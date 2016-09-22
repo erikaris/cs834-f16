@@ -151,8 +151,8 @@ Furthermore, figure \ref{fig:sampling} illustrates the processes that happen in 
 	\label{fig:sampling}
 \end{figure}
 
-The response page for a query may contain information that is not relevant to the actual query (e.g. ads, navigation bars) that is not part of the site. This information may negatively impact the keyword selection process. Hence, it must be removed before selecting the candidate words. We also have to implement additional techniques to ensure that our design is not destructive such as removing stop words and stemming. 
-
+The response page for a query may contain information that is not relevant to the actual query (e.g. ads, navigation bars) that is not part of the site. This information may negatively impact the keyword selection process. Hence, it must be removed before selecting the candidate words. We also have to consider doing additional techniques such as removing stop words and stemming. \\
+To ensure that our design is not destructive, we have to send only GET requests. By using GET method, we can guarantee that the crawler will not inadvertently post something such as posting blog comments or order a product. Since the crawlwer's job is to retrieve data that is already exists on the server (not to tell something to the server), a crawler should use GET method and avoid POST method. Also, filtering away form contains login/personal information (user-name, password, etc.) will be a good idea. It could help to make sure that the query that we submit does not create new documents on the server side. 
 
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
@@ -300,7 +300,7 @@ while level < depth:
 
 \end{lstlisting}
 
-Figure \ref{fig:crawler} shows the crawling process that happens when we run the crawler using  \url{http://www.cs.odu.edu/~mln/} as the seed and the number of recursive calls = 1. 
+Figure \ref{fig:crawler} shows the crawling process that happens when we run the crawler using  \url{http://www.cs.odu.edu/~mln/} as the seed and the number of recursive calls = 1. Figure \ref{fig:url} shows the extracted links resulted from the crawling process. 
 
 
 \begin{figure}[H]
@@ -312,6 +312,18 @@ Figure \ref{fig:crawler} shows the crawling process that happens when we run the
 \caption{The crawling process}
 
 \label{fig:crawler}
+
+\end{figure} 
+
+\begin{figure}[H]
+
+\fbox{\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{url}}
+
+\centering
+
+\caption{The Extracted Link from \url{http://www.cs.odu.edu/~mln/}}
+
+\label{fig:url}
 
 \end{figure} 
 
@@ -533,7 +545,17 @@ you would use to identify content and non-content elements of the structure.
 
 \subsection*{Answer}
 
-According to Lopez et al \cite{lopez2012using}, content extraction could be done using CNR (Chars-nodes ratio) algorithm, which shows the relation between text content and tags content of each node in the DOM tree. CNR considers nodes as blocks where the internal information is grouped and indivisible using the DOM structure. CNR of an internal node takes into account all the texts and tags included in its descendants. 
+According to Lopez et al \cite{lopez2012using}, content extraction could be done using CNR (Chars-nodes ratio) algorithm, which shows the relation between text content and tags content of each node in the DOM tree. Figure \ provides an illustration of the DOM Tree for content extraction. CNR considers nodes as blocks where the internal information is grouped and indivisible using the DOM structure. CNR of an internal node takes into account all the texts and tags included in its descendants. 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{dom_tree}}
+
+	\centering
+
+	\caption{DOM Tree representation for content extraction. Adapted from \cite{lopez2012using}}
+
+	\label{fig:dom_tree}
+\end{figure}
 
 Steps for content extraction:
 \begin{enumerate}
