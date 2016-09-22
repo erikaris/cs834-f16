@@ -1,0 +1,138 @@
+/usr/bin/python2.7 "/media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/3.9_single-threaded-crawler.py"
+Enter a URL: http://www.cs.odu.edu/~mln/  
+Enter crawl depth or level: 1
+Enter output directory: /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output
+Debug : 0.1 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 0.1 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 1.1 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 1.1 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 1.2 Opening URL http://www.cs.odu.edu/
+Debug : 1.2 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 1.3 Opening URL http://www.odu.edu
+Debug : 1.3 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 1.4 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 1.4 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 1.5 Opening URL http://www.cs.odu.edu/~mln/research/
+Debug : 1.5 URL http://www.cs.odu.edu/~mln/research/ is opened
+Debug : http://www.cs.odu.edu/~mln/research/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/2a47b2edb6390d1f30bd83220c1a4909.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 1.6 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 1.6 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 1.7 Opening URL http://www.cs.odu.edu/~mln/teaching/
+Debug : 1.7 URL http://www.cs.odu.edu/~mln/teaching/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/312f0e30904d4c999a3e3fe74d9424be.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 1.8 Opening URL http://www.cs.odu.edu/~mln/service/
+Debug : 1.8 URL http://www.cs.odu.edu/~mln/service/ is opened
+Debug : http://www.cs.odu.edu/~mln/service/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/b0412c7003fd2e66aa279afc8bf5213f.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 1.9 Opening URL http://www.cs.odu.edu/~mln/personal/
+Debug : 1.9 URL http://www.cs.odu.edu/~mln/personal/ is opened
+Debug : http://www.cs.odu.edu/~mln/personal/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/5472b346fec5431e5839f4a470aa50c1.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 1.10 Opening URL http://www.larc.nasa.gov/
+Debug : 1.10 URL http://www.larc.nasa.gov/ is opened
+Debug : http://www.larc.nasa.gov/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/d7918e9d8c9149086ffc56e161607799.html
+Debug : Sleep for 5 seconds
+Debug : 1.11 Opening URL http://sils.unc.edu/
+Debug : 1.11 URL http://sils.unc.edu/ is opened
+Debug : http://sils.unc.edu/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/141b67bfcfe070af2a6250a7a6fe5ecb.html
+Debug : Found 77 links
+Debug : Sleep for 5 seconds
+Debug : 1.12 Opening URL http://www.openarchives.org/pmh/
+Debug : 1.12 URL http://www.openarchives.org/pmh/ is opened
+Debug : http://www.openarchives.org/pmh/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/ffb41178dbf44330e3c8ba0994188e0c.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 1.13 Opening URL http://www.openarchives.org/ore/
+Debug : 1.13 URL http://www.openarchives.org/ore/ is opened
+Debug : http://www.openarchives.org/ore/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/0f68f21aff0f38074da5352d149dd791.html
+Debug : Found 40 links
+Debug : Sleep for 5 seconds
+Debug : 1.14 Opening URL http://www.mementoweb.org/guide/rfc/ID/
+Debug : 1.14 URL http://www.mementoweb.org/guide/rfc/ID/ is opened
+Debug : http://www.mementoweb.org/guide/rfc/ID/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/1b276d4ae634f6ffe4e24edf80c561ba.html
+Debug : Found 624 links
+Debug : Sleep for 5 seconds
+Debug : 1.15 Opening URL http://www.openarchives.org/rs/toc
+Debug : 1.15 URL http://www.openarchives.org/rs/toc is opened
+Debug : http://www.openarchives.org/rs/toc is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/21c44257332cd700af1019907b16a9e3.html
+Debug : Found 22 links
+Debug : Sleep for 5 seconds
+Debug : 1.16 Opening URL http://ntrs.nasa.gov/
+Debug : 1.16 URL http://ntrs.nasa.gov/ is opened
+Debug : http://ntrs.nasa.gov/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/60715e0bb39b0d8bb44e356ac243c3b4.html
+Debug : Found 155 links
+Debug : Sleep for 5 seconds
+Debug : 1.17 Opening URL http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784
+Debug : 1.17 URL http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784 is opened
+Debug : http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784 is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/3a44cab8285e1a7f37e2269f13a87b54.html
+Debug : Found 123 links
+Debug : Sleep for 5 seconds
+Debug : 1.18 Opening URL http://www.cs.odu.edu/~mln/cv.pdf
+Debug : 1.18 URL http://www.cs.odu.edu/~mln/cv.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/cv.pdf is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/c94cb16fc6ff8f553fc90f86ec9e6134.html
+Debug : Sleep for 5 seconds
+Debug : 1.19 Opening URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf
+Debug : 1.19 URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/667c934ed21266b674ddbb36886d42b3.html
+Debug : Sleep for 5 seconds
+Debug : 1.20 Opening URL http://www.cs.odu.edu/~mln/lineage.html
+Debug : 1.20 URL http://www.cs.odu.edu/~mln/lineage.html is opened
+Debug : http://www.cs.odu.edu/~mln/lineage.html is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/f20fc87fbd1c4d84970ca8aa83d48e97.html
+Debug : Found 9 links
+Debug : Sleep for 5 seconds
+Debug : 1.21 Opening URL http://www.cs.odu.edu/~mln/travel.html
+Debug : 1.21 URL http://www.cs.odu.edu/~mln/travel.html is opened
+Debug : http://www.cs.odu.edu/~mln/travel.html is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/ed7d908855f37d77f89a77fd58303938.html
+Debug : Found 119 links
+Debug : Sleep for 5 seconds
+Debug : 1.22 Opening URL http://www.cs.odu.edu/~mln/mln-ad.pdf
+Debug : 1.22 URL http://www.cs.odu.edu/~mln/mln-ad.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/mln-ad.pdf is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/dec9e84f6be5899c0fd69cf5dbb707e2.html
+Debug : Sleep for 5 seconds
+Debug : 1.23 Opening URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research
+Debug : 1.23 URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is opened
+Debug : https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/116cd4add2ba5c40814810fff1a0390e.html
+Debug : Found 105 links
+Debug : Sleep for 5 seconds
+Debug : 1.24 Opening URL http://ws-dl.blogspot.com/
+Debug : 1.24 URL http://ws-dl.blogspot.com/ is opened
+Debug : http://ws-dl.blogspot.com/ is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/7d6f9e8932c59bc180045a0721387807.html
+Debug : Found 1077 links
+Debug : Sleep for 5 seconds
+Debug : 1.25 Opening URL http://twitter.com/phonedude_mln
+Debug : 1.25 URL http://twitter.com/phonedude_mln is opened
+Debug : http://twitter.com/phonedude_mln is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/3265534346db64d6e1d17502124ccb36.html
+Debug : Found 269 links
+Debug : Sleep for 5 seconds
+Debug : 1.26 Opening URL https://twitter.com/phonedude_mln
+Debug : 1.26 URL https://twitter.com/phonedude_mln is opened
+Debug : https://twitter.com/phonedude_mln is saved into /media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a1/code_report/crawling_output/0f645e022311a6dc73af1a3d545d9d52.html
+Debug : Found 269 links
+Debug : Sleep for 5 seconds
+
+Process finished with exit code 0
+

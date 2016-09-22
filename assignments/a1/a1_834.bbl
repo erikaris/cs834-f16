@@ -1,0 +1,52 @@
+\begin{thebibliography}{1}
+
+\bibitem{craigslist}
+Wikipedia.
+\newblock {Craigslist}.
+\newblock \url{https://en.wikipedia.org/wiki/Craigslist}, 2016.
+\newblock [Online; accessed 20-September-2016].
+
+\bibitem{kantorski2012automatic}
+Gustavo~Zanini Kantorski and Carlos~Alberto Heuser.
+\newblock Automatic filling of web forms.
+\newblock In {\em AMW}, pages 215--219, 2012.
+
+\bibitem{Kantorski:2015:AFH:2783888.2783898}
+Gustavo~Zanini Kantorski, Viviane~Pereira Moreira, and Carlos~Alberto Heuser.
+\newblock Automatic filling of hidden web forms: A survey.
+\newblock {\em SIGMOD Rec.}, 44(1):24--35, May 2015.
+
+\bibitem{barbosa2010siphoning}
+Luciano Barbosa and Juliana Freire.
+\newblock Siphoning hidden-web data through keyword-based interfaces.
+\newblock {\em Journal of Information and Data Management}, 1(1):133, 2010.
+
+\bibitem{Croft:2009:SEI:1516224}
+Bruce Croft, Donald Metzler, and Trevor Strohman.
+\newblock {\em Search Engines: Information Retrieval in Practice}.
+\newblock Addison-Wesley Publishing Company, USA, 1st edition, 2009.
+
+\bibitem{bs4}
+Leonard Richardson.
+\newblock {Beautiful Soup}.
+\newblock \url{https://www.crummy.com/software/BeautifulSoup/}, 2016.
+\newblock [Online; accessed 20-September-2016].
+
+\bibitem{requests}
+Kenneth Reitz.
+\newblock {Requests: HTTP for Humans}.
+\newblock \url{http://docs.python-requests.org/en/master/}, 2016.
+\newblock [Online; accessed 20-September-2016].
+
+\bibitem{txt-compression}
+Python~Software Foundation.
+\newblock {HTMLParser — Simple HTML and XHTML parser}.
+\newblock \url{https://docs.python.org/2/library/htmlparser.html}, 2016.
+\newblock [Online; accessed 18-September-2016].
+
+\bibitem{lopez2012using}
+Sergio L{\'o}pez, Josep Silva, and David Insa.
+\newblock Using the dom tree for content extraction.
+\newblock {\em arXiv preprint arXiv:1210.6113}, 2012.
+
+\end{thebibliography}
