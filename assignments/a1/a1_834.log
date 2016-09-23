@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.14)  22 SEP 2016 15:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.14)  22 SEP 2016 23:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -695,28 +695,28 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 233.
  [5]
-<crawling_process.jpg, id=184, 979.66pt x 432.61626pt>
+<crawling_process.jpg, id=184, 938.50626pt x 846.16125pt>
 File: crawling_process.jpg Graphic file (type jpg)
 
 <use crawling_process.jpg>
 Package pdftex.def Info: crawling_process.jpg used on input line 308.
-(pdftex.def)             Requested size: 473.80414pt x 209.23112pt.
+(pdftex.def)             Requested size: 473.80588pt x 427.18541pt.
 
-Overfull \hbox (6.7931pt too wide) in paragraph at lines 308--309
+Overfull \hbox (6.79485pt too wide) in paragraph at lines 308--309
 [][] 
  []
 
-<url.jpg, id=185, 674.52pt x 481.8pt>
+[6] <url.jpg, id=216, 647.41875pt x 776.9025pt>
 File: url.jpg Graphic file (type jpg)
  <use url.jpg>
 Package pdftex.def Info: url.jpg used on input line 320.
-(pdftex.def)             Requested size: 473.81786pt x 338.44131pt.
+(pdftex.def)             Requested size: 473.81697pt x 568.58035pt.
 
-Overfull \hbox (6.80682pt too wide) in paragraph at lines 320--321
+Overfull \hbox (6.80594pt too wide) in paragraph at lines 320--321
 [][] 
  []
 
-[6 <./crawling_process.jpg>] [7 <./url.jpg>]
+[7 <./crawling_process.jpg>] [8 <./url.jpg>]
 <compressedTag.jpg, id=229, 579.16376pt x 115.43124pt>
 File: compressedTag.jpg Graphic file (type jpg)
  <use compressedTag.jpg>
@@ -727,11 +727,11 @@ Overfull \hbox (6.80165pt too wide) in paragraph at lines 371--372
 [][] 
  []
 
-[8 <./compressedTag.jpg>]
+[9]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 411.
- [9] [10]
-<csodu_encode_jpg.jpg, id=382, 949.5475pt x 720.6925pt>
+ [10 <./compressedTag.jpg>] [11]
+<csodu_encode_jpg.jpg, id=363, 949.5475pt x 720.6925pt>
 File: csodu_encode_jpg.jpg Graphic file (type jpg)
 
 <use csodu_encode_jpg.jpg>
@@ -742,7 +742,7 @@ Overfull \hbox (6.80528pt too wide) in paragraph at lines 523--525
  [][] 
  []
 
-<csodu_decode_jpg.jpg, id=385, 711.65875pt x 647.41875pt>
+[12] <csodu_decode_jpg.jpg, id=407, 711.65875pt x 647.41875pt>
 File: csodu_decode_jpg.jpg Graphic file (type jpg)
 
 <use csodu_decode_jpg.jpg>
@@ -753,8 +753,8 @@ Overfull \hbox (6.7899pt too wide) in paragraph at lines 530--532
  [][] 
  []
 
-[11 <./csodu_encode_jpg.jpg>] [12 <./csodu_decode_jpg.jpg>]
-<dom_tree.jpg, id=414, 957.5775pt x 510.90875pt>
+[13 <./csodu_encode_jpg.jpg>] [14 <./csodu_decode_jpg.jpg>]
+<dom_tree.jpg, id=422, 957.5775pt x 510.90875pt>
 File: dom_tree.jpg Graphic file (type jpg)
  <use dom_tree.jpg>
 Package pdftex.def Info: dom_tree.jpg used on input line 551.
@@ -764,23 +764,23 @@ Overfull \hbox (6.79404pt too wide) in paragraph at lines 551--552
 [][] 
  []
 
-<dom_extract_alg1.jpg, id=420, 749.80125pt x 809.0225pt>
+<dom_extract_alg1.jpg, id=428, 749.80125pt x 809.0225pt>
 File: dom_extract_alg1.jpg Graphic file (type jpg)
 
 <use dom_extract_alg1.jpg>
 Package pdftex.def Info: dom_extract_alg1.jpg used on input line 571.
 (pdftex.def)             Requested size: 449.88422pt x 485.41725pt.
- [13 <./dom_tree.jpg>]
-<dom_extract_alg2.jpg, id=434, 623.32875pt x 326.21875pt>
+ [15 <./dom_tree.jpg>]
+<dom_extract_alg2.jpg, id=442, 623.32875pt x 326.21875pt>
 File: dom_extract_alg2.jpg Graphic file (type jpg)
 
 <use dom_extract_alg2.jpg>
 Package pdftex.def Info: dom_extract_alg2.jpg used on input line 582.
 (pdftex.def)             Requested size: 374.00014pt x 195.73274pt.
- [14 <./dom_extract_alg1.jpg>] (./a1_834.bbl)
+ [16 <./dom_extract_alg1.jpg>] (./a1_834.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 596.
 
-[15 <./dom_extract_alg2.jpg>]
+[17 <./dom_extract_alg2.jpg>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 596.
  (./a1_834.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 596.
@@ -790,9 +790,9 @@ Package rerunfilecheck Info: File `a1_834.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 596.
  ) 
 Here is how much of TeX's memory you used:
- 9092 strings out of 493029
- 131658 string characters out of 6136234
- 485375 words of memory out of 5000000
+ 9094 strings out of 493029
+ 131672 string characters out of 6136234
+ 482377 words of memory out of 5000000
  12217 multiletter control sequences out of 15000+600000
  14449 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -807,10 +807,10 @@ blic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm14
 40.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/t
 exmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sftt1095.pfb>
-Output written on a1_834.pdf (16 pages, 1011202 bytes).
+Output written on a1_834.pdf (18 pages, 1149639 bytes).
 PDF statistics:
- 556 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
- 310 named destinations out of 1000 (max. 500000)
+ 564 PDF objects out of 1000 (max. 8388607)
+ 509 compressed objects within 6 object streams
+ 312 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
