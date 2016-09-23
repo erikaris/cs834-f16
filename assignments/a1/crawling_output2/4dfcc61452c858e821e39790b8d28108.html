@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+        <title>
+            Alexander Nwala.
+            Ph.D Student.Researcher.Artist.
+            My name is Alexander Nwala. I am a Ph.D student under the supervision of Dr. Michael Nelson, in the Computer Science Department at Old Dominion University.
+        </title>
+        <script type="text/javascript" src="d3.min.js"></script>
+        <style type="text/css">
+
+            body { 
+                /*background-image: url('me.jpg');*/
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+                background-position: 50% 50%; 
+            }
+            .node {
+                cursor: pointer;
+            }
+            
+            .desc {
+                /*border: #000 solid thin;*/
+                
+                text-align: center;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                color: #660000;
+                width: 800px;
+                margin: auto;
+            }
+            
+            path.link {
+                fill: none;
+                stroke: #666;
+                stroke-width: 1.5px;
+            }
+            
+            circle {
+                fill: #70B8FF;
+                stroke: #333;
+                stroke-width: 1.5px;
+            }
+            
+            text {
+                font: 24px sans-serif;
+                pointer-events: none;
+                text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+            }
+            
+            .main {
+                min-height: 800px;
+                height: 100%;
+            }
+        </style>
+
+        
+    </head>
+
+    <body onLoad="loadViz();" style="overflow: hidden">
+        <div class="main">
+            <div id="chart"></div>
+        </div>
+        <script type="text/javascript">
+            var switchFlag = true;
+            var minorData = {
+                "name": "Parent",
+                "id": -1,
+                "tooltip": "Click me!",
+                "edgeLabel": "",
+                "children": [
+                {
+                    "name": "A.N",
+                    "id": 0,
+                    "tooltip": "Click me!",
+                    "edgeLabel": "",
+                    "children": []
+                }]
+            };
+
+            var data = {
+                "name": "Parent",
+                "id": -1,
+                "children": [
+                {
+                    "name": "Alexander Nwala",
+                    "id": 0,
+                    "tooltip": "",
+                    "edgeLabel": "",
+                    "children": [
+                        {
+                            "name": "Ph.D Student",
+                            "id": 0,
+                            "tooltip": "Computer Science Department, Old Dominion University",
+                            "edgeLabel": "now",
+                            "children": []
+
+                        },
+                        {
+                            "name": "Researcher",
+                            "id": 0,
+                            "tooltip": "I research Text Mining and Web Sciences, under the supervision of Dr. Michael Nelson",
+                            "edgeLabel": "now",
+                            "children": []
+                        },
+                        {
+                            "name": "Artist",
+                            "id": 0,
+                            "tooltip": "",
+                            "edgeLabel": "always",
+                            "children": []
+                        },
+                        {
+                            "name": "Dr. Michael Nelson",
+                            "id": 0,
+                            "tooltip": "My Supervisor",
+                            "edgeLabel": "supervisor",
+                            "children": []
+                        },
+                        {
+                            "name": "ODU",
+                            "id": 0,
+                            "tooltip": "My School",
+                            "edgeLabel": "My School",
+                            "children": []
+                        },
+                        {
+                            "name": "WSDL",
+                            "id": 0,
+                            "tooltip": "",
+                            "edgeLabel": "Lab",
+                            "children": []
+                        },
+                        {
+                            "name": "acnwala",
+                            "id": 0,
+                            "tooltip": "",
+                            "edgeLabel": "Twitter",
+                            "children": []
+                        },
+                        {
+                            "name": "anwala@cs.odu.edu",
+                            "id": 0,
+                            "tooltip": "",
+                            "edgeLabel": "email",
+                            "children": []
+                        },
+                        {
+                            "name": "M1",
+                            "id": 0,
+                            "tooltip": "",
+                            "edgeLabel": "original method2",
+                            "children": []
+                        },
+                        {
+                            "name": "Algorithm f",
+                            "id": 0,
+                            "tooltip": "",
+                            "edgeLabel": "original method1",
+                            "children": []
+                        },
+                        {
+                            "name": "Carbon Date",
+                            "id": 0,
+                            "tooltip": "Refactored",
+                            "edgeLabel": "Project",
+                            "children": []
+                        },
+                        {
+                            "name": "What Did It Look Like?",
+                            "id": 0,
+                            "tooltip": "Developed",
+                            "edgeLabel": "Project",
+                            "children": []
+                        }
+
+
+                    ]
+                }]
+            };
+            //window.innerWidth, screen.height
+            var w = window.innerWidth,
+                h = screen.height,
+                node,
+                path,
+                root, nodes, links, rootNode, id = 19;
+
+            var force, vis;
+            var LoadData = true;
+
+            function update()
+            {
+                if (force) force.stop();
+
+                nodes = flatten(root).filter(function(el)
+                {
+                    return el.id != "-1";
+                });
+
+                //console.log(nodes.length);
+
+                links = d3.layout.tree().links(nodes).filter(function(el)
+                {
+                    return el.source.id != "-1";
+                });
+
+
+
+                // Restart the force layout.
+                force.nodes(nodes)
+                    .links(links)
+                    .linkDistance(250) //60
+                    .charge(-300)
+                    .start();
+
+                vis.selectAll("path").remove();
+                vis.selectAll(".node").remove();
+                vis.selectAll("defs").remove();
+
+                // Per-type markers, as they don't inherit styles.
+                vis.append("defs").selectAll("marker")
+                    .data(["end"])
+                    .enter().append("marker")
+                    .attr("id", function(d)
+                    {
+                        return d;
+                    })
+                    .attr("viewBox", "0 -2 10 10")
+                    .attr("refX", 18)
+                    .attr("refY", -1.5)
+                    .attr("markerWidth", 6)
+                    .attr("markerHeight", 6)
+                    .attr("orient", "auto")
+                    .append("path")
+                    .attr("d", "M0,-5L10,0L0,5");
+
+                path = vis.selectAll("path.link");
+                path = path.data(force.links());
+                path.exit().remove();
+
+                // make an arch between nodes and a text label in the middle
+                path.enter().append("svg:path")
+                    .attr("class", "link")
+                    .attr("id", function(d, i) //star3
+                        {
+                            return "linkId_" + i;
+                        })
+                    .attr("marker-end", "url(#end)");
+
+                //label edge end
+                var linktext = vis.append("svg:g").selectAll("g.linklabelholder").data(nodes);
+
+                linktext.enter().append("g").attr("class", "linklabelholder")
+                    .append("text")
+                    .attr("class", "linklabel")
+                    .style("font-size", "16px")
+                    .attr("x", "80")
+                    .attr("y", "-60")
+                    .attr("text-anchor", "start")
+                    .style("fill", "#000")
+                    .append("textPath")
+
+                .attr("xlink:href", function(d, i)
+                    {
+                        return "#linkId_" + i;
+                    })
+                    .text(function(d)
+                    {
+                        return d.edgeLabel;
+                    });
+                //label edge end
+
+                node = vis.selectAll(".node");
+                node = node.data(force.nodes());
+                node.exit().remove();
+
+                node.enter().append("g")
+                    .attr("class", "node")
+                    .on("click", click)
+                    .call(force.drag);
+
+                node.append("circle")
+                    .attr("r", 7)
+                    .attr("id", function(d)
+                    {
+                        return d.name;
+                    });
+
+                node.append("title")
+                    .text(function(d)
+                    {
+                        return d.tooltip;
+                    });
+
+                node.append("text")
+
+                .style("font-size", function(d)
+                    {
+                        if (d.name != 'Alexander Nwala')
+                        {
+                            return '16px';
+                        }
+                        else
+                        {
+                            return '24px';
+                        }
+                    })
+                    .attr("x", 19)
+                    .attr("dy", ".35em")
+                    .text(function(d)
+                    {
+                        return d.name;
+                    });
+            }
+
+            function tick()
+            {
+                path.attr("d", function(d)
+                {
+
+                    if (d.source.id == rootNode.id)
+                    {
+                        d.source.x = (w / 2 - 15);
+                        d.source.y = (h / 2 - 15);
+                    }
+
+                    var dx = d.target.x - d.source.x,
+                        dy = d.target.y - d.source.y,
+
+                        //curve: dr = Math.sqrt(dx * dx + dy * dy);
+                        dr = Math.sqrt(dx * dx + dy * dy);
+                    //straight: dr = dx * dx + dy * dy;
+                    //dr = dx * dx + dy * dy;
+                    return "M" +
+                        d.source.x + "," +
+                        d.source.y + "A" +
+                        dr + "," + dr + " 0 0,1 " +
+                        d.target.x + "," +
+                        d.target.y;
+                });
+
+                node.attr("transform", function(d)
+                {
+
+                    if (d.id == rootNode.id)
+                    {
+                        return "translate(" + ((w / 2) - 20) + "," + ((h / 2) - 20) + ")";
+                    }
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+            }
+
+            // Toggle children on click.
+            function click(d)
+            {
+                //console.log(d);
+                if (d.name == 'Dr. Michael Nelson')
+                {
+                    window.open('http://www.cs.odu.edu/~mln');
+                }
+                else if (d.name == 'ODU')
+                {
+                    window.open('http://www.odu.edu');
+                }
+                else if (d.name == 'WSDL')
+                {
+                    window.open('http://ws-dl.blogspot.com/');
+                }
+                else if (d.name == 'acnwala')
+                {
+                    window.open('https://twitter.com/acnwala');
+                }
+                else if (d.name == 'M1' || d.name == 'Algorithm f')
+                {
+                    window.open('http://www.cs.odu.edu/~anwala/files/Thesis_Nwala7.pdf');
+                }
+                else if (d.name == 'What Did It Look Like?')
+                {
+                    window.open('http://whatdiditlooklike.mementoweb.org');
+                }
+                else if (d.name == 'Carbon Date')
+                {
+                    window.open('http://cd.cs.odu.edu');
+                }
+
+                if (switchFlag)
+                {
+                    switchFlag = false;
+                    root = data;
+                }
+
+
+                if ((d.children != null || d.children != undefined) || (d._children != null || d._children != undefined))
+                {
+                    if (d.children)
+                    {
+                        d._children = d.children;
+                        d.children = null;
+                    }
+                    else
+                    {
+                        d.children = d._children;
+                        d._children = null;
+                    }
+                    update();
+                }
+            }
+
+            var findNode = function(node)
+            {
+                for (var i in force.nodes())
+                {
+                    if (force.nodes()[i] === node) return true
+                };
+                return false;
+            }
+
+            // Returns a list of all nodes under the root.
+            function flatten(root)
+            {
+                var nodes = [],
+                    i = 0;
+
+                function recurse(node)
+                {
+                    if (node.children) node.children.forEach(recurse);
+                    if (!node.id) node.id = ++i;
+                    nodes.push(node);
+                }
+
+                rootNode = root;
+                recurse(root);
+
+                return nodes;
+            }
+
+            function loadViz()
+            {
+                if (LoadData)
+                {
+                    root = minorData;
+                    //root = data;
+
+                    force = d3.layout.force()
+                        .on("tick", tick)
+                        .size([w, h]);
+
+                    vis = d3.select("#chart").append("svg:svg")
+                        .attr("width", w)
+                        .attr("height", h);
+
+
+
+                    update();
+                    LoadData = false;
+                }
+            }
+            //var nodeCount =1;
+            //setInterval(addNode, 3000);
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="enctype"	 content="utf-8"  />
+<meta name="generator"	 content="Bucket" />
+<meta name="Author"		 content="Bucket" />
+<meta name="Keywords"	 content="Bucket" />
+<meta name="Description" content="Bucket" />
+<title>CS 495/595 - Web Server Design</title>
+<style type="text/css">/*<![CDATA[*/
+ 	  <!--
+	  
+	  body
+	      {
+	      font-family:Arial;  
+	      background-color:#AAAAAA;
+	      }
+	  
+	  h1,h2,h3,h4,h5
+	      {
+	      font-family:Arial;
+	      color:#EEEEEE;
+	      }
+	  
+	  table
+	      {
+	      display:table;
+	      border-width:3px;
+	      border-style:outset;
+	      border-color:gray;
+	      font-family:Arial;
+	      font-size:10pt;
+	      vertical-align:top;
+	      }
+	  
+	  td	
+	      {
+	      padding: 1pt 3pt 0pt 3pt;
+	      }
+	  
+	  
+	  .element  
+	      {  
+	      font-size:10pt;
+	      font-weight:bold;
+	      background:#003366;
+	      vertical-align:top;
+	      color:#EEEEEE;
+	      }
+
+	  .elementContent 
+		  {
+		  background:#EEEEEE;
+		  }
+
+	  .elementContentTitle
+	      {
+	      color:#003366;
+	      font-weight:bold;
+		  background:#EEEEEE;
+	      }
+
+	  .noBorder                                              
+	      {
+	      display:table;
+	      border-style:none;
+	      border-width:0px;
+	      font-family:Arial;
+	      font-size:10pt;
+	      vertical-align:top;
+	      }
+
+	  .myTitle
+	      {
+	      font-family:Arial;
+	      color:#003366;
+	      font-size:14.0pt;
+	      font-weight:bold;
+		  text-align:left;
+	      }
+	  
+	  .tableTitle
+	      {       
+	      font-family:Arial;
+	      color:#003366;
+	      font-size:10.0pt;
+	      padding:.2in 0pt 5pt 0pt;
+	      font-weight:bold;
+       	  text-align:left;
+	      }
+	   
+	  .tableSubtitle
+	      {       
+          font-family:Arial;
+          color:#003366;
+          font-size:14.0pt;
+	      padding:0in 0pt 0pt 0pt;
+	      }
+
+	  a:visited
+	      { 
+	      text-decoration:none;
+	      } 
+
+	  a:link                       
+	      {	
+	      color:#003399;
+	      text-decoration:none;
+	      } 
+	  
+		a:.selected                                         
+	      {	
+    	  color:white;
+	      background:#003366;
+	      border-width:1px;
+	      border-color:gray;
+	      }
+	  
+	  a:hover                                       
+	      {
+		   color:#99CCFF;
+	      }
+
+		  .select                                         
+	      {	
+	      border-width:1px;
+	      border-color:gray;
+	      }
+
+	  -->
+	/*]]>*/
+
+</style>
+</head>
+<body>
+<table class="noBorder" cellpadding="1" cellspacing="1">
+<caption class="myTitle">
+CS 495/595 - Web Server Design
+</caption>
+<tr>
+<td>
+<table bgcolor="#AAAAAA" cellpadding="1" cellspacing="1">
+<caption class="tableTitle">
+Metadata
+</caption>
+<tr>
+<td class="element"> creator:</td>
+<td colspan="12" class="elementContentTitle"> Michael L. Nelson</td>
+</tr>
+<tr>
+<td class="element"> title:</td>
+<td colspan="12" class="elementContentTitle"> CS 495/595 - Web Server Design</td>
+</tr>
+<tr>
+<td class="element"> date:</td>
+<td colspan="12" class="elementContentTitle"> Spring 2009</td>
+</tr>
+<tr>
+<td class="element"> description:</td>
+<td colspan="12" class="elementContentTitle"> 
+   This class will focus on the complete understanding of the hypertext transfer protocol (http) and the
+   implementation of a web server. The class will be programming intensive: prerequisites include the understanding
+   of network (socket) programming. The class will work in teams of 1-2 to implement an http server, with 5 well
+   defined demonstrations of protocol conformance (assignments) during the class. The assignments will build on the
+   previous assignments, and at the end of the class the teams should have a fully functioning web server that
+   implements most of the common http functionality.
+ 
+   The teams will decide their own implementation language / environment; the lectures will be strictly about http
+   and not about any particular programming language. There will be no class textbook; class lectures and RFCs
+   will be the primary guide for students. Grades will be determine solely on the design and performance of the
+   teams' http servers.
+
+
+			</td>
+</tr>
+<tr>
+<td class="element"> identifier:</td>
+<td colspan="12" class="elementContentTitle"> CRNs 27014, 27015</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table bgcolor="#EEEEEE">
+<caption class="tableTitle">
+Contents
+</caption>
+<tr>
+<td>
+<a class="select" href="?method=display">CS 495/595 - Web Server Design</a>
+<ul>
+<li> <a href="?method=getElement&element=~syllabus.txt">Syllabus</a>
+<i>(Text; 2 KB)</i>
+</li>
+<li> <a href="?method=getElement&element=~groups.txt">Groups</a>
+<i>(Text; 706 bytes)</i>
+</li>
+<li><a href="?method=display&element=~resources&metadata=descriptive">Resources</a></li>
+<ul>
+<li><a href="?method=display&redirect=http://list.odu.edu/listinfo/cs595-s09/">Class email list</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.amazon.com/exec/obidos/ASIN/0672324547/ref%3Dnosim/chrisshiflett-20">HTTP Developer's Handbook - Chris Shiflett</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc1630.txt">RFC 1630: Universal Resource Identifiers in WWW</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc1867.txt">RFC 1867: Form-based File Upload in HTML</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc1738.txt">RFC 1738: Uniform Resource Locators (URL)</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc2396.txt">RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc2295.txt">RFC 2295: Transparent Content Negotiation in HTTP</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc2616.txt">RFC 2616: Hypertext Transfer Protocol -- HTTP/1.1</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc2617.txt">RFC 2617: HTTP Authentication: Basic and Digest Access Authentication</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://purl.org/NET/http-errata">Errata for RFCs 2616 & 2617</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ietf.org/rfc/rfc3875.txt">RFC 3875: The Common Gateway Interface (CGI) Version 1.1</a>
+<i>(URL) </i>
+</li>
+<li><a href="?method=display&redirect=http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Roy Fielding's dissertation</a>
+<i>(URL) </i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week1&metadata=descriptive">Week 1: January 12: Introduction & Administration</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week1~readings.txt">Readings</a>
+<i>(Text; 248 bytes)</i>
+</li>
+<li> <a href="?method=getElement&element=~week1~week1.ppt">Slides</a>
+<i>(MS Powerpoint; 465 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week2&metadata=descriptive">Week 2: January 19: (Holiday - No Class)</a></li>
+<li><a href="?method=display&element=~week3&metadata=descriptive">Week 3: January 26: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week3~readings.txt">Readings</a>
+<i>(Text; 66 bytes)</i>
+</li>
+<li> <a href="?method=getElement&element=~week3~week3.ppt">Slides</a>
+<i>(MS Powerpoint; 64 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week4&metadata=descriptive">Week 4: February 2:</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week4~readings.txt">Readings</a>
+<i>(Text; 72 bytes)</i>
+</li>
+<li> <a href="?method=getElement&element=~week4~week4.ppt">Slides</a>
+<i>(MS Powerpoint; 88 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week5&metadata=descriptive">Week 5: February 9: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week5~week5.ppt">Slides</a>
+<i>(MS Powerpoint; 117 KB)</i>
+</li>
+<li><a href="?method=display&element=~a~a1&metadata=descriptive">Assignment 1: Basic Operations</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~a~assignment1.ppt">description</a>
+<i>(MS Powerpoint; 28 KB)</i>
+</li>
+<li> <a href="?method=getElement&element=~a~a1-test.tar.gz">test directory for local installation (.tar.gz)</a>
+<i>(; 90 KB)</i>
+</li>
+<li><a href="?method=display&redirect=http://www.cs.odu.edu/~mln/teaching/cs595-s09/a1-test/">test directory installed on www.cs.odu.edu</a>
+<i>(URL) </i>
+</li>
+</ul>
+</ul>
+<li><a href="?method=display&element=~week6&metadata=descriptive">Week 6: February 16: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week6~readings.txt">Readings</a>
+<i>(Text; 25 bytes)</i>
+</li>
+<li> <a href="?method=getElement&element=~week6~week6.ppt">Slides</a>
+<i>(MS Powerpoint; 44 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week7&metadata=descriptive">Week 7: February 23: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week7~week7.ppt">Slides</a>
+<i>(MS Powerpoint; 60 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week8&metadata=descriptive">Week 8: March 2: </a></li>
+<ul>
+<li><a href="?method=display&element=~a~a2&metadata=descriptive">Assignment 2: Conditionals, Persistence</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~a~assignment2.ppt">description</a>
+<i>(MS Powerpoint; 289 KB)</i>
+</li>
+<li> <a href="?method=getElement&element=~a~a2-test.tar.gz">test directory for local installation (.tar.gz)</a>
+<i>(; 91 KB)</i>
+</li>
+<li><a href="?method=display&redirect=http://www.cs.odu.edu/~mln/teaching/cs595-s07/a2-test/">test directory installed on www.cs.odu.edu</a>
+<i>(URL) </i>
+</li>
+</ul>
+<li> <a href="?method=getElement&element=~week8~week8.ppt">Slides</a>
+<i>(MS Powerpoint; 205 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week9&metadata=descriptive">Week 9: March 9 (Spring Break - No Class)</a></li>
+<li><a href="?method=display&element=~week10&metadata=descriptive">Week 10: March 16: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week10~readings.txt">Readings</a>
+<i>(Text; 36 bytes)</i>
+</li>
+<li> <a href="?method=getElement&element=~week10~week10.ppt">Slides</a>
+<i>(MS Powerpoint; 48 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week11&metadata=descriptive">Week 11: March 23: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week11~week11.ppt">Slides</a>
+<i>(MS Powerpoint; 52 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week12&metadata=descriptive">Week 12: March 30: </a></li>
+<ul>
+<li><a href="?method=display&element=~a~a3&metadata=descriptive">Assignment 3: Content Negotiation, Transfer Encoding</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~a~assignment3.ppt">description</a>
+<i>(MS Powerpoint; 49 KB)</i>
+</li>
+<li> <a href="?method=getElement&element=~a~a3-test.tar.gz">test directory for local installation (.tar.gz)</a>
+<i>(; 217 KB)</i>
+</li>
+<li><a href="?method=display&redirect=http://www.cs.odu.edu/~mln/teaching/cs595-s07/a3-test/">test directory installed on www.cs.odu.edu</a>
+<i>(URL) </i>
+</li>
+</ul>
+<li> <a href="?method=getElement&element=~week12~week12.ppt">Slides</a>
+<i>(MS Powerpoint; 59 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week13&metadata=descriptive">Week 13: April 6: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week13~readings.txt">Readings</a>
+<i>(Text; 42 bytes)</i>
+</li>
+<li> <a href="?method=getElement&element=~week13~week13.ppt">Slides</a>
+<i>(MS Powerpoint; 56 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week14&metadata=descriptive">Week 14: April 13: </a></li>
+<ul>
+<li><a href="?method=display&element=~a~a4&metadata=descriptive">Assignment 4: Authentication</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~a~assignment4.ppt">description</a>
+<i>(MS Powerpoint; 27 KB)</i>
+</li>
+<li> <a href="?method=getElement&element=~a~a4-test.tar.gz">test directory for local installation (.tar.gz)</a>
+<i>(; 218 KB)</i>
+</li>
+<li><a href="?method=display&redirect=http://www.cs.odu.edu/~mln/teaching/cs595-s07/a4-test/">test directory installed on www.cs.odu.edu</a>
+<i>(URL) </i>
+</li>
+</ul>
+<li> <a href="?method=getElement&element=~week14~week14.ppt">Slides</a>
+<i>(MS Powerpoint; 43 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week15&metadata=descriptive">Week 15: April 20: </a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week15~readings.txt">Readings</a>
+<i>(Text; 61 bytes)</i>
+</li>
+<li> <a href="?method=getElement&element=~week15~week15.ppt">Slides</a>
+<i>(MS Powerpoint; 33 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week16&metadata=descriptive">Week 16: April 27: REST Design and a Brief Tour of Amazon S3</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~week16~week16.ppt">Slides</a>
+<i>(MS Powerpoint; 69 KB)</i>
+</li>
+</ul>
+<li><a href="?method=display&element=~week16&metadata=descriptive">Week 17: May 4: Exam week </a></li>
+<ul>
+<li><a href="?method=display&element=~a~a5&metadata=descriptive">Assignment 5: Dynamic Resources, Unsafe Methods</a></li>
+<ul>
+<li> <a href="?method=getElement&element=~a~assignment5.ppt">description</a>
+<i>(MS Powerpoint; 34 KB)</i>
+</li>
+<li> <a href="?method=getElement&element=~a~extra-credit.ppt">Extra Credit</a>
+<i>(MS Powerpoint; 27 KB)</i>
+</li>
+<li> <a href="?method=getElement&element=~a~a5-test.tar.gz">test directory for local installation (.tar.gz)</a>
+<i>(; 219 KB)</i>
+</li>
+<li><a href="?method=display&redirect=http://www.cs.odu.edu/~mln/teaching/cs595-s07/a5-test/">test directory installed on www.cs.odu.edu</a>
+<i>(URL) </i>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>ODUCS Video on Demand</TITLE>
+<META http-equiv="Content-Type" content="text/html;charset=utf-8">
+<STYLE type=text/css>
+@import "files/new_style.css";
+
+TABLE.list { width:75%; border:0; border-spacing:0; padding:0; }
+TABLE.cell { width:100%; border:0; border-spacing:1px; padding:1px; }
+TD.cell { width:128px; background-color:#CECECE; }
+</STYLE>
+<link href="/video-js/video-js.css" rel="stylesheet" type="text/css">
+<script src="/video-js/video.js"></script>
+
+<SCRIPT type="text/javascript">
+videojs.options.flash.swf = "/video-js/video-js.swf";
+/*
+function submit_enter(myform)
+{
+	if (window.event && window.event.keyCode == 13)
+		myform.submit();
+	else return true;
+}*/
+</SCRIPT>
+</HEAD>
+<BODY>
+<DIV id="wrap">
+  <!-- Begin Page Header -->
+  <DIV id="header">
+	<DIV id="odu" class="container_h1">
+		<DIV id="odu-logo" class="grid_h1">
+			<A href="http://www.odu.edu">
+			<IMG style="height:27px;width:235px;" src="files/gfx-logo-odu-crown.gif" alt="Old Dominion University">
+			</A>
+		</DIV> <!-- odu-logo -->
+		<DIV id="search" class="grid_h2">
+			<FORM action="http://www.odu.edu/oduhome/search/" method="GET">
+				<A class="header" href="http://www.odu.edu/oduhome/azindex.shtml">A to Z Index</A>&nbsp;&nbsp;
+				<SPAN style="color:#FFFFFF">|</SPAN>&nbsp;&nbsp;
+				<A class="header" href="http://www.odu.edu/oduhome/directories.shtml">Directories</A>&nbsp;
+				<INPUT style="font:11px normal Arial,Helvetica;" type="text" size=15 maxlength=35 name="q" value="Search ODU" onfocus="if(value=='Search ODU'){value='';}" onblur="if (value==''){value='Search ODU';}">
+				<INPUT type="hidden" name="col" value="www">
+				<INPUT style="vertical-align:middle;" type="image" src="files/gfx-btn-go-dblue.gif" alt="GO">
+			</FORM>
+		</DIV> <!-- search -->
+	</DIV> <!-- odu -->
+	<DIV id="col" class="container_h2">
+		<A href="http://sci.odu.edu">
+			<IMG src="files/hmenu_college_of_sciences-new.png" alt="College of Sciences">
+		</A>
+	</DIV> <!-- col -->
+	<DIV id="cs" class="container_h3">
+		<DIV id="cs-logo" class="grid_h3">
+			<A href="http://www.cs.odu.edu">
+				<IMG src="files/logo-cs.gif" alt="Computer Science" height="42"> 
+			</A>
+		</DIV> <!-- cs-logo -->
+		<DIV id="cs-image" class="grid_h4">
+				<IMG src="files/header-right1.gif" width="312" height="43">
+		</DIV> <!-- cs-image -->
+	</DIV> <!-- cs -->
+</DIV> <!-- header -->
+  <!-- End Page Header -->
+  <!-- Session Bar -->
+  <DIV id=sessioncontainer>
+<SPAN style='padding-left:5px;float:left;'><A HREF='https://www.cs.odu.edu/vod.php'>Current Videos</A> |
+<A HREF='vod.php?id=Archive'>Archived Videos</A> |
+</SPAN>
+<DIV id=sessionbar>
+<FORM name="login" method="POST" action="vod.php">
+<SPAN class=sm_bold>Username:</SPAN>
+<INPUT class=sm_normal type="text" name="user" size="18">
+<SPAN class=sm_bold>Password:</SPAN>
+<INPUT class=sm_normal type="password" name="pass" size="18" onKeyPress="return submit_enter(this.form)">&nbsp;
+<INPUT class=button type="image" src="files/login_button.png" name="auth" value="login">
+</FORM> <!-- login -->
+</DIV> <!-- sessionBar -->
+</DIV> <!-- sessionContainer -->
+  <!-- End Session Bar -->
+  <DIV id="bodycontainer">
+    <!-- Begin Page Content -->
+    <DIV id="content">
+      <DIV id="pagecontent">
+        <H3>Computer Science Videos Online</H3><BR>
+
+<!-- Check to make sure session has not timed out -->
+<H4>Current Videos</H4><BR>
+NOTE:<BR>
+- To stream the video please click on the image!<BR>
+- Please login with your CS windows credentials to view ALL videos.  To login please click on the LOGIN button after filling out your credentials.<BR><BR><BR>
+<FORM name="search" method="POST" action="vod.php">
+<INPUT type="text" name="search">
+<INPUT type="submit" name="submit" value="Search">
+</FORM><BR>
+<TABLE class="list"><TR><TD>
+<TABLE class="cell">
+<TR>
+<TD class="cell"><A href="vod.php?id=126">
+<IMG src="images/video/phd-defense-ahmed-fakhry-thumbnail.jpg"></A>
+</TD>
+<TD style="background-color:#CECECE;">
+<SPAN style="font-weight:bold">Video Title:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Machine Learning Methods for Brain Image Analysis</SPAN><BR>
+<SPAN style="font-weight:bold">Speaker:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Ahmed Fakhry</SPAN><BR>
+<SPAN style="font-weight:bold">Category:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">PhD Defense</SPAN><BR>
+<SPAN style="font-weight:bold">Date:</SPAN>&nbsp;<SPAN>2016-07-07</SPAN><BR><BR>
+</TD></TR></TABLE>
+<TABLE class="cell">
+<TR>
+<TD class="cell"><A href="vod.php?id=125">
+<IMG src="images/video/phd-defense-yasmin-alnoamany-thumbnail.jpg"></A>
+</TD>
+<TD style="background-color:#CECECE;">
+<SPAN style="font-weight:bold">Video Title:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Using Web Archives to Enrich the Live Web Experience Through Storytelling</SPAN><BR>
+<SPAN style="font-weight:bold">Speaker:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Yasmin Alnoamany</SPAN><BR>
+<SPAN style="font-weight:bold">Category:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">PhD Defense</SPAN><BR>
+<SPAN style="font-weight:bold">Date:</SPAN>&nbsp;<SPAN>2016-06-16</SPAN><BR><BR>
+</TD></TR></TABLE>
+<TABLE class="cell">
+<TR>
+<TD class="cell"><A href="vod.php?id=124">
+<IMG src="images/video/phd-defense-mostafa-uddin-thumbnail.jpg"></A>
+</TD>
+<TD style="background-color:#CECECE;">
+<SPAN style="font-weight:bold">Video Title:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">The Puzzle of the Last-Hop</SPAN><BR>
+<SPAN style="font-weight:bold">Speaker:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Mostafa Uddin</SPAN><BR>
+<SPAN style="font-weight:bold">Category:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">PhD Defense</SPAN><BR>
+<SPAN style="font-weight:bold">Date:</SPAN>&nbsp;<SPAN>2016-05-11</SPAN><BR><BR>
+</TD></TR></TABLE>
+<TABLE class="cell">
+<TR>
+<TD class="cell"><A href="vod.php?id=123">
+<IMG src="images/video/phd-defense-hao-ji-thumbnail.jpg"></A>
+</TD>
+<TD style="background-color:#CECECE;">
+<SPAN style="font-weight:bold">Video Title:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Novel Monte Carlo Methos for Large-Scale Linear Algrbra Operations</SPAN><BR>
+<SPAN style="font-weight:bold">Speaker:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Hao Ji</SPAN><BR>
+<SPAN style="font-weight:bold">Category:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">PhD Defense</SPAN><BR>
+<SPAN style="font-weight:bold">Date:</SPAN>&nbsp;<SPAN>2016-05-07</SPAN><BR><BR>
+</TD></TR></TABLE>
+<TABLE class="cell">
+<TR>
+<TD class="cell"><A href="vod.php?id=121">
+<IMG src="images/video/colloquium-boris-diskin-thumbnail.jpg"></A>
+</TD>
+<TD style="background-color:#CECECE;">
+<SPAN style="font-weight:bold">Video Title:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Grid Convergence Studies: Expect Unexpected</SPAN><BR>
+<SPAN style="font-weight:bold">Speaker:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Boris Diskin</SPAN><BR>
+<SPAN style="font-weight:bold">Category:</SPAN>&nbsp;&nbsp;<SPAN style="font-style:italic">Colloquium</SPAN><BR>
+<SPAN style="font-weight:bold">Date:</SPAN>&nbsp;<SPAN>2016-04-21</SPAN><BR><BR>
+</TD></TR></TABLE>
+</TD></TR></TABLE><BR>
+
+      </DIV> <!-- pagecontent -->
+    </DIV> <!-- content -->
+    <!-- End Page Content -->
+    <!-- Begin Navbar -->
+        <!-- End Navbar -->
+  </DIV> <!-- bodycontainer -->
+  <!-- Begin Footer -->
+  <DIV id="footer">
+	Maintained by: <A class="footer" href="mailto:webmaster@cs.odu.edu">CS Webmaster</A> |
+	Updated 11/8/2010 | &copy; 2010 <A class="footer" href="http://www.odu.edu">Old Dominion University</A>, Norfolk, VA 23529 | 
+	<A class="footer" href="http://www.odu.edu/oduhome/policies.shtml">Policies</A><BR>
+	Phone: 757.683.6001 | Engineering &amp; Computational Sciences Bldg, 4700 Elkhorn Ave, Suite 3300, Norfolk, VA 23529-0162<BR>
+</DIV> <!-- footer -->
+  <!-- End Footer -->
+</DIV> <!-- wrap -->
+</BODY>
+</HTML>

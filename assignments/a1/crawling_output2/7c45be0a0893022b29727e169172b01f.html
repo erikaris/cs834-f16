@@ -1,0 +1,4332 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+	<title>Booked - Schedule</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="robots" content="noindex" />
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<link rel="icon" href="favicon.ico"/>
+			<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="scripts/phpscheduleit.js?v=2.5.13"></script>
+		<link rel='stylesheet' type='text/css' href='css/normalize.css?v=2.5.13'></link>
+		<link rel='stylesheet' type='text/css' href='css/nav.css?v=2.5.13'></link>
+		<link rel='stylesheet' type='text/css' href='css/style.css?v=2.5.13'></link>
+					<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css" type="text/css"></link>
+														<link rel='stylesheet' type='text/css' href='css/schedule.css?v=2.5.13'></link>
+							<link rel='stylesheet' type='text/css' href='css/view-schedule.css?v=2.5.13'></link>
+							<link rel='stylesheet' type='text/css' href='css/jquery.qtip.min.css?v=2.5.13'></link>
+							<link rel='stylesheet' type='text/css' href='scripts/css/jqtree.css?v=2.5.13'></link>
+							<link rel='stylesheet' type='text/css' href='css/null-style.css?v=2.5.13'></link>
+		
+	
+	<script type="text/javascript">
+		$(document).ready(function () {
+		initMenu();
+		});
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="doc">
+		<div id="logo"><a href="schedule.php"><img src="img/booked.png" title="" alt=""   /></a></div>
+		<div id="header">
+			<div id="header-top">
+				<div id="signout">
+									You are not signed in<br/>
+					<a href="index.php">Log In</a>
+								</div>
+			</div>
+			<div>
+				<ul id="nav" class="menubar">
+							<li class="menubaritem help"><a href="help.php">Help</a>
+					<ul>
+						<li><a href="help.php">Help</a></li>
+												<li><a href="help.php?ht=about">About</a></li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+			<!-- end #nav -->
+		</div>
+		<!-- end #header -->
+		<div id="content">
+
+
+
+
+<div id="defaultSetMessage" class="success hidden">
+	This is now your default schedule
+</div>
+
+
+	<div>
+		<div class="schedule_title">
+			<span>Conference Rooms</span>
+							<ul class="schedule_drop">
+					<li id="show_schedule"><img src="img/down_sm_blue.png" title="Change Schedule" alt="Change Schedule"   /></li>
+					<ul style="display:none;" id="schedule_list">
+													<li><a href="#"
+								   onclick="ChangeSchedule(1); return false;">Conference Rooms</a>
+							</li>
+											</ul>
+				</ul>
+						<a href="#" id="calendar_toggle"><img src="img/calendar.png" title="Show/Hide Navigation" alt="Show/Hide Navigation"   /></a>
+		</div>
+
+		
+					<div class="schedule_dates">
+												<a href="#" onclick="ChangeDate(2016, 09, 11); return false;"><img
+							src="img/arrow_large_left.png" alt="Back"/></a>
+				09/18/2016 - 09/24/2016
+				<a href="#" onclick="ChangeDate(2016, 09, 25); return false;"><img
+							src="img/arrow_large_right.png" alt="Forward"/></a>
+
+							</div>
+		
+	</div>
+	<div type="text" id="datepicker" style="display:none;"></div>
+
+
+
+<div style="text-align: center; margin: auto;">
+	<div class="legend reservable">Reservable</div>
+	<div class="legend unreservable">Unreservable</div>
+	<div class="legend reserved">Reserved</div>
+	<div class="legend reserved mine">My Reservation</div>
+	<div class="legend reserved participating">Participant</div>
+	<div class="legend reserved pending">Pending</div>
+	<div class="legend pasttime">Past</div>
+	<div class="legend restricted">Restricted</div>
+</div>
+
+<div style="height:10px">&nbsp;</div>
+
+
+<div id="reservations-left">
+	<div class="reservations-left-header">Resource Filter</div>
+
+	<div class="reservations-left-content">
+		<div class="center"><a id="show_all_resources" href="#">Clear Filter</a></div>
+
+		<div>
+		<select name='resourceId' class="textbox" id="resourceIdFilter">
+			<option value="">- All -</option>
+			<option label="Dragas Hall Conference Room 1100F" value="3">Dragas Hall Conference Room 1100F</option><option label="E&amp;CS Building Access Grid Room 2120" value="1">E&amp;CS Building Access Grid Room 2120</option><option label="E&amp;CS Building Conference Room 3316" value="2">E&amp;CS Building Conference Room 3316</option><option label="E&amp;CS Building Open Research Lab 3104" value="5">E&amp;CS Building Open Research Lab 3104</option><option label="E&amp;CS Building Room 3109" value="4">E&amp;CS Building Room 3109</option>
+		</select>
+		</div>
+
+		<div>
+		<div id="resourceGroups"></div>
+		</div>
+
+		<form method="POST">
+
+			<div class="advancedFilterTitle">Advanced Filter</div>
+			<hr/>
+
+			<div id="advancedFilter">
+				<div>
+				Minimum Capacity
+				<input type='text' id='maxCapactiy' class="textbox" size='5' maxlength='5' name='maxParticipants' value="" />
+				</div>
+
+				<div>
+				Resource Type
+				<select name='RESOURCE_TYPE_ID' class="textbox" name='RESOURCE_TYPE_ID'>
+					<option value="">- All -</option>
+					<option label="maximum notification time" value="1">maximum notification time</option>
+				</select>
+				</div>
+
+				
+				
+				<div>
+					<br/>
+					<input type="submit" value="Filter" class="button" name='SUBMIT'/>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+		<div id="reservations">
+					<div style="position:relative;">
+			<table class="reservations" border="1" cellpadding="0" width="100%">
+								<tr>
+										<td class="resdate">Sunday, 09/18/2016</td>
+											<td class="reslabel" colspan="1">12:00 AM</td>
+											<td class="reslabel" colspan="2">8:00 AM</td>
+											<td class="reslabel" colspan="2">9:00 AM</td>
+											<td class="reslabel" colspan="2">10:00 AM</td>
+											<td class="reslabel" colspan="2">11:00 AM</td>
+											<td class="reslabel" colspan="2">12:00 PM</td>
+											<td class="reslabel" colspan="2">1:00 PM</td>
+											<td class="reslabel" colspan="2">2:00 PM</td>
+											<td class="reslabel" colspan="2">3:00 PM</td>
+											<td class="reslabel" colspan="2">4:00 PM</td>
+											<td class="reslabel" colspan="2">5:00 PM</td>
+											<td class="reslabel" colspan="2">6:00 PM</td>
+											<td class="reslabel" colspan="2">7:00 PM</td>
+											<td class="reslabel" colspan="2">8:00 PM</td>
+											<td class="reslabel" colspan="2">9:00 PM</td>
+											<td class="reslabel" colspan="1">10:00 PM</td>
+									</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															Dragas Hall Conference Room 1100F
+													</td>
+																						<td colspan="1" ref="201609180000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181200003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181230003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181300003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181330003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181400003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181430003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181500003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181530003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181600003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181630003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181700003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181730003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182200003"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Access Grid Room 2120
+													</td>
+																						<td colspan="1" ref="201609180000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181030001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181100001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181130001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181200001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181230001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181300001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181330001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181400001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181430001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181500001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181530001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181600001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181630001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181700001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181730001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182030001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182100001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182130001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182200001"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Conference Room 3316
+													</td>
+																						<td colspan="1" ref="201609180000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181200002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181230002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181300002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181330002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181400002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181430002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181500002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181530002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181600002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181630002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181700002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181730002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182200002"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Open Research Lab 3104
+													</td>
+																						<td colspan="1" ref="201609180000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181200005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181230005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181300005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181330005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181400005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181430005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181500005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181530005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181600005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181630005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181700005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181730005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182200005"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Room 3109
+													</td>
+																						<td colspan="1" ref="201609180000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609180930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181200004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181230004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181300004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181330004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181400004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181430004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181500004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181530004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181600004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181630004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181700004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181730004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609181930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609182200004"
+		class="pasttime slot"></td>
+
+
+											</tr>
+							</table>
+			</div>
+			<!-- flushing -->
+					<div style="position:relative;">
+			<table class="reservations" border="1" cellpadding="0" width="100%">
+								<tr>
+										<td class="resdate">Monday, 09/19/2016</td>
+											<td class="reslabel" colspan="1">12:00 AM</td>
+											<td class="reslabel" colspan="2">8:00 AM</td>
+											<td class="reslabel" colspan="2">9:00 AM</td>
+											<td class="reslabel" colspan="2">10:00 AM</td>
+											<td class="reslabel" colspan="2">11:00 AM</td>
+											<td class="reslabel" colspan="2">12:00 PM</td>
+											<td class="reslabel" colspan="2">1:00 PM</td>
+											<td class="reslabel" colspan="2">2:00 PM</td>
+											<td class="reslabel" colspan="2">3:00 PM</td>
+											<td class="reslabel" colspan="2">4:00 PM</td>
+											<td class="reslabel" colspan="2">5:00 PM</td>
+											<td class="reslabel" colspan="2">6:00 PM</td>
+											<td class="reslabel" colspan="2">7:00 PM</td>
+											<td class="reslabel" colspan="2">8:00 PM</td>
+											<td class="reslabel" colspan="2">9:00 PM</td>
+											<td class="reslabel" colspan="1">10:00 PM</td>
+									</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															Dragas Hall Conference Room 1100F
+													</td>
+																						<td colspan="1" ref="201609190000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191200003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191230003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191300003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191330003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191400003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191430003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191500003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191530003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191600003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191630003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191700003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191730003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192200003"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Access Grid Room 2120
+													</td>
+																						<td colspan="1" ref="201609190000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191030001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191100001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191130001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191200001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191230001"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="4" class="reserved   clickres slot"
+		resid="57967dbb90bd2224401387" 
+		id="57967dbb90bd2224401387|20160919">Mathematics</td>
+
+
+
+																						<td colspan="1" ref="201609191500001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191530001"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="6" class="reserved   clickres slot"
+		resid="57967b7c4a32a976065843" 
+		id="57967b7c4a32a976065843|20160919">Mathematics</td>
+
+
+
+																						<td colspan="1" ref="201609191900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192030001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192100001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192130001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192200001"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Conference Room 3316
+													</td>
+																						<td colspan="1" ref="201609190000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191030002"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="3" class="reserved   clickres slot"
+		resid="57bb0ed0e0d7f310908534" 
+		id="57bb0ed0e0d7f310908534|20160919">CHKD</td>
+
+
+
+																						<td colspan="1" ref="201609191230002"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="1" class="reserved   clickres slot"
+		resid="57e01ac4a71cd045293096" 
+		id="57e01ac4a71cd045293096|20160919">Systems Group</td>
+
+
+
+																									<td colspan="1" class="reserved   clickres slot"
+		resid="57e01ae19ecfb016018237" 
+		id="57e01ae19ecfb016018237|20160919">Syatems group</td>
+
+
+
+																									<td colspan="2" class="reserved   clickres slot"
+		resid="57dff66b77d8a463163104" 
+		id="57dff66b77d8a463163104|20160919">Weigle</td>
+
+
+
+																						<td colspan="1" ref="201609191500002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191530002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191600002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191630002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191700002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191730002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192200002"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Open Research Lab 3104
+													</td>
+																						<td colspan="1" ref="201609190000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191200005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191230005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191300005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191330005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191400005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191430005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191500005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191530005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191600005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191630005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191700005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191730005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192200005"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Room 3109
+													</td>
+																						<td colspan="1" ref="201609190000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609190930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191200004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191230004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191300004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191330004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191400004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191430004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191500004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191530004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191600004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191630004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191700004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191730004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609191930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609192200004"
+		class="pasttime slot"></td>
+
+
+											</tr>
+							</table>
+			</div>
+			<!-- flushing -->
+					<div style="position:relative;">
+			<table class="reservations" border="1" cellpadding="0" width="100%">
+								<tr>
+										<td class="resdate">Tuesday, 09/20/2016</td>
+											<td class="reslabel" colspan="1">12:00 AM</td>
+											<td class="reslabel" colspan="2">8:00 AM</td>
+											<td class="reslabel" colspan="2">9:00 AM</td>
+											<td class="reslabel" colspan="2">10:00 AM</td>
+											<td class="reslabel" colspan="2">11:00 AM</td>
+											<td class="reslabel" colspan="2">12:00 PM</td>
+											<td class="reslabel" colspan="2">1:00 PM</td>
+											<td class="reslabel" colspan="2">2:00 PM</td>
+											<td class="reslabel" colspan="2">3:00 PM</td>
+											<td class="reslabel" colspan="2">4:00 PM</td>
+											<td class="reslabel" colspan="2">5:00 PM</td>
+											<td class="reslabel" colspan="2">6:00 PM</td>
+											<td class="reslabel" colspan="2">7:00 PM</td>
+											<td class="reslabel" colspan="2">8:00 PM</td>
+											<td class="reslabel" colspan="2">9:00 PM</td>
+											<td class="reslabel" colspan="1">10:00 PM</td>
+									</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															Dragas Hall Conference Room 1100F
+													</td>
+																						<td colspan="1" ref="201609200000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200900003"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="3" class="reserved   clickres slot"
+		resid="57bf178621036643528781" 
+		id="57bf178621036643528781|20160920">Undergraduate Committee</td>
+
+
+
+																						<td colspan="1" ref="201609201100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201200003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201230003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201300003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201330003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201400003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201430003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201500003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201530003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201600003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201630003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201700003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201730003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202200003"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Access Grid Room 2120
+													</td>
+																						<td colspan="1" ref="201609200000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201030001"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="3" class="reserved   clickres slot"
+		resid="57ced6892d7f6779142072" 
+		id="57ced6892d7f6779142072|20160920">CS 600 Class</td>
+
+
+
+																									<td colspan="5" class="reserved   clickres slot"
+		resid="57967e238d854565097679" 
+		id="57967e238d854565097679|20160920">Mathematics</td>
+
+
+
+																									<td colspan="6" class="reserved   clickres slot"
+		resid="57967d1870439661526258" 
+		id="57967d1870439661526258|20160920">Mathematics</td>
+
+
+
+																						<td colspan="1" ref="201609201800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202030001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202100001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202130001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202200001"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Conference Room 3316
+													</td>
+																						<td colspan="1" ref="201609200000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201200002"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="4" class="reserved   clickres slot"
+		resid="5784fe26298a1037151079" 
+		id="5784fe26298a1037151079|20160920">Systems Group</td>
+
+
+
+																						<td colspan="1" ref="201609201430002"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="2" class="reserved   clickres slot"
+		resid="57e042c028356452447847" 
+		id="57e042c028356452447847|20160920">ITS</td>
+
+
+
+																						<td colspan="1" ref="201609201600002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201630002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201700002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201730002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202200002"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Open Research Lab 3104
+													</td>
+																						<td colspan="1" ref="201609200000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201200005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201230005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201300005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201330005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201400005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201430005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201500005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201530005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201600005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201630005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201700005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201730005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202200005"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Room 3109
+													</td>
+																						<td colspan="1" ref="201609200000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609200930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201200004"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="4" class="reserved   clickres slot"
+		resid="57e161976e088168533532" 
+		id="57e161976e088168533532|20160920">Systems Group</td>
+
+
+
+																						<td colspan="1" ref="201609201430004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201500004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201530004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201600004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201630004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201700004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201730004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609201930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609202200004"
+		class="pasttime slot"></td>
+
+
+											</tr>
+							</table>
+			</div>
+			<!-- flushing -->
+					<div style="position:relative;">
+			<table class="reservations" border="1" cellpadding="0" width="100%">
+								<tr>
+										<td class="resdate">Wednesday, 09/21/2016</td>
+											<td class="reslabel" colspan="1">12:00 AM</td>
+											<td class="reslabel" colspan="2">8:00 AM</td>
+											<td class="reslabel" colspan="2">9:00 AM</td>
+											<td class="reslabel" colspan="2">10:00 AM</td>
+											<td class="reslabel" colspan="2">11:00 AM</td>
+											<td class="reslabel" colspan="2">12:00 PM</td>
+											<td class="reslabel" colspan="2">1:00 PM</td>
+											<td class="reslabel" colspan="2">2:00 PM</td>
+											<td class="reslabel" colspan="2">3:00 PM</td>
+											<td class="reslabel" colspan="2">4:00 PM</td>
+											<td class="reslabel" colspan="2">5:00 PM</td>
+											<td class="reslabel" colspan="2">6:00 PM</td>
+											<td class="reslabel" colspan="2">7:00 PM</td>
+											<td class="reslabel" colspan="2">8:00 PM</td>
+											<td class="reslabel" colspan="2">9:00 PM</td>
+											<td class="reslabel" colspan="1">10:00 PM</td>
+									</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															Dragas Hall Conference Room 1100F
+													</td>
+																						<td colspan="1" ref="201609210000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211200003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211230003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211300003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211330003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211400003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211430003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211500003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211530003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211600003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211630003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211700003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211730003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212200003"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Access Grid Room 2120
+													</td>
+																						<td colspan="1" ref="201609210000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211030001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211100001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211130001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211200001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211230001"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="6" class="reserved   clickres slot"
+		resid="57967c9948a94097855802" 
+		id="57967c9948a94097855802|20160921">Mathematics</td>
+
+
+
+																									<td colspan="6" class="reserved   clickres slot"
+		resid="57967b7c4a335409509960" 
+		id="57967b7c4a335409509960|20160921">Mathematics</td>
+
+
+
+																						<td colspan="1" ref="201609211900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212030001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212100001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212130001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212200001"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Conference Room 3316
+													</td>
+																						<td colspan="1" ref="201609210000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211200002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211230002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211300002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211330002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211400002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211430002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211500002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211530002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211600002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211630002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211700002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211730002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212200002"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Open Research Lab 3104
+													</td>
+																						<td colspan="1" ref="201609210000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211200005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211230005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211300005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211330005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211400005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211430005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211500005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211530005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211600005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211630005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211700005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211730005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212200005"
+		class="pasttime slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															E&amp;CS Building Room 3109
+													</td>
+																						<td colspan="1" ref="201609210000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609210930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211200004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211230004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211300004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211330004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211400004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211430004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211500004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211530004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211600004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211630004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211700004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211730004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609211930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609212200004"
+		class="pasttime slot"></td>
+
+
+											</tr>
+							</table>
+			</div>
+			<!-- flushing -->
+					<div style="position:relative;">
+			<table class="reservations" border="1" cellpadding="0" width="100%">
+								<tr class="today">
+										<td class="resdate">Thursday, 09/22/2016</td>
+											<td class="reslabel" colspan="1">12:00 AM</td>
+											<td class="reslabel" colspan="2">8:00 AM</td>
+											<td class="reslabel" colspan="2">9:00 AM</td>
+											<td class="reslabel" colspan="2">10:00 AM</td>
+											<td class="reslabel" colspan="2">11:00 AM</td>
+											<td class="reslabel" colspan="2">12:00 PM</td>
+											<td class="reslabel" colspan="2">1:00 PM</td>
+											<td class="reslabel" colspan="2">2:00 PM</td>
+											<td class="reslabel" colspan="2">3:00 PM</td>
+											<td class="reslabel" colspan="2">4:00 PM</td>
+											<td class="reslabel" colspan="2">5:00 PM</td>
+											<td class="reslabel" colspan="2">6:00 PM</td>
+											<td class="reslabel" colspan="2">7:00 PM</td>
+											<td class="reslabel" colspan="2">8:00 PM</td>
+											<td class="reslabel" colspan="2">9:00 PM</td>
+											<td class="reslabel" colspan="1">10:00 PM</td>
+									</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=3&sid=1&rd=2016-09-22" resourceId="3"
+								   class="resourceNameSelector">Dragas Hall Conference Room 1100F</a>
+													</td>
+																						<td colspan="1" ref="201609220000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221000003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221030003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221100003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221130003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221200003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221230003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221300003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221330003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221400003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221430003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221500003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221530003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221600003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221630003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221700003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221730003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221800003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221830003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221900003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221930003"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609222000003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A00%3A00" data-end="2016-09-22%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222030003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A30%3A00" data-end="2016-09-22%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222100003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A00%3A00" data-end="2016-09-22%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222130003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A30%3A00" data-end="2016-09-22%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=1&sid=1&rd=2016-09-22" resourceId="1"
+								   class="resourceNameSelector">E&amp;CS Building Access Grid Room 2120</a>
+													</td>
+																						<td colspan="1" ref="201609220000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221000001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221030001"
+		class="pasttime slot"></td>
+
+
+																									<td colspan="3" class="reserved   clickres slot"
+		resid="57ced6892d801946401522" 
+		id="57ced6892d801946401522|20160922">CS 600 Class</td>
+
+
+
+																									<td colspan="5" class="reserved   clickres slot"
+		resid="57967e238d860813465076" 
+		id="57967e238d860813465076|20160922">Mathematics</td>
+
+
+
+																									<td colspan="6" class="reserved   clickres slot"
+		resid="57967d1870445042587403" 
+		id="57967d1870445042587403|20160922">Mathematics</td>
+
+
+
+																						<td colspan="1" ref="201609221800001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221830001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221900001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221930001"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609222000001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A00%3A00" data-end="2016-09-22%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222030001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A30%3A00" data-end="2016-09-22%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222100001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A00%3A00" data-end="2016-09-22%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222130001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A30%3A00" data-end="2016-09-22%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=2&sid=1&rd=2016-09-22" resourceId="2"
+								   class="resourceNameSelector">E&amp;CS Building Conference Room 3316</a>
+													</td>
+																						<td colspan="1" ref="201609220000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221000002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221030002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221100002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221130002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221200002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221230002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221300002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221330002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221400002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221430002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221500002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221530002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221600002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221630002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221700002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221730002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221800002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221830002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221900002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221930002"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609222000002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A00%3A00" data-end="2016-09-22%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222030002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A30%3A00" data-end="2016-09-22%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222100002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A00%3A00" data-end="2016-09-22%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222130002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A30%3A00" data-end="2016-09-22%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=5&sid=1&rd=2016-09-22" resourceId="5"
+								   class="resourceNameSelector">E&amp;CS Building Open Research Lab 3104</a>
+													</td>
+																						<td colspan="1" ref="201609220000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221000005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221030005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221100005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221130005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221200005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221230005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221300005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221330005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221400005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221430005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221500005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221530005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221600005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221630005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221700005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221730005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221800005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221830005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221900005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221930005"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609222000005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A00%3A00" data-end="2016-09-22%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222030005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A30%3A00" data-end="2016-09-22%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222100005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A00%3A00" data-end="2016-09-22%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222130005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A30%3A00" data-end="2016-09-22%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=4&sid=1&rd=2016-09-22" resourceId="4"
+								   class="resourceNameSelector">E&amp;CS Building Room 3109</a>
+													</td>
+																						<td colspan="1" ref="201609220000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609220930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221000004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221030004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221100004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221130004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221200004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221230004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221300004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221330004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221400004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221430004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221500004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221530004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221600004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221630004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221700004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221730004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221800004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221830004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221900004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609221930004"
+		class="pasttime slot"></td>
+
+
+																						<td colspan="1" ref="201609222000004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A00%3A00" data-end="2016-09-22%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222030004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-22" data-start="2016-09-22%2020%3A30%3A00" data-end="2016-09-22%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222100004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A00%3A00" data-end="2016-09-22%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609222130004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-22" data-start="2016-09-22%2021%3A30%3A00" data-end="2016-09-22%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+							</table>
+			</div>
+			<!-- flushing -->
+					<div style="position:relative;">
+			<table class="reservations" border="1" cellpadding="0" width="100%">
+								<tr>
+										<td class="resdate">Friday, 09/23/2016</td>
+											<td class="reslabel" colspan="1">12:00 AM</td>
+											<td class="reslabel" colspan="2">8:00 AM</td>
+											<td class="reslabel" colspan="2">9:00 AM</td>
+											<td class="reslabel" colspan="2">10:00 AM</td>
+											<td class="reslabel" colspan="2">11:00 AM</td>
+											<td class="reslabel" colspan="2">12:00 PM</td>
+											<td class="reslabel" colspan="2">1:00 PM</td>
+											<td class="reslabel" colspan="2">2:00 PM</td>
+											<td class="reslabel" colspan="2">3:00 PM</td>
+											<td class="reslabel" colspan="2">4:00 PM</td>
+											<td class="reslabel" colspan="2">5:00 PM</td>
+											<td class="reslabel" colspan="2">6:00 PM</td>
+											<td class="reslabel" colspan="2">7:00 PM</td>
+											<td class="reslabel" colspan="2">8:00 PM</td>
+											<td class="reslabel" colspan="2">9:00 PM</td>
+											<td class="reslabel" colspan="1">10:00 PM</td>
+									</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=3&sid=1&rd=2016-09-23" resourceId="3"
+								   class="resourceNameSelector">Dragas Hall Conference Room 1100F</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609230800003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A00%3A00" data-end="2016-09-23%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230830003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A30%3A00" data-end="2016-09-23%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230900003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A00%3A00" data-end="2016-09-23%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230930003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A30%3A00" data-end="2016-09-23%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231000003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A00%3A00" data-end="2016-09-23%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231030003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A30%3A00" data-end="2016-09-23%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231100003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A00%3A00" data-end="2016-09-23%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231130003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A30%3A00" data-end="2016-09-23%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231200003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A00%3A00" data-end="2016-09-23%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231230003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A30%3A00" data-end="2016-09-23%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231300003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A00%3A00" data-end="2016-09-23%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231330003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A30%3A00" data-end="2016-09-23%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231400003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A00%3A00" data-end="2016-09-23%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231430003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A30%3A00" data-end="2016-09-23%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231500003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A00%3A00" data-end="2016-09-23%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231530003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A30%3A00" data-end="2016-09-23%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231600003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A00%3A00" data-end="2016-09-23%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231630003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A30%3A00" data-end="2016-09-23%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231700003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A00%3A00" data-end="2016-09-23%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231730003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A30%3A00" data-end="2016-09-23%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231800003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A00%3A00" data-end="2016-09-23%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231830003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A30%3A00" data-end="2016-09-23%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231900003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A00%3A00" data-end="2016-09-23%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231930003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A30%3A00" data-end="2016-09-23%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232000003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A00%3A00" data-end="2016-09-23%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232030003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A30%3A00" data-end="2016-09-23%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232100003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A00%3A00" data-end="2016-09-23%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232130003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A30%3A00" data-end="2016-09-23%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=1&sid=1&rd=2016-09-23" resourceId="1"
+								   class="resourceNameSelector">E&amp;CS Building Access Grid Room 2120</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609230800001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A00%3A00" data-end="2016-09-23%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230830001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A30%3A00" data-end="2016-09-23%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230900001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A00%3A00" data-end="2016-09-23%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230930001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A30%3A00" data-end="2016-09-23%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231000001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A00%3A00" data-end="2016-09-23%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231030001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A30%3A00" data-end="2016-09-23%2011%3A00%3A00">&nbsp;</td>
+
+
+																									<td colspan="6" class="reserved   clickres slot"
+		resid="57967e830c726096318069" 
+		id="57967e830c726096318069|20160923">Mathematics</td>
+
+
+
+																						<td colspan="1" ref="201609231400001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A00%3A00" data-end="2016-09-23%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231430001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A30%3A00" data-end="2016-09-23%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231500001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A00%3A00" data-end="2016-09-23%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231530001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A30%3A00" data-end="2016-09-23%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231600001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A00%3A00" data-end="2016-09-23%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231630001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A30%3A00" data-end="2016-09-23%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231700001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A00%3A00" data-end="2016-09-23%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231730001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A30%3A00" data-end="2016-09-23%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231800001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A00%3A00" data-end="2016-09-23%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231830001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A30%3A00" data-end="2016-09-23%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231900001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A00%3A00" data-end="2016-09-23%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231930001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A30%3A00" data-end="2016-09-23%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232000001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A00%3A00" data-end="2016-09-23%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232030001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A30%3A00" data-end="2016-09-23%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232100001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A00%3A00" data-end="2016-09-23%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232130001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A30%3A00" data-end="2016-09-23%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=2&sid=1&rd=2016-09-23" resourceId="2"
+								   class="resourceNameSelector">E&amp;CS Building Conference Room 3316</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609230800002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A00%3A00" data-end="2016-09-23%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230830002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A30%3A00" data-end="2016-09-23%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230900002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A00%3A00" data-end="2016-09-23%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230930002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A30%3A00" data-end="2016-09-23%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231000002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A00%3A00" data-end="2016-09-23%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231030002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A30%3A00" data-end="2016-09-23%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231100002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A00%3A00" data-end="2016-09-23%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231130002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A30%3A00" data-end="2016-09-23%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231200002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A00%3A00" data-end="2016-09-23%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231230002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A30%3A00" data-end="2016-09-23%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231300002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A00%3A00" data-end="2016-09-23%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231330002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A30%3A00" data-end="2016-09-23%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231400002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A00%3A00" data-end="2016-09-23%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231430002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A30%3A00" data-end="2016-09-23%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231500002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A00%3A00" data-end="2016-09-23%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231530002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A30%3A00" data-end="2016-09-23%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231600002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A00%3A00" data-end="2016-09-23%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231630002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A30%3A00" data-end="2016-09-23%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231700002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A00%3A00" data-end="2016-09-23%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231730002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A30%3A00" data-end="2016-09-23%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231800002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A00%3A00" data-end="2016-09-23%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231830002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A30%3A00" data-end="2016-09-23%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231900002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A00%3A00" data-end="2016-09-23%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231930002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A30%3A00" data-end="2016-09-23%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232000002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A00%3A00" data-end="2016-09-23%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232030002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A30%3A00" data-end="2016-09-23%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232100002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A00%3A00" data-end="2016-09-23%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232130002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A30%3A00" data-end="2016-09-23%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=5&sid=1&rd=2016-09-23" resourceId="5"
+								   class="resourceNameSelector">E&amp;CS Building Open Research Lab 3104</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609230800005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A00%3A00" data-end="2016-09-23%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230830005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A30%3A00" data-end="2016-09-23%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230900005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A00%3A00" data-end="2016-09-23%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230930005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A30%3A00" data-end="2016-09-23%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231000005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A00%3A00" data-end="2016-09-23%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231030005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A30%3A00" data-end="2016-09-23%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231100005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A00%3A00" data-end="2016-09-23%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231130005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A30%3A00" data-end="2016-09-23%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231200005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A00%3A00" data-end="2016-09-23%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231230005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A30%3A00" data-end="2016-09-23%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231300005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A00%3A00" data-end="2016-09-23%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231330005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A30%3A00" data-end="2016-09-23%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231400005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A00%3A00" data-end="2016-09-23%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231430005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A30%3A00" data-end="2016-09-23%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231500005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A00%3A00" data-end="2016-09-23%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231530005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A30%3A00" data-end="2016-09-23%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231600005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A00%3A00" data-end="2016-09-23%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231630005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A30%3A00" data-end="2016-09-23%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231700005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A00%3A00" data-end="2016-09-23%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231730005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A30%3A00" data-end="2016-09-23%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231800005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A00%3A00" data-end="2016-09-23%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231830005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A30%3A00" data-end="2016-09-23%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231900005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A00%3A00" data-end="2016-09-23%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231930005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A30%3A00" data-end="2016-09-23%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232000005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A00%3A00" data-end="2016-09-23%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232030005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A30%3A00" data-end="2016-09-23%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232100005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A00%3A00" data-end="2016-09-23%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232130005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A30%3A00" data-end="2016-09-23%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=4&sid=1&rd=2016-09-23" resourceId="4"
+								   class="resourceNameSelector">E&amp;CS Building Room 3109</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609230800004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A00%3A00" data-end="2016-09-23%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230830004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2008%3A30%3A00" data-end="2016-09-23%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230900004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A00%3A00" data-end="2016-09-23%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609230930004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2009%3A30%3A00" data-end="2016-09-23%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231000004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A00%3A00" data-end="2016-09-23%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231030004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2010%3A30%3A00" data-end="2016-09-23%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231100004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A00%3A00" data-end="2016-09-23%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231130004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2011%3A30%3A00" data-end="2016-09-23%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231200004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A00%3A00" data-end="2016-09-23%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231230004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2012%3A30%3A00" data-end="2016-09-23%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231300004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A00%3A00" data-end="2016-09-23%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231330004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2013%3A30%3A00" data-end="2016-09-23%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231400004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A00%3A00" data-end="2016-09-23%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231430004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2014%3A30%3A00" data-end="2016-09-23%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231500004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A00%3A00" data-end="2016-09-23%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231530004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2015%3A30%3A00" data-end="2016-09-23%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231600004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A00%3A00" data-end="2016-09-23%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231630004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2016%3A30%3A00" data-end="2016-09-23%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231700004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A00%3A00" data-end="2016-09-23%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231730004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2017%3A30%3A00" data-end="2016-09-23%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231800004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A00%3A00" data-end="2016-09-23%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231830004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2018%3A30%3A00" data-end="2016-09-23%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231900004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A00%3A00" data-end="2016-09-23%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609231930004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2019%3A30%3A00" data-end="2016-09-23%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232000004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A00%3A00" data-end="2016-09-23%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232030004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2020%3A30%3A00" data-end="2016-09-23%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232100004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A00%3A00" data-end="2016-09-23%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609232130004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-23" data-start="2016-09-23%2021%3A30%3A00" data-end="2016-09-23%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+							</table>
+			</div>
+			<!-- flushing -->
+					<div style="position:relative;">
+			<table class="reservations" border="1" cellpadding="0" width="100%">
+								<tr>
+										<td class="resdate">Saturday, 09/24/2016</td>
+											<td class="reslabel" colspan="1">12:00 AM</td>
+											<td class="reslabel" colspan="2">8:00 AM</td>
+											<td class="reslabel" colspan="2">9:00 AM</td>
+											<td class="reslabel" colspan="2">10:00 AM</td>
+											<td class="reslabel" colspan="2">11:00 AM</td>
+											<td class="reslabel" colspan="2">12:00 PM</td>
+											<td class="reslabel" colspan="2">1:00 PM</td>
+											<td class="reslabel" colspan="2">2:00 PM</td>
+											<td class="reslabel" colspan="2">3:00 PM</td>
+											<td class="reslabel" colspan="2">4:00 PM</td>
+											<td class="reslabel" colspan="2">5:00 PM</td>
+											<td class="reslabel" colspan="2">6:00 PM</td>
+											<td class="reslabel" colspan="2">7:00 PM</td>
+											<td class="reslabel" colspan="2">8:00 PM</td>
+											<td class="reslabel" colspan="2">9:00 PM</td>
+											<td class="reslabel" colspan="1">10:00 PM</td>
+									</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=3&sid=1&rd=2016-09-24" resourceId="3"
+								   class="resourceNameSelector">Dragas Hall Conference Room 1100F</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609240800003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A00%3A00" data-end="2016-09-24%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240830003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A30%3A00" data-end="2016-09-24%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240900003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A00%3A00" data-end="2016-09-24%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240930003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A30%3A00" data-end="2016-09-24%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241000003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A00%3A00" data-end="2016-09-24%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241030003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A30%3A00" data-end="2016-09-24%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241100003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A00%3A00" data-end="2016-09-24%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241130003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A30%3A00" data-end="2016-09-24%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241200003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A00%3A00" data-end="2016-09-24%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241230003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A30%3A00" data-end="2016-09-24%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241300003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A00%3A00" data-end="2016-09-24%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241330003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A30%3A00" data-end="2016-09-24%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241400003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A00%3A00" data-end="2016-09-24%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241430003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A30%3A00" data-end="2016-09-24%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241500003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A00%3A00" data-end="2016-09-24%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241530003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A30%3A00" data-end="2016-09-24%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241600003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A00%3A00" data-end="2016-09-24%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241630003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A30%3A00" data-end="2016-09-24%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241700003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A00%3A00" data-end="2016-09-24%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241730003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A30%3A00" data-end="2016-09-24%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241800003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A00%3A00" data-end="2016-09-24%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241830003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A30%3A00" data-end="2016-09-24%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241900003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A00%3A00" data-end="2016-09-24%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241930003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A30%3A00" data-end="2016-09-24%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242000003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A00%3A00" data-end="2016-09-24%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242030003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A30%3A00" data-end="2016-09-24%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242100003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A00%3A00" data-end="2016-09-24%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242130003" class="reservable clickres slot" data-href="reservation.php?rid=3&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A30%3A00" data-end="2016-09-24%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=1&sid=1&rd=2016-09-24" resourceId="1"
+								   class="resourceNameSelector">E&amp;CS Building Access Grid Room 2120</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609240800001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A00%3A00" data-end="2016-09-24%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240830001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A30%3A00" data-end="2016-09-24%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240900001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A00%3A00" data-end="2016-09-24%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240930001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A30%3A00" data-end="2016-09-24%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241000001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A00%3A00" data-end="2016-09-24%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241030001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A30%3A00" data-end="2016-09-24%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241100001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A00%3A00" data-end="2016-09-24%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241130001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A30%3A00" data-end="2016-09-24%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241200001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A00%3A00" data-end="2016-09-24%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241230001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A30%3A00" data-end="2016-09-24%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241300001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A00%3A00" data-end="2016-09-24%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241330001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A30%3A00" data-end="2016-09-24%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241400001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A00%3A00" data-end="2016-09-24%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241430001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A30%3A00" data-end="2016-09-24%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241500001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A00%3A00" data-end="2016-09-24%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241530001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A30%3A00" data-end="2016-09-24%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241600001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A00%3A00" data-end="2016-09-24%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241630001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A30%3A00" data-end="2016-09-24%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241700001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A00%3A00" data-end="2016-09-24%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241730001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A30%3A00" data-end="2016-09-24%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241800001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A00%3A00" data-end="2016-09-24%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241830001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A30%3A00" data-end="2016-09-24%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241900001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A00%3A00" data-end="2016-09-24%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241930001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A30%3A00" data-end="2016-09-24%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242000001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A00%3A00" data-end="2016-09-24%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242030001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A30%3A00" data-end="2016-09-24%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242100001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A00%3A00" data-end="2016-09-24%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242130001" class="reservable clickres slot" data-href="reservation.php?rid=1&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A30%3A00" data-end="2016-09-24%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=2&sid=1&rd=2016-09-24" resourceId="2"
+								   class="resourceNameSelector">E&amp;CS Building Conference Room 3316</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609240800002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A00%3A00" data-end="2016-09-24%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240830002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A30%3A00" data-end="2016-09-24%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240900002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A00%3A00" data-end="2016-09-24%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240930002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A30%3A00" data-end="2016-09-24%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241000002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A00%3A00" data-end="2016-09-24%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241030002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A30%3A00" data-end="2016-09-24%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241100002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A00%3A00" data-end="2016-09-24%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241130002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A30%3A00" data-end="2016-09-24%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241200002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A00%3A00" data-end="2016-09-24%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241230002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A30%3A00" data-end="2016-09-24%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241300002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A00%3A00" data-end="2016-09-24%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241330002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A30%3A00" data-end="2016-09-24%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241400002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A00%3A00" data-end="2016-09-24%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241430002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A30%3A00" data-end="2016-09-24%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241500002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A00%3A00" data-end="2016-09-24%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241530002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A30%3A00" data-end="2016-09-24%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241600002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A00%3A00" data-end="2016-09-24%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241630002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A30%3A00" data-end="2016-09-24%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241700002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A00%3A00" data-end="2016-09-24%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241730002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A30%3A00" data-end="2016-09-24%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241800002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A00%3A00" data-end="2016-09-24%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241830002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A30%3A00" data-end="2016-09-24%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241900002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A00%3A00" data-end="2016-09-24%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241930002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A30%3A00" data-end="2016-09-24%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242000002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A00%3A00" data-end="2016-09-24%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242030002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A30%3A00" data-end="2016-09-24%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242100002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A00%3A00" data-end="2016-09-24%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242130002" class="reservable clickres slot" data-href="reservation.php?rid=2&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A30%3A00" data-end="2016-09-24%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=5&sid=1&rd=2016-09-24" resourceId="5"
+								   class="resourceNameSelector">E&amp;CS Building Open Research Lab 3104</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609240800005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A00%3A00" data-end="2016-09-24%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240830005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A30%3A00" data-end="2016-09-24%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240900005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A00%3A00" data-end="2016-09-24%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240930005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A30%3A00" data-end="2016-09-24%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241000005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A00%3A00" data-end="2016-09-24%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241030005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A30%3A00" data-end="2016-09-24%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241100005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A00%3A00" data-end="2016-09-24%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241130005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A30%3A00" data-end="2016-09-24%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241200005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A00%3A00" data-end="2016-09-24%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241230005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A30%3A00" data-end="2016-09-24%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241300005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A00%3A00" data-end="2016-09-24%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241330005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A30%3A00" data-end="2016-09-24%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241400005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A00%3A00" data-end="2016-09-24%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241430005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A30%3A00" data-end="2016-09-24%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241500005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A00%3A00" data-end="2016-09-24%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241530005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A30%3A00" data-end="2016-09-24%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241600005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A00%3A00" data-end="2016-09-24%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241630005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A30%3A00" data-end="2016-09-24%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241700005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A00%3A00" data-end="2016-09-24%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241730005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A30%3A00" data-end="2016-09-24%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241800005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A00%3A00" data-end="2016-09-24%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241830005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A30%3A00" data-end="2016-09-24%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241900005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A00%3A00" data-end="2016-09-24%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241930005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A30%3A00" data-end="2016-09-24%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242000005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A00%3A00" data-end="2016-09-24%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242030005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A30%3A00" data-end="2016-09-24%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242100005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A00%3A00" data-end="2016-09-24%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242130005" class="reservable clickres slot" data-href="reservation.php?rid=5&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A30%3A00" data-end="2016-09-24%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+																								<tr class="slots">
+						<td class="resourcename">
+															<a href="reservation.php?rid=4&sid=1&rd=2016-09-24" resourceId="4"
+								   class="resourceNameSelector">E&amp;CS Building Room 3109</a>
+													</td>
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+																						<td colspan="1" ref="201609240800004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A00%3A00" data-end="2016-09-24%2008%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240830004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2008%3A30%3A00" data-end="2016-09-24%2009%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240900004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A00%3A00" data-end="2016-09-24%2009%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609240930004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2009%3A30%3A00" data-end="2016-09-24%2010%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241000004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A00%3A00" data-end="2016-09-24%2010%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241030004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2010%3A30%3A00" data-end="2016-09-24%2011%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241100004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A00%3A00" data-end="2016-09-24%2011%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241130004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2011%3A30%3A00" data-end="2016-09-24%2012%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241200004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A00%3A00" data-end="2016-09-24%2012%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241230004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2012%3A30%3A00" data-end="2016-09-24%2013%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241300004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A00%3A00" data-end="2016-09-24%2013%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241330004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2013%3A30%3A00" data-end="2016-09-24%2014%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241400004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A00%3A00" data-end="2016-09-24%2014%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241430004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2014%3A30%3A00" data-end="2016-09-24%2015%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241500004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A00%3A00" data-end="2016-09-24%2015%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241530004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2015%3A30%3A00" data-end="2016-09-24%2016%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241600004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A00%3A00" data-end="2016-09-24%2016%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241630004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2016%3A30%3A00" data-end="2016-09-24%2017%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241700004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A00%3A00" data-end="2016-09-24%2017%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241730004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2017%3A30%3A00" data-end="2016-09-24%2018%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241800004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A00%3A00" data-end="2016-09-24%2018%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241830004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2018%3A30%3A00" data-end="2016-09-24%2019%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241900004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A00%3A00" data-end="2016-09-24%2019%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609241930004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2019%3A30%3A00" data-end="2016-09-24%2020%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242000004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A00%3A00" data-end="2016-09-24%2020%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242030004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2020%3A30%3A00" data-end="2016-09-24%2021%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242100004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A00%3A00" data-end="2016-09-24%2021%3A30%3A00">&nbsp;</td>
+
+
+																						<td colspan="1" ref="201609242130004" class="reservable clickres slot" data-href="reservation.php?rid=4&sid=1&rd=2016-09-24" data-start="2016-09-24%2021%3A30%3A00" data-end="2016-09-24%2022%3A00%3A00">&nbsp;</td>
+
+
+																						<td colspan="1"
+		class="unreservable slot"></td>
+
+
+											</tr>
+							</table>
+			</div>
+			<!-- flushing -->
+			</div>
+
+
+<div class="clear">&nbsp;</div>
+<input type="hidden" value="1" id="scheduleId"/>
+
+			<div class="schedule_dates">
+												<a href="#" onclick="ChangeDate(2016, 09, 11); return false;"><img
+							src="img/arrow_large_left.png" alt="Back"/></a>
+				09/18/2016 - 09/24/2016
+				<a href="#" onclick="ChangeDate(2016, 09, 25); return false;"><img
+							src="img/arrow_large_right.png" alt="Forward"/></a>
+
+							</div>
+		
+
+
+
+
+
+
+	<script type="text/javascript" src="scripts/js/jquery.qtip.min.js?v=2.5.13"></script>
+	<script type="text/javascript" src="scripts/js/moment.min.js?v=2.5.13"></script>
+	<script type="text/javascript" src="scripts/schedule.js?v=2.5.13"></script>
+	<script type="text/javascript" src="scripts/resourcePopup.js?v=2.5.13"></script>
+	<script type="text/javascript" src="scripts/js/tree.jquery.js?v=2.5.13"></script>
+	<script type="text/javascript" src="scripts/js/jquery.cookie.js?v=2.5.13"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	var scheduleOptions = {
+		reservationUrlTemplate: "view-reservation.php?rn=[referenceNumber]",
+		summaryPopupUrl: "ajax/respopup.php",
+		cookieName: "schedule-direction-1",
+		scheduleId:"1"
+	};
+	var schedule = new Schedule(scheduleOptions, [{"id":0,"name":"All","label":"All","parent":null,"parent_id":null,"children":[{"type":"resource","group_id":0,"resource_name":"Dragas Hall Conference Room 1100F","id":"resource-0-3","label":"Dragas Hall Conference Room 1100F","resource_id":"3"},{"type":"resource","group_id":0,"resource_name":"E&amp;CS Building Access Grid Room 2120","id":"resource-0-1","label":"E&amp;CS Building Access Grid Room 2120","resource_id":"1"},{"type":"resource","group_id":0,"resource_name":"E&amp;CS Building Conference Room 3316","id":"resource-0-2","label":"E&amp;CS Building Conference Room 3316","resource_id":"2"},{"type":"resource","group_id":0,"resource_name":"E&amp;CS Building Open Research Lab 3104","id":"resource-0-5","label":"E&amp;CS Building Open Research Lab 3104","resource_id":"5"},{"type":"resource","group_id":0,"resource_name":"E&amp;CS Building Room 3109","id":"resource-0-4","label":"E&amp;CS Building Room 3109","resource_id":"4"}],"type":"group"}]);
+	schedule.initNavigation();
+	schedule.initReservations();
+	schedule.initResourceFilter();
+	schedule.initResources();
+});
+</script>
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $("#datepicker").datepicker({
+		 numberOfMonths: 3,
+		 showButtonPanel: true,
+		 onSelect: dpDateChanged,
+		 dayNames: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+		 dayNamesShort: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+		 dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+		 dateFormat: 'mm/dd/yy',
+		 	  		firstDay: 0,
+		 		 monthNames: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+		 monthNamesShort: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+		 currentText: "Today"
+	  	   });
+
+  
+});
+</script>
+
+	</div><!-- close content-->
+	</div><!-- close doc-->
+	<div class="push">&nbsp;</div>
+	</div><!-- close wrapper-->
+
+    	<div class="page-footer">
+			&copy; 2014 <a href="http://www.twinkletoessoftware.com">Twinkle Toes Software</a> <br/><a href="http://www.bookedscheduler.com">Booked Scheduler v2.5.13</a>
+    	</div>
+	</body>
+</html>
