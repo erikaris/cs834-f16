@@ -1,0 +1,1850 @@
+Enter a URL: http://www.cs.odu.edu/~mln/ 
+Enter crawl depth or level: 2
+Enter output directory: 3.9-out
+Debug : 0.1 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 0.1 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 1.1 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 1.1 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 1.2 Opening URL http://www.cs.odu.edu/
+Debug : 1.2 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 1.3 Opening URL http://www.odu.edu
+Debug : 1.3 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 1.4 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 1.4 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 1.5 Opening URL http://www.cs.odu.edu/~mln/research/
+Debug : 1.5 URL http://www.cs.odu.edu/~mln/research/ is opened
+Debug : http://www.cs.odu.edu/~mln/research/ is saved into 3.9-out/2a47b2edb6390d1f30bd83220c1a4909.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 1.6 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 1.6 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into 3.9-out/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 1.7 Opening URL http://www.cs.odu.edu/~mln/teaching/
+Debug : 1.7 URL http://www.cs.odu.edu/~mln/teaching/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/ is saved into 3.9-out/312f0e30904d4c999a3e3fe74d9424be.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 1.8 Opening URL http://www.cs.odu.edu/~mln/service/
+Debug : 1.8 URL http://www.cs.odu.edu/~mln/service/ is opened
+Debug : http://www.cs.odu.edu/~mln/service/ is saved into 3.9-out/b0412c7003fd2e66aa279afc8bf5213f.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 1.9 Opening URL http://www.cs.odu.edu/~mln/personal/
+Debug : 1.9 URL http://www.cs.odu.edu/~mln/personal/ is opened
+Debug : http://www.cs.odu.edu/~mln/personal/ is saved into 3.9-out/5472b346fec5431e5839f4a470aa50c1.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 1.10 Opening URL http://www.larc.nasa.gov/
+Debug : 1.10 URL http://www.larc.nasa.gov/ is opened
+Debug : http://www.larc.nasa.gov/ is saved into 3.9-out/d7918e9d8c9149086ffc56e161607799.html
+Debug : Sleep for 5 seconds
+Debug : 1.11 Opening URL http://sils.unc.edu/
+Debug : 1.11 URL http://sils.unc.edu/ is opened
+Debug : http://sils.unc.edu/ is saved into 3.9-out/141b67bfcfe070af2a6250a7a6fe5ecb.html
+Debug : Found 77 links
+Debug : Sleep for 5 seconds
+Debug : 1.12 Opening URL http://www.openarchives.org/pmh/
+Debug : 1.12 URL http://www.openarchives.org/pmh/ is opened
+Debug : http://www.openarchives.org/pmh/ is saved into 3.9-out/ffb41178dbf44330e3c8ba0994188e0c.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 1.13 Opening URL http://www.openarchives.org/ore/
+Debug : 1.13 URL http://www.openarchives.org/ore/ is opened
+Debug : http://www.openarchives.org/ore/ is saved into 3.9-out/0f68f21aff0f38074da5352d149dd791.html
+Debug : Found 40 links
+Debug : Sleep for 5 seconds
+Debug : 1.14 Opening URL http://www.mementoweb.org/guide/rfc/ID/
+Debug : 1.14 URL http://www.mementoweb.org/guide/rfc/ID/ is opened
+Debug : http://www.mementoweb.org/guide/rfc/ID/ is saved into 3.9-out/1b276d4ae634f6ffe4e24edf80c561ba.html
+Debug : Found 624 links
+Debug : Sleep for 5 seconds
+Debug : 1.15 Opening URL http://www.openarchives.org/rs/toc
+Debug : 1.15 URL http://www.openarchives.org/rs/toc is opened
+Debug : http://www.openarchives.org/rs/toc is saved into 3.9-out/21c44257332cd700af1019907b16a9e3.html
+Debug : Found 22 links
+Debug : Sleep for 5 seconds
+Debug : 1.16 Opening URL http://ntrs.nasa.gov/
+Debug : 1.16 URL http://ntrs.nasa.gov/ is opened
+Debug : http://ntrs.nasa.gov/ is saved into 3.9-out/60715e0bb39b0d8bb44e356ac243c3b4.html
+Debug : Found 155 links
+Debug : Sleep for 5 seconds
+Debug : 1.17 Opening URL http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784
+Debug : Sleep for 5 seconds
+Debug : 1.18 Opening URL http://www.cs.odu.edu/~mln/cv.pdf
+Debug : 1.18 URL http://www.cs.odu.edu/~mln/cv.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/cv.pdf is saved into 3.9-out/c94cb16fc6ff8f553fc90f86ec9e6134.html
+Debug : Sleep for 5 seconds
+Debug : 1.19 Opening URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf
+Debug : 1.19 URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is saved into 3.9-out/667c934ed21266b674ddbb36886d42b3.html
+Debug : Sleep for 5 seconds
+Debug : 1.20 Opening URL http://www.cs.odu.edu/~mln/lineage.html
+Debug : 1.20 URL http://www.cs.odu.edu/~mln/lineage.html is opened
+Debug : http://www.cs.odu.edu/~mln/lineage.html is saved into 3.9-out/f20fc87fbd1c4d84970ca8aa83d48e97.html
+Debug : Found 9 links
+Debug : Sleep for 5 seconds
+Debug : 1.21 Opening URL http://www.cs.odu.edu/~mln/travel.html
+Debug : 1.21 URL http://www.cs.odu.edu/~mln/travel.html is opened
+Debug : http://www.cs.odu.edu/~mln/travel.html is saved into 3.9-out/ed7d908855f37d77f89a77fd58303938.html
+Debug : Found 119 links
+Debug : Sleep for 5 seconds
+Debug : 1.22 Opening URL http://www.cs.odu.edu/~mln/mln-ad.pdf
+Debug : 1.22 URL http://www.cs.odu.edu/~mln/mln-ad.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/mln-ad.pdf is saved into 3.9-out/dec9e84f6be5899c0fd69cf5dbb707e2.html
+Debug : Sleep for 5 seconds
+Debug : 1.23 Opening URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research
+Debug : 1.23 URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is opened
+Debug : https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is saved into 3.9-out/116cd4add2ba5c40814810fff1a0390e.html
+Debug : Found 105 links
+Debug : Sleep for 5 seconds
+Debug : 1.24 Opening URL http://ws-dl.blogspot.com/
+Debug : 1.24 URL http://ws-dl.blogspot.com/ is opened
+Debug : http://ws-dl.blogspot.com/ is saved into 3.9-out/7d6f9e8932c59bc180045a0721387807.html
+Debug : Found 1077 links
+Debug : Sleep for 5 seconds
+Debug : 1.25 Opening URL http://twitter.com/phonedude_mln
+Debug : 1.25 URL http://twitter.com/phonedude_mln is opened
+Debug : http://twitter.com/phonedude_mln is saved into 3.9-out/3265534346db64d6e1d17502124ccb36.html
+Debug : Found 268 links
+Debug : Sleep for 5 seconds
+Debug : 1.26 Opening URL https://twitter.com/phonedude_mln
+Debug : 1.26 URL https://twitter.com/phonedude_mln is opened
+Debug : https://twitter.com/phonedude_mln is saved into 3.9-out/0f645e022311a6dc73af1a3d545d9d52.html
+Debug : Found 268 links
+Debug : Sleep for 5 seconds
+Debug : 2.1 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.1 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.2 Opening URL http://www.cs.odu.edu/
+Debug : 2.2 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.3 Opening URL http://www.odu.edu
+Debug : 2.3 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.4 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.4 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.5 Opening URL http://www.cs.odu.edu/~mln/research/
+Debug : 2.5 URL http://www.cs.odu.edu/~mln/research/ is opened
+Debug : http://www.cs.odu.edu/~mln/research/ is saved into 3.9-out/2a47b2edb6390d1f30bd83220c1a4909.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 2.6 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 2.6 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into 3.9-out/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 2.7 Opening URL http://www.cs.odu.edu/~mln/teaching/
+Debug : 2.7 URL http://www.cs.odu.edu/~mln/teaching/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/ is saved into 3.9-out/312f0e30904d4c999a3e3fe74d9424be.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.8 Opening URL http://www.cs.odu.edu/~mln/service/
+Debug : 2.8 URL http://www.cs.odu.edu/~mln/service/ is opened
+Debug : http://www.cs.odu.edu/~mln/service/ is saved into 3.9-out/b0412c7003fd2e66aa279afc8bf5213f.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 2.9 Opening URL http://www.cs.odu.edu/~mln/personal/
+Debug : 2.9 URL http://www.cs.odu.edu/~mln/personal/ is opened
+Debug : http://www.cs.odu.edu/~mln/personal/ is saved into 3.9-out/5472b346fec5431e5839f4a470aa50c1.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 2.10 Opening URL http://www.larc.nasa.gov/
+Debug : 2.10 URL http://www.larc.nasa.gov/ is opened
+Debug : http://www.larc.nasa.gov/ is saved into 3.9-out/d7918e9d8c9149086ffc56e161607799.html
+Debug : Sleep for 5 seconds
+Debug : 2.11 Opening URL http://sils.unc.edu/
+Debug : 2.11 URL http://sils.unc.edu/ is opened
+Debug : http://sils.unc.edu/ is saved into 3.9-out/141b67bfcfe070af2a6250a7a6fe5ecb.html
+Debug : Found 77 links
+Debug : Sleep for 5 seconds
+Debug : 2.12 Opening URL http://www.openarchives.org/pmh/
+Debug : 2.12 URL http://www.openarchives.org/pmh/ is opened
+Debug : http://www.openarchives.org/pmh/ is saved into 3.9-out/ffb41178dbf44330e3c8ba0994188e0c.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 2.13 Opening URL http://www.openarchives.org/ore/
+Debug : 2.13 URL http://www.openarchives.org/ore/ is opened
+Debug : http://www.openarchives.org/ore/ is saved into 3.9-out/0f68f21aff0f38074da5352d149dd791.html
+Debug : Found 40 links
+Debug : Sleep for 5 seconds
+Debug : 2.14 Opening URL http://www.mementoweb.org/guide/rfc/ID/
+Debug : 2.14 URL http://www.mementoweb.org/guide/rfc/ID/ is opened
+Debug : http://www.mementoweb.org/guide/rfc/ID/ is saved into 3.9-out/1b276d4ae634f6ffe4e24edf80c561ba.html
+Debug : Found 624 links
+Debug : Sleep for 5 seconds
+Debug : 2.15 Opening URL http://www.openarchives.org/rs/toc
+Debug : 2.15 URL http://www.openarchives.org/rs/toc is opened
+Debug : http://www.openarchives.org/rs/toc is saved into 3.9-out/21c44257332cd700af1019907b16a9e3.html
+Debug : Found 22 links
+Debug : Sleep for 5 seconds
+Debug : 2.16 Opening URL http://ntrs.nasa.gov/
+Debug : 2.16 URL http://ntrs.nasa.gov/ is opened
+Debug : http://ntrs.nasa.gov/ is saved into 3.9-out/60715e0bb39b0d8bb44e356ac243c3b4.html
+Debug : Found 155 links
+Debug : Sleep for 5 seconds
+Debug : 2.17 Opening URL http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784
+Debug : 2.17 URL http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784 is opened
+Debug : http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784 is saved into 3.9-out/3a44cab8285e1a7f37e2269f13a87b54.html
+Debug : Found 123 links
+Debug : Sleep for 5 seconds
+Debug : 2.18 Opening URL http://www.cs.odu.edu/~mln/cv.pdf
+Debug : 2.18 URL http://www.cs.odu.edu/~mln/cv.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/cv.pdf is saved into 3.9-out/c94cb16fc6ff8f553fc90f86ec9e6134.html
+Debug : Sleep for 5 seconds
+Debug : 2.19 Opening URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf
+Debug : 2.19 URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is saved into 3.9-out/667c934ed21266b674ddbb36886d42b3.html
+Debug : Sleep for 5 seconds
+Debug : 2.20 Opening URL http://www.cs.odu.edu/~mln/lineage.html
+Debug : 2.20 URL http://www.cs.odu.edu/~mln/lineage.html is opened
+Debug : http://www.cs.odu.edu/~mln/lineage.html is saved into 3.9-out/f20fc87fbd1c4d84970ca8aa83d48e97.html
+Debug : Found 9 links
+Debug : Sleep for 5 seconds
+Debug : 2.21 Opening URL http://www.cs.odu.edu/~mln/travel.html
+Debug : 2.21 URL http://www.cs.odu.edu/~mln/travel.html is opened
+Debug : http://www.cs.odu.edu/~mln/travel.html is saved into 3.9-out/ed7d908855f37d77f89a77fd58303938.html
+Debug : Found 119 links
+Debug : Sleep for 5 seconds
+Debug : 2.22 Opening URL http://www.cs.odu.edu/~mln/mln-ad.pdf
+Debug : 2.22 URL http://www.cs.odu.edu/~mln/mln-ad.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/mln-ad.pdf is saved into 3.9-out/dec9e84f6be5899c0fd69cf5dbb707e2.html
+Debug : Sleep for 5 seconds
+Debug : 2.23 Opening URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research
+Debug : 2.23 URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is opened
+Debug : https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is saved into 3.9-out/116cd4add2ba5c40814810fff1a0390e.html
+Debug : Found 105 links
+Debug : Sleep for 5 seconds
+Debug : 2.24 Opening URL http://ws-dl.blogspot.com/
+Debug : 2.24 URL http://ws-dl.blogspot.com/ is opened
+Debug : http://ws-dl.blogspot.com/ is saved into 3.9-out/7d6f9e8932c59bc180045a0721387807.html
+Debug : Found 1077 links
+Debug : Sleep for 5 seconds
+Debug : 2.25 Opening URL http://twitter.com/phonedude_mln
+Debug : 2.25 URL http://twitter.com/phonedude_mln is opened
+Debug : http://twitter.com/phonedude_mln is saved into 3.9-out/3265534346db64d6e1d17502124ccb36.html
+Debug : Found 268 links
+Debug : Sleep for 5 seconds
+Debug : 2.26 Opening URL https://twitter.com/phonedude_mln
+Debug : 2.26 URL https://twitter.com/phonedude_mln is opened
+Debug : https://twitter.com/phonedude_mln is saved into 3.9-out/0f645e022311a6dc73af1a3d545d9d52.html
+Debug : Found 268 links
+Debug : Sleep for 5 seconds
+Debug : 2.27 Opening URL http://www.odu.edu/
+Debug : 2.27 URL http://www.odu.edu/ is opened
+Debug : http://www.odu.edu/ is saved into 3.9-out/d69606f79642d955f9c3470d893eb79d.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.28 Opening URL http://www.odu.edu/oduhome/azindex.shtml
+Debug : 2.28 URL http://www.odu.edu/oduhome/azindex.shtml is opened
+Debug : http://www.odu.edu/oduhome/azindex.shtml is saved into 3.9-out/f6da03d4fafcbecaa2ca8d0bcc0d5269.html
+Debug : Found 896 links
+Debug : Sleep for 5 seconds
+Debug : 2.29 Opening URL http://www.odu.edu/oduhome/directories.shtml
+Debug : 2.29 URL http://www.odu.edu/oduhome/directories.shtml is opened
+Debug : http://www.odu.edu/oduhome/directories.shtml is saved into 3.9-out/ddf16bce86b32309e3846320aa3f49b9.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.30 Opening URL http://sci.odu.edu
+Debug : 2.30 URL http://sci.odu.edu is opened
+Debug : http://sci.odu.edu is saved into 3.9-out/3e6f44d535281fa0b1dad2155c1410e5.html
+Debug : Found 121 links
+Debug : Sleep for 5 seconds
+Debug : 2.31 Opening URL http://www.cs.odu.edu/
+Debug : 2.31 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.32 Opening URL http://www.cs.odu.edu/
+Debug : 2.32 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.33 Opening URL https://graduate.cs.odu.edu/phd/index.php/Main_Page
+Debug : 2.33 URL https://graduate.cs.odu.edu/phd/index.php/Main_Page is opened
+Debug : https://graduate.cs.odu.edu/phd/index.php/Main_Page is saved into 3.9-out/fe9ca812d58347cc8e1c0961ebef3185.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 2.34 Opening URL https://graduate.cs.odu.edu/ms
+Debug : 2.34 URL https://graduate.cs.odu.edu/ms is opened
+Debug : https://graduate.cs.odu.edu/ms is saved into 3.9-out/8f2dc750fa2e1575b6ffa4588c62dd49.html
+Debug : Found 73 links
+Debug : Sleep for 5 seconds
+Debug : 2.35 Opening URL http://www.cs.odu.edu/graduate_certificates.shtml
+Debug : 2.35 URL http://www.cs.odu.edu/graduate_certificates.shtml is opened
+Debug : http://www.cs.odu.edu/graduate_certificates.shtml is saved into 3.9-out/2fedd17cc2b23210856f367ad79a50a8.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.36 Opening URL http://www.cs.odu.edu/graduate_course_information.shtml
+Debug : 2.36 URL http://www.cs.odu.edu/graduate_course_information.shtml is opened
+Debug : http://www.cs.odu.edu/graduate_course_information.shtml is saved into 3.9-out/96071db4d65ca92e12454c5309cc6fe0.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.37 Opening URL http://www.cs.odu.edu/
+Debug : 2.37 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.38 Opening URL http://www.cs.odu.edu/~advisor/program_info_ug.shtml
+Debug : 2.38 URL http://www.cs.odu.edu/~advisor/program_info_ug.shtml is opened
+Debug : http://www.cs.odu.edu/~advisor/program_info_ug.shtml is saved into 3.9-out/f673e5c6aef414cdbab1e379293078e9.html
+Debug : Found 73 links
+Debug : Sleep for 5 seconds
+Debug : 2.39 Opening URL http://www.cs.odu.edu/~advisor/course_info_ug.shtml
+Debug : 2.39 URL http://www.cs.odu.edu/~advisor/course_info_ug.shtml is opened
+Debug : http://www.cs.odu.edu/~advisor/course_info_ug.shtml is saved into 3.9-out/bf95c077a3e366afb4fdb50640903bfc.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.40 Opening URL http://www.cs.odu.edu/~advisor/advise_info_ug.shtml
+Debug : 2.40 URL http://www.cs.odu.edu/~advisor/advise_info_ug.shtml is opened
+Debug : http://www.cs.odu.edu/~advisor/advise_info_ug.shtml is saved into 3.9-out/c772f436c6694ca81f13a5446488ac70.html
+Debug : Found 84 links
+Debug : Sleep for 5 seconds
+Debug : 2.41 Opening URL http://www.cs.odu.edu/
+Debug : 2.41 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.42 Opening URL http://www.odu.edu/admission
+Debug : 2.42 URL http://www.odu.edu/admission is opened
+Debug : http://www.odu.edu/admission is saved into 3.9-out/00a3188fb3d84196f49aacf8689d996b.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.43 Opening URL https://www.odu.edu/newtransfer/advising
+Debug : 2.43 URL https://www.odu.edu/newtransfer/advising is opened
+Debug : https://www.odu.edu/newtransfer/advising is saved into 3.9-out/16ab5636ce46ece42a4e8368b533e8a2.html
+Debug : Found 101 links
+Debug : Sleep for 5 seconds
+Debug : 2.44 Opening URL http://www.odu.edu//finaidoffice
+Debug : 2.44 URL http://www.odu.edu//finaidoffice is opened
+Debug : http://www.odu.edu//finaidoffice is saved into 3.9-out/1ee9e2ab94171c8981e26d3e2b152fa8.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 2.45 Opening URL http://www.cs.odu.edu/~ibl/csschedule.php?semester=fall16
+Debug : 2.45 URL http://www.cs.odu.edu/~ibl/csschedule.php?semester=fall16 is opened
+Debug : http://www.cs.odu.edu/~ibl/csschedule.php?semester=fall16 is saved into 3.9-out/64dbf3ec026bd1443702d8e17633a265.html
+Debug : Found 3 links
+Debug : Sleep for 5 seconds
+Debug : 2.46 Opening URL http://www.cs.odu.edu/~ibl/fall16books.html
+Debug : 2.46 URL http://www.cs.odu.edu/~ibl/fall16books.html is opened
+Debug : http://www.cs.odu.edu/~ibl/fall16books.html is saved into 3.9-out/9d19563e9905a6db137a7a065d2ecc2e.html
+Debug : Found 23 links
+Debug : Sleep for 5 seconds
+Debug : 2.47 Opening URL http://www.cs.odu.edu/research_oppor.shtml
+Debug : 2.47 URL http://www.cs.odu.edu/research_oppor.shtml is opened
+Debug : http://www.cs.odu.edu/research_oppor.shtml is saved into 3.9-out/6e56537086e9bd5310d613f2c3f37200.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.48 Opening URL http://www.cs.odu.edu/employment_oppor.shtml
+Debug : 2.48 URL http://www.cs.odu.edu/employment_oppor.shtml is opened
+Debug : http://www.cs.odu.edu/employment_oppor.shtml is saved into 3.9-out/3a9f9ba27fc76b664118babdde3b1ef3.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.49 Opening URL http://www.cs.odu.edu/calenders.shtml
+Debug : 2.49 URL http://www.cs.odu.edu/calenders.shtml is opened
+Debug : http://www.cs.odu.edu/calenders.shtml is saved into 3.9-out/abd57ad0a90b57651dc47f489b5336da.html
+Debug : Found 62 links
+Debug : Sleep for 5 seconds
+Debug : 2.50 Opening URL http://www.cs.odu.edu/studentappointmentinfo.pdf
+Debug : 2.50 URL http://www.cs.odu.edu/studentappointmentinfo.pdf is opened
+Debug : http://www.cs.odu.edu/studentappointmentinfo.pdf is saved into 3.9-out/9f7fb1b174cd347f27e3b3adbb434436.html
+Debug : Sleep for 5 seconds
+Debug : 2.51 Opening URL http://www.cs.odu.edu/~acm
+Debug : 2.51 URL http://www.cs.odu.edu/~acm is opened
+Debug : http://www.cs.odu.edu/~acm is saved into 3.9-out/d964836c48b0abc39f9e242805d50672.html
+Debug : Found 30 links
+Debug : Sleep for 5 seconds
+Debug : 2.52 Opening URL http://www.cs.odu.edu/
+Debug : 2.52 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.53 Opening URL http://www.cs.odu.edu/faculty.shtml
+Debug : 2.53 URL http://www.cs.odu.edu/faculty.shtml is opened
+Debug : http://www.cs.odu.edu/faculty.shtml is saved into 3.9-out/52e93439d9b459d689473ed74ced17a3.html
+Debug : Found 94 links
+Debug : Sleep for 5 seconds
+Debug : 2.54 Opening URL http://www.cs.odu.edu/staff.shtml
+Debug : 2.54 URL http://www.cs.odu.edu/staff.shtml is opened
+Debug : http://www.cs.odu.edu/staff.shtml is saved into 3.9-out/13966062e2a2ccd89acf69fde41946be.html
+Debug : Found 66 links
+Debug : Sleep for 5 seconds
+Debug : 2.55 Opening URL https://secweb.cs.odu.edu/alumni
+Debug : 2.55 URL https://secweb.cs.odu.edu/alumni is opened
+Debug : https://secweb.cs.odu.edu/alumni is saved into 3.9-out/45407bf336b35eb997ceb72c1bdb3795.html
+Debug : Found 25 links
+Debug : Sleep for 5 seconds
+Debug : 2.56 Opening URL http://www.cs.odu.edu/
+Debug : 2.56 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.57 Opening URL https://systems.cs.odu.edu/
+Debug : 2.57 URL https://systems.cs.odu.edu/ is opened
+Debug : https://systems.cs.odu.edu/ is saved into 3.9-out/58f261405fa42352cbee43ce652107bb.html
+Debug : Found 48 links
+Debug : Sleep for 5 seconds
+Debug : 2.58 Opening URL https://systems.cs.odu.edu/Computing_Labs
+Debug : 2.58 URL https://systems.cs.odu.edu/Computing_Labs is opened
+Debug : https://systems.cs.odu.edu/Computing_Labs is saved into 3.9-out/5474113843de6f5f97cbacf9252b2aee.html
+Debug : Found 36 links
+Debug : Sleep for 5 seconds
+Debug : 2.59 Opening URL https://hpc.cs.odu.edu
+Debug : 2.59 URL https://hpc.cs.odu.edu is opened
+Debug : https://hpc.cs.odu.edu is saved into 3.9-out/95979ab37bcde5429b26b0e88b1fceb3.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.60 Opening URL https://systems.cs.odu.edu/VCLab
+Debug : 2.60 URL https://systems.cs.odu.edu/VCLab is opened
+Debug : https://systems.cs.odu.edu/VCLab is saved into 3.9-out/d39ecd3bd43cd8b0ad72f3dac0094664.html
+Debug : Found 41 links
+Debug : Sleep for 5 seconds
+Debug : 2.61 Opening URL https://systems.cs.odu.edu/Network_Services
+Debug : 2.61 URL https://systems.cs.odu.edu/Network_Services is opened
+Debug : https://systems.cs.odu.edu/Network_Services is saved into 3.9-out/0493e16556b610774a17470bd3680d00.html
+Debug : Found 63 links
+Debug : Sleep for 5 seconds
+Debug : 2.62 Opening URL https://systems.cs.odu.edu/Windows_Services
+Debug : 2.62 URL https://systems.cs.odu.edu/Windows_Services is opened
+Debug : https://systems.cs.odu.edu/Windows_Services is saved into 3.9-out/c4fb0c114756b39aba866f014dc3e180.html
+Debug : Found 46 links
+Debug : Sleep for 5 seconds
+Debug : 2.63 Opening URL http://www.cs.odu.edu/files/cs_systems_it_infrastructure_2012.pdf
+Debug : 2.63 URL http://www.cs.odu.edu/files/cs_systems_it_infrastructure_2012.pdf is opened
+Debug : http://www.cs.odu.edu/files/cs_systems_it_infrastructure_2012.pdf is saved into 3.9-out/2e6cefc744de53638df1bb4e9d51f2ac.html
+Debug : Sleep for 5 seconds
+Debug : 2.64 Opening URL http://www.cs.odu.edu/files/cs_systems_it_infrastructure_2012.pptx
+Debug : 2.64 URL http://www.cs.odu.edu/files/cs_systems_it_infrastructure_2012.pptx is opened
+Debug : http://www.cs.odu.edu/files/cs_systems_it_infrastructure_2012.pptx is saved into 3.9-out/26f9d3664c62024f27833438a602b54d.html
+Debug : Sleep for 5 seconds
+Debug : 2.65 Opening URL http://www.cs.odu.edu/files/cs_systems_services.pdf
+Debug : 2.65 URL http://www.cs.odu.edu/files/cs_systems_services.pdf is opened
+Debug : http://www.cs.odu.edu/files/cs_systems_services.pdf is saved into 3.9-out/4335b4181eb1849586d3166deb2e7e96.html
+Debug : Sleep for 5 seconds
+Debug : 2.66 Opening URL http://www.cs.odu.edu/files/cs_systems_services.docx
+Debug : 2.66 URL http://www.cs.odu.edu/files/cs_systems_services.docx is opened
+Debug : http://www.cs.odu.edu/files/cs_systems_services.docx is saved into 3.9-out/3d5496318865ddf3b538c8dfa8e419ee.html
+Debug : Sleep for 5 seconds
+Debug : 2.67 Opening URL mailto:root@cs.odu.edu
+Debug : Sleep for 5 seconds
+Debug : 2.68 Opening URL http://www.cs.odu.edu/
+Debug : 2.68 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.69 Opening URL https://accounts.cs.odu.edu/validate
+Debug : Sleep for 5 seconds
+Debug : 2.70 Opening URL https://accounts.cs.odu.edu/validate/pwreset
+Debug : Sleep for 5 seconds
+Debug : 2.71 Opening URL https://sysweb.cs.odu.edu/guests
+Debug : Sleep for 5 seconds
+Debug : 2.72 Opening URL http://outlook.odu.edu/
+Debug : 2.72 URL http://outlook.odu.edu/ is opened
+Debug : http://outlook.odu.edu/ is saved into 3.9-out/52048059b5a5d9ce98608858356da632.html
+Debug : Found 4 links
+Debug : Sleep for 5 seconds
+Debug : 2.73 Opening URL https://roundcube.cs.odu.edu/
+Debug : Sleep for 5 seconds
+Debug : 2.74 Opening URL https://conference.cs.odu.edu
+Debug : 2.74 URL https://conference.cs.odu.edu is opened
+Debug : https://conference.cs.odu.edu is saved into 3.9-out/e8692c4128cd4a8a3234ca8d08fb77d2.html
+Debug : Sleep for 5 seconds
+Debug : 2.75 Opening URL https://conference.cs.odu.edu/Web/view-schedule.php
+Debug : 2.75 URL https://conference.cs.odu.edu/Web/view-schedule.php is opened
+Debug : https://conference.cs.odu.edu/Web/view-schedule.php is saved into 3.9-out/7c45be0a0893022b29727e169172b01f.html
+Debug : Found 29 links
+Debug : Sleep for 5 seconds
+Debug : 2.76 Opening URL https://www.leoonline.odu.edu/homepage_securenews.htm
+Debug : 2.76 URL https://www.leoonline.odu.edu/homepage_securenews.htm is opened
+Debug : https://www.leoonline.odu.edu/homepage_securenews.htm is saved into 3.9-out/dfc830a10ff056350c166faab8b235cf.html
+Debug : Found 7 links
+Debug : Sleep for 5 seconds
+Debug : 2.77 Opening URL http://dlib.cs.odu.edu
+Debug : 2.77 URL http://dlib.cs.odu.edu is opened
+Debug : http://dlib.cs.odu.edu is saved into 3.9-out/25e1eb79c6e637db111e7754047856fc.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 2.78 Opening URL https://www.cs.odu.edu/vod.php
+Debug : 2.78 URL https://www.cs.odu.edu/vod.php is opened
+Debug : https://www.cs.odu.edu/vod.php is saved into 3.9-out/01fe36fac4d02754d3ececa2da866593.html
+Debug : Found 15 links
+Debug : Sleep for 5 seconds
+Debug : 2.79 Opening URL http://www.cs.odu.edu/awards_honors.shtml
+Debug : 2.79 URL http://www.cs.odu.edu/awards_honors.shtml is opened
+Debug : http://www.cs.odu.edu/awards_honors.shtml is saved into 3.9-out/5995a9d77b83f87e59df0f30d51a59d6.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.80 Opening URL http://www.cs.odu.edu/StrategicPlan0515_2010.pdf
+Debug : 2.80 URL http://www.cs.odu.edu/StrategicPlan0515_2010.pdf is opened
+Debug : http://www.cs.odu.edu/StrategicPlan0515_2010.pdf is saved into 3.9-out/aaf12bf0648f3ee53a627e1a212deeaa.html
+Debug : Sleep for 5 seconds
+Debug : 2.81 Opening URL https://sysweb.cs.odu.edu/online/index.php?action=create
+Debug : Sleep for 5 seconds
+Debug : 2.82 Opening URL https://accounts.cs.odu.edu/validate/pwreset
+Debug : Sleep for 5 seconds
+Debug : 2.83 Opening URL https://www.leoonline.odu.edu/homepage_securenews.htm
+Debug : 2.83 URL https://www.leoonline.odu.edu/homepage_securenews.htm is opened
+Debug : https://www.leoonline.odu.edu/homepage_securenews.htm is saved into 3.9-out/dfc830a10ff056350c166faab8b235cf.html
+Debug : Found 7 links
+Debug : Sleep for 5 seconds
+Debug : 2.84 Opening URL http://outlook.odu.edu/
+Debug : 2.84 URL http://outlook.odu.edu/ is opened
+Debug : http://outlook.odu.edu/ is saved into 3.9-out/52048059b5a5d9ce98608858356da632.html
+Debug : Found 4 links
+Debug : Sleep for 5 seconds
+Debug : 2.85 Opening URL http://www.cs.odu.edu/files/cs_systems_services.pdf
+Debug : 2.85 URL http://www.cs.odu.edu/files/cs_systems_services.pdf is opened
+Debug : http://www.cs.odu.edu/files/cs_systems_services.pdf is saved into 3.9-out/4335b4181eb1849586d3166deb2e7e96.html
+Debug : Sleep for 5 seconds
+Debug : 2.86 Opening URL http://www.cs.odu.edu/files/csintroductioninfo.pdf
+Debug : 2.86 URL http://www.cs.odu.edu/files/csintroductioninfo.pdf is opened
+Debug : http://www.cs.odu.edu/files/csintroductioninfo.pdf is saved into 3.9-out/a6f144fb86f186bca1be39230c31cb25.html
+Debug : Sleep for 5 seconds
+Debug : 2.87 Opening URL http://www.cs.odu.edu/show_news.shtml?247
+Debug : 2.87 URL http://www.cs.odu.edu/show_news.shtml?247 is opened
+Debug : http://www.cs.odu.edu/show_news.shtml?247 is saved into 3.9-out/4e23ae95666173737c65d05b7287a3b3.html
+Debug : Found 59 links
+Debug : Sleep for 5 seconds
+Debug : 2.88 Opening URL http://www.cs.odu.edu/show_news.shtml?246
+Debug : 2.88 URL http://www.cs.odu.edu/show_news.shtml?246 is opened
+Debug : http://www.cs.odu.edu/show_news.shtml?246 is saved into 3.9-out/22fa4dc7974f91e82fe1f9e4bbf20e5f.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.89 Opening URL http://www.cs.odu.edu/news_archives.shtml
+Debug : 2.89 URL http://www.cs.odu.edu/news_archives.shtml is opened
+Debug : http://www.cs.odu.edu/news_archives.shtml is saved into 3.9-out/d99c9cb8678116c3c04a183536ae8f70.html
+Debug : Found 247 links
+Debug : Sleep for 5 seconds
+Debug : 2.90 Opening URL http://www.cs.odu.edu/events_archives.shtml
+Debug : 2.90 URL http://www.cs.odu.edu/events_archives.shtml is opened
+Debug : http://www.cs.odu.edu/events_archives.shtml is saved into 3.9-out/016d06520d2c09f629ba6ca6cfe24762.html
+Debug : Found 120 links
+Debug : Sleep for 5 seconds
+Debug : 2.91 Opening URL http://www.cs.odu.edu/show_announcements.shtml
+Debug : 2.91 URL http://www.cs.odu.edu/show_announcements.shtml is opened
+Debug : http://www.cs.odu.edu/show_announcements.shtml is saved into 3.9-out/037d0402127e226d663a5aa400aa3648.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.92 Opening URL http://www.cs.odu.edu/show_features.shtml?88
+Debug : 2.92 URL http://www.cs.odu.edu/show_features.shtml?88 is opened
+Debug : http://www.cs.odu.edu/show_features.shtml?88 is saved into 3.9-out/46629c3b7530f36d7f1dc1ed119fce93.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.93 Opening URL http://www.cs.odu.edu/show_features.shtml?88
+Debug : 2.93 URL http://www.cs.odu.edu/show_features.shtml?88 is opened
+Debug : http://www.cs.odu.edu/show_features.shtml?88 is saved into 3.9-out/46629c3b7530f36d7f1dc1ed119fce93.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.94 Opening URL http://www.cs.odu.edu/show_features.shtml?89
+Debug : 2.94 URL http://www.cs.odu.edu/show_features.shtml?89 is opened
+Debug : http://www.cs.odu.edu/show_features.shtml?89 is saved into 3.9-out/505dc28a8f1d71c45f89fb49e21ec410.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.95 Opening URL http://www.cs.odu.edu/show_features.shtml?89
+Debug : 2.95 URL http://www.cs.odu.edu/show_features.shtml?89 is opened
+Debug : http://www.cs.odu.edu/show_features.shtml?89 is saved into 3.9-out/505dc28a8f1d71c45f89fb49e21ec410.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.96 Opening URL http://www.cs.odu.edu/chairs_welcome.shtml
+Debug : 2.96 URL http://www.cs.odu.edu/chairs_welcome.shtml is opened
+Debug : http://www.cs.odu.edu/chairs_welcome.shtml is saved into 3.9-out/fbdd0f6001b1865576ee65437866bef9.html
+Debug : Found 59 links
+Debug : Sleep for 5 seconds
+Debug : 2.97 Opening URL http://www.cs.odu.edu/mission_statement.shtml
+Debug : 2.97 URL http://www.cs.odu.edu/mission_statement.shtml is opened
+Debug : http://www.cs.odu.edu/mission_statement.shtml is saved into 3.9-out/225554f5d3341ed83a0c8d5e4645ccff.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.98 Opening URL http://www.cs.odu.edu/student_goals.shtml
+Debug : 2.98 URL http://www.cs.odu.edu/student_goals.shtml is opened
+Debug : http://www.cs.odu.edu/student_goals.shtml is saved into 3.9-out/03e8c6af81e31c32d5444d5bc21e6fda.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.99 Opening URL http://www.cs.odu.edu/by_laws.shtml
+Debug : 2.99 URL http://www.cs.odu.edu/by_laws.shtml is opened
+Debug : http://www.cs.odu.edu/by_laws.shtml is saved into 3.9-out/e6891513a0503c95a07b966111f25815.html
+Debug : Found 58 links
+Debug : Sleep for 5 seconds
+Debug : 2.100 Opening URL http://www.cs.odu.edu/facilities.shtml
+Debug : 2.100 URL http://www.cs.odu.edu/facilities.shtml is opened
+Debug : http://www.cs.odu.edu/facilities.shtml is saved into 3.9-out/644a86f2f3183b8f20860d6f3c8c3a4a.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.101 Opening URL http://www.cs.odu.edu/faq.shtml
+Debug : 2.101 URL http://www.cs.odu.edu/faq.shtml is opened
+Debug : http://www.cs.odu.edu/faq.shtml is saved into 3.9-out/b9ce8ee645ba6008c10120020b32d398.html
+Debug : Found 87 links
+Debug : Sleep for 5 seconds
+Debug : 2.102 Opening URL http://www.cs.odu.edu/policy.shtml
+Debug : 2.102 URL http://www.cs.odu.edu/policy.shtml is opened
+Debug : http://www.cs.odu.edu/policy.shtml is saved into 3.9-out/d0cb9bb3e1f686c5f4684438c2e3b400.html
+Debug : Found 97 links
+Debug : Sleep for 5 seconds
+Debug : 2.103 Opening URL http://www.cs.odu.edu/files/csdeptresearch.pptx
+Debug : 2.103 URL http://www.cs.odu.edu/files/csdeptresearch.pptx is opened
+Debug : http://www.cs.odu.edu/files/csdeptresearch.pptx is saved into 3.9-out/eeb3392268dc977ef1b9619945ab79c9.html
+Debug : Sleep for 5 seconds
+Debug : 2.104 Opening URL http://www.cs.odu.edu/files/csdeptresearch.pdf
+Debug : 2.104 URL http://www.cs.odu.edu/files/csdeptresearch.pdf is opened
+Debug : http://www.cs.odu.edu/files/csdeptresearch.pdf is saved into 3.9-out/37e7b76fb7ee4c22e72fb646f2354f94.html
+Debug : Sleep for 5 seconds
+Debug : 2.105 Opening URL http://swimsys.cs.odu.edu/
+Debug : 2.105 URL http://swimsys.cs.odu.edu/ is opened
+Debug : http://swimsys.cs.odu.edu/ is saved into 3.9-out/f3eb3e2732306dcfca4002e6baa49d3d.html
+Debug : Found 22 links
+Debug : Sleep for 5 seconds
+Debug : 2.106 Opening URL http://www.cs.odu.edu/~inets
+Debug : 2.106 URL http://www.cs.odu.edu/~inets is opened
+Debug : http://www.cs.odu.edu/~inets is saved into 3.9-out/adc96ed3e9d99891f396bed8f2238017.html
+Debug : Found 14 links
+Debug : Sleep for 5 seconds
+Debug : 2.107 Opening URL http://dlib.cs.odu.edu/
+Debug : 2.107 URL http://dlib.cs.odu.edu/ is opened
+Debug : http://dlib.cs.odu.edu/ is saved into 3.9-out/8868624caeebc002a8384a56924863ea.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 2.108 Opening URL http://www.cs.odu.edu/bioinformatics.html
+Debug : 2.108 URL http://www.cs.odu.edu/bioinformatics.html is opened
+Debug : http://www.cs.odu.edu/bioinformatics.html is saved into 3.9-out/a3fe2a9d5f02d1f644531b7c68865562.html
+Debug : Sleep for 5 seconds
+Debug : 2.109 Opening URL http://ws-dl.cs.odu.edu
+Debug : Sleep for 5 seconds
+Debug : 2.110 Opening URL http://ws-dl.blogspot.com
+Debug : 2.110 URL http://ws-dl.blogspot.com is opened
+Debug : http://ws-dl.blogspot.com is saved into 3.9-out/ab821b3339327ad0972d38c00c22882f.html
+Debug : Found 1079 links
+Debug : Sleep for 5 seconds
+Debug : 2.111 Opening URL https://www.facebook.com/pages/ODU-Computer-Science/190112164344396
+Debug : 2.111 URL https://www.facebook.com/pages/ODU-Computer-Science/190112164344396 is opened
+Debug : https://www.facebook.com/pages/ODU-Computer-Science/190112164344396 is saved into 3.9-out/c53f25b925bbebe1eb843f22d7565a89.html
+Debug : Found 180 links
+Debug : Sleep for 5 seconds
+Debug : 2.112 Opening URL https://twitter.com/oducs
+Debug : 2.112 URL https://twitter.com/oducs is opened
+Debug : https://twitter.com/oducs is saved into 3.9-out/ffb611faf9a64b3cffbd515d43fb5b10.html
+Debug : Found 107 links
+Debug : Sleep for 5 seconds
+Debug : 2.113 Opening URL mailto:webmaster@cs.odu.edu
+Debug : Sleep for 5 seconds
+Debug : 2.114 Opening URL http://www.odu.edu/
+Debug : 2.114 URL http://www.odu.edu/ is opened
+Debug : http://www.odu.edu/ is saved into 3.9-out/d69606f79642d955f9c3470d893eb79d.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.115 Opening URL http://www.odu.edu/oduhome/policies.shtml
+Debug : 2.115 Cannot open URL http://www.odu.edu/oduhome/policies.shtml, Status code: 404
+Debug : Sleep for 5 seconds
+Debug : 2.116 Opening URL http://www.ncwit.org/alliances/aa
+Debug : 2.116 URL http://www.ncwit.org/alliances/aa is opened
+Debug : http://www.ncwit.org/alliances/aa is saved into 3.9-out/52c57800fdc1a79e1bb42e9180f56c3b.html
+Debug : Found 150 links
+Debug : Sleep for 5 seconds
+Debug : 2.117 Opening URL http://www.odu.edu#content
+Debug : 2.117 URL http://www.odu.edu#content is opened
+Debug : http://www.odu.edu#content is saved into 3.9-out/4335cd7ee5e41081d0b73dcf7eef459f.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.118 Opening URL http://www.odu.edu/
+Debug : 2.118 URL http://www.odu.edu/ is opened
+Debug : http://www.odu.edu/ is saved into 3.9-out/d69606f79642d955f9c3470d893eb79d.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.119 Opening URL http://www.odu.edu/a-to-z
+Debug : 2.119 URL http://www.odu.edu/a-to-z is opened
+Debug : http://www.odu.edu/a-to-z is saved into 3.9-out/752682a2e2ff0a6128b5a4210c445370.html
+Debug : Found 896 links
+Debug : Sleep for 5 seconds
+Debug : 2.120 Opening URL http://www.odu.edu/directory
+Debug : 2.120 URL http://www.odu.edu/directory is opened
+Debug : http://www.odu.edu/directory is saved into 3.9-out/e73ee6e66d7c91551a021097b5c3a600.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.121 Opening URL http://www.odu.edu/library
+Debug : 2.121 URL http://www.odu.edu/library is opened
+Debug : http://www.odu.edu/library is saved into 3.9-out/34da442295e00c005986164a668f995c.html
+Debug : Found 113 links
+Debug : Sleep for 5 seconds
+Debug : 2.122 Opening URL http://www.odu.edu/calendar
+Debug : 2.122 URL http://www.odu.edu/calendar is opened
+Debug : http://www.odu.edu/calendar is saved into 3.9-out/4e1ae5d39bdb661977ac150edd09eb6b.html
+Debug : Found 107 links
+Debug : Sleep for 5 seconds
+Debug : 2.123 Opening URL http://www.odu.edu/about
+Debug : 2.123 URL http://www.odu.edu/about is opened
+Debug : http://www.odu.edu/about is saved into 3.9-out/d066e405a993939837a1763be9f22f97.html
+Debug : Found 160 links
+Debug : Sleep for 5 seconds
+Debug : 2.124 Opening URL http://www.odu.edu/academics
+Debug : 2.124 URL http://www.odu.edu/academics is opened
+Debug : http://www.odu.edu/academics is saved into 3.9-out/1296c9e3187149a8ccd65ca016bfc896.html
+Debug : Found 203 links
+Debug : Sleep for 5 seconds
+Debug : 2.125 Opening URL http://www.odu.edu/life
+Debug : 2.125 URL http://www.odu.edu/life is opened
+Debug : http://www.odu.edu/life is saved into 3.9-out/4e5745903b5805cca657165db03b65bd.html
+Debug : Found 124 links
+Debug : Sleep for 5 seconds
+Debug : 2.126 Opening URL http://www.odu.edu/admission
+Debug : 2.126 URL http://www.odu.edu/admission is opened
+Debug : http://www.odu.edu/admission is saved into 3.9-out/00a3188fb3d84196f49aacf8689d996b.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.127 Opening URL http://www.odu.edu/research
+Debug : 2.127 URL http://www.odu.edu/research is opened
+Debug : http://www.odu.edu/research is saved into 3.9-out/1ad0e80435fe4d1f7781b7a6211a0028.html
+Debug : Found 110 links
+Debug : Sleep for 5 seconds
+Debug : 2.128 Opening URL http://www.odusports.com/
+Debug : 2.128 URL http://www.odusports.com/ is opened
+Debug : http://www.odusports.com/ is saved into 3.9-out/0d6b0ad047738ca59a77741a16507f7d.html
+Debug : Found 110 links
+Debug : Sleep for 5 seconds
+Debug : 2.129 Opening URL http://www.odu.edu#uni-phone-menu
+Debug : 2.129 URL http://www.odu.edu#uni-phone-menu is opened
+Debug : http://www.odu.edu#uni-phone-menu is saved into 3.9-out/1491f0afd0e742e7cbe6aa2b1e114919.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.130 Opening URL http://www.odu.edu/about/odu-publications/monarch-magazine/issue/winter-2016/homecoming-preview/_jcr_content
+Debug : 2.130 URL http://www.odu.edu/about/odu-publications/monarch-magazine/issue/winter-2016/homecoming-preview/_jcr_content is opened
+Debug : http://www.odu.edu/about/odu-publications/monarch-magazine/issue/winter-2016/homecoming-preview/_jcr_content is saved into 3.9-out/5ac03366a1b5d1b4808ddf6ce31957ee.html
+Debug : Found 92 links
+Debug : Sleep for 5 seconds
+Debug : 2.131 Opening URL http://www.odu.edu/news/2016/9/pls_brinkley/_jcr_content/par
+Debug : 2.131 URL http://www.odu.edu/news/2016/9/pls_brinkley/_jcr_content/par is opened
+Debug : http://www.odu.edu/news/2016/9/pls_brinkley/_jcr_content/par is saved into 3.9-out/bae0ffd18d4a4398c6425189fad2d627.html
+Debug : Found 3 links
+Debug : Sleep for 5 seconds
+Debug : 2.132 Opening URL http://www.odu.edu/life/culture/culture-months/hispanic-heritage
+Debug : 2.132 URL http://www.odu.edu/life/culture/culture-months/hispanic-heritage is opened
+Debug : http://www.odu.edu/life/culture/culture-months/hispanic-heritage is saved into 3.9-out/390455c53f7ef4f0bf58d52b25e3ea94.html
+Debug : Found 78 links
+Debug : Sleep for 5 seconds
+Debug : 2.133 Opening URL http://www.odu.edu/news/2016/9/dining_commons/_jcr_content/par
+Debug : 2.133 URL http://www.odu.edu/news/2016/9/dining_commons/_jcr_content/par is opened
+Debug : http://www.odu.edu/news/2016/9/dining_commons/_jcr_content/par is saved into 3.9-out/3b7d624f7059cc33836d36af58808d25.html
+Debug : Found 2 links
+Debug : Sleep for 5 seconds
+Debug : 2.134 Opening URL http://www.odu.edu/news/2016/9/mapping_lambert_s_po/_jcr_content
+Debug : 2.134 URL http://www.odu.edu/news/2016/9/mapping_lambert_s_po/_jcr_content is opened
+Debug : http://www.odu.edu/news/2016/9/mapping_lambert_s_po/_jcr_content is saved into 3.9-out/456be83e9cd75c8459e3ca34e6cc985f.html
+Debug : Found 132 links
+Debug : Sleep for 5 seconds
+Debug : 2.135 Opening URL http://www.odu.edu/prospective
+Debug : 2.135 URL http://www.odu.edu/prospective is opened
+Debug : http://www.odu.edu/prospective is saved into 3.9-out/34cc264ec6da467c469bee83b1010565.html
+Debug : Found 106 links
+Debug : Sleep for 5 seconds
+Debug : 2.136 Opening URL http://www.odu.edu/partnerships/business
+Debug : 2.136 URL http://www.odu.edu/partnerships/business is opened
+Debug : http://www.odu.edu/partnerships/business is saved into 3.9-out/c3f723b6eae321586ca54b4fcf800691.html
+Debug : Found 95 links
+Debug : Sleep for 5 seconds
+Debug : 2.137 Opening URL http://www.odu.edu/partnerships/community
+Debug : 2.137 URL http://www.odu.edu/partnerships/community is opened
+Debug : http://www.odu.edu/partnerships/community is saved into 3.9-out/3694331d1a23c111d4651ec34517dae3.html
+Debug : Found 119 links
+Debug : Sleep for 5 seconds
+Debug : 2.138 Opening URL http://www.odu.edu/alumni
+Debug : 2.138 URL http://www.odu.edu/alumni is opened
+Debug : http://www.odu.edu/alumni is saved into 3.9-out/9336dd44c184ab5d5022293f06f48cc5.html
+Debug : Found 95 links
+Debug : Sleep for 5 seconds
+Debug : 2.139 Opening URL http://www.odu.edu/family
+Debug : 2.139 URL http://www.odu.edu/family is opened
+Debug : http://www.odu.edu/family is saved into 3.9-out/9cf43c3c19f27120f05c7f8fbcf4c489.html
+Debug : Found 106 links
+Debug : Sleep for 5 seconds
+Debug : 2.140 Opening URL http://www.odu.edu/students
+Debug : 2.140 URL http://www.odu.edu/students is opened
+Debug : http://www.odu.edu/students is saved into 3.9-out/ac511bf8a889e9e4a73b9ed645b5a6e0.html
+Debug : Found 231 links
+Debug : Sleep for 5 seconds
+Debug : 2.141 Opening URL http://www.odu.edu/facultystaff
+Debug : 2.141 URL http://www.odu.edu/facultystaff is opened
+Debug : http://www.odu.edu/facultystaff is saved into 3.9-out/5697e4b4387efe893b4ad734d0e245f0.html
+Debug : Found 430 links
+Debug : Sleep for 5 seconds
+Debug : 2.142 Opening URL http://www.odu.edu/academics/programs
+Debug : 2.142 URL http://www.odu.edu/academics/programs is opened
+Debug : http://www.odu.edu/academics/programs is saved into 3.9-out/4506b2faa08dca9d5b0eca77065915cb.html
+Debug : Found 1900 links
+Debug : Sleep for 5 seconds
+Debug : 2.143 Opening URL http://www.odu.edu/academics/odufaculty
+Debug : 2.143 URL http://www.odu.edu/academics/odufaculty is opened
+Debug : http://www.odu.edu/academics/odufaculty is saved into 3.9-out/17a30695248193fdf356aa7467b6b48c.html
+Debug : Found 113 links
+Debug : Sleep for 5 seconds
+Debug : 2.144 Opening URL http://www.odu.edu/academics/rhec
+Debug : 2.144 URL http://www.odu.edu/academics/rhec is opened
+Debug : http://www.odu.edu/academics/rhec is saved into 3.9-out/8b4ba5b8e82d5bfb37c6e18d22166668.html
+Debug : Found 92 links
+Debug : Sleep for 5 seconds
+Debug : 2.145 Opening URL http://www.odu.edu/academics
+Debug : 2.145 URL http://www.odu.edu/academics is opened
+Debug : http://www.odu.edu/academics is saved into 3.9-out/1296c9e3187149a8ccd65ca016bfc896.html
+Debug : Found 203 links
+Debug : Sleep for 5 seconds
+Debug : 2.146 Opening URL http://www.odu.edu/life/housing/on-campus-housing
+Debug : 2.146 URL http://www.odu.edu/life/housing/on-campus-housing is opened
+Debug : http://www.odu.edu/life/housing/on-campus-housing is saved into 3.9-out/ca3dd3330ae866526f49470cafcce734.html
+Debug : Found 132 links
+Debug : Sleep for 5 seconds
+Debug : 2.147 Opening URL http://www.odu.edu/life/dining
+Debug : 2.147 URL http://www.odu.edu/life/dining is opened
+Debug : http://www.odu.edu/life/dining is saved into 3.9-out/2db70878f5afe906aff34239f5eecccf.html
+Debug : Found 65 links
+Debug : Sleep for 5 seconds
+Debug : 2.148 Opening URL http://www.odu.edu/about/visitors/hampton-roads
+Debug : 2.148 URL http://www.odu.edu/about/visitors/hampton-roads is opened
+Debug : http://www.odu.edu/about/visitors/hampton-roads is saved into 3.9-out/ccf1a4bcf2078dd8dd73dcf17957820f.html
+Debug : Found 104 links
+Debug : Sleep for 5 seconds
+Debug : 2.149 Opening URL http://www.odu.edu/life
+Debug : 2.149 URL http://www.odu.edu/life is opened
+Debug : http://www.odu.edu/life is saved into 3.9-out/4e5745903b5805cca657165db03b65bd.html
+Debug : Found 124 links
+Debug : Sleep for 5 seconds
+Debug : 2.150 Opening URL http://www.odu.edu/life/gettinginvolved/studentorgs
+Debug : 2.150 URL http://www.odu.edu/life/gettinginvolved/studentorgs is opened
+Debug : http://www.odu.edu/life/gettinginvolved/studentorgs is saved into 3.9-out/ca80b3d3bba53331792a9cf74258b81f.html
+Debug : Found 110 links
+Debug : Sleep for 5 seconds
+Debug : 2.151 Opening URL http://www.odu.edu/life/gettinginvolved/service
+Debug : 2.151 URL http://www.odu.edu/life/gettinginvolved/service is opened
+Debug : http://www.odu.edu/life/gettinginvolved/service is saved into 3.9-out/0e0a31ac79b8dad5aab5a96f10edd667.html
+Debug : Found 141 links
+Debug : Sleep for 5 seconds
+Debug : 2.152 Opening URL http://www.odu.edu/life/gettinginvolved/spirit
+Debug : 2.152 URL http://www.odu.edu/life/gettinginvolved/spirit is opened
+Debug : http://www.odu.edu/life/gettinginvolved/spirit is saved into 3.9-out/fbaf6c08fccd930167c28c45d5e65e38.html
+Debug : Found 104 links
+Debug : Sleep for 5 seconds
+Debug : 2.153 Opening URL http://www.odu.edu/life/gettinginvolved
+Debug : 2.153 URL http://www.odu.edu/life/gettinginvolved is opened
+Debug : http://www.odu.edu/life/gettinginvolved is saved into 3.9-out/dd12d0b4750fd1dd262f918013d30909.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.154 Opening URL http://www.odu.edu/about/visitors/campus-map
+Debug : 2.154 URL http://www.odu.edu/about/visitors/campus-map is opened
+Debug : http://www.odu.edu/about/visitors/campus-map is saved into 3.9-out/3012cb0aa42a49e15c4b91259088f118.html
+Debug : Found 83 links
+Debug : Sleep for 5 seconds
+Debug : 2.155 Opening URL http://www.odu.edu/about/visitors/campus-tours
+Debug : 2.155 URL http://www.odu.edu/about/visitors/campus-tours is opened
+Debug : http://www.odu.edu/about/visitors/campus-tours is saved into 3.9-out/a56896468d601c786dd891bb04364c1d.html
+Debug : Found 94 links
+Debug : Sleep for 5 seconds
+Debug : 2.156 Opening URL http://www.odu.edu/about/visitors/lodging
+Debug : 2.156 URL http://www.odu.edu/about/visitors/lodging is opened
+Debug : http://www.odu.edu/about/visitors/lodging is saved into 3.9-out/208c6aef5269557d521833e9b90c7fc5.html
+Debug : Found 122 links
+Debug : Sleep for 5 seconds
+Debug : 2.157 Opening URL http://www.odu.edu/about/visitors
+Debug : 2.157 URL http://www.odu.edu/about/visitors is opened
+Debug : http://www.odu.edu/about/visitors is saved into 3.9-out/a6dab995bc351edcb494db85cbd6f36f.html
+Debug : Found 99 links
+Debug : Sleep for 5 seconds
+Debug : 2.158 Opening URL http://www.odu.edu/admission
+Debug : 2.158 URL http://www.odu.edu/admission is opened
+Debug : http://www.odu.edu/admission is saved into 3.9-out/00a3188fb3d84196f49aacf8689d996b.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.159 Opening URL http://www.odu.edu/admission/costs-tuition
+Debug : 2.159 URL http://www.odu.edu/admission/costs-tuition is opened
+Debug : http://www.odu.edu/admission/costs-tuition is saved into 3.9-out/6d4568f2a0a41c57f178d88a62a75c41.html
+Debug : Found 75 links
+Debug : Sleep for 5 seconds
+Debug : 2.160 Opening URL http://www.odu.edu/cds
+Debug : 2.160 URL http://www.odu.edu/cds is opened
+Debug : http://www.odu.edu/cds is saved into 3.9-out/e012d7b08430ac69752d09cf25ea3ef1.html
+Debug : Found 229 links
+Debug : Sleep for 5 seconds
+Debug : 2.161 Opening URL http://www.odu.edu/admission
+Debug : 2.161 URL http://www.odu.edu/admission is opened
+Debug : http://www.odu.edu/admission is saved into 3.9-out/00a3188fb3d84196f49aacf8689d996b.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.162 Opening URL http://www.odu.edu/preview
+Debug : 2.162 URL http://www.odu.edu/preview is opened
+Debug : http://www.odu.edu/preview is saved into 3.9-out/4f26578b694f913a5608f842e6737bdb.html
+Debug : Found 76 links
+Debug : Sleep for 5 seconds
+Debug : 2.163 Opening URL http://www.odu.edu/life/housing/on-campus-housing
+Debug : 2.163 URL http://www.odu.edu/life/housing/on-campus-housing is opened
+Debug : http://www.odu.edu/life/housing/on-campus-housing is saved into 3.9-out/ca3dd3330ae866526f49470cafcce734.html
+Debug : Found 132 links
+Debug : Sleep for 5 seconds
+Debug : 2.164 Opening URL http://www.odu.edu/life/gettinginvolved
+Debug : 2.164 URL http://www.odu.edu/life/gettinginvolved is opened
+Debug : http://www.odu.edu/life/gettinginvolved is saved into 3.9-out/dd12d0b4750fd1dd262f918013d30909.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.165 Opening URL http://www.odu.edu/shortcut/myodu
+Debug : 2.165 URL http://www.odu.edu/shortcut/myodu is opened
+Debug : http://www.odu.edu/shortcut/myodu is saved into 3.9-out/dac43e13f0ed70be0d7193fe4657a482.html
+Debug : Found 44 links
+Debug : Sleep for 5 seconds
+Debug : 2.166 Opening URL http://www.odu.edu/academics/courses-registration/course-schedules/listing
+Debug : 2.166 URL http://www.odu.edu/academics/courses-registration/course-schedules/listing is opened
+Debug : http://www.odu.edu/academics/courses-registration/course-schedules/listing is saved into 3.9-out/64a49545dc6507e2a9b020c182f14744.html
+Debug : Found 72 links
+Debug : Sleep for 5 seconds
+Debug : 2.167 Opening URL http://www.odu.edu/admission/admitted
+Debug : 2.167 URL http://www.odu.edu/admission/admitted is opened
+Debug : http://www.odu.edu/admission/admitted is saved into 3.9-out/602ee904d55f9da13ed9ef2354f17d68.html
+Debug : Found 78 links
+Debug : Sleep for 5 seconds
+Debug : 2.168 Opening URL http://www.odu.edu/admission/apply
+Debug : 2.168 URL http://www.odu.edu/admission/apply is opened
+Debug : http://www.odu.edu/admission/apply is saved into 3.9-out/fa4fcf729c7a8678de53de722e3c3377.html
+Debug : Found 45 links
+Debug : Sleep for 5 seconds
+Debug : 2.169 Opening URL http://www.odu.edu/admission/visit
+Debug : Sleep for 5 seconds
+Debug : 2.170 Opening URL http://www.odu.edu/academics
+Debug : 2.170 URL http://www.odu.edu/academics is opened
+Debug : http://www.odu.edu/academics is saved into 3.9-out/1296c9e3187149a8ccd65ca016bfc896.html
+Debug : Found 203 links
+Debug : Sleep for 5 seconds
+Debug : 2.171 Opening URL https://online.odu.edu
+Debug : 2.171 URL https://online.odu.edu is opened
+Debug : https://online.odu.edu is saved into 3.9-out/302787c8c229954662771fb60c651818.html
+Debug : Found 23 links
+Debug : Sleep for 5 seconds
+Debug : 2.172 Opening URL http://www.odu.edu/regionalcenters
+Debug : 2.172 URL http://www.odu.edu/regionalcenters is opened
+Debug : http://www.odu.edu/regionalcenters is saved into 3.9-out/2ca1964d6a70770ad8af9fc5ee21bd45.html
+Debug : Found 92 links
+Debug : Sleep for 5 seconds
+Debug : 2.173 Opening URL http://www.odu.edu
+Debug : 2.173 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.174 Opening URL http://www.odu.edu/academics/programs/undergraduate
+Debug : 2.174 URL http://www.odu.edu/academics/programs/undergraduate is opened
+Debug : http://www.odu.edu/academics/programs/undergraduate is saved into 3.9-out/9bff0d72d427bce1837dcab028bdfe11.html
+Debug : Found 1900 links
+Debug : Sleep for 5 seconds
+Debug : 2.175 Opening URL http://www.odu.edu/admission/undergraduate
+Debug : 2.175 URL http://www.odu.edu/admission/undergraduate is opened
+Debug : http://www.odu.edu/admission/undergraduate is saved into 3.9-out/ead94624fbdc0942fbd3595ca0b4bed3.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.176 Opening URL http://www.odu.edu
+Debug : 2.176 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.177 Opening URL http://www.odu.edu/academics/programs/masters
+Debug : 2.177 URL http://www.odu.edu/academics/programs/masters is opened
+Debug : http://www.odu.edu/academics/programs/masters is saved into 3.9-out/92d70817f635d0659a109df2fc69ab78.html
+Debug : Found 1900 links
+Debug : Sleep for 5 seconds
+Debug : 2.178 Opening URL http://www.odu.edu/academics/programs/doctoral
+Debug : 2.178 URL http://www.odu.edu/academics/programs/doctoral is opened
+Debug : http://www.odu.edu/academics/programs/doctoral is saved into 3.9-out/79469aae61339aa27ac2b9c6e0cf8403.html
+Debug : Found 1900 links
+Debug : Sleep for 5 seconds
+Debug : 2.179 Opening URL http://www.odu.edu/admission/graduate
+Debug : 2.179 URL http://www.odu.edu/admission/graduate is opened
+Debug : http://www.odu.edu/admission/graduate is saved into 3.9-out/05e8ba18501c8e2e5d7413cfe2c3a1e7.html
+Debug : Found 106 links
+Debug : Sleep for 5 seconds
+Debug : 2.180 Opening URL http://www.odu.edu
+Debug : 2.180 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.181 Opening URL http://www.odu.edu/admission/non-degree-admission
+Debug : 2.181 URL http://www.odu.edu/admission/non-degree-admission is opened
+Debug : http://www.odu.edu/admission/non-degree-admission is saved into 3.9-out/104c057c9f9e88766c1c8a1813242a56.html
+Debug : Found 79 links
+Debug : Sleep for 5 seconds
+Debug : 2.182 Opening URL http://www.odu.edu
+Debug : 2.182 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.183 Opening URL http://www.odu.edu/cepd
+Debug : 2.183 URL http://www.odu.edu/cepd is opened
+Debug : http://www.odu.edu/cepd is saved into 3.9-out/ac00d47828f5954abf9ca23a881a4ff5.html
+Debug : Found 170 links
+Debug : Sleep for 5 seconds
+Debug : 2.184 Opening URL http://www.odu.edu
+Debug : 2.184 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.185 Opening URL http://www.odu.edu/academics/online
+Debug : 2.185 URL http://www.odu.edu/academics/online is opened
+Debug : http://www.odu.edu/academics/online is saved into 3.9-out/8d5a1eff08a7055f8523500e090cac17.html
+Debug : Found 23 links
+Debug : Sleep for 5 seconds
+Debug : 2.186 Opening URL http://www.odu.edu
+Debug : 2.186 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.187 Opening URL http://www.odu.edu/admission/undergraduate/transfer/guaranteed-admission
+Debug : 2.187 URL http://www.odu.edu/admission/undergraduate/transfer/guaranteed-admission is opened
+Debug : http://www.odu.edu/admission/undergraduate/transfer/guaranteed-admission is saved into 3.9-out/45a660b3e2df4b3c6658753f85216e43.html
+Debug : Found 98 links
+Debug : Sleep for 5 seconds
+Debug : 2.188 Opening URL http://www.odu.edu/admission/undergraduate/transfer
+Debug : 2.188 URL http://www.odu.edu/admission/undergraduate/transfer is opened
+Debug : http://www.odu.edu/admission/undergraduate/transfer is saved into 3.9-out/4fab0e44a8703af458d35ab3688f651f.html
+Debug : Found 116 links
+Debug : Sleep for 5 seconds
+Debug : 2.189 Opening URL http://www.odu.edu/admission/undergraduate/transfer/transfermation
+Debug : 2.189 URL http://www.odu.edu/admission/undergraduate/transfer/transfermation is opened
+Debug : http://www.odu.edu/admission/undergraduate/transfer/transfermation is saved into 3.9-out/85b93e6dfca0763b6d6880fdbb1bbd67.html
+Debug : Found 97 links
+Debug : Sleep for 5 seconds
+Debug : 2.190 Opening URL http://www.odu.edu
+Debug : 2.190 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.191 Opening URL http://www.odu.edu/admission/military-admission
+Debug : 2.191 URL http://www.odu.edu/admission/military-admission is opened
+Debug : http://www.odu.edu/admission/military-admission is saved into 3.9-out/a4009c6f515a5884166b36fcc57a64f9.html
+Debug : Found 123 links
+Debug : Sleep for 5 seconds
+Debug : 2.192 Opening URL http://www.odu.edu/milact
+Debug : Sleep for 5 seconds
+Debug : 2.193 Opening URL http://www.odu.edu
+Debug : 2.193 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.194 Opening URL http://www.odu.edu/admission/international
+Debug : 2.194 URL http://www.odu.edu/admission/international is opened
+Debug : http://www.odu.edu/admission/international is saved into 3.9-out/3afbef25f1e933f5856fc7241e9718e5.html
+Debug : Found 104 links
+Debug : Sleep for 5 seconds
+Debug : 2.195 Opening URL http://www.odu.edu
+Debug : 2.195 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.196 Opening URL http://www.odu.edu/educationalaccessibility
+Debug : 2.196 URL http://www.odu.edu/educationalaccessibility is opened
+Debug : http://www.odu.edu/educationalaccessibility is saved into 3.9-out/8d2ad287b6091e0cfb0f998a10fc7d4c.html
+Debug : Found 89 links
+Debug : Sleep for 5 seconds
+Debug : 2.197 Opening URL http://www.odu.edu/about/president/blog
+Debug : 2.197 URL http://www.odu.edu/about/president/blog is opened
+Debug : http://www.odu.edu/about/president/blog is saved into 3.9-out/291f95fa50f860303fe6b60e64078cab.html
+Debug : Found 116 links
+Debug : Sleep for 5 seconds
+Debug : 2.198 Opening URL http://www.odu.edu/news
+Debug : 2.198 URL http://www.odu.edu/news is opened
+Debug : http://www.odu.edu/news is saved into 3.9-out/1eae135fdd6297f23620078ab93b86a4.html
+Debug : Found 155 links
+Debug : Sleep for 5 seconds
+Debug : 2.199 Opening URL http://www.odu.edu/about/odu-publications/monarch-magazine
+Debug : 2.199 URL http://www.odu.edu/about/odu-publications/monarch-magazine is opened
+Debug : http://www.odu.edu/about/odu-publications/monarch-magazine is saved into 3.9-out/3bcfb5cac95afa48b618621bf1281d55.html
+Debug : Found 119 links
+Debug : Sleep for 5 seconds
+Debug : 2.200 Opening URL http://www.facebook.com/Old.Dominion.University
+Debug : 2.200 URL http://www.facebook.com/Old.Dominion.University is opened
+Debug : http://www.facebook.com/Old.Dominion.University is saved into 3.9-out/153372a029fbbf507ef61c91e11b4ac4.html
+Debug : Found 269 links
+Debug : Sleep for 5 seconds
+Debug : 2.201 Opening URL http://www.flickr.com/photos/oduphotos/sets/
+Debug : 2.201 URL http://www.flickr.com/photos/oduphotos/sets/ is opened
+Debug : http://www.flickr.com/photos/oduphotos/sets/ is saved into 3.9-out/6c1dcc5577770232d9d5b2f6d3e2932d.html
+Debug : Found 56 links
+Debug : Sleep for 5 seconds
+Debug : 2.202 Opening URL http://instagram.com/odupics
+Debug : 2.202 URL http://instagram.com/odupics is opened
+Debug : http://instagram.com/odupics is saved into 3.9-out/6272300da43c21c26c077e423cdbc1b4.html
+Debug : Sleep for 5 seconds
+Debug : 2.203 Opening URL http://pinterest.com/OldDominion
+Debug : 2.203 URL http://pinterest.com/OldDominion is opened
+Debug : http://pinterest.com/OldDominion is saved into 3.9-out/1be683ae6cf88016e992324164f90730.html
+Debug : Found 8 links
+Debug : Sleep for 5 seconds
+Debug : 2.204 Opening URL http://odublue.tumblr.com
+Debug : 2.204 URL http://odublue.tumblr.com is opened
+Debug : http://odublue.tumblr.com is saved into 3.9-out/dd3e1f45ca6bc077d0bd2a93c0f08988.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 2.205 Opening URL http://twitter.com/ODUnow
+Debug : 2.205 URL http://twitter.com/ODUnow is opened
+Debug : http://twitter.com/ODUnow is saved into 3.9-out/ee5a31cb7fed1ebb2a36da09d8d65af5.html
+Debug : Found 227 links
+Debug : Sleep for 5 seconds
+Debug : 2.206 Opening URL http://www.youtube.com/odu
+Debug : 2.206 URL http://www.youtube.com/odu is opened
+Debug : http://www.youtube.com/odu is saved into 3.9-out/3469240dc2e88c2d22e2979838c902c2.html
+Debug : Found 187 links
+Debug : Sleep for 5 seconds
+Debug : 2.207 Opening URL http://www.odu.edu/about/contact
+Debug : 2.207 URL http://www.odu.edu/about/contact is opened
+Debug : http://www.odu.edu/about/contact is saved into 3.9-out/431bf2881197872e88ff2ae6616138d2.html
+Debug : Found 98 links
+Debug : Sleep for 5 seconds
+Debug : 2.208 Opening URL http://www.odu.edu/about/visitors/directions
+Debug : 2.208 URL http://www.odu.edu/about/visitors/directions is opened
+Debug : http://www.odu.edu/about/visitors/directions is saved into 3.9-out/a5e2a128f4491acb01dc1ac3b69f9c1a.html
+Debug : Found 93 links
+Debug : Sleep for 5 seconds
+Debug : 2.209 Opening URL http://www.odu.edu/admission
+Debug : 2.209 URL http://www.odu.edu/admission is opened
+Debug : http://www.odu.edu/admission is saved into 3.9-out/00a3188fb3d84196f49aacf8689d996b.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.210 Opening URL http://www.odu.edu/about/support-odu
+Debug : 2.210 URL http://www.odu.edu/about/support-odu is opened
+Debug : http://www.odu.edu/about/support-odu is saved into 3.9-out/01f6ed044a479037a929a790d5736688.html
+Debug : Found 91 links
+Debug : Sleep for 5 seconds
+Debug : 2.211 Opening URL http://www.odu.edu/about/visitors
+Debug : 2.211 URL http://www.odu.edu/about/visitors is opened
+Debug : http://www.odu.edu/about/visitors is saved into 3.9-out/a6dab995bc351edcb494db85cbd6f36f.html
+Debug : Found 99 links
+Debug : Sleep for 5 seconds
+Debug : 2.212 Opening URL http://www.odu.edu/employment
+Debug : 2.212 URL http://www.odu.edu/employment is opened
+Debug : http://www.odu.edu/employment is saved into 3.9-out/27ca606f1a15c83c12250a4bf19ca39b.html
+Debug : Found 77 links
+Debug : Sleep for 5 seconds
+Debug : 2.213 Opening URL http://www.odu.edu/media
+Debug : 2.213 URL http://www.odu.edu/media is opened
+Debug : http://www.odu.edu/media is saved into 3.9-out/97b24f6ed1d460865e68208ab35e6257.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.214 Opening URL http://www.odu.edu/life/health-safety/alerts
+Debug : 2.214 URL http://www.odu.edu/life/health-safety/alerts is opened
+Debug : http://www.odu.edu/life/health-safety/alerts is saved into 3.9-out/8c9e0aa9d1b3118cfef5677450336f2e.html
+Debug : Found 87 links
+Debug : Sleep for 5 seconds
+Debug : 2.215 Opening URL http://www.odu.edu/link/c/connect
+Debug : 2.215 URL http://www.odu.edu/link/c/connect is opened
+Debug : http://www.odu.edu/link/c/connect is saved into 3.9-out/f2e998b396dcbd6ee2df4499bb7d40f3.html
+Debug : Found 198 links
+Debug : Sleep for 5 seconds
+Debug : 2.216 Opening URL http://www.facebook.com/Old.Dominion.University
+Debug : 2.216 URL http://www.facebook.com/Old.Dominion.University is opened
+Debug : http://www.facebook.com/Old.Dominion.University is saved into 3.9-out/153372a029fbbf507ef61c91e11b4ac4.html
+Debug : Found 269 links
+Debug : Sleep for 5 seconds
+Debug : 2.217 Opening URL https://twitter.com/ODUnow
+Debug : 2.217 URL https://twitter.com/ODUnow is opened
+Debug : https://twitter.com/ODUnow is saved into 3.9-out/083330f8d84104dae68940d02dbf4be5.html
+Debug : Found 227 links
+Debug : Sleep for 5 seconds
+Debug : 2.218 Opening URL http://pinterest.com/OldDominion/
+Debug : 2.218 URL http://pinterest.com/OldDominion/ is opened
+Debug : http://pinterest.com/OldDominion/ is saved into 3.9-out/10d6b2f085b6a8e4040a8823e1e0804d.html
+Debug : Found 8 links
+Debug : Sleep for 5 seconds
+Debug : 2.219 Opening URL https://plus.google.com/+olddominionuniversity
+Debug : 2.219 URL https://plus.google.com/+olddominionuniversity is opened
+Debug : https://plus.google.com/+olddominionuniversity is saved into 3.9-out/e12e3f9fffbe532120d1de95cb6c781b.html
+Debug : Found 62 links
+Debug : Sleep for 5 seconds
+Debug : 2.220 Opening URL http://www.youtube.com/odu
+Debug : 2.220 URL http://www.youtube.com/odu is opened
+Debug : http://www.youtube.com/odu is saved into 3.9-out/3469240dc2e88c2d22e2979838c902c2.html
+Debug : Found 187 links
+Debug : Sleep for 5 seconds
+Debug : 2.221 Opening URL http://itunes.odu.edu/
+Debug : 2.221 URL http://itunes.odu.edu/ is opened
+Debug : http://itunes.odu.edu/ is saved into 3.9-out/7c0f9e2b828ece63fdcdcc8bcd568a46.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 2.222 Opening URL http://www.odu.edu/about/contact
+Debug : 2.222 URL http://www.odu.edu/about/contact is opened
+Debug : http://www.odu.edu/about/contact is saved into 3.9-out/431bf2881197872e88ff2ae6616138d2.html
+Debug : Found 98 links
+Debug : Sleep for 5 seconds
+Debug : 2.223 Opening URL http://www.odu.edu/privacy
+Debug : 2.223 URL http://www.odu.edu/privacy is opened
+Debug : http://www.odu.edu/privacy is saved into 3.9-out/d2e5ed5874a3027060184acb27312aee.html
+Debug : Found 45 links
+Debug : Sleep for 5 seconds
+Debug : 2.224 Opening URL http://www.odu.edu/about
+Debug : 2.224 URL http://www.odu.edu/about is opened
+Debug : http://www.odu.edu/about is saved into 3.9-out/d066e405a993939837a1763be9f22f97.html
+Debug : Found 160 links
+Debug : Sleep for 5 seconds
+Debug : 2.225 Opening URL http://www.odu.edu/academics
+Debug : 2.225 URL http://www.odu.edu/academics is opened
+Debug : http://www.odu.edu/academics is saved into 3.9-out/1296c9e3187149a8ccd65ca016bfc896.html
+Debug : Found 203 links
+Debug : Sleep for 5 seconds
+Debug : 2.226 Opening URL http://www.odu.edu/life
+Debug : 2.226 URL http://www.odu.edu/life is opened
+Debug : http://www.odu.edu/life is saved into 3.9-out/4e5745903b5805cca657165db03b65bd.html
+Debug : Found 124 links
+Debug : Sleep for 5 seconds
+Debug : 2.227 Opening URL http://www.odu.edu/admission
+Debug : 2.227 URL http://www.odu.edu/admission is opened
+Debug : http://www.odu.edu/admission is saved into 3.9-out/00a3188fb3d84196f49aacf8689d996b.html
+Debug : Found 118 links
+Debug : Sleep for 5 seconds
+Debug : 2.228 Opening URL http://www.odu.edu/research
+Debug : 2.228 URL http://www.odu.edu/research is opened
+Debug : http://www.odu.edu/research is saved into 3.9-out/1ad0e80435fe4d1f7781b7a6211a0028.html
+Debug : Found 110 links
+Debug : Sleep for 5 seconds
+Debug : 2.229 Opening URL http://www.odusports.com/
+Debug : 2.229 URL http://www.odusports.com/ is opened
+Debug : http://www.odusports.com/ is saved into 3.9-out/0d6b0ad047738ca59a77741a16507f7d.html
+Debug : Found 110 links
+Debug : Sleep for 5 seconds
+Debug : 2.230 Opening URL http://www.odu.edu/a-to-z
+Debug : 2.230 URL http://www.odu.edu/a-to-z is opened
+Debug : http://www.odu.edu/a-to-z is saved into 3.9-out/752682a2e2ff0a6128b5a4210c445370.html
+Debug : Found 896 links
+Debug : Sleep for 5 seconds
+Debug : 2.231 Opening URL http://www.odu.edu/directory
+Debug : 2.231 URL http://www.odu.edu/directory is opened
+Debug : http://www.odu.edu/directory is saved into 3.9-out/e73ee6e66d7c91551a021097b5c3a600.html
+Debug : Found 60 links
+Debug : Sleep for 5 seconds
+Debug : 2.232 Opening URL http://www.odu.edu/library
+Debug : 2.232 URL http://www.odu.edu/library is opened
+Debug : http://www.odu.edu/library is saved into 3.9-out/34da442295e00c005986164a668f995c.html
+Debug : Found 113 links
+Debug : Sleep for 5 seconds
+Debug : 2.233 Opening URL http://www.odu.edu/calendar
+Debug : 2.233 URL http://www.odu.edu/calendar is opened
+Debug : http://www.odu.edu/calendar is saved into 3.9-out/4e1ae5d39bdb661977ac150edd09eb6b.html
+Debug : Found 107 links
+Debug : Sleep for 5 seconds
+Debug : 2.234 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.234 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.235 Opening URL http://www.cs.odu.edu/
+Debug : 2.235 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.236 Opening URL http://www.odu.edu
+Debug : 2.236 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.237 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.237 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.238 Opening URL http://www.cs.odu.edu/~mln/research/
+Debug : 2.238 URL http://www.cs.odu.edu/~mln/research/ is opened
+Debug : http://www.cs.odu.edu/~mln/research/ is saved into 3.9-out/2a47b2edb6390d1f30bd83220c1a4909.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 2.239 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 2.239 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into 3.9-out/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 2.240 Opening URL http://www.cs.odu.edu/~mln/teaching/
+Debug : 2.240 URL http://www.cs.odu.edu/~mln/teaching/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/ is saved into 3.9-out/312f0e30904d4c999a3e3fe74d9424be.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.241 Opening URL http://www.cs.odu.edu/~mln/service/
+Debug : 2.241 URL http://www.cs.odu.edu/~mln/service/ is opened
+Debug : http://www.cs.odu.edu/~mln/service/ is saved into 3.9-out/b0412c7003fd2e66aa279afc8bf5213f.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 2.242 Opening URL http://www.cs.odu.edu/~mln/personal/
+Debug : 2.242 URL http://www.cs.odu.edu/~mln/personal/ is opened
+Debug : http://www.cs.odu.edu/~mln/personal/ is saved into 3.9-out/5472b346fec5431e5839f4a470aa50c1.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 2.243 Opening URL http://www.larc.nasa.gov/
+Debug : 2.243 URL http://www.larc.nasa.gov/ is opened
+Debug : http://www.larc.nasa.gov/ is saved into 3.9-out/d7918e9d8c9149086ffc56e161607799.html
+Debug : Sleep for 5 seconds
+Debug : 2.244 Opening URL http://sils.unc.edu/
+Debug : 2.244 URL http://sils.unc.edu/ is opened
+Debug : http://sils.unc.edu/ is saved into 3.9-out/141b67bfcfe070af2a6250a7a6fe5ecb.html
+Debug : Found 77 links
+Debug : Sleep for 5 seconds
+Debug : 2.245 Opening URL http://www.openarchives.org/pmh/
+Debug : 2.245 URL http://www.openarchives.org/pmh/ is opened
+Debug : http://www.openarchives.org/pmh/ is saved into 3.9-out/ffb41178dbf44330e3c8ba0994188e0c.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 2.246 Opening URL http://www.openarchives.org/ore/
+Debug : 2.246 URL http://www.openarchives.org/ore/ is opened
+Debug : http://www.openarchives.org/ore/ is saved into 3.9-out/0f68f21aff0f38074da5352d149dd791.html
+Debug : Found 40 links
+Debug : Sleep for 5 seconds
+Debug : 2.247 Opening URL http://www.mementoweb.org/guide/rfc/ID/
+Debug : 2.247 URL http://www.mementoweb.org/guide/rfc/ID/ is opened
+Debug : http://www.mementoweb.org/guide/rfc/ID/ is saved into 3.9-out/1b276d4ae634f6ffe4e24edf80c561ba.html
+Debug : Found 624 links
+Debug : Sleep for 5 seconds
+Debug : 2.248 Opening URL http://www.openarchives.org/rs/toc
+Debug : 2.248 URL http://www.openarchives.org/rs/toc is opened
+Debug : http://www.openarchives.org/rs/toc is saved into 3.9-out/21c44257332cd700af1019907b16a9e3.html
+Debug : Found 22 links
+Debug : Sleep for 5 seconds
+Debug : 2.249 Opening URL http://ntrs.nasa.gov/
+Debug : 2.249 URL http://ntrs.nasa.gov/ is opened
+Debug : http://ntrs.nasa.gov/ is saved into 3.9-out/60715e0bb39b0d8bb44e356ac243c3b4.html
+Debug : Found 155 links
+Debug : Sleep for 5 seconds
+Debug : 2.250 Opening URL http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0643784
+Debug : Sleep for 5 seconds
+Debug : 2.251 Opening URL http://www.cs.odu.edu/~mln/cv.pdf
+Debug : 2.251 URL http://www.cs.odu.edu/~mln/cv.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/cv.pdf is saved into 3.9-out/c94cb16fc6ff8f553fc90f86ec9e6134.html
+Debug : Sleep for 5 seconds
+Debug : 2.252 Opening URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf
+Debug : 2.252 URL http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/nsf-cv-2014.pdf is saved into 3.9-out/667c934ed21266b674ddbb36886d42b3.html
+Debug : Sleep for 5 seconds
+Debug : 2.253 Opening URL http://www.cs.odu.edu/~mln/lineage.html
+Debug : 2.253 URL http://www.cs.odu.edu/~mln/lineage.html is opened
+Debug : http://www.cs.odu.edu/~mln/lineage.html is saved into 3.9-out/f20fc87fbd1c4d84970ca8aa83d48e97.html
+Debug : Found 9 links
+Debug : Sleep for 5 seconds
+Debug : 2.254 Opening URL http://www.cs.odu.edu/~mln/travel.html
+Debug : 2.254 URL http://www.cs.odu.edu/~mln/travel.html is opened
+Debug : http://www.cs.odu.edu/~mln/travel.html is saved into 3.9-out/ed7d908855f37d77f89a77fd58303938.html
+Debug : Found 119 links
+Debug : Sleep for 5 seconds
+Debug : 2.255 Opening URL http://www.cs.odu.edu/~mln/mln-ad.pdf
+Debug : 2.255 URL http://www.cs.odu.edu/~mln/mln-ad.pdf is opened
+Debug : http://www.cs.odu.edu/~mln/mln-ad.pdf is saved into 3.9-out/dec9e84f6be5899c0fd69cf5dbb707e2.html
+Debug : Sleep for 5 seconds
+Debug : 2.256 Opening URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research
+Debug : 2.256 URL https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is opened
+Debug : https://storify.com/michaelnelson/coverage-of-ws-dl-members-and-research is saved into 3.9-out/116cd4add2ba5c40814810fff1a0390e.html
+Debug : Found 105 links
+Debug : Sleep for 5 seconds
+Debug : 2.257 Opening URL http://ws-dl.blogspot.com/
+Debug : 2.257 URL http://ws-dl.blogspot.com/ is opened
+Debug : http://ws-dl.blogspot.com/ is saved into 3.9-out/7d6f9e8932c59bc180045a0721387807.html
+Debug : Found 1082 links
+Debug : Sleep for 5 seconds
+Debug : 2.258 Opening URL http://twitter.com/phonedude_mln
+Debug : 2.258 URL http://twitter.com/phonedude_mln is opened
+Debug : http://twitter.com/phonedude_mln is saved into 3.9-out/3265534346db64d6e1d17502124ccb36.html
+Debug : Found 268 links
+Debug : Sleep for 5 seconds
+Debug : 2.259 Opening URL https://twitter.com/phonedude_mln
+Debug : 2.259 URL https://twitter.com/phonedude_mln is opened
+Debug : https://twitter.com/phonedude_mln is saved into 3.9-out/0f645e022311a6dc73af1a3d545d9d52.html
+Debug : Found 268 links
+Debug : Sleep for 5 seconds
+Debug : 2.260 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.260 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.261 Opening URL http://www.cs.odu.edu/
+Debug : 2.261 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.262 Opening URL http://www.odu.edu
+Debug : 2.262 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.263 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.263 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.264 Opening URL http://www.cs.odu.edu/~mln/research/
+Debug : 2.264 URL http://www.cs.odu.edu/~mln/research/ is opened
+Debug : http://www.cs.odu.edu/~mln/research/ is saved into 3.9-out/2a47b2edb6390d1f30bd83220c1a4909.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 2.265 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 2.265 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into 3.9-out/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 2.266 Opening URL http://www.cs.odu.edu/~mln/teaching/
+Debug : 2.266 URL http://www.cs.odu.edu/~mln/teaching/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/ is saved into 3.9-out/312f0e30904d4c999a3e3fe74d9424be.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.267 Opening URL http://www.cs.odu.edu/~mln/service/
+Debug : 2.267 URL http://www.cs.odu.edu/~mln/service/ is opened
+Debug : http://www.cs.odu.edu/~mln/service/ is saved into 3.9-out/b0412c7003fd2e66aa279afc8bf5213f.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 2.268 Opening URL http://www.cs.odu.edu/~mln/personal/
+Debug : 2.268 URL http://www.cs.odu.edu/~mln/personal/ is opened
+Debug : http://www.cs.odu.edu/~mln/personal/ is saved into 3.9-out/5472b346fec5431e5839f4a470aa50c1.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 2.269 Opening URL http://twitter.com/WebSciDL
+Debug : 2.269 URL http://twitter.com/WebSciDL is opened
+Debug : http://twitter.com/WebSciDL is saved into 3.9-out/690f06c3019dfcda295963992d7b1255.html
+Debug : Found 246 links
+Debug : Sleep for 5 seconds
+Debug : 2.270 Opening URL http://ws-dl.blogspot.com/
+Debug : 2.270 URL http://ws-dl.blogspot.com/ is opened
+Debug : http://ws-dl.blogspot.com/ is saved into 3.9-out/7d6f9e8932c59bc180045a0721387807.html
+Debug : Found 1082 links
+Debug : Sleep for 5 seconds
+Debug : 2.271 Opening URL https://twitter.com/WebSciDL
+Debug : 2.271 URL https://twitter.com/WebSciDL is opened
+Debug : https://twitter.com/WebSciDL is saved into 3.9-out/e2adf5108db462a84beac6f3b5dfedd9.html
+Debug : Found 246 links
+Debug : Sleep for 5 seconds
+Debug : 2.272 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.272 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.273 Opening URL http://www.cs.odu.edu/
+Debug : 2.273 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.274 Opening URL http://www.odu.edu
+Debug : 2.274 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.275 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.275 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.276 Opening URL http://www.cs.odu.edu/~mln/research/
+Debug : 2.276 URL http://www.cs.odu.edu/~mln/research/ is opened
+Debug : http://www.cs.odu.edu/~mln/research/ is saved into 3.9-out/2a47b2edb6390d1f30bd83220c1a4909.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 2.277 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 2.277 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into 3.9-out/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 2.278 Opening URL http://www.cs.odu.edu/~mln/teaching/
+Debug : 2.278 URL http://www.cs.odu.edu/~mln/teaching/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/ is saved into 3.9-out/312f0e30904d4c999a3e3fe74d9424be.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.279 Opening URL http://www.cs.odu.edu/~mln/service/
+Debug : 2.279 URL http://www.cs.odu.edu/~mln/service/ is opened
+Debug : http://www.cs.odu.edu/~mln/service/ is saved into 3.9-out/b0412c7003fd2e66aa279afc8bf5213f.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 2.280 Opening URL http://www.cs.odu.edu/~mln/personal/
+Debug : 2.280 URL http://www.cs.odu.edu/~mln/personal/ is opened
+Debug : http://www.cs.odu.edu/~mln/personal/ is saved into 3.9-out/5472b346fec5431e5839f4a470aa50c1.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 2.281 Opening URL http://www.cs.odu.edu/~mln/pubs/all.html
+Debug : 2.281 URL http://www.cs.odu.edu/~mln/pubs/all.html is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/all.html is saved into 3.9-out/4e3851ffc08b61635873f13ae81a0f97.html
+Debug : Found 287 links
+Debug : Sleep for 5 seconds
+Debug : 2.282 Opening URL http://www.slideshare.net/phonedude/presentations
+Debug : 2.282 URL http://www.slideshare.net/phonedude/presentations is opened
+Debug : http://www.slideshare.net/phonedude/presentations is saved into 3.9-out/1674593e9946492f1a87b0f10c3d97f5.html
+Debug : Found 81 links
+Debug : Sleep for 5 seconds
+Debug : 2.283 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 2.283 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into 3.9-out/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 2.284 Opening URL http://www.cs.odu.edu/~mln/presentations.html
+Debug : 2.284 URL http://www.cs.odu.edu/~mln/presentations.html is opened
+Debug : http://www.cs.odu.edu/~mln/presentations.html is saved into 3.9-out/fbabc65a65b6ae7f792ad0cd55e98df6.html
+Debug : Found 52 links
+Debug : Sleep for 5 seconds
+Debug : 2.285 Opening URL http://en.wikipedia.org/wiki/Hirsch_number
+Debug : 2.285 URL http://en.wikipedia.org/wiki/Hirsch_number is opened
+Debug : http://en.wikipedia.org/wiki/Hirsch_number is saved into 3.9-out/f5a89c17a7f271a9f003589602eaf62c.html
+Debug : Found 548 links
+Debug : Sleep for 5 seconds
+Debug : 2.286 Opening URL http://bit.ly/sHRHuk
+Debug : 2.286 URL http://bit.ly/sHRHuk is opened
+Debug : http://bit.ly/sHRHuk is saved into 3.9-out/3c5d4d246811b3249f619e5b66e0bd99.html
+Debug : Found 270 links
+Debug : Sleep for 5 seconds
+Debug : 2.287 Opening URL https://aminer.org/profile/53f7f8e1dabfae7f97a3887b
+Debug : 2.287 URL https://aminer.org/profile/53f7f8e1dabfae7f97a3887b is opened
+Debug : https://aminer.org/profile/53f7f8e1dabfae7f97a3887b is saved into 3.9-out/715d7bd6b9238f75ba19d862d72243ac.html
+Debug : Sleep for 5 seconds
+Debug : 2.288 Opening URL https://academic.microsoft.com/#/search?iq=And%28Ty%3D%3D%270%27%2CComposite%28AA.AuId%3D2124413495%29%29&q=Michael%20L%20Nelson&from=0&sort=1
+Debug : 2.288 URL https://academic.microsoft.com/#/search?iq=And%28Ty%3D%3D%270%27%2CComposite%28AA.AuId%3D2124413495%29%29&q=Michael%20L%20Nelson&from=0&sort=1 is opened
+Debug : https://academic.microsoft.com/#/search?iq=And%28Ty%3D%3D%270%27%2CComposite%28AA.AuId%3D2124413495%29%29&q=Michael%20L%20Nelson&from=0&sort=1 is saved into 3.9-out/fbe904d835a014a0d43adeccb5467553.html
+Debug : Found 34 links
+Debug : Sleep for 5 seconds
+Debug : 2.289 Opening URL http://www.scopus.com/authid/detail.url?authorId=7403461363
+Debug : 2.289 URL http://www.scopus.com/authid/detail.url?authorId=7403461363 is opened
+Debug : http://www.scopus.com/authid/detail.url?authorId=7403461363 is saved into 3.9-out/698bfa2aa9b5099f2f08086806dd9e75.html
+Debug : Found 138 links
+Debug : Sleep for 5 seconds
+Debug : 2.290 Opening URL http://en.wikipedia.org/wiki/Gray_literature
+Debug : 2.290 URL http://en.wikipedia.org/wiki/Gray_literature is opened
+Debug : http://en.wikipedia.org/wiki/Gray_literature is saved into 3.9-out/a178e6fa74562c985c9c3fbbfd218931.html
+Debug : Found 295 links
+Debug : Sleep for 5 seconds
+Debug : 2.291 Opening URL http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/n/Nelson:Michael_L=.html
+Debug : 2.291 URL http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/n/Nelson:Michael_L=.html is opened
+Debug : http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/n/Nelson:Michael_L=.html is saved into 3.9-out/dd09d144784eb0b3d2913307db0c3e9a.html
+Debug : Found 6654 links
+Debug : Sleep for 5 seconds
+Debug : 2.292 Opening URL http://citeseer.csail.mit.edu/cs?cs=1&q=m+l.+nelson&submit=Documents&co=Citations&cm=50&cf=Any&ao=Citations&am=20&af=Any
+Debug : Sleep for 5 seconds
+Debug : 2.293 Opening URL http://portal.acm.org/author_page.cfm?id=81336491952
+Debug : 2.293 Cannot open URL http://portal.acm.org/author_page.cfm?id=81336491952, Status code: 403
+Debug : Sleep for 5 seconds
+Debug : 2.294 Opening URL http://orcid.org/0000-0003-3749-8116
+Debug : 2.294 URL http://orcid.org/0000-0003-3749-8116 is opened
+Debug : http://orcid.org/0000-0003-3749-8116 is saved into 3.9-out/e7d601a76feb3e16193d49d7c3b524e5.html
+Debug : Found 138 links
+Debug : Sleep for 5 seconds
+Debug : 2.295 Opening URL http://www.researchgate.net/profile/Michael_Nelson8
+Debug : 2.295 URL http://www.researchgate.net/profile/Michael_Nelson8 is opened
+Debug : http://www.researchgate.net/profile/Michael_Nelson8 is saved into 3.9-out/03e2f0351ae60e8a83e4d2cb903eef72.html
+Debug : Found 122 links
+Debug : Sleep for 5 seconds
+Debug : 2.296 Opening URL http://en.scientificcommons.org/michael_l_nelson
+Debug : 2.296 URL http://en.scientificcommons.org/michael_l_nelson is opened
+Debug : http://en.scientificcommons.org/michael_l_nelson is saved into 3.9-out/fea8eabcffade22011a740243d24c5ec.html
+Debug : Sleep for 5 seconds
+Debug : 2.297 Opening URL http://www.oakland.edu/enp/
+Debug : 2.297 URL http://www.oakland.edu/enp/ is opened
+Debug : http://www.oakland.edu/enp/ is saved into 3.9-out/f2d0637a615966b131d3bdbf2fd9194f.html
+Debug : Found 192 links
+Debug : Sleep for 5 seconds
+Debug : 2.298 Opening URL http://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon#Bacon_numbers
+Debug : 2.298 URL http://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon#Bacon_numbers is opened
+Debug : http://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon#Bacon_numbers is saved into 3.9-out/8dca3c058e42ac77e64fed49e7270e72.html
+Debug : Found 242 links
+Debug : Sleep for 5 seconds
+Debug : 2.299 Opening URL http://bit.ly/HZgwVJ
+Debug : 2.299 URL http://bit.ly/HZgwVJ is opened
+Debug : http://bit.ly/HZgwVJ is saved into 3.9-out/d0bdaaedba9016ec47d0825d98ca4f37.html
+Debug : Sleep for 5 seconds
+Debug : 2.300 Opening URL http://www.youtube.com/watch?v=qU3vIC8hxl4
+Debug : 2.300 URL http://www.youtube.com/watch?v=qU3vIC8hxl4 is opened
+Debug : http://www.youtube.com/watch?v=qU3vIC8hxl4 is saved into 3.9-out/09a536c5f99d7bcf8fbde589632d7724.html
+Debug : Found 71 links
+Debug : Sleep for 5 seconds
+Debug : 2.301 Opening URL http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number
+Debug : 2.301 URL http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number is opened
+Debug : http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number is saved into 3.9-out/df6d6071564d99abf716faa72e8ef580.html
+Debug : Found 734 links
+Debug : Sleep for 5 seconds
+Debug : 2.302 Opening URL http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number#Table
+Debug : 2.302 URL http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number#Table is opened
+Debug : http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number#Table is saved into 3.9-out/958f5bd430dc48c08dfe58b98b8642e8.html
+Debug : Found 734 links
+Debug : Sleep for 5 seconds
+Debug : 2.303 Opening URL http://www.slate.com/articles/sports/slate_labs/2013/10/six_degrees_of_kevin_garnett_connect_any_two_athletes_who_ve_ever_played.html
+Debug : 2.303 URL http://www.slate.com/articles/sports/slate_labs/2013/10/six_degrees_of_kevin_garnett_connect_any_two_athletes_who_ve_ever_played.html is opened
+Debug : http://www.slate.com/articles/sports/slate_labs/2013/10/six_degrees_of_kevin_garnett_connect_any_two_athletes_who_ve_ever_played.html is saved into 3.9-out/784bd6b7aebbf006cee9aacaaf6ef11f.html
+Debug : Found 116 links
+Debug : Sleep for 5 seconds
+Debug : 2.304 Opening URL https://en.wikipedia.org/wiki/Kevin_Garnett
+Debug : 2.304 URL https://en.wikipedia.org/wiki/Kevin_Garnett is opened
+Debug : https://en.wikipedia.org/wiki/Kevin_Garnett is saved into 3.9-out/0dcba709dcf4eb6187e7e86989eb5786.html
+Debug : Found 1539 links
+Debug : Sleep for 5 seconds
+Debug : 2.305 Opening URL https://en.wikipedia.org/wiki/James_Posey
+Debug : 2.305 URL https://en.wikipedia.org/wiki/James_Posey is opened
+Debug : https://en.wikipedia.org/wiki/James_Posey is saved into 3.9-out/f01b56ecfebff9702a92bf59d44b1660.html
+Debug : Found 556 links
+Debug : Sleep for 5 seconds
+Debug : 2.306 Opening URL https://en.wikipedia.org/wiki/Chris_Gatling
+Debug : 2.306 URL https://en.wikipedia.org/wiki/Chris_Gatling is opened
+Debug : https://en.wikipedia.org/wiki/Chris_Gatling is saved into 3.9-out/30e7275c6df10055a1e4f475d19f7aad.html
+Debug : Found 361 links
+Debug : Sleep for 5 seconds
+Debug : 2.307 Opening URL http://www.cs.odu.edu/wilson.shtml
+Debug : 2.307 URL http://www.cs.odu.edu/wilson.shtml is opened
+Debug : http://www.cs.odu.edu/wilson.shtml is saved into 3.9-out/1b31768336077edb1591d5ee9c43d5d5.html
+Debug : Found 59 links
+Debug : Sleep for 5 seconds
+Debug : 2.308 Opening URL http://www.justinfbrunelle.com/
+Debug : 2.308 URL http://www.justinfbrunelle.com/ is opened
+Debug : http://www.justinfbrunelle.com/ is saved into 3.9-out/c032e40ba3e90cdb13f4099f6622dc9c.html
+Debug : Sleep for 5 seconds
+Debug : 2.309 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.309 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.310 Opening URL http://www.cs.odu.edu/
+Debug : 2.310 URL http://www.cs.odu.edu/ is opened
+Debug : http://www.cs.odu.edu/ is saved into 3.9-out/f9631544f10b0f63a190ff3cbe52c1e9.html
+Debug : Found 90 links
+Debug : Sleep for 5 seconds
+Debug : 2.311 Opening URL http://www.odu.edu
+Debug : 2.311 URL http://www.odu.edu is opened
+Debug : http://www.odu.edu is saved into 3.9-out/ea1e65eafb9d130b3ba5cf86a692a02b.html
+Debug : Found 117 links
+Debug : Sleep for 5 seconds
+Debug : 2.312 Opening URL http://www.cs.odu.edu/~mln/
+Debug : 2.312 URL http://www.cs.odu.edu/~mln/ is opened
+Debug : http://www.cs.odu.edu/~mln/ is saved into 3.9-out/53b48073bf6954a3c11c972f5009ac56.html
+Debug : Found 26 links
+Debug : Sleep for 5 seconds
+Debug : 2.313 Opening URL http://www.cs.odu.edu/~mln/research/
+Debug : 2.313 URL http://www.cs.odu.edu/~mln/research/ is opened
+Debug : http://www.cs.odu.edu/~mln/research/ is saved into 3.9-out/2a47b2edb6390d1f30bd83220c1a4909.html
+Debug : Found 12 links
+Debug : Sleep for 5 seconds
+Debug : 2.314 Opening URL http://www.cs.odu.edu/~mln/pubs/
+Debug : 2.314 URL http://www.cs.odu.edu/~mln/pubs/ is opened
+Debug : http://www.cs.odu.edu/~mln/pubs/ is saved into 3.9-out/a0e18c1572a1d06142847f283bc22e8e.html
+Debug : Found 37 links
+Debug : Sleep for 5 seconds
+Debug : 2.315 Opening URL http://www.cs.odu.edu/~mln/teaching/
+Debug : 2.315 URL http://www.cs.odu.edu/~mln/teaching/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/ is saved into 3.9-out/312f0e30904d4c999a3e3fe74d9424be.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.316 Opening URL http://www.cs.odu.edu/~mln/service/
+Debug : 2.316 URL http://www.cs.odu.edu/~mln/service/ is opened
+Debug : http://www.cs.odu.edu/~mln/service/ is saved into 3.9-out/b0412c7003fd2e66aa279afc8bf5213f.html
+Debug : Found 80 links
+Debug : Sleep for 5 seconds
+Debug : 2.317 Opening URL http://www.cs.odu.edu/~mln/personal/
+Debug : 2.317 URL http://www.cs.odu.edu/~mln/personal/ is opened
+Debug : http://www.cs.odu.edu/~mln/personal/ is saved into 3.9-out/5472b346fec5431e5839f4a470aa50c1.html
+Debug : Found 28 links
+Debug : Sleep for 5 seconds
+Debug : 2.318 Opening URL http://www.cs.odu.edu/~mln/teaching/cs895-s14/
+Debug : 2.318 URL http://www.cs.odu.edu/~mln/teaching/cs895-s14/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs895-s14/ is saved into 3.9-out/3926eaa6023b09a23d63db56b3eb3948.html
+Debug : Found 51 links
+Debug : Sleep for 5 seconds
+Debug : 2.319 Opening URL http://www.cs.odu.edu/~mln/teaching/cs895-s13/
+Debug : 2.319 URL http://www.cs.odu.edu/~mln/teaching/cs895-s13/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs895-s13/ is saved into 3.9-out/2b1b03183a892393df40f4f8a36e42ef.html
+Debug : Found 51 links
+Debug : Sleep for 5 seconds
+Debug : 2.320 Opening URL http://www.cs.odu.edu/~mln/teaching/cs895-f11/
+Debug : 2.320 URL http://www.cs.odu.edu/~mln/teaching/cs895-f11/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs895-f11/ is saved into 3.9-out/8122cf632c1dca49c0f33143eda94421.html
+Debug : Found 41 links
+Debug : Sleep for 5 seconds
+Debug : 2.321 Opening URL http://www.cs.odu.edu/~mln/teaching/cs895-f10/
+Debug : 2.321 URL http://www.cs.odu.edu/~mln/teaching/cs895-f10/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs895-f10/ is saved into 3.9-out/ab01984a0e5eb6fcff92e192dc8eda41.html
+Debug : Found 27 links
+Debug : Sleep for 5 seconds
+Debug : 2.322 Opening URL http://www.cs.odu.edu/~mln/teaching/cs895-s09/
+Debug : 2.322 URL http://www.cs.odu.edu/~mln/teaching/cs895-s09/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs895-s09/ is saved into 3.9-out/050e747c07d338770542215f003202bf.html
+Debug : Found 35 links
+Debug : Sleep for 5 seconds
+Debug : 2.323 Opening URL http://www.cs.odu.edu/~mln/teaching/cs791-s08/
+Debug : 2.323 URL http://www.cs.odu.edu/~mln/teaching/cs791-s08/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs791-s08/ is saved into 3.9-out/f5b1d333100196abade4193075f0eb8f.html
+Debug : Found 45 links
+Debug : Sleep for 5 seconds
+Debug : 2.324 Opening URL http://www.cs.odu.edu/~mln/teaching/cs791-s07/
+Debug : 2.324 URL http://www.cs.odu.edu/~mln/teaching/cs791-s07/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs791-s07/ is saved into 3.9-out/ee4a8f300ee12e151907b143dd87de97.html
+Debug : Found 43 links
+Debug : Sleep for 5 seconds
+Debug : 2.325 Opening URL http://www.cs.odu.edu/~mln/teaching/cs891-s06/
+Debug : 2.325 URL http://www.cs.odu.edu/~mln/teaching/cs891-s06/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs891-s06/ is saved into 3.9-out/1e50f6082ad8b6f741843158eb0c0376.html
+Debug : Found 69 links
+Debug : Sleep for 5 seconds
+Debug : 2.326 Opening URL http://www.cs.odu.edu/~mln/teaching/cs791-s05/
+Debug : 2.326 URL http://www.cs.odu.edu/~mln/teaching/cs791-s05/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs791-s05/ is saved into 3.9-out/45faa17795974130403f9ecb2c6861f6.html
+Debug : Found 73 links
+Debug : Sleep for 5 seconds
+Debug : 2.327 Opening URL http://www.cs.odu.edu/~mln/teaching/cs791-s04/
+Debug : 2.327 URL http://www.cs.odu.edu/~mln/teaching/cs791-s04/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs791-s04/ is saved into 3.9-out/15867f724cd3a7a89052a918684bbe35.html
+Debug : Found 67 links
+Debug : Sleep for 5 seconds
+Debug : 2.328 Opening URL https://phonedude.github.io/cs834-f16/
+Debug : 2.328 URL https://phonedude.github.io/cs834-f16/ is opened
+Debug : https://phonedude.github.io/cs834-f16/ is saved into 3.9-out/23da4b50e5892c1aef68a1aa0c51959a.html
+Debug : Found 27 links
+Debug : Sleep for 5 seconds
+Debug : 2.329 Opening URL http://www.cs.odu.edu/~mln/teaching/cs834-f15/
+Debug : 2.329 URL http://www.cs.odu.edu/~mln/teaching/cs834-f15/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs834-f15/ is saved into 3.9-out/24163d4a947cc6cb9cc09cdc696009be.html
+Debug : Found 51 links
+Debug : Sleep for 5 seconds
+Debug : 2.330 Opening URL http://www.cs.odu.edu/~mln/teaching/cs851-s15/
+Debug : 2.330 URL http://www.cs.odu.edu/~mln/teaching/cs851-s15/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs851-s15/ is saved into 3.9-out/7222d3e6381d34ab883d85a9b8337e6f.html
+Debug : Found 66 links
+Debug : Sleep for 5 seconds
+Debug : 2.331 Opening URL http://www.cs.odu.edu/~mln/teaching/cs751-s11/
+Debug : 2.331 URL http://www.cs.odu.edu/~mln/teaching/cs751-s11/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs751-s11/ is saved into 3.9-out/c43df0e5de704abbcce55ab7c524a7da.html
+Debug : Found 63 links
+Debug : Sleep for 5 seconds
+Debug : 2.332 Opening URL http://www.cs.odu.edu/~mln/teaching/cs751-s10/
+Debug : 2.332 URL http://www.cs.odu.edu/~mln/teaching/cs751-s10/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs751-s10/ is saved into 3.9-out/e47eb81038a04db1b8c904a929fe48e5.html
+Debug : Found 61 links
+Debug : Sleep for 5 seconds
+Debug : 2.333 Opening URL http://www.cs.odu.edu/~mln/teaching/cs751-f06/
+Debug : 2.333 URL http://www.cs.odu.edu/~mln/teaching/cs751-f06/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs751-f06/ is saved into 3.9-out/ae4f766b9775ea30a48e024c1e92cf42.html
+Debug : Found 62 links
+Debug : Sleep for 5 seconds
+Debug : 2.334 Opening URL http://www.cs.odu.edu/~mln/teaching/cs695-f05/
+Debug : 2.334 URL http://www.cs.odu.edu/~mln/teaching/cs695-f05/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs695-f05/ is saved into 3.9-out/10bca14d217cc26fe860039edabb4d05.html
+Debug : Found 56 links
+Debug : Sleep for 5 seconds
+Debug : 2.335 Opening URL http://www.cs.odu.edu/~mln/teaching/cs695-f04/
+Debug : 2.335 URL http://www.cs.odu.edu/~mln/teaching/cs695-f04/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs695-f04/ is saved into 3.9-out/25c4963088506649e3dc1ecdad83f019.html
+Debug : Found 50 links
+Debug : Sleep for 5 seconds
+Debug : 2.336 Opening URL http://www.cs.odu.edu/~mln/teaching/cs695-f03/
+Debug : 2.336 URL http://www.cs.odu.edu/~mln/teaching/cs695-f03/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs695-f03/ is saved into 3.9-out/001ae29da82c08c7c68d40d735e1f35e.html
+Debug : Found 52 links
+Debug : Sleep for 5 seconds
+Debug : 2.337 Opening URL http://www.cs.odu.edu/~mln/teaching/cs695-f02/
+Debug : 2.337 URL http://www.cs.odu.edu/~mln/teaching/cs695-f02/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs695-f02/ is saved into 3.9-out/aab613577bcc4eeda3099c6a56419e2d.html
+Debug : Found 31 links
+Debug : Sleep for 5 seconds
+Debug : 2.338 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-f14/
+Debug : 2.338 URL http://www.cs.odu.edu/~mln/teaching/cs595-f14/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-f14/ is saved into 3.9-out/520bc207035b9d9347cb6bd64e74f3c9.html
+Debug : Found 53 links
+Debug : Sleep for 5 seconds
+Debug : 2.339 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-f13/
+Debug : 2.339 URL http://www.cs.odu.edu/~mln/teaching/cs595-f13/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-f13/ is saved into 3.9-out/6c441972fe3335a02c38deda1866c4d5.html
+Debug : Found 51 links
+Debug : Sleep for 5 seconds
+Debug : 2.340 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-f04/
+Debug : 2.340 URL http://www.cs.odu.edu/~mln/teaching/cs595-f04/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-f04/ is saved into 3.9-out/1c9bc5bb3e744142d3254d69b1a577a7.html
+Debug : Found 64 links
+Debug : Sleep for 5 seconds
+Debug : 2.341 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-f03/
+Debug : 2.341 URL http://www.cs.odu.edu/~mln/teaching/cs595-f03/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-f03/ is saved into 3.9-out/88c038bf770b143e68e8c5a5adfcaa92.html
+Debug : Found 66 links
+Debug : Sleep for 5 seconds
+Debug : 2.342 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-s12/
+Debug : 2.342 URL http://www.cs.odu.edu/~mln/teaching/cs595-s12/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-s12/ is saved into 3.9-out/f8b7d6bf8579af7df511aa5d7686f0b7.html
+Debug : Found 77 links
+Debug : Sleep for 5 seconds
+Debug : 2.343 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-s09/
+Debug : 2.343 URL http://www.cs.odu.edu/~mln/teaching/cs595-s09/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-s09/ is saved into 3.9-out/7ea2fcd8d2383206a9738fd10d35cb53.html
+Debug : Found 75 links
+Debug : Sleep for 5 seconds
+Debug : 2.344 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-s07/
+Debug : 2.344 URL http://www.cs.odu.edu/~mln/teaching/cs595-s07/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-s07/ is saved into 3.9-out/cef47d2d89223f17245c4da81981f9ea.html
+Debug : Found 74 links
+Debug : Sleep for 5 seconds
+Debug : 2.345 Opening URL http://www.cs.odu.edu/~mln/teaching/cs595-s06/
+Debug : 2.345 URL http://www.cs.odu.edu/~mln/teaching/cs595-s06/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs595-s06/ is saved into 3.9-out/71694b874f35f62a1b30abdd5e99bb4b.html
+Debug : Found 77 links
+Debug : Sleep for 5 seconds
+Debug : 2.346 Opening URL http://phonedude.github.io/cs532-s16/
+Debug : 2.346 URL http://phonedude.github.io/cs532-s16/ is opened
+Debug : http://phonedude.github.io/cs532-s16/ is saved into 3.9-out/c523e473b9d8cc44cc9c0053740936a5.html
+Debug : Found 44 links
+Debug : Sleep for 5 seconds
+Debug : 2.347 Opening URL http://www.cs.odu.edu/~mln/teaching/cs518-f08/
+Debug : 2.347 URL http://www.cs.odu.edu/~mln/teaching/cs518-f08/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs518-f08/ is saved into 3.9-out/b445699f28291c2f8aecde0b06e58958.html
+Debug : Found 57 links
+Debug : Sleep for 5 seconds
+Debug : 2.348 Opening URL http://www.cs.odu.edu/~mln/teaching/cs518-f07/
+Debug : 2.348 URL http://www.cs.odu.edu/~mln/teaching/cs518-f07/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs518-f07/ is saved into 3.9-out/197291ee6217de2862df43728448e38e.html
+Debug : Found 57 links
+Debug : Sleep for 5 seconds
+Debug : 2.349 Opening URL http://www.cs.odu.edu/~mln/teaching/cs518-f06/
+Debug : 2.349 URL http://www.cs.odu.edu/~mln/teaching/cs518-f06/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs518-f06/ is saved into 3.9-out/fa93c6bc14bd8d9699172bec7e958eea.html
+Debug : Found 54 links
+Debug : Sleep for 5 seconds
+Debug : 2.350 Opening URL http://www.cs.odu.edu/~mln/teaching/cs410-s03/
+Debug : 2.350 URL http://www.cs.odu.edu/~mln/teaching/cs410-s03/ is opened
+Debug : http://www.cs.odu.edu/~mln/teaching/cs410-s03/ is saved into 3.9-out/0e520fce7a94be136afe9b591592e691.html
+Debug : Found 2 links
+Debug : Sleep for 5 seconds
+Debug : 2.351 Opening URL http://www.cs.odu.edu/~sainswor/
+Debug : 2.351 URL http://www.cs.odu.edu/~sainswor/ is opened
+Debug : http://www.cs.odu.edu/~sainswor/ is saved into 3.9-out/876a1d615e82d074029e42beb34eaf63.html
+Debug : Found 34 links
+Debug : Sleep for 5 seconds
+Debug : 2.352 Opening URL http://www.cs.odu.edu/~salam/
+Debug : 2.352 URL http://www.cs.odu.edu/~salam/ is opened
+Debug : http://www.cs.odu.edu/~salam/ is saved into 3.9-out/96b04760382488084744c74d97c44e14.html
+Debug : Found 2 links
+Debug : Sleep for 5 seconds
+Debug : 2.353 Opening URL http://cs.odu.edu/~sjone/
+Debug : 2.353 URL http://cs.odu.edu/~sjone/ is opened
+Debug : http://cs.odu.edu/~sjone/ is saved into 3.9-out/ebec426b34e431340bf7e3549f67f521.html
+Debug : Found 22 links
+Debug : Sleep for 5 seconds
+Debug : 2.354 Opening URL http://www.cs.odu.edu/~lnguyen/
+Debug : 2.354 URL http://www.cs.odu.edu/~lnguyen/ is opened
+Debug : http://www.cs.odu.edu/~lnguyen/ is saved into 3.9-out/bd9d05ec2a3f6f0071faa91582e41d55.html
+Debug : Found 27 links
+Debug : Sleep for 5 seconds
+Debug : 2.355 Opening URL http://www.cs.odu.edu/~anwala/
+Debug : 2.355 URL http://www.cs.odu.edu/~anwala/ is opened
+Debug : http://www.cs.odu.edu/~anwala/ is saved into 3.9-out/4dfcc61452c858e821e39790b8d28108.html
+Debug : Sleep for 5 seconds
+Debug : 2.356 Opening URL http://www.cs.odu.edu/~yasmin/
+Debug : 2.356 URL http://www.cs.odu.edu/~yasmin/ is opened
+Debug : http://www.cs.odu.edu/~yasmin/ is saved into 3.9-out/be3a5ed6a4a66e9d0b355d3d1d1f350c.html
+Debug : Found 8 links
+Debug : Sleep for 5 seconds
+Debug : 2.357 Opening URL http://www.cs.odu.edu/~mln/pubs/phd/alnoamany-phd-dissertation.pdf
+Debug : 2.357 URL http://www.cs.odu.edu/~mln/pubs/phd/alnoamany-phd-dissertation.pdf is opened
+Debug : Sleep for 5 seconds
+Debug : 2.358 Opening URL http://cs.odu.edu/~jbrunelle/
+Debug : 2.358 URL http://cs.odu.edu/~jbrunelle/ is opened
+Debug : http://cs.odu.edu/~jbrunelle/ is saved into 3.9-out/33e1327fc5a69be942c5d6daf6a5c57c.html
+Debug : Sleep for 5 seconds
+Debug : 2.359 Opening URL http://www.cs.odu.edu/~mln/pubs/phd/brunelle-phd-dissertation.pdf

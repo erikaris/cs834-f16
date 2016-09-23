@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html class="no-js oldie ng-app:orcidApp"  ng-app="orcidApp" id="ng-app" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Michael Nelson (0000-0003-3749-8116) - ORCID | Connecting Research and Researchers</title>
+    <meta name="description" content="">
+    <meta name="author" content="ORCID">
+    <meta name="_csrf" content=""/>
+    <meta name="_csrf_header" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- hack in json3 to allow angular js to work in IE7 -->
+    <!-- we also need this JSON parser for orcidVar -->
+    <!--[if IE 7]>
+    	<script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.2.4/json3.min.js" type="text/javascript"></script>
+    	<script type="text/javascript">
+			if (typeof JSON == 'undefined') {
+    			document.write(unescape("%3Cscript src='https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/json3/3.2.4/json3.min.js' type='text/javascript'%3E%3C/script%3E"));
+			}
+		</script>
+    <![endif]-->
+    
+	<!-- Google Analytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-17492803-4', 'auto', {'legacyCookieDomain': 'orcid.org'});  // Replace with your property ID.
+	ga('send', 'pageview');
+
+	</script>
+	<!-- End Google Analytics -->	 
+    
+    <script type="text/javascript">
+        var orcidVar = {};
+        orcidVar.recaptchaKey = '6Lfj4AoTAAAAAAjr0x3Gu2RcVpA1-0LJAhV-GRQj';
+        orcidVar.baseUri = 'https://orcid.org';
+        orcidVar.baseUriHttp = 'http://orcid.org';
+        orcidVar.pubBaseUri = 'https://pub.orcid.org';
+        orcidVar.workIds = JSON.parse("[5008563,5008564,5008565,13248394,13248395,13248396,13248397,13248398,13248399,13248400,13248401,13248402,13248403,13248404,13248405,13248406,13248407,13248408,13248409,13248410,13248411,13248412,13248413,13248414,13248415,13248416,13248417,13248418,13248419,13248420,13248421,13248422,13248423,13248424,13248425,13248426,13248427,13248428,13248429,13248430,13248431,13248432,13248433,13248434,13248435,13248436,13248437,13248438,13248439,13248440,13248441,13248442,13248443,13248444,13248445,13248446,13248447,13248448,13248449,13248450,13248451,13248452,13248453,13248454,13248455,13248456,13248457,13248458,13248459,13248460,13248461,13248462,13248463,13248464,13248465,13248466,13248467,13248468,13248469,13248470,13248471,13248472,13248473,13248474,13248475,13248476,13248477,13248478,13248479,13248480,13248481,13248482,13248483,13248484,13248485,13248486,13248487,13248488,13248489,13248490,13248491,13248492,13248494,13248496,13248497,13248498,13248500,13248501,13248502,13248503,13248504,13248505,13248506,13248507,13248508,13248509,13248510,13248511,13248512,13248513,13248514,13248515,13248516,13248517,13248518,13248519,13248520,13248521,20545115,20545114,20545117,20545116,20545119,20545118,20545120,20545121,20545123,20545122,20545124,20545126,20545125,20545127,20545128,20545129,20545131,20545130,20545132,20545134,20545133,20545135,20545136,20545138,20545137,20545139,20545140,20545141,20545142,20545143,20545144,20545145,20545147,20545146,20545148,20545149,20545150,20545152,20545151,20545154,20545153,20545155,20545157,20545156,20545159,20545158,20545160,20545161,20545163,20545162,20545164,20545166,20545165,20545167,20545168,20545169,20545170,20545171,20545172,20545173,20545174,20545175,20545177,20545176,20545179,20545178,20545181,20545180,20545182,20545183,20545185,20545184,20545186,20545187,20545188,20545190,20545189,20545191,20545192,20545194,20545193,20545195,20545197,20545196,20545198,20545199,20545200,20545201,20545202,20545203,20545205,20545206,20545204,20545208,20545207,20545209,20545210,20545212,20545211,20545213,20545214,20545216,20545215,20545217,20545218,20545220,20545219,20545221,20545223,20545222,20545225,20545224,20545226,20545227,20545228,20545229,20545232,20545230,20545231,20545234,20545233,20545236,20545235,20545238,20545237,20545242,20545243,20545244,20545245,20545246,20545247,20545248,20545249,20545250,20545251,20545252,20545253,20545254,20545255,20545256,20545257,20545258,20545259]");
+        orcidVar.affiliationIdsJson = JSON.parse("[1498840,1498838,1498834,1498833,1498831]");
+        orcidVar.fundingIdsJson = JSON.parse("[144647,144639,144643,144640,144648,144645,144644,144646,144642,144641]");
+      	orcidVar.PeerReviewIds = JSON.parse("[]");
+      orcidVar.orcidId = '0000-0003-3749-8116';
+      orcidVar.orcidIdHash = '';
+      orcidVar.realOrcidId = '';
+      orcidVar.jsMessages = JSON.parse("{\"locale\":\"en\",\"messages\":{\"fatal.wrongProtocol\":\"Policy supplied to DS was not \\\"urn:oasis:names:tc:SAML:profiles:SSO:idpdiscovery-protocol:single\\\"\",\"idpList.showSearch\":\"Allow me to specify the site\",\"fatal.noparms\":\"No parameters to discovery session and no defaultReturn parameter configured\",\"manage_member.edit_member.success\":\"Member was successfully updated\",\"funding.add.external_id.value.placeholder.grant\":\"Enter grant number\",\"idpEntry.NoPreferred.label\":\"Enter your organization\'s name\",\"funding.add.external_id.title.grant\":\"GRANT NUMBER\",\"common.old.browser\":\"We notice you are using an older browser. Some features on this site may not work correctly. <a href=\\\"http:\/\/support.orcid.org\/knowledgebase\/articles\/159728-upgrade-your-browser\\\">We recommend you upgrade<\/a> to a later version of this browser or switch to a different one.\",\"idpList.defaultOptionLabel\":\"Please select your organization...\",\"idpList.label\":\"Or select your organization from the list below\",\"admin.profile_deactivation.success\":\"Profile successfully deactivated.\",\"funding.add.external_id.url.placeholder.contract\":\"Enter contract URL\",\"fatal.noXMLHttpRequest\":\"Browser does not support XMLHttpRequest, unable to load IdP selection data\",\"funding.add.external_id.value.label.award\":\"Award number\",\"fatal.noReturnURL\":\"No URL return parameter provided\",\"funding.add.external_id.value.label.contract\":\"Contract number\",\"delegators.nomatches\":\"no matches, please search again\",\"orcid.frontend.security.deprecated\":\"This account is deprecated.\",\"defaultLogoAlt\":\"DefaultLogo\",\"idpList.NoPreferred.label\":\"Select your organization from the list below\",\"manage.editTable.edit\":\"Edit\",\"manage.socialNetworks.edit\":\"Edit\",\"common.part_of\":\"Part of\",\"funding.add.external_id.value.label.grant\":\"Grant number\",\"funding.add.external_id.url.label.award\":\"Award URL\",\"manage.email.close\":\"Close\",\"funding.add.external_id.url.label.contract\":\"Contract URL\",\"idpList.showList\":\"Allow me to pick from a list\",\"fatal.loadFailed\":\"Oops, something went wrong. Refresh your page to try again. Failed to load: \",\"funding.add.external_id.title.award\":\"AWARD NUMBER\",\"funding.add.external_id.url.label.grant\":\"Grant URL\",\"fatal.noData\":\"Oops, something went wrong. Refresh your page to try again. No data: \",\"manage.editTable.deactivateRecord\":\"Close this ORCID record...\",\"common.processing\":\"Processing\",\"funding.add.external_id.value.placeholder.contract\":\"Enter contract number\",\"idpEntry.label\":\"Or enter your organization\'s name\",\"fatal.divMissing\":\"<div> specified  as \\\"insertAtDiv\\\" could not be located in the HTML\",\"common.js.domain.warn.template\":\"Warning! {{curentDomian}} is a test website. <a href=\\\"http:\/\/ORCID.org\\\">ORCID.org<\/a> is the official website. Sandbox only sends email messages to <a href=\\\"http:\/\/mailinator.com\\\">mailinator.com<\/a> email addresses, see Sandbox FAQ for <a href=\\\"http:\/\/members.orcid.org\/api\/faq\/why-am-i-not-receiving-messages-sandbox\\\">more information<\/a>.\",\"funding.add.external_id.url.placeholder.award\":\"Enter award URL\",\"idpPreferred.label\":\"Use a suggested selection:\",\"fatal.badProtocol\":\"Return request must start with https:\/\/ or http:\/\/\",\"admin.profile_deprecation.deprecate_account.success_message\":\"Profile {{0}} has been successfully deprecated to profile {{1}}.\",\"orcid.frontend.security.orcid_deactivated\":\"Account deactivated - please contact support.\",\"admin.profile_reactivation.success\":\"Profile successfully reactivated.\",\"funding.add.external_id.url.placeholder.grant\":\"Enter grant URL\",\"manage.socialNetworks.hide\":\"Hide\",\"orcid.frontend.security.bad_credentials\":\"Bad username, and\/or password. Please try again.\",\"helpText\":\"Help\",\"fatal.wrongEntityId\":\"entityId supplied by SP did not match configuration\",\"admin.edit_client.success\":\"Client was successfully updated\",\"funding.add.external_id.value.placeholder.award\":\"Enter award number\",\"orcid.frontend.security.deprecated_with_primary\":\"This account is deprecated. Please refer to account: {{primary}}\",\"manage.editTable.hide\":\"Hide\",\"funding.add.external_id.title.contract\":\"CONTRACT NUMBER\",\"common.cookies.click_dismiss\":\"click to dismiss\",\"submitButton.label\":\"Continue\",\"orcid.frontend.security.unclaimed_exists\":\"The ORCID record exists but has not been claimed. Would you like to <a href=\\\"{{resendClaimUrl}}\\\">resend the claim email<\/a>?\",\"manualWork.bibtext.notValid\":\"There may be an error. Please review the BibTex before adding.\"}}");
+      orcidVar.searchBaseUrl = "https://pub.orcid.org/v1.2/search/orcid-bio/";
+      orcidVar.isPasswordConfirmationRequired = false;
+      orcidVar.version = "2016-09-21T22:24:37Z";
+    </script>
+    
+    <link rel="stylesheet" href="//orcid.org/static/css/fonts.css?v=2016-09-21T22:24:37Z"/>
+    
+    <link rel="stylesheet" href="//orcid.org/static/css/glyphicons.css?v=2016-09-21T22:24:37Z"/>
+    <link rel="stylesheet" href="//orcid.org/static/css/social.css?v=2016-09-21T22:24:37Z"/>
+    <link rel="stylesheet" href="//orcid.org/static/css/filetypes.css?v=2016-09-21T22:24:37Z"/>    
+	
+	<!-- Always remember to remove Glyphicons font reference when bootstrap is updated -->
+    <link rel="stylesheet" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/twitter-bootstrap/3.3.6/css/bootstrap.min.css?v=2016-09-21T22:24:37Z"/>
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/twitter-bootstrap/3.1.0/css/bootstrap-ie7.css?v=2016-09-21T22:24:37Z"/>	                
+    <![endif]-->
+    
+    
+    <link rel="stylesheet" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/css/orcid.new.css?v=2016-09-21T22:24:37Z"/>
+    <link rel="stylesheet" type="text/css" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/css/idpselect.css" />
+
+    <!--[if lt IE 8]>
+    	<link rel="stylesheet" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/css/orcid-ie7.css?v=2016-09-21T22:24:37Z"/>
+    <![endif]-->
+    <link rel="stylesheet" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/css/jquery-ui-1.10.0.custom.min.css?v=2016-09-21T22:24:37Z"/>
+    <!-- this is a manually patched version, we should update when they accept our changes -->
+    <script src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/respond.src.js?v=2016-09-21T22:24:37Z"></script>
+    
+    <!-- Respond.js proxy on external server -->
+    <link href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/html/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="//orcid.org/static/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <script src="//orcid.org/static/javascript/respond.proxy.js"></script>
+        
+	<style type="text/css">
+		/* 
+	  	Allow angular.js to be loaded in body, hiding cloaked elements until 
+	  	templates compile.  The !important is important given that there may be 
+	  	other selectors that are more specific or come later and might alter display.  
+		 */
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+	  		display: none !important;
+		}
+	</style>	
+
+    <link rel="shortcut icon" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/img/favicon.ico"/>
+    <link rel="apple-touch-icon" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/img/apple-touch-icon.png" />	
+    <link rel="stylesheet" href="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/css/orcid-print.css?v=2016-09-21T22:24:37Z"/>
+</head>
+<body data-baseurl="/">
+<div class="container">
+	<div class="header center" ng-controller="headerCtrl">
+		<div class="row">
+
+			<div class="search col-md-11 col-md-offset-1 col-sm-12 col-xs-12"
+				id="search" ng-show="searchVisible == true || settingsVisible == true" ng-cloak>
+				
+				
+				<!-- Search Form  -->				
+				<form id="form-search" action='/search/node' method="POST" ng-show="searchVisible == true" ng-cloak>
+					<div id="search-box">
+						<input type="search" id="search-input" name="keys"
+							ng-focus="searchFocus()" ng-blur="searchBlur()"
+							placeholder="Search" />
+					</div>
+
+					<div class="bar">
+						<fieldset class="search_options" ng-show="filterActive == true"
+							ng-cloak>
+							<input type="radio" name="huh_radio" id="filter_registry"
+								value="registry" ng-click="focusActive()" checked /> <label
+								for="filter_registry">The ORCID Registry</label> <input type="radio"
+								name="huh_radio" id="filter_website" value="website"
+								ng-click="focusActive()" /> <label for="filter_website">The ORCID Website</label>
+						</fieldset>
+					</div>
+
+
+					<div class="conditions" ng-show="conditionsActive == true" ng-cloak>
+						<p>							
+							Your use of the Registry and the results of your search are subject to ORCID's <a
+								href="http://orcid.org/legal">Terms and Conditions of Use</a>						</p>
+					</div>
+
+					<div class="top-buttons">
+						<button type="submit" class="search-button">
+							<i class="icon-orcid-search"></i>
+						</button>
+						<a href="/orcid-search/search"
+						class="settings-button" title="Advanced Search"><i class="glyphicon glyphicon-cog"></i></a>
+					</div>
+				</form>				
+				
+				<!-- Language -->
+				<div class="language-selector" ng-show = "settingsVisible == true">
+					<!-- Shared component -->
+					<div ng-include="'edit-language'"></div>
+					
+					<div class="account-settings-mobile-menu">
+						<span class="account-settings-mobile"> 
+							<a href="/account">
+Account Settings							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- .row -->
+		<div class="row">			
+				<div class="col-md-9 col-sm-9 col-sm-push-3 col-md-push-3 navigation">
+					<!--  Mobile menu -->				
+					<a id="mobile-menu-icon" class="mobile-button mobile-menu-icon hidden-md hidden-lg hidden-sm visible-xs"
+					   ng-click="toggleMenu()" ng-class="{'mobile-menu-active': menuVisible == true}">
+						<span class="glyphicon glyphicon-align-justify"></span>
+					</a>								
+					<a href="http://orcid.org" id="logo-mini" class="pull-left"></a>
+					<a id="mobile-settings" class="mobile-button mobile-settings" ng-click="toggleSettings()" ng-class="{'mobile-menu-active': settingsVisible == true}">
+						<span class="glyphicon glyphicon-cog"></span>
+					</a>
+					<a id="mobile-search" class="mobile-button mobile-search" ng-click="toggleSearch()" ng-class="{'mobile-menu-active': searchVisible == true}">
+						<span class="glyphicon glyphicon-search"></span>
+					</a>
+					<a href="/signin" id="mobile-sign-in" class="mobile-button mobile-sign-in">
+						<span class="glyphicon glyphicon-user"></span>
+					</a>				
+					
+					<!--  Desktop / Tablet menu -->				
+					<ul class="menu" ng-show="menuVisible == true" ng-cloak resize>
+						<!-- FOR RESEARCHERS -->
+						<li class="first expanded active-trail">
+							<a href="http://orcid.org/about/what-is-orcid/mission" ng-click="handleMobileMenuOption($event)" title="">For Researchers</a>
+							<ul class="menu lang-fixes">
+							<!-- Mobile view Only -->
+							<li class="leaf hidden-md hidden-lg hidden-sm visible-xs"><a href="/" title="">For Researchers</a></li>
+							
+								<li class="leaf last"><a  href="/signin">Sign in</a></li>									
+								<li class="leaf last"><a  href="/register">Register for an ORCID iD</a></li>
+								<li class="leaf last"><a href="/content/initiative">Learn more</a></li>
+							</ul>
+						</li>
+	
+						<!-- DRUPAL WEBSITE MENUS -->
+						<!-- FOR ORGANIZATIONS -->
+						<li class="expanded">
+							<a href="http://orcid.org/organizations" ng-click="handleMobileMenuOption($event)">For Organizations</a>
+							<ul class="menu lang-fixes">
+								<!-- Mobile view Only -->
+								<li class="first leaf hidden-md hidden-lg hidden-sm visible-xs">
+									<a href="http://orcid.org/organizations">For Organizations</a>
+								</li>
+	
+								<li class="first leaf">
+									<a href="http://orcid.org/organizations/funders" class="russian-fix" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('funders')">Funders<span class="more" ng-class="{'less':secondaryMenuVisible['funders'] == true}"></span></a> <!-- Updated according Drupal website structure -->
+									<ul class="menu" ng-show="secondaryMenuVisible['funders'] == true">
+										<li class="hidden-sm hidden-md hidden-lg">
+											<a href="http://orcid.org/organizations/funders">Funders</a>
+										</li>
+										<li class="first leaf">
+											<a href="http://orcid.org/organizations/funders/learnmore">Learn more</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/organizations/funders/outreachresources">Outreach Resources</a>
+										</li>
+										<li class="last leaf">
+											<a href="http://orcid.org/about/membership" title="">Membership</a>
+										</li>
+									</ul>
+								</li>
+								<li class="leaf">
+									<a href="http://orcid.org/organizations/institutions" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('institutions')">Research Organizations<span class="more" ng-class="{'less':secondaryMenuVisible['institutions'] == true}"></span></a> <!-- Updated according Drupal website structure -->
+									<ul class="menu" ng-show="secondaryMenuVisible['institutions'] == true">
+										<li class="hidden-sm hidden-md hidden-lg">
+											<a href="http://orcid.org/organizations/institutions">Research Organizations</a>
+										</li>
+										<li class="first leaf">
+											<a href="http://orcid.org/organizations/institutions/learnmore">Learn more</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/organizations/institutions/outreachresources">Outreach Resources</a>
+										</li>
+											<li class="leaf"><a href="http://orcid.org/about/membership" title="">Membership</a>
+										</li>
+										<li class="last leaf">
+											<a href="http://orcid.org/organizations/institutions/usecases">Use cases</a>
+										</li>
+									</ul>
+								</li>
+								<li class="leaf">
+									<a href="http://orcid.org/organizations/publishers" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('publishers')"> Publishers<span class="more" ng-class="{'less':secondaryMenuVisible['publishers'] == true}"></span></a> <!-- Updated according Drupal website structure -->
+									<ul class="menu" ng-show="secondaryMenuVisible['publishers'] == true">
+										<li class="hidden-sm hidden-md hidden-lg">
+											<a href="http://orcid.org/organizations/publishers"> Publishers</a>
+										</li>
+										<li class="first leaf">
+											<a href="http://orcid.org/organizations/publishers/learnmore">Learn more</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/organizations/publishers/outreachresources">Outreach Resources</a>
+										</li>
+										<li class="last leaf">
+											<a href="http://orcid.org/about/membership" title="">Membership</a>
+										</li>
+									</ul>
+								</li>
+								<li class="leaf">
+									<a href="http://orcid.org/organizations/associations" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('associations')">Associations<span class="more" ng-class="{'less':secondaryMenuVisible['associations'] == true}"></span></a> <!-- Updated according Drupal website structure -->
+									<ul class="menu" ng-show="secondaryMenuVisible['associations'] == true">
+										<li class="hidden-sm hidden-md hidden-lg">
+											<a href="http://orcid.org/organizations/associations">Associations</a>
+										</li>
+										<li class="first leaf">
+											<a href="/organizations/associations/learnmore">Learn more</a>
+										</li>
+										<li class="leaf">
+											<a href="/organizations/associations/outreachresources">Outreach resources</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/about/membership">Membership</a>
+										</li>
+										<li class="last leaf">
+											<a href="/organizations/associations/usecases">Use cases</a>
+										</li>
+									</ul>
+								</li>
+								<li class="last leaf">
+									<a href="http://orcid.org/organizations/integrators" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('integrators')">Integrators<span class="more" ng-class="{'less':secondaryMenuVisible['integrators‰'] == true}"></span></a> <!-- Updated according Drupal website structure -->
+									<ul class="menu" ng-show="secondaryMenuVisible['integrators'] == true">
+										<li class="first leaf hidden-sm hidden-md hidden-lg">
+											<a href="http://orcid.org/organizations/integrators">Integrators</a>
+										</li>
+										<li class="first leaf">
+											<a href="http://orcid.org/organizations/integrators/API">The ORCID API</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/content/register-client-application-0">Register a Client Application</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/organizations/integrators/current">Current Integrations</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/organizations/integrators/integration-chart">Integration Chart</a>
+										</li>
+										<li class="last leaf">
+											<a href="http://orcid.org/content/beta-tester-request">Beta Testers</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- ABOUT -->
+						<li class="expanded"><a href="http://orcid.org/about" ng-click="handleMobileMenuOption($event)">About</a>
+	
+							<ul class="menu lang-fixes">
+								<!-- Mobile view Only -->
+								<li><a href="http://orcid.org/about"
+									class="first leaf hidden-md hidden-lg hidden-sm visible-xs">About</a></li>
+								<!-- What is ORCID? -->
+								<li class="first expanded">
+									<a href="http://orcid.org/about/what-is-orcid" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('whatIsOrcid')">What is ORCID<span class="more" ng-class="{'less':secondaryMenuVisible['whatIsOrcid'] == true}"></span></a>
+									<ul class="menu" ng-show="secondaryMenuVisible['whatIsOrcid'] == true">
+										<li class="hidden-md hidden-lg hidden-sm visible-xs">
+											<a href="http://orcid.org/about/what-is-orcid">What is ORCID</a>
+										</li>
+										<li class="first leaf">
+											<a href="http://orcid.org/about/what-is-orcid/mission-statement" title="">Our Mission</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/about/what-is-orcid/our-principles" title="">Our Principles</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/content/our-governance">Our Governance</a>
+										</li>
+										<li class="last expanded">
+											<a href="http://orcid.org/about/what-is-orcid/policies" ng-click="handleMobileMenuOption($event); toggleTertiaryMenu('policies')">Our Policies</a>
+											<ul class="menu" ng-show="tertiaryMenuVisible['policies'] == true">
+												<li class="first leaf"><a
+													href="http://orcid.org/orcid-dispute-procedures">Dispute
+														Procedures</a></li>
+												<li class="leaf"><a
+													href="http://orcid.org/footer/privacy-policy" title="">Privacy
+														Policy</a></li>
+												<li class="leaf"><a
+													href="http://orcid.org/content/orcid-public-client-terms-service">Public
+														Client Terms of Service</a></li>
+												<li class="leaf"><a
+													href="http://orcid.org/content/orcid-public-data-file-use-policy">Public
+														Data File Use Policy</a></li>
+												<li class="leaf"><a href="http://orcid.org/legal">Terms
+														and Conditions of Use</a></li>
+												<li class="last leaf"><a
+													href="http://orcid.org/trademark-and-id-display-guidelines">Trademark
+														and iD Display Guidelines</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<!-- The ORCID Team -->
+								<li class="leaf"><a href="http://orcid.org/about/team" title="">The ORCID Team</a></li>
+								<!-- The ORCID Comunity -->
+								<li class="expanded">
+									<a href="http://orcid.org/about/community" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('community')">The ORCID Community<span class="more" ng-class="{'less':secondaryMenuVisible['community'] == true}"></span></a>
+									<ul class="menu" ng-show="secondaryMenuVisible['community'] == true">
+										<li class="hidden-md hidden-lg hidden-sm visible-xs">
+											<a href="http://orcid.org/about/community">The ORCID Community</a>
+										</li>
+										<li class="first leaf">
+											<a href="http://orcid.org/about/community" title="">Working Groups</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/about/community/sponsors" title="">Sponsors</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/about/community/members" title="">Members</a>
+										</li>
+										<li class="last">
+											<a href="http://orcid.org/about/community/launch-partners" title="">Launch Partners</a></li>
+										<li class="leaf">
+											<a href="http://orcid.org/about/community/launch-partners" title="">Launch Partners</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/about/community/orcid-technical-community">Open Source</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/content/partners">Partners</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/content/adoption-and-integration-program">Adoption &amp; Integration Program</a>
+										</li>
+										<li class="expanded">
+											<a href="http://orcid.org/content/orcid-ambassadors">Ambassadors</a>
+											<ul class="menu">
+												<li class="first last leaf">
+													<a href="http://orcid.org/content/orcid-ambassadors-1/outreachresources">Outreach Resources</a>
+												</li>
+											</ul>
+										</li>
+										<li class="last leaf">
+											<a href="http://www.cafepress.com/orcid" title="">ORCID Gear</a>
+										</li>
+									</ul>
+								</li>
+								<!-- Membership -->
+								<li class="expanded">
+									<a href="http://orcid.org/about/membership" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('membership')">Membership<span class="more" ng-class="{'less':secondaryMenuVisible['membership'] == true}"></span></a>
+									<ul class="menu" ng-show="secondaryMenuVisible['membership'] == true">
+										<li class="hidden-md hidden-lg hidden-sm visible-xs">
+											<a href="http://orcid.org/about/membership">Membership</a>
+										</li>
+										<li class="first expanded">
+											<a href="http://orcid.org/about/membership" title="">Membership &amp; Subscription</a>
+											<ul class="menu">
+												<li class="first last leaf">
+													<a href="http://orcid.org/content/membership-comparison">Membership Comparison</a>
+												</li>
+											</ul>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/about/membership/standard-member-agreement" title="">Standard Member Agreement</a>
+										</li>
+										<li class="leaf">
+											<a href="http://orcid.org/document/standard-creator-membership-agreement">Standard Creator Member Agreement</a>
+										</li>
+										<li class="last leaf">
+											<a href="http://orcid.org/about/community/members" title="">Our Members</a>
+										</li>
+									</ul>
+								</li>
+								<!-- News -->
+								<li class="leaf">
+									<a href="http://orcid.org/about/news/news" ng-click="handleMobileMenuOption($event); toggleSecondaryMenu('news')">News<span class="more" ng-class="{'less':secondaryMenuVisible['news'] == true}"></span></a>
+									<ul class="menu" ng-show="secondaryMenuVisible['news'] == true">
+										<li class="hidden-md hidden-lg hidden-sm visible-xs">
+											<a href="http://orcid.org/about/news/news">News</a>
+										</li>
+										<li class="first leaf">
+											<a href="http://orcid.org/category/newsletter/blog" title="">Blog</a>
+										</li>
+										<li class="last leaf">
+											<a href="http://orcid.org/newsletter/subscriptions" title="">Subscribe!</a>
+										</li>
+									</ul>
+								</li>
+								<!-- Events -->
+								<li class="last expanded">
+									<a href="http://orcid.org/about/events" title="">Events</a>
+								</li>
+							</ul>
+						</li>
+						<!-- HELP -->
+						<li class="expanded">
+							<a href="http://orcid.org/help" ng-click="handleMobileMenuOption($event)">Help</a>
+							<ul class="menu lang-fixes">
+								<!-- Mobile view Only -->
+								<li class="first leaf hidden-md hidden-lg hidden-sm visible-xs">
+									<a href="http://orcid.org/help">Help</a>
+								</li>
+								<li class="first leaf">
+									<a href="http://orcid.org/faq-page" title="">FAQ</a>
+								</li>
+								<li class="leaf">
+									<a href="http://orcid.org/help/contact-us" title="">Contact us</a>
+								</li>
+								<li class="leaf">
+									<a href="http://orcid.uservoice.com/forums/175591-general" title="">Give Feedback</a>
+								</li>
+								<li class="last leaf">
+									<a href="http://orcid.uservoice.com/knowledgebase" title="">Knowledge Base</a>
+								</li>
+							</ul>
+						</li>
+						
+						<!-- SIGN IN/OUT -->
+						<li class="last leaf">							<a href="/signin" title="">Sign in</a>
+						 
+						
+					</li>
+	
+					</ul>
+			</div>
+			<div class="col-md-3 col-sm-3 col-sm-pull-9 col-md-pull-9 reset logo">
+				<h1>
+					<a href="http://orcid.org"><img
+						src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/img/orcid-logo.png" alt="ORCID logo" /></a>
+				</h1>
+				<p>Connecting Research and Researchers</p>
+			</div>
+			<span class="see-more">2,565,878 ORCID iDs and counting. <a href="/statistics"
+				title="">See more...</a>
+			</span>
+			<!--
+			 -->	
+		</div><!-- .row -->
+	</div><!-- .header -->
+	<div id="main" role="main" class="main">  <div class="row workspace-top public-profile">
+    <div class="col-md-3 left-aside">
+        <div class="workspace-left workspace-profile" ng-controller="PublicRecordCtrl">
+        	<div class="id-banner">
+	            <h2 class="full-name">	            	
+					Michael Nelson	                
+	            </h2>	            	            
+	            
+	            <div class="oid">
+					<div class="id-banner-header">
+						<span>ORCID iD</span>
+					</div>
+					<div class="orcid-id-container">
+						<div class="orcid-id-info">
+					    	<span class="mini-orcid-icon"></span>
+					    	<!-- Reference: orcid.js:removeProtocolString() -->
+				       		<span id="orcid-id" class="orcid-id shortURI">orcid.org/0000-0003-3749-8116</span>
+						</div>						
+					</div>
+				</div>					        
+
+					<!-- Other Names -->
+		            
+		            <!-- Websites -->       	            
+	              
+	           
+		            
+		            <!-- Countries -->    	            	           
+		            
+		            <!-- Keywords -->
+			            <div class="workspace-section">
+		            		<div class="workspace-section-header">
+		            			<ul class="inline-list visible workspace-section-heading">
+								    <li><span class="workspace-section-title">Keywords</span></li>
+								    <li class="right">									    
+								    	<span ng-click="toggleSourcesDisplay('keywords')" class="right toggle" ng-mouseenter="showPopover('keywords')" ng-mouseleave="hidePopover('keywords')">
+								    		<i ng-class="(showSources['keywords'] || showSources['keywords'] == 'null')? 'glyphicons collapse_top' : 'glyphicons expand'"></i>
+								    		<div class="popover top" ng-class="{'block' : showPopover['keywords']}">
+											    <div class="arrow"></div>
+											    <div class="popover-content">
+											        <span ng-show="showSources['keywords'] == false  || showSources['keywords'] == null">Show details</span>
+											        <span ng-show="showSources['keywords']">Hide details</span>
+											    </div>
+											</div>
+								    	</span>
+								    </li>		                		
+								</ul>	
+		                		<div id="public-keywords-div" class="public-content">	                    			
+										<span name="keyword">digital libraries, web science, web preservation</span>
+										<div ng-if="showSources['keywords']" class="source-line separator" ng-cloak>
+											<p>Sources:<br />
+													Michael Nelson (2013-03-07)
+											</p>
+										</div>
+	                        	</div>
+	                        </div>
+	                    </div>
+		            
+		            <!-- Websites -->       	            
+		           		<div class="workspace-section">
+		            		<div class="workspace-section-header">
+		            			<ul class="inline-list visible workspace-section-heading">
+								    <li><span class="workspace-section-title">Websites</span></li>
+								    <li class="right">								    	
+								    	<span ng-click="toggleSourcesDisplay('websites')" class="right toggle" ng-mouseenter="showPopover('websites')" ng-mouseleave="hidePopover('websites')">
+								    		<i ng-class="(showSources['websites'] || showSources['websites'] == 'null')? 'glyphicons collapse_top' : 'glyphicons expand'"></i>
+								    		<div class="popover top" ng-class="{'block' : showPopover['websites']}">
+											    <div class="arrow"></div>
+											    <div class="popover-content">
+											        <span ng-show="showSources['websites'] == false  || showSources['websites'] == null">Show details</span>
+											        <span ng-show="showSources['websites']">Hide details</span>
+											    </div>
+											</div>
+								    	</span>
+								    </li>		                		
+								</ul>
+				                <div id="public-researcher-urls-div" class="public-content">				                					                
+				                				  <a href="	http://www.cs.odu.edu/~mln/	
+" target="_blank" rel="me nofollow">Home page for Michael L. Nelson</a><br/>
+					                			<div ng-if="showSources['websites']" class="source-line separator" ng-cloak>
+						                			<p>Sources:<br />
+												Michael Nelson (2016-01-22)
+					                	</p>
+					                	</div>					                	
+				                				  <a href="	http://twitter.com/phonedude_mln	
+" target="_blank" rel="me nofollow">Twitter for Michael L. Nelson</a><br/>
+					                			<div ng-if="showSources['websites']" class="source-line separator" ng-cloak>
+						                			<p>Sources:<br />
+												Michael Nelson (2016-01-22)
+					                	</p>
+					                	</div>					                	
+				                				  <a href="	http://ws-dl.blogspot.com/	
+" target="_blank" rel="me nofollow">Web Science &amp; Digital Libraries Research Group blog</a>
+					                			<div ng-if="showSources['websites']" class="source-line separator" ng-cloak>
+						                			<p>Sources:<br />
+												Michael Nelson (2016-01-25)
+					                	</p>
+					                	</div>					                	
+			                    </div>
+			                </div>
+	                    </div>
+		              
+		            <!-- Email -->
+		             
+		            <!-- External Identifiers -->
+						<div class="workspace-section">
+		            		<div class="workspace-section-header">
+			            		<ul class="inline-list visible workspace-section-heading">
+								    <li><span class="workspace-section-title">Other IDs</span></li>
+								    <li class="right">
+								    	<span ng-click="toggleSourcesDisplay('external-identifiers')" class="right toggle" ng-mouseenter="showPopover('external-identifiers')" ng-mouseleave="hidePopover('external-identifiers')">
+								    		<i ng-class="(showSources['external-identifiers'] || showSources['external-identifiers'] == 'null')? 'glyphicons collapse_top' : 'glyphicons expand'"></i>
+								    		<div class="popover top" ng-class="{'block' : showPopover['external-identifiers']}">
+											    <div class="arrow"></div>
+											    <div class="popover-content">
+											        <span ng-show="showSources['external-identifiers'] == false  || showSources['external-identifiers'] == null">Show details</span>
+											        <span ng-show="showSources['external-identifiers']">Hide details</span>
+											    </div>
+											</div>
+								    	</span>									    
+								    </li>		                		
+								</ul>				                
+				                <div id="public-external-identifiers-div" class="public-content">
+													<a href="http://www.scopus.com/inward/authorDetails.url?authorID=7403461363&amp;partnerID=MN8TOARS" target="_blank">Scopus Author ID: 7403461363</a>
+  												<div ng-if="showSources['external-identifiers']" class="source-line separator" ng-cloak>					                							                					                		
+	  												<p>Sources:<br />
+					                     	Scopus to ORCID (2013-03-07)
+			                           </p>
+				                   </div>	                                            	
+			                    </div>
+			                 </div>
+			             </div>	                
+	        </div>
+        </div>
+    </div>
+    
+    <div class="col-md-9 right-aside">
+        <div class="workspace-right" ng-controller="PersonalInfoCtrl">
+        		<div class="workspace-inner-public workspace-public workspace-accordion">
+		        			<div class="workspace-accordion-content" ng-show="displayInfo">
+		        				<div class="row bottomBuffer">
+		        					<div class="col-md-12 col-sm-12 col-xs-12">
+		        						<h3 class="workspace-title">Biography</h3>
+		        					</div>
+		        				</div>	        
+		        				<div class="row bottomBuffer">					
+			        				<div class="col-md-12 col-sm-12 col-xs-12">
+										<div class="bio-content">I joined the Computer Science department at Old Dominion University in 2002. I worked at NASA Langley Research Center from 1991-2002. Through a NASA fellowship, I spent the 2000-2001 academic year at the School of Information and Library Science, University of North Carolina at Chapel Hill.</div>		        					
+			        				</div>
+			        			</div>	        				
+		        			</div>
+	<!-- Education -->
+	<div id="workspace-education" class="workspace-accordion-item workspace-accordion-active" ng-controller="PublicEduAffiliation" ng-hide="!affiliationsSrvc.educations.length" ng-cloack>	       
+	
+<div class="workspace-accordion-header">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-12">
+            <a name='workspace-educations' />
+            <a href="" ng-click="workspaceSrvc.toggleEducation($event)" ng-click="workspaceSrvc.toggleEducation($event)" class="toggle-text">
+                <i class="glyphicon-chevron-down glyphicon x075" ng-class="{'glyphicon-chevron-right':workspaceSrvc.displayEducation==false}"></i>
+                Education (<span ng-bind="affiliationsSrvc.educations.length"></span>)
+            </a>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-12 action-button-bar" ng-if="workspaceSrvc.displayEducation">
+	<!-- Sort -->
+	<div class="menu-container">			       					 
+ 		<ul class="toggle-menu">
+ 			<li>
+				<span class="glyphicon glyphicon-sort"></span>							
+Sort				<ul class="menu-options sort">
+					<li ng-class="{'checked':sortState.predicateKey=='date'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('date');" class="action-option manage-button">
+Date							<span ng-show="sortState.reverseKey['date']" ng-class="{'glyphicon glyphicon-sort-by-order-alt':sortState.predicateKey=='date'}"></span>
+							<span ng-show="sortState.reverseKey['date'] == false" ng-class="{'glyphicon glyphicon-sort-by-order':sortState.predicateKey=='date'}"></span>
+						</a>																					
+					</li>
+				    <li ng-class="{'checked':sortState.predicateKey=='groupName'}" ng-hide="sortHideOption == null">
+				    	<a ng-click="sort('groupName');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['groupName']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='groupName'}" ></span>
+				    		<span ng-show="sortState.reverseKey['groupName'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='groupName'}" ></span>
+				    	</a>									    	
+				    </li>
+				    <li ng-class="{'checked':sortState.predicateKey=='title'}" ng-hide="sortHideOption">									    	
+				    	<a ng-click="sort('title');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['title']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='title'}" ></span>
+				    		<span ng-show="sortState.reverseKey['title'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='title'}" ></span>
+				    	</a>									    	
+				    </li>
+					<li ng-show="sortState.type != 'affiliation'" ng-class="{'checked':sortState.predicateKey=='type'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('type');" class="action-option manage-button">
+Type							<span ng-show="sortState.reverseKey['type']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='type'}"></span>
+							<span ng-show="sortState.reverseKey['type'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='type'}"></span>
+						</a>																						
+					</li>
+			    </ul>											
+			</li>
+		</ul>									
+	</div>
+        </div>
+    </div>
+</div>
+	      <div ng-if="workspaceSrvc.displayEducation" class="workspace-accordion-content">
+<ul id="educations-list" ng-hide="!affiliationsSrvc.educations.length" class="workspace-affiliations workspace-body-list bottom-margin-medium" ng-cloak>
+	<li class="bottom-margin-small workspace-border-box affiliation-box card ng-scope" ng-repeat="group in affiliationsSrvc.educations | orderBy:sortState.predicate:sortState.reverse" education-put-code="{{group.getActive().putCode.value}}"> 
+<div class="row">        
+  	<!-- Information -->
+	<div class="col-md-10 col-sm-10 col-xs-8 bottomBuffer">
+	    <h3 class="workspace-title">	    	
+        	<span ng-bind="group.getActive().affiliationName.value"></span>:
+        	<span ng-bind="group.getActive().city.value"></span><span ng-if="group.getActive().region.value">, </span><span ng-bind="group.getActive().region.value"></span>, <span ng-bind="group.getActive().countryForDisplay"></span>        	        	        	        	
+        </h3>
+        <div class="info-detail">
+        	<div class="info-date">        	        	
+	        	<span class="affiliation-date" ng-if="group.getActive().startDate">
+	        	    <span ng-if="group.getActive().startDate.year">{{group.getActive().startDate.year}}</span><span ng-if="group.getActive().startDate.month">-{{group.getActive().startDate.month}}</span>
+	        	    <span>to</span>
+	        	    <span ng-hide="group.getActive().endDate.year">present</span>
+	        		<span ng-if="group.getActive().endDate.year">{{group.getActive().endDate.year}}</span><span ng-if="group.getActive().endDate.month">-{{group.getActive().endDate.month}}</span><span ng-if="group.getActive().endDate.day">-{{group.getActive().endDate.day}}</span>
+	            </span>
+	            <span class="affiliation-date" ng-if="!group.getActive().startDate && group.getActive().endDate">
+	        	     <span ng-if="group.getActive().endDate.year">{{group.getActive().endDate.year}}</span><span ng-if="group.getActive().endDate.month">-{{group.getActive().endDate.month}}</span><span ng-if="group.getActive().endDate.day">-{{group.getActive().endDate.day}}</span>
+	        	</span>
+        	</div>
+        	<span class="divisor" ng-if="(group.getActive().startDate || group.getActive().endDate) && (group.getActive().roleTitle.value || group.getActive().departmentName.value)"></span>        	
+        	<div class="role" ng-if="group.getActive().roleTitle.value">
+	            <span ng-bind="group.getActive().roleTitle.value"></span>
+        	</div>
+			<span ng-if="group.getActive().departmentName.value">
+				<span ng-if="group.getActive().roleTitle.value">&nbsp;</span>(<span ng-bind="group.getActive().departmentName.value" ng-cloak></span>)
+			</span>
+        </div>
+       </div>
+       <!-- Privacy Settings -->
+       <div class="col-md-2 col-sm-2 col-xs-4 workspace-toolbar">       	
+	</div>
+</div>
+<div class="row source-line">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="sources-container-header">          
+			<div class="row">
+				<div class="col-md-7 col-sm-7 col-xs-7">
+					Source: {{(group.getActive().sourceName == null || group.getActive().sourceName == '') ? group.getActive().source : group.getActive().sourceName}}	
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-3">
+					Created: <span ng-bind="group.getActive().createdDate | ajaxFormDateToISO8601"></span>
+				</div>				
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<ul class="sources-options">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</li>
+</ul>
+<div ng-if="affiliationsSrvc.loading" class="text-center">
+    <i class="glyphicon glyphicon-refresh spin x4 green" id="spinner"></i>
+    <!--[if lt IE 8]>    
+    	<img src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/img/spin-big.gif" width="85" height ="85"/>
+    <![endif]-->
+</div>
+<div ng-if="affiliationsSrvc.loading == false && affiliationsSrvc.educations.length == 0" ng-cloak>
+    <strong>No education added yet</strong>
+</div>		
+	      </div>	       
+	</div>
+	<!-- Employment -->
+	<div id="workspace-employment" class="workspace-accordion-item workspace-accordion-active" ng-controller="PublicEmpAffiliation" ng-hide="!affiliationsSrvc.employments.length" ng-cloack>
+<div class="workspace-accordion-header">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-12">
+            <a name='workspace-employments' />
+            <a href="" ng-click="workspaceSrvc.toggleEmployment($event)" ng-click="workspaceSrvc.toggleEmployment($event)" class="toggle-text">
+                <i class="glyphicon-chevron-down glyphicon x075" ng-class="{'glyphicon-chevron-right':workspaceSrvc.displayEmployment==false}"></i>
+                Employment (<span ng-bind="affiliationsSrvc.employments.length"></span>)
+            </a>                    
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-12 action-button-bar" ng-if="workspaceSrvc.displayEmployment">
+	<!-- Sort -->
+	<div class="menu-container">			       					 
+ 		<ul class="toggle-menu">
+ 			<li>
+				<span class="glyphicon glyphicon-sort"></span>							
+Sort				<ul class="menu-options sort">
+					<li ng-class="{'checked':sortState.predicateKey=='date'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('date');" class="action-option manage-button">
+Date							<span ng-show="sortState.reverseKey['date']" ng-class="{'glyphicon glyphicon-sort-by-order-alt':sortState.predicateKey=='date'}"></span>
+							<span ng-show="sortState.reverseKey['date'] == false" ng-class="{'glyphicon glyphicon-sort-by-order':sortState.predicateKey=='date'}"></span>
+						</a>																					
+					</li>
+				    <li ng-class="{'checked':sortState.predicateKey=='groupName'}" ng-hide="sortHideOption == null">
+				    	<a ng-click="sort('groupName');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['groupName']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='groupName'}" ></span>
+				    		<span ng-show="sortState.reverseKey['groupName'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='groupName'}" ></span>
+				    	</a>									    	
+				    </li>
+				    <li ng-class="{'checked':sortState.predicateKey=='title'}" ng-hide="sortHideOption">									    	
+				    	<a ng-click="sort('title');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['title']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='title'}" ></span>
+				    		<span ng-show="sortState.reverseKey['title'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='title'}" ></span>
+				    	</a>									    	
+				    </li>
+					<li ng-show="sortState.type != 'affiliation'" ng-class="{'checked':sortState.predicateKey=='type'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('type');" class="action-option manage-button">
+Type							<span ng-show="sortState.reverseKey['type']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='type'}"></span>
+							<span ng-show="sortState.reverseKey['type'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='type'}"></span>
+						</a>																						
+					</li>
+			    </ul>											
+			</li>
+		</ul>									
+	</div>
+        </div>
+    </div>
+</div>
+	       <div ng-if="workspaceSrvc.displayEmployment" class="workspace-accordion-content">
+<ul id="employments-list" ng-hide="!affiliationsSrvc.employments.length" class="workspace-affiliations workspace-body-list bottom-margin-medium" ng-cloak>
+	<li class="bottom-margin-small workspace-border-box affiliation-box card" ng-repeat="group in affiliationsSrvc.employments | orderBy:sortState.predicate:sortState.reverse" employment-put-code="{{group.getActive().putCode.value}}">  
+<div class="row">        
+  	<!-- Information -->
+	<div class="col-md-10 col-sm-10 col-xs-8 bottomBuffer">
+	    <h3 class="workspace-title">	    	
+        	<span ng-bind="group.getActive().affiliationName.value"></span>:
+        	<span ng-bind="group.getActive().city.value"></span><span ng-if="group.getActive().region.value">, </span><span ng-bind="group.getActive().region.value"></span>, <span ng-bind="group.getActive().countryForDisplay"></span>        	        	        	        	
+        </h3>
+        <div class="info-detail">
+        	<div class="info-date">        	        	
+	        	<span class="affiliation-date" ng-if="group.getActive().startDate">
+	        	    <span ng-if="group.getActive().startDate.year">{{group.getActive().startDate.year}}</span><span ng-if="group.getActive().startDate.month">-{{group.getActive().startDate.month}}</span>
+	        	    <span>to</span>
+	        	    <span ng-hide="group.getActive().endDate.year">present</span>
+	        		<span ng-if="group.getActive().endDate.year">{{group.getActive().endDate.year}}</span><span ng-if="group.getActive().endDate.month">-{{group.getActive().endDate.month}}</span><span ng-if="group.getActive().endDate.day">-{{group.getActive().endDate.day}}</span>
+	            </span>
+	            <span class="affiliation-date" ng-if="!group.getActive().startDate && group.getActive().endDate">
+	        	     <span ng-if="group.getActive().endDate.year">{{group.getActive().endDate.year}}</span><span ng-if="group.getActive().endDate.month">-{{group.getActive().endDate.month}}</span><span ng-if="group.getActive().endDate.day">-{{group.getActive().endDate.day}}</span>
+	        	</span>
+        	</div>
+        	<span class="divisor" ng-if="(group.getActive().startDate || group.getActive().endDate) && (group.getActive().roleTitle.value || group.getActive().departmentName.value)"></span>        	
+        	<div class="role" ng-if="group.getActive().roleTitle.value">
+	            <span ng-bind="group.getActive().roleTitle.value"></span>
+        	</div>
+			<span ng-if="group.getActive().departmentName.value">
+				<span ng-if="group.getActive().roleTitle.value">&nbsp;</span>(<span ng-bind="group.getActive().departmentName.value" ng-cloak></span>)
+			</span>
+        </div>
+       </div>
+       <!-- Privacy Settings -->
+       <div class="col-md-2 col-sm-2 col-xs-4 workspace-toolbar">       	
+	</div>
+</div>
+<div class="row source-line">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="sources-container-header">          
+			<div class="row">
+				<div class="col-md-7 col-sm-7 col-xs-7">
+					Source: {{(group.getActive().sourceName == null || group.getActive().sourceName == '') ? group.getActive().source : group.getActive().sourceName}}	
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-3">
+					Created: <span ng-bind="group.getActive().createdDate | ajaxFormDateToISO8601"></span>
+				</div>				
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<ul class="sources-options">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</li>
+</ul>
+<div ng-if="affiliationsSrvc.loading" class="text-center">
+    <i class="glyphicon glyphicon-refresh spin x4 green" id="spinner"></i>
+    <!--[if lt IE 8]>    
+    	<img src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/img/spin-big.gif" width="85" height ="85"/>
+    <![endif]-->
+</div>
+<div ng-if="affiliationsSrvc.loading == false && affiliationsSrvc.employments.length == 0" ng-cloak>
+    <strong>No employment added yet</strong>
+</div>
+	      </div>
+	</div>
+  
+<!-- Funding -->
+	<div id="workspace-funding" class="workspace-accordion-item workspace-accordion-active" ng-controller="PublicFundingCtrl" ng-cloack>
+<div class="workspace-accordion-header">
+    <div class="row">
+        
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <a href="" ng-click="workspaceSrvc.toggleFunding($event)" class="toggle-text">
+                  <i class="glyphicon-chevron-down glyphicon x075" ng-class="{'glyphicon-chevron-right':workspaceSrvc.displayFunding==false}"></i>
+                  Funding (<span ng-bind="fundingSrvc.groups.length"></span>)
+               </a>
+        </div>
+        
+        
+        <div class="col-md-8 col-sm-8 col-xs-12 action-button-bar" ng-if="workspaceSrvc.displayFunding">
+        		<!-- Sort -->
+	<!-- Sort -->
+	<div class="menu-container">			       					 
+ 		<ul class="toggle-menu">
+ 			<li>
+				<span class="glyphicon glyphicon-sort"></span>							
+Sort				<ul class="menu-options sort">
+					<li ng-class="{'checked':sortState.predicateKey=='date'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('date');" class="action-option manage-button">
+Date							<span ng-show="sortState.reverseKey['date']" ng-class="{'glyphicon glyphicon-sort-by-order-alt':sortState.predicateKey=='date'}"></span>
+							<span ng-show="sortState.reverseKey['date'] == false" ng-class="{'glyphicon glyphicon-sort-by-order':sortState.predicateKey=='date'}"></span>
+						</a>																					
+					</li>
+				    <li ng-class="{'checked':sortState.predicateKey=='groupName'}" ng-hide="sortHideOption == null">
+				    	<a ng-click="sort('groupName');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['groupName']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='groupName'}" ></span>
+				    		<span ng-show="sortState.reverseKey['groupName'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='groupName'}" ></span>
+				    	</a>									    	
+				    </li>
+				    <li ng-class="{'checked':sortState.predicateKey=='title'}" ng-hide="sortHideOption">									    	
+				    	<a ng-click="sort('title');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['title']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='title'}" ></span>
+				    		<span ng-show="sortState.reverseKey['title'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='title'}" ></span>
+				    	</a>									    	
+				    </li>
+					<li ng-show="sortState.type != 'affiliation'" ng-class="{'checked':sortState.predicateKey=='type'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('type');" class="action-option manage-button">
+Type							<span ng-show="sortState.reverseKey['type']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='type'}"></span>
+							<span ng-show="sortState.reverseKey['type'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='type'}"></span>
+						</a>																						
+					</li>
+			    </ul>											
+			</li>
+		</ul>									
+	</div>
+        </div>
+    </div>
+</div>
+	    <div ng-if="workspaceSrvc.displayFunding" class="workspace-accordion-content">
+<ul ng-hide="!fundingSrvc.groups.length" class="workspace-fundings workspace-body-list bottom-margin-medium" ng-cloak>
+    <li class="bottom-margin-small workspace-border-box card ng-scope" ng-repeat="group in fundingSrvc.groups | orderBy:sortState.predicate:sortState.reverse">
+        <div class="work-list-container">
+            <ul class="sources-edit-list">
+                <!-- Header -->
+                <li ng-if="editSources[group.groupId] == true" class="source-header" ng-class="{'source-active' : editSources[group.groupId] == true}" ng-model="group.activities">
+                    <div class="sources-header">
+                        <div class="row">
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                Sources <span class="hide-sources" ng-click="hideSources(group)">Close sources</span>
+                            </div>                            
+                            <div class="col-md-2 col-sm-2 col-xs-2">                                
+Preferred                            </div>                            
+                            <div class="col-md-3 col-sm-3 col-xs-3 right">
+                             </div>
+                        </div>
+                    </div>
+                </li><!--  End of header -->
+
+
+                <li ng-repeat="funding in group.activities" ng-if="group.activePutCode == funding.putCode.value || editSources[group.groupId]" funding-put-code="{{funding.putCode.value}}">
+                    <!-- active row summary info -->
+                    <div class="row" ng-if="group.activePutCode == funding.putCode.value">
+                        <div class="col-md-9 col-sm-9 col-xs-8">
+                            <h3 class="workspace-title">                                
+                               <span ng-if="group.getActive().fundingTitle.title.value" ng-bind="group.getActive().fundingTitle.title.value"></span>                               
+                            </h3>
+							<div class="clear-fix left">
+								<span ng-if="group.getActive().fundingName.value"><span ng-bind="group.getActive().fundingName.value"></span></span> (<span ng-if="group.getActive().city.value"><span ng-bind="group.getActive().city.value"></span></span><span ng-if="group.getActive().region.value">, <span ng-bind="group.getActive().region.value"></span></span><span ng-if="group.getActive().countryForDisplay">, <span ng-bind="group.getActive().countryForDisplay"></span></span>)
+							</div>	
+                            <div class="info-detail">
+                            	<!-- Funding date -->
+                                <span class="funding-date" ng-if="group.getActive().startDate && !group.getActive().endDate">
+                                    <span ng-if="group.getActive().startDate.year" ng-bind="group.getActive().startDate.year"></span><span ng-if="group.getActive().startDate.month">-</span><span ng-if="group.getActive().startDate.month" ng-bind="group.getActive().startDate.month"></span>
+                                    to present
+                                </span>
+                                <span class="funding-date" ng-if="group.getActive().startDate && group.getActive().endDate">
+                                    <span ng-if="group.getActive().startDate.year" ng-bind="group.getActive().startDate.year"></span><span ng-if="group.getActive().startDate.month">-</span><span ng-if="group.getActive().startDate.month" ng-bind="group.getActive().startDate.month"></span>
+to                                    <span ng-if="group.getActive().endDate.year" ng-bind="group.getActive().endDate.year"></span><span ng-if="group.getActive().endDate.month">-</span><span ng-if="group.getActive().endDate.month" ng-bind="group.getActive().endDate.month"></span>
+                                </span>
+                                <span class="funding-date" ng-if="!group.getActive().startDate && group.getActive().endDate">
+                                     <span ng-if="group.getActive().endDate.year" ng-bind="group.getActive().endDate.year"></span><span ng-if="group.getActive().endDate.month">-</span><span ng-if="group.getActive().endDate.month" ng-bind="group.getActive().endDate.month"></span>
+                                </span>                                
+                                <!-- Funding type -->
+                                <span ng-if="(group.getActive().startDate || group.getActive().endDate) && group.getActive().fundingType.value">|</span> <span ng-bind="group.getActive().fundingTypeForDisplay" class="capitalize"></span>
+                            </div>                            
+                        </div>
+
+
+                            <div class="col-md-3 col-sm-3 col-xs-4 workspace-toolbar">
+                                <ul class="workspace-private-toolbar" ng-hide="editSources[group.groupId] == true">
+                                    <!-- Show/Hide Details -->
+                                    <li class="works-details" ng-hide="editSources[group.groupId] == true">                                        
+                                        <a ng-click="showDetailsMouseClick(group.groupId,$event);" ng-mouseenter="showTooltip(group.groupId+'-showHideDetails')" ng-mouseleave="hideTooltip(group.groupId+'-showHideDetails')">
+                                            <span ng-class="(moreInfo[group.groupId] == true) ? 'glyphicons collapse_top' : 'glyphicons expand'">
+                                            </span>
+                                        </a>                                        
+                                        <div class="popover popover-tooltip top show-hide-details-popover" ng-if="showElement[group.groupId+'-showHideDetails'] == true">
+                                             <div class="arrow"></div>
+                                            <div class="popover-content">
+                                                <span ng-if="moreInfo[group.groupId] == false || moreInfo[group.groupId] == null">Show Details</span>                                    
+                                                <span ng-if="moreInfo[group.groupId]">Hide Details</span>
+                                            </div>
+                                        </div>                                        
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+
+                    <!-- Active Row Identifiers / URL / Validations / Versions -->
+                    <div class="row" ng-if="group.activePutCode == funding.putCode.value">
+                         <div class="col-md-12 col-sm-12 bottomBuffer">
+                             <ul class="id-details">
+                                 <li>
+                                     <span ng-repeat='ei in group.getActive().externalIdentifiers'>
+                                        <span bind-html-compile='ei | externalIdentifierHtml:$first:$last:group.getActive().externalIdentifiers.length:group.getActive().fundingType:moreInfo[group.groupId]' class="url-popover">
+                                        </span>
+                                    </span>
+                                 </li>
+                                 <li ng-if="group.getActive().url.value" class="url-popover">
+                                 	Alternate URL: <a href="{{group.getActive().url.value | urlProtocol}}" ng-class="{'truncate-anchor' : moreInfo[group.groupId] == false || moreInfo[group.groupId] == null}" ng-bind="group.getActive().url.value" target="_blank" ng-mouseenter='showURLPopOver(funding.putCode.value + "-alternate")' ng-mouseleave='hideURLPopOver(funding.putCode.value + "-alternate")'></a>                                 		
+	                                <div class="popover-pos">
+		                                <div class="popover-help-container">
+									       <div class="popover bottom" ng-class="{'block' : displayURLPopOver[funding.putCode.value + '-alternate'] == true}">
+												<div class="arrow"></div>
+												<div class="popover-content">
+											    	<a href="{{group.getActive().url.value}}" target="_blank" >{{group.getActive().url.value}}</a>
+											    </div>                
+										  	</div>    			   				
+									 	</div>
+									 </div>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+
+                     <!-- more info -->
+<div class="more-info" ng-show="moreInfo[group.groupId] && group.activePutCode == funding.putCode.value">
+	<span class="dotted-bar"></span>	
+    <div class="row">        
+		<!-- Funding subtype -->
+        <div class="col-md-6" ng-show="group.getActive().organizationDefinedFundingSubType.subtype.value" ng-cloak>
+            <div class="bottomBuffer">                    
+                <strong>Funding subtype</strong>
+                <div ng-bind="group.getActive().organizationDefinedFundingSubType.subtype.value"></div>
+            </div>        
+        </div> 
+        
+        <!-- Funding translated title -->
+        <div class="col-md-6" ng-show="group.getActive().fundingTitle.translatedTitle.content" ng-cloak>
+            <div class="bottomBuffer">                
+                <strong>Translated title</strong>
+                <div ng-bind="renderTranslatedTitleInfo(funding)"></div>                    
+            </div>        
+        </div>
+        
+        <!-- Funding Amount -->
+        <div class="col-md-6" ng-show="group.getActive().amount.value" ng-cloak>
+            <div class="bottomBuffer">                
+                <strong>Total funding amount</strong>
+                <div>{{group.getActive().currencyCode.value}} {{group.getActive().amount.value}}</div>                
+            </div>
+        </div>
+        
+        <!-- Contribuitors -->
+        <div class="col-md-6" ng-show="group.getActive().contributors.length > 0" ng-cloak>
+            <div class="bottomBuffer">
+                <strong>Contributors</strong>
+                <div ng-repeat="contributor in group.getActive().contributors">
+                    {{contributor.creditName.value}} <span
+                        ng-bind='contributor | contributorFilter'></span>
+                </div>        
+            </div>
+        </div>
+        
+        <!-- Description -->
+        <div class="col-md-6" ng-show="group.getActive().description.value" ng-cloak>
+            <div class="bottomBuffer">                
+                <strong>Description</strong>
+                <div ng-bind="group.getActive().description.value"></div>                
+            </div>
+        </div>
+        
+        <!-- Created Date -->
+        <div class="col-md-6">
+        	<strong>Created</strong>
+        	<div ng-bind="group.getActive().createdDate | ajaxFormDateToISO8601"></div>
+        </div>
+    </div>
+</div>
+
+                     <!-- active row source display -->
+                      <div class="row source-line" ng-if="group.activePutCode == funding.putCode.value">
+                          <div class="col-md-7 col-sm-7 col-xs-7" ng-if="editSources[group.groupId] == true">                              
+                              {{(group.getActive().sourceName == null || group.getActive().sourceName == '') ? group.getActive().source : group.getActive().sourceName}}
+                          </div>                          
+                          <div class="col-md-3 col-sm-3 col-xs-3" ng-if="editSources[group.groupId] == true">
+                          
+                          <span class="glyphicon glyphicon-check" ng-if="funding.putCode.value == group.defaultPutCode"></span><span ng-if="funding.putCode.value == group.defaultPutCode"> Preferred source</span>
+                          </div>
+                          <div class="col-md-2 col-sm-2  col-xs-2 trash-source" ng-if="editSources[group.groupId]">
+
+
+                          </div>
+                    </div>
+
+                    <!-- not active row && edit sources -->
+                    <div ng-if="group.activePutCode != funding.putCode.value" class="row source-line">
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                                <a ng-click="group.activePutCode = funding.putCode.value;">                                
+                                {{(funding.sourceName == null || funding.sourceName == '') ? funding.source : funding.sourceName}}
+                            </a>
+                        </div>                        
+                        <div class="col-md-3 col-sm-3 col-xs-5">
+                        </div>
+
+
+                        <div class="col-md-2 col-sm-2 col-xs-2 trash-source">
+                        </div>
+
+
+                    </div>
+
+                    <!-- Bottom row -->
+
+                    <div class="row source-line" ng-hide="editSources[group.groupId] == true">
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                              Source: {{(funding.sourceName == null || funding.sourceName == '') ? funding.source : funding.sourceName}}
+                        </div>                          
+                        <div class="col-md-3 col-sm-3 col-xs-3" ng-if="group.activePutCode == funding.putCode.value">
+                            <span class="glyphicon glyphicon-check"></span><span> Preferred source</span> <span ng-hide="group.activitiesCount == 1">(</span><a ng-click="showSources(group)" ng-hide="group.activitiesCount == 1" ng-mouseenter="showTooltip(group.groupId+'-sources')" ng-mouseleave="hideTooltip(group.groupId+'-sources')">of {{group.activitiesCount}}</a><span ng-hide="group.activitiesCount == 1">)</span>
+                            
+                            <div class="popover popover-tooltip top sources-popover" ng-if="showElement[group.groupId+'-sources']">
+                                <div class="arrow"></div>
+                                <div class="popover-content">
+Show other sources                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                            <ul class="sources-options" ng-cloak>
+                            </ul>
+                        </div>
+                    </div>
+                </li><!-- End line -->
+               </ul>
+         </div>
+    </li>
+</ul>
+
+<div ng-if="fundingSrvc.loading" class="text-center">
+    <i class="glyphicon glyphicon-refresh spin x4 green" id="spinner"></i>
+    <!--[if lt IE 8]>
+        <img src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/img/spin-big.gif" width="85" height ="85"/>
+    <![endif]-->
+</div>
+<div ng-if="fundingSrvc.loading == false && fundingSrvc.groups.length == 0" class="" ng-cloak>
+    <strong>
+No Funding added yet    </strong>
+</div>
+
+	    </div>
+	</div>
+
+<!-- Works -->
+	<div id="workspace-works" class="workspace-accordion-item workspace-accordion-active" ng-controller="PublicWorkCtrl" ng-cloak>
+<div class="workspace-accordion-header">
+    <div class="row">
+        <div class="col-md-3 col-sm-2 col-xs-12">
+        	<a name='workspace-works' />
+            <div class="workspace-title" ng-controller="WorkspaceSummaryCtrl">
+                <a href="" ng-click="workspaceSrvc.toggleWorks($event)" class="toggle-text">
+                   <i class="glyphicon-chevron-down glyphicon x075" ng-class="{'glyphicon-chevron-right':workspaceSrvc.displayWorks==false}"></i>
+                   Works (<span ng-bind="worksSrvc.groups.length"></span>)
+                </a>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-10 col-xs-12 action-button-bar" ng-show="workspaceSrvc.displayWorks">
+	<!-- Sort -->
+	<div class="menu-container">			       					 
+ 		<ul class="toggle-menu">
+ 			<li>
+				<span class="glyphicon glyphicon-sort"></span>							
+Sort				<ul class="menu-options sort">
+					<li ng-class="{'checked':sortState.predicateKey=='date'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('date');" class="action-option manage-button">
+Date							<span ng-show="sortState.reverseKey['date']" ng-class="{'glyphicon glyphicon-sort-by-order-alt':sortState.predicateKey=='date'}"></span>
+							<span ng-show="sortState.reverseKey['date'] == false" ng-class="{'glyphicon glyphicon-sort-by-order':sortState.predicateKey=='date'}"></span>
+						</a>																					
+					</li>
+				    <li ng-class="{'checked':sortState.predicateKey=='groupName'}" ng-hide="sortHideOption == null">
+				    	<a ng-click="sort('groupName');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['groupName']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='groupName'}" ></span>
+				    		<span ng-show="sortState.reverseKey['groupName'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='groupName'}" ></span>
+				    	</a>									    	
+				    </li>
+				    <li ng-class="{'checked':sortState.predicateKey=='title'}" ng-hide="sortHideOption">									    	
+				    	<a ng-click="sort('title');" class="action-option manage-button">
+Title				    		<span ng-show="sortState.reverseKey['title']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='title'}" ></span>
+				    		<span ng-show="sortState.reverseKey['title'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='title'}" ></span>
+				    	</a>									    	
+				    </li>
+					<li ng-show="sortState.type != 'affiliation'" ng-class="{'checked':sortState.predicateKey=='type'}" ng-hide="sortHideOption">											
+						<a ng-click="sort('type');" class="action-option manage-button">
+Type							<span ng-show="sortState.reverseKey['type']" ng-class="{'glyphicon glyphicon-sort-by-alphabet-alt':sortState.predicateKey=='type'}"></span>
+							<span ng-show="sortState.reverseKey['type'] == false" ng-class="{'glyphicon glyphicon-sort-by-alphabet':sortState.predicateKey=='type'}"></span>
+						</a>																						
+					</li>
+			    </ul>											
+			</li>
+		</ul>									
+	</div>
+        </div>
+    </div>
+</div>
+	      <div ng-if="workspaceSrvc.displayWorks" class="workspace-accordion-content">
+	<noscript ng-non-bindable>
+	</noscript>
+	<div>
+<ul ng-hide="!worksSrvc.groups.length" class="workspace-publications bottom-margin-medium" id="body-work-list" ng-cloak>
+    <li class="bottom-margin-small workspace-border-box card" ng-repeat="group in worksSrvc.groups | orderBy:sortState.predicate:sortState.reverse">
+        <div class="work-list-container">
+            <ul class="sources-edit-list">
+                <!-- Header -->
+                <li ng-if="editSources[group.groupId]" class="source-header" ng-class="{'source-active' : editSources[group.groupId] == true}" ng-model="group.activities">
+                    <div class="sources-header">
+                        <div class="row">
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                Sources <span class="hide-sources" ng-click="hideSources(group)">Close sources</span>
+                            </div>
+                            
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+Preferred                            </div>
+                            
+                            <div class="col-md-3 col-sm-3 col-xs-3 right padding-left-fix">
+                                    <div class="workspace-toolbar">
+                                        <ul class="workspace-private-toolbar">
+                                            <li class="works-details">
+                                                <a ng-click="showDetailsMouseClick(group,$event);showMozillaBadges(group.activePutCode)" ng-mouseenter="showTooltip(group.groupId+'-showHideDetails')" ng-mouseleave="hideTooltip(group.groupId+'-showHideDetails')">
+                                                    <span ng-class="(moreInfo[group.groupId] == true) ? 'glyphicons collapse_top' : 'glyphicons expand'">
+                                                    </span>
+                                                </a>
+                                                <div class="popover popover-tooltip top show-hide-details-popover" ng-if="showElement[group.groupId+'-showHideDetails']">
+                                                     <div class="arrow"></div>
+                                                    <div class="popover-content">   
+                                                        <span ng-if="moreInfo[group.groupId] == false || moreInfo[group.groupId] == null">Show Details</span>   
+                                                        <span ng-if="moreInfo[group.groupId]">Hide Details</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- End of Header -->
+
+
+                <li ng-repeat="work in group.activities" ng-if="group.activePutCode == work.putCode.value || editSources[group.groupId] == true" orcid-put-code="{{work.putCode.value}}">
+
+                    <!-- active row summary info -->
+                    <div class="row" ng-if="group.activePutCode == work.putCode.value">
+                        <div class="col-md-9 col-sm-9 col-xs-8">
+                            <h3 class="workspace-title">
+                                <span ng-bind="work.title.value"></span>
+                                <span class="journaltitle" ng-if="work.journalTitle.value" ng-bind="work.journalTitle.value"></span>                                
+                            </h3>                                                        
+                            <div class="info-detail">
+                                <span ng-if="work.publicationDate.year" ng-bind="work.publicationDate.year"></span><span ng-if="work.publicationDate.month">-{{work.publicationDate.month}}</span><span ng-if="work.publicationDate.day">-</span><span ng-if="work.publicationDate.day" ng-bind="work.publicationDate.day"></span><span ng-if="work.publicationDate.year"> | </span> <span class="capitalize" ng-bind="work.workType.value"></span>
+                            </div>
+                        </div>
+
+
+                          <div class="col-md-3 col-sm-3 col-xs-4 workspace-toolbar">
+                              <ul class="workspace-private-toolbar" ng-hide="editSources[group.groupId] == true">
+                                  <!-- Show/Hide Details -->
+                                  <li class="works-details" ng-hide="editSources[group.groupId] == true">
+                                      <a ng-click="showDetailsMouseClick(group,$event);showMozillaBadges(group.activePutCode)" ng-mouseenter="showTooltip(group.groupId+'-showHideDetails')" ng-mouseleave="hideTooltip(group.groupId+'-showHideDetails')">
+                                          <span ng-class="(moreInfo[group.groupId] == true) ? 'glyphicons collapse_top' : 'glyphicons expand'">
+                                          </span>
+                                      </a>
+                                      <div class="popover popover-tooltip top show-hide-details-popover" ng-if="showElement[group.groupId+'-showHideDetails']">
+                                           <div class="arrow"></div>
+                                          <div class="popover-content">
+                                              <span ng-if="moreInfo[group.groupId] == false || moreInfo[group.groupId] == null">Show Details</span>   
+                                              <span ng-if="moreInfo[group.groupId]">Hide Details</span>
+                                          </div>
+                                      </div>
+                                  </li>
+
+                              </ul>
+                               
+                          </div>
+                     </div>
+
+                     <!-- Active Row Identifiers / URL / Validations / Versions -->
+                     <div class="row" ng-if="group.activePutCode == work.putCode.value">
+                         <div class="col-md-12 col-sm-12 bottomBuffer">
+                             <ul class="id-details">
+                                 <li class="url-work">
+                                 	<ul class="id-details">
+                                 		<li ng-repeat='ie in work.workExternalIdentifiers' class="url-popover">
+                                 			<span bind-html-compile='ie | workExternalIdentifierHtml:$first:$last:work.workExternalIdentifiers.length:moreInfo[group.groupId]'></span>
+                                 		</li>
+                                 	</ul>                                 	
+                                 </li>
+                                 <li ng-if="work.url.value" class="url-popover url-work">
+                                 	URL: <a href="{{work.url.value | urlProtocol}}" ng-mouseenter="showURLPopOver(work.putCode.value)" ng-mouseleave="hideURLPopOver(work.putCode.value)" ng-class="{'truncate-anchor' : moreInfo[group.groupId] == false || moreInfo[group.groupId] == undefined}" target="_blank">{{work.url.value}}</a>
+                                 	<div class="popover-pos">                                 	
+		                                <div class="popover-help-container">
+									       <div class="popover bottom" ng-class="{'block' : displayURLPopOver[work.putCode.value] == true}">
+												<div class="arrow"></div>
+												<div class="popover-content">
+											    	<a href="{{work.url.value}}" target="_blank">{{work.url.value}}</a>
+											    </div>                
+										  	</div>    			   				
+									 	</div>
+									 </div>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+
+
+                     <!-- more info -->
+<div class="more-info" ng-if="moreInfo[group.groupId] && group.activePutCode == work.putCode.value">
+	<div id="ajax-loader" ng-if="worksSrvc.details[work.putCode.value] == undefined">
+		<span id="ajax-loader"><i id="ajax-loader" class="glyphicon glyphicon-refresh spin x4 green"></i></span>
+	</div>
+	
+	<div class="content" ng-hide="worksSrvc.details[work.putCode.value] == undefined">	
+		
+		<span class="dotted-bar"></span>
+		<div class="row">		
+			<div class="col-md-6" ng-if="worksSrvc.details[work.putCode.value].translatedTitle.content" ng-cloak>
+				<!-- Translated title -->
+				<div class="bottomBuffer">
+					<strong>Translated title</strong> <span><i>({{worksSrvc.details[work.putCode.value].translatedTitle.languageName}})</i></span>
+					<div>{{worksSrvc.details[work.putCode.value].translatedTitle.content}}</div>				
+				</div>
+			</div>
+			<div class="col-md-6" ng-if="worksSrvc.details[work.putCode.value].languageCode.value" ng-cloak>
+				<!-- Language -->
+				<div class="bottomBuffer">					
+					<strong>Language</strong>
+					<div ng-bind="worksSrvc.details[work.putCode.value].languageName.value"></div>					
+				</div>
+			</div>
+			<div class="col-md-6" ng-if="worksSrvc.details[work.putCode.value].subtitle.value" ng-cloak>
+				<div class="bottomBuffer">
+					<strong> Subtitle </strong>
+					<div ng-bind="worksSrvc.details[work.putCode.value].subtitle.value"></div>
+				</div>
+			</div>
+			
+			<div class="col-md-6" ng-if="worksSrvc.details[work.putCode.value].url.value" ng-cloak>
+				<!-- URL -->				
+				<div class="bottomBuffer">
+					<strong>
+URL					</strong>
+					<div>
+						<a href="{{worksSrvc.details[work.putCode.value].url.value | urlProtocol}}" target="_blank">{{worksSrvc.details[work.putCode.value].url.value}}</a>					
+					</div>				
+				</div>
+			</div>			
+		</div>
+		<!-- Citation -->                  
+		<div class="row bottomBuffer" ng-if="worksSrvc.details[work.putCode.value].citation.citation.value" ng-cloak>
+			<div class="col-md-12">				
+				<strong>Citation</strong> <span> (<span ng-if="worksSrvc.details[work.putCode.value].citation.citationType.value" ng-cloak><i>{{worksSrvc.details[work.putCode.value].citation.citationType.value}}</i></span>) 
+				</span>
+				<span ng-if="showBibtex[work.putCode.value] && worksSrvc.details[work.putCode.value].citation.citationType.value == 'bibtex'">
+					<a class="toggle-tag-option" ng-click="bibtexShowToggle(work.putCode.value)">
+						[Switch view]
+					</a>
+				</span>
+				<span ng-if="(showBibtex[work.putCode.value] == null || showBibtex[work.putCode.value] == false) && worksSrvc.details[work.putCode.value].citation.citationType.value == 'bibtex'">
+					<a class="toggle-tag-option" ng-click="bibtexShowToggle(work.putCode.value)">
+						[Switch view]
+					</a>
+				</span>
+				
+			</div>
+			<div class="col-md-12">
+			
+				<div ng-if="worksSrvc.details[work.putCode.value].citation.citationType.value != 'bibtex'">
+					<span>
+						{{worksSrvc.details[work.putCode.value].citation.citation.value}}
+					</span>
+				</div>
+				
+				<div ng-if="(showBibtex[work.putCode.value] == null || showBibtex[work.putCode.value] == false) && worksSrvc.details[work.putCode.value].citation.citationType.value == 'bibtex'" 
+					 ng-bind="worksSrvc.details[work.putCode.value].citation.citation.value"
+					 class="col-md-offset-1 col-md-11 col-sm-offset-1 col-sm-11 col-xs-12 citation-raw">
+				</div>
+									
+				<div class="row" ng-if="showBibtex[work.putCode.value] && (worksSrvc.bibtexJson[work.putCode.value]==null || worksSrvc.bibtexJson[work.putCode.value].length==0)">
+					<div class="col-md-offset-1 col-md-6">View not available</div>
+				</div>
+				
+				
+				<div class="row" ng-if="showBibtex[work.putCode.value]" ng-repeat='bibJSON in worksSrvc.bibtexJson[work.putCode.value]'>						
+					<div class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-1 col-xs-offset-1 col-xs-11">{{bibJSON.entryType}}</div>
+					<div class="col-md-8 col-sm-9 col-xs-offset-1 col-xs-11">{{bibJSON.citationKey}}</div>								
+					<div ng-repeat="(entKey,entVal) in bibJSON.entryTags">
+						<div class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-1 col-xs-offset-1 col-xs-11">{{entKey}}</div>
+						<div class="col-md-8 col-sm-9 col-xs-offset-1 col-xs-11">{{entVal | latex}}</div>
+					</div>
+				</div>						
+			</div>
+		</div>
+		<!-- Description -->
+		<div class="row bottomBuffer" ng-if="worksSrvc.details[work.putCode.value].shortDescription.value"
+			ng-cloak>
+			<div class="col-md-12">
+				<strong> Description </strong>
+				<div ng-bind="worksSrvc.details[work.putCode.value].shortDescription.value"
+					style="white-space: pre-wrap;"></div>
+			</div>
+		</div>
+		
+		<div class="row bottomBuffer">
+			<div class="col-md-6" ng-if="worksSrvc.details[work.putCode.value].countryCode.value" ng-cloak>
+				<!-- Country -->				
+				<div class="bottomBuffer">
+					<strong>Country of publication</strong>
+					<div ng-bind="worksSrvc.details[work.putCode.value].countryName.value"></div>
+				</div>
+			</div>			
+			<div class="col-md-6" ng-if="worksSrvc.details[work.putCode.value].contributors.length > 0" ng-cloak>
+				<!-- Contributors -->
+				<div class="bottomBuffer">			
+					<strong> Contributor </strong>
+					<div ng-repeat="contributor in worksSrvc.details[work.putCode.value].contributors">
+						{{contributor.creditName.value}} <span
+							ng-bind='contributor | contributorFilter'></span>
+					</div>
+				</div>										
+			</div>
+			<div class="col-md-6">
+				<div class="bottomBuffer">
+					<strong>Created</strong><br />
+					<div ng-bind="worksSrvc.details[work.putCode.value].createdDate | ajaxFormDateToISO8601"></div>
+				</div>		
+			</div>
+			<div class="col-md-12">
+				<div class="bottomBuffer">
+					<div class="badge-container-{{work.putCode.value}}"></div>
+				</div>                         
+			</div>		
+		</div>
+		
+	</div>	
+</div>
+                     <!-- active row  source display -->
+                      <div class="row source-line" ng-if="group.activePutCode == work.putCode.value">
+                          <div class="col-md-7 col-sm-7 col-xs-7" ng-if="editSources[group.groupId]">
+                              {{(work.sourceName == null || work.sourceName == '') ? work.source : work.sourceName }}
+                          </div>
+                          <div class="col-md-3 col-sm-3 col-xs-3" ng-if="editSources[group.groupId]">
+
+                            <div ng-if="editSources[group.groupId]">
+                                <span class="glyphicon glyphicon-check" ng-if="work.putCode.value == group.defaultPutCode"></span><span ng-if="work.putCode.value == group.defaultPutCode"> Preferred source</span>
+                            </div>
+
+                          </div>
+                          <div class="col-md-2 trash-source" ng-if="editSources[group.groupId]">
+                              <div ng-if="editSources[group.groupId]">
+                        </div>
+                          </div>
+                    </div>
+
+
+                    <!-- not active row && edit sources -->
+                    <div ng-if="group.activePutCode != work.putCode.value" class="row source-line">
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <a ng-click="group.activePutCode = work.putCode.value;;showMozillaBadges(group.activePutCode);">                                
+                                {{(work.sourceName == null || work.sourceName == '') ? work.source : work.sourceName }}
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2 trash-source">
+                        </div>
+                    </div>
+
+                    <!--  Bottom row -->                     
+                    <div class="row source-line" ng-hide="editSources[group.groupId] == true">                        
+                        
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                             Source: {{(work.sourceName == null || work.sourceName == '') ? work.source : work.sourceName }}
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                              <span class="glyphicon glyphicon-check"></span><span> Preferred source</span> <span ng-hide="group.activitiesCount == 1">(</span><a ng-click="showSources(group)" ng-hide="group.activitiesCount == 1" ng-mouseenter="showTooltip(group.groupId+'-sources')" ng-mouseleave="hideTooltip(group.groupId+'-sources')">of {{group.activitiesCount}}</a><span ng-hide="group.activitiesCount == 1">)</span>
+
+                              <div class="popover popover-tooltip top sources-popover" ng-if="showElement[group.groupId+'-sources']">
+                                   <div class="arrow"></div>
+                                   <div class="popover-content">
+Show other sources                                   </div>
+                              </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-2" ng-if="group.activePutCode == work.putCode.value">
+                            <ul class="sources-options" ng-cloak>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul><!-- End of .sources-edit-list -->
+
+        </div>
+    </li>
+</ul>
+<div ng-if="worksSrvc.loading" class="text-center" id="workSpinner">
+    <i class="glyphicon glyphicon-refresh spin x4 green" id="spinner"></i><!-- Hidden with a CSS hack on IE 7 only -->
+    <!--[if lt IE 8]>
+        <img src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/img/spin-big.gif" width="85" height ="85"/>
+    <![endif]-->
+</div>
+<div ng-if="worksSrvc.loading == false && worksSrvc.groups.length == 0" class="" ng-cloak>
+    <strong>
+    	No publications added yet    </strong>
+</div>	</div>
+	      </div>
+	</div>
+
+<!-- Peer Review -->
+    
+	        	</div>	                   
+        </div>
+    </div>
+</div>
+
+	</div>
+</div>
+<!-- .container -->
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-11 col-md-offset-1">
+				<ul class="col-md-11 col-md-offset-1">
+					<li class=""><a href="http://orcid.org/help/contact-us">Contact us</a></li>
+					<li class=""><a href="http://orcid.org/footer/privacy-policy">Privacy Policy</a></li>
+					<li class=""><a href="http://orcid.org/content/orcid-terms-use">Terms of Use</a></li>
+					<li class=""><a href="http://orcid.org/open-source-license">Open Source Project</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<form action="/">
+	<input id="imageUrl" type="hidden" value="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/images">
+</form>
+
+<script type="text/ng-template" id="edit-language">
+	<form id="language-form" action="#" ng-controller="languageCtrl">
+		<select name="language-codes" id="language-codes"
+			ng-model="language"
+			ng-options="language.label for language in languages"
+			ng-change="selectedLanguage()"></select>
+	</form>
+</script>
+<script type="text/javascript" src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/jquery/2.2.3/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery.ui == 'undefined') {
+    document.write(unescape("%3Cscript src='https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/jqueryui/1.10.0/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.3.0/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/jquery-migrate/1.3.0/jquery-migrate.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+
+<script type="text/javascript" >
+    // CSRF
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");    
+    if (header && token){
+	    $(document).ajaxSend(function(e, xhr, options) {
+	        if (options.type != "GET") {
+	           if (   options.url.startsWith(orcidVar.baseUri)
+	               || options.url.startsWith(orcidVar.baseUriHttp)
+	               || options.url.startsWith('/')) {
+	               xhr.setRequestHeader(header, token);
+	           };
+	        };
+	    });
+    }
+</script>
+
+<script type="text/javascript" src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/typeahead/0.9.3/typeahead.min.js"></script>
+
+<script type="text/javascript" src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/plugins.js?v=2016-09-21T22:24:37Z"></script>
+
+<script type="text/javascript" src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/orcid.js?v=2016-09-21T22:24:37Z"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-cookies.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-sanitize.min.js"></script>
+
+<script type="text/javascript">
+if (typeof angular == 'undefined') {
+    document.write(unescape("%3Cscript src='https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/angularjs/1.5.2/angular.min.js' type='text/javascript'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src='https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/angularjs/1.5.2/angular-cookies.min.js' type='text/javascript'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src='https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/angularjs/1.5.2/angular-sanitize.min.js' type='text/javascript'%3E%3C/script%3E"));    
+}
+</script>
+<script type="text/javascript" src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/script.js?v=2016-09-21T22:24:37Z"></script>
+
+<script type="text/javascript">
+	var lang = OrcidCookie.getCookie('locale_v3');
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+    script.src = "https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit&hl=" + lang;
+    document.body.appendChild(script);
+</script>
+
+
+
+<script src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/angularjs/1.5.0/angular-recaptcha.min.js"></script>
+
+<script type="text/javascript" src="https://a12d9252ac9db77e2649-498470b0f6c4a7ba31705cfb2c71388a.ssl.cf1.rackcdn.com/javascript/angularOrcid.js?v=2016-09-21T22:24:37Z"></script>
+
+
+
+<script type="text/javascript">
+    var MTIProjectId='078e0d2f-8275-4c25-8aa9-5d902d8e4491';
+    (function() {
+        var mtiTracking = document.createElement('script');
+        mtiTracking.type='text/javascript';
+        mtiTracking.async='true';
+        mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';
+        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+   })();
+</script>
+
+<script type="text/javascript">
+   var script = document.createElement("script");
+   script.type = "text/javascript";
+   script.src = "https://badges.mozillascience.org/widgets/paper-badger-widget.js";
+   document.body.appendChild(script);
+</script>
+
+<!-- Shibboleth -->
+<script>
+// Include the UserVoice JavaScript SDK (only needed once on a page)
+UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/8sVrMcGwO4vg6GT455xOLw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+//
+// UserVoice Javascript SDK developer documentation:
+// https://www.uservoice.com/o/javascript-sdk
+//
+
+// Set colors
+UserVoice.push(['set', {
+  accent_color: '#a6ce39',
+  trigger_color: 'white',
+  trigger_background_color: '#a6ce39',
+  post_idea_enabled: 'false'
+}]);
+
+// Identify the user and pass traits
+// To enable, replace sample data with actual user traits and uncomment the line
+UserVoice.push(['identify', {
+  //email:      'john.doe@example.com', // User�s email address
+  //name:       'John Doe', // User�s real name
+  //created_at: 1364406966, // Unix timestamp for the date the user signed up
+  //id:         123, // Optional: Unique id of the user (if set, this should not change)
+  //type:       'Owner', // Optional: segment your users by type
+  //account: {
+  //  id:           123, // Optional: associate multiple users with a single account
+  //  name:         'Acme, Co.', // Account name
+  //  created_at:   1364406966, // Unix timestamp for the date the account was created
+  //  monthly_rate: 9.99, // Decimal; monthly rate of the account
+  //  ltv:          1495.00, // Decimal; lifetime value of the account
+  //  plan:         'Enhanced' // Plan name for the account
+  //}
+  
+}]);
+
+// Add default trigger to the bottom-right corner of the window:
+UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+// Or, use your own custom trigger:
+//UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+// Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+UserVoice.push(['autoprompt', {}]);
+</script>	
+</body>
+</html>

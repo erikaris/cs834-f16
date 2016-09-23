@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <title>Microsoft Academic</title>
+    <link rel="icon" type="image/png" href="/App/assets/favicons/favicon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/App/assets/favicons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/App/assets/favicons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/App/assets/favicons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/App/assets/favicons/apple-icon-144x144.png" />
+    <link href="https://i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.css" rel="stylesheet" type="text/css" />
+    <link href="https://i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.css" rel="stylesheet" type="text/css" />
+    <link href="https://i.s-microsoft.com/fonts/segoe-ui/west-european/semibold/latest.css" rel="stylesheet" type="text/css" />
+    <link href="https://i.s-microsoft.com/fonts/segoe-ui/west-european/semilight/latest.css" rel="stylesheet" type="text/css" />
+    <link href="https://i.s-microsoft.com/fonts/segoe-ui/west-european/italic/latest.css" rel="stylesheet" type="text/css" />
+    <link href="https://i.s-microsoft.com/fonts/segoe-ui/west-european/bold/latest.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/App/css/build/csslibs.min.css" />
+    
+        <link rel="stylesheet" href="/App/css/build/public.min.css" />
+
+    <script type="text/javascript">
+        var generatePaperQueryByAffiliation = function (id) { var q = "And(Ty=='0',Composite(AA.AfId=0))"; return q.replace("@@@",id);}
+        var generatePaperQueryByAuthor = function (id) { var q = "And(Ty=='0',Composite(AA.AuId=0))"; return q.replace("@@@",id);}
+        var generatePaperQueryByConference = function (id) { var q = "And(Ty=='0',Composite(C.CId=0))"; return q.replace("@@@",id);}
+        var generatePaperQueryByFieldOfStudy = function (id) { var q = "And(Ty=='0',Composite(F.FId=0))"; return q.replace("@@@",id);}
+        var generatePaperQueryByJournal = function (id) { var q = "And(Ty=='0',Composite(J.JId=0))"; return q.replace("@@@",id);}
+        var ariaApiKey = "4469a4e969b84415b7893eaabd145b51-0e6df6f4-9a72-4d9e-9526-d6aff4f3618b-7524";
+        var raGuidCookieValue = "8da21b96-abac-4cc4-ba2c-156fae53a8d3";
+    </script>
+</head>
+<body id="isrcWrapper" style="display: none" data-bind="visible: true">
+    <input id="deUrl" type="hidden" />
+    <input id="appVersions" type="hidden" data-dataver="Dialog engine: http://academic-api-ext.trafficmanager.net/,     Data date: 2016-09-16-new, Pipeline: v2, Rank: Heterogeneous based" data-sitever="Site build: 1.1 Beta (7/11/2016 7:13:06 PM +00:00)" />
+    <div class="error-notification" style="display: none;" data-bind="visible: errorHandling.errorNotificationShown">
+    <span data-bind="text: errorHandling.errorNotification().friendly"></span> <span class="icon-times-circle" data-bind="click: errorHandling.closeErrorNotification"></span>
+</div>
+
+    <div class="desktop-top desktop-visible">
+        <div class="container pure-g">
+            <div class="pure-u-1 pure-u-md-5-24 brand">
+                <a href='/'>
+                    <img src='/App/assets/MA_logo_205x24.png' alt="Microsoft Academic" />
+                </a>
+            </div>
+            <div class="pure-u-1 pure-u-md-13-24 search-box">
+                <div class="searchWrap">
+                    <div class="search-input">
+                        <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="searchControl" class="searchControl" placeholder="Type your search query..." type="text" data-bind="searchControl: { value: resultContainers.selectedResult, template: 'searchTemplate' }, value: resultContainers.selectedResult()" />
+                        <div class="small-loader searchLoader" data-bind="visible: resultContainers.states.inputMidSearch()">
+                            <span>.</span>
+                            <span>.</span>
+                            <span>.</span>
+                        </div>
+                    </div>
+                    <div class="search-btn">
+                        <span class="search-icon"></span>
+                    </div>
+                    <input id="searchGhost" class="ghostInput unselectable" type="text" data-bind="textInput: ghostResult" />
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-6-24">
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="mobile-top mobile-visible">
+        <div class="mobile-header">
+            <span class="icon-bars" data-bind="click: $root.mobile.toggleMenu"></span>
+            <a href='/'>
+                <img src='/App/assets/MA_logo_205x24.png' alt="Microsoft Academic" />
+            </a>
+        </div>
+        <div class="mobileSearchWrap">
+            <div class="mobile-input-overlay" data-bind="visible: resultContainers.selectedResult()">
+                <span class="icon-remove" data-bind="click: mobile.clearSearchQuery"></span>
+            </div>
+            <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="mobileSearchControl" class="searchControl" placeholder="Type your search query..." type="search" data-bind="mobileSearchControl: { value: resultContainers.selectedResult, template: 'searchTemplate' }, value: resultContainers.selectedResult()" />
+            <div class="small-loader searchLoader" data-bind="visible: resultContainers.states.inputMidSearch()">
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+            </div>
+        </div>
+    </div>
+    <div data-bind="visible: mobile.suggestionsPresent">
+        <div id="mobileSearchResultDiv" class="mobileResultDiv"></div>
+    </div>
+    <div class="container-fluid body-content">
+        
+
+<div class="news-page" data-bind="page: { id: 'news', role: 'start', beforeShow: newsPage.beforeNewsParentShown, params: { s: 'a' } }">
+    <div class="id-wrapper" data-bind="page: { id: '?', role: 'start', beforeShow: newsPage.afterNewsPageShown, params: { 'nte': '', 'nts': '' } }">
+        <div class="container">
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-5-24 left-column desktop-fos">
+                    <div class="column-header fos-column-header">
+    <span class="semibold">Fields of Study</span>
+</div>
+<div class="column-content fos-column-content">
+    <ul class="fos-list" data-bind="foreach: resultContainers.news.fosArray()">
+        <li>
+            <span class="fos-literal" data-bind="attr: { id: $data.id }, click: $root.newsPage.activateSelectedFos, text: $data.title, clickBubble: false"></span> <!-- ko if: $data.id != 0 --><span class="icon-angle-right"></span><!-- /ko -->
+        </li>
+    </ul>
+</div>
+<div class="fos-hover-box" id="fosHoverBoard" data-bind="visible: newsPage.fosHoverBoardActive">
+    <ul data-bind="foreach: newsPage.fosChildArray">
+        <li data-bind="click: $root.newsPage.activateSecondaryFos, clickBubble: false"><span class="fos-child-literal" data-bind="text: $data.title, attr: { id: $data.parentId + '_' + $data.id }"></span></li>
+    </ul>
+</div>
+
+                </div>
+                <div class="pure-u-1 mobile-fos mobile-menu mobile-visible">
+                    <div class="mobile-header">
+    <span class="icon-bars" data-bind="click: $root.mobile.toggleMenu"></span>
+    <a href='/'>
+        <img src='/App/assets/ma_logo_209.png' alt="Microsoft Academic" />
+    </a>
+</div>
+<div class="content-toggle">
+    <span>View: </span>
+    <select data-bind="value: $root.newsPage.activeNewsSection, event: {change: $root.newsPage.toggleSection }">
+        <option value="0">All</option>
+        <option value="1">News</option>
+        <option value="2">Papers</option>
+    </select>
+</div>
+<ul class="ma-accordion-menu">
+    <li class="has-children top-level">
+        <input type="checkbox" name="mo-newsfeed-categories" id="moNewsfeedCategories" checked />
+        <label for="moNewsfeedCategories">Newsfeed Fields of Study<span class="icon-angle-down"></span></label>
+
+        <ul data-bind="foreach: resultContainers.news.fosArray()">
+            <li class="has-children child1">
+                <input type="checkbox" name="mo-newsfeed-categories" data-bind="attr: { id: 'mo' + $data.id }" />
+                <label data-bind="attr: { for: 'mo' + $data.id }"><span data-bind="attr: { id: $data.id }, click: $root.newsPage.activateSelectedFos, text: $data.title, clickBubble: false"></span> <!-- ko if: $data.id != 0 --><span class="icon-angle-down"></span><!-- /ko --></label>
+
+                <ul data-bind="foreach: $data.children">
+                    <li class="child2" data-bind="click: $root.newsPage.activateSecondaryFos, clickBubble: false"><span class="fos-child-literal" data-bind="text: title, attr: { id: $data.parentId + '_' + $data.id }"></span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    
+</ul>
+<div class="spacer"></div>
+<div class="mobile-footer">
+    <div class="footer-msr">
+        <a href="https://research.microsoft.com"><img src="/App/assets/mslogo.png" /></a>
+    </div>
+    <div class="footer-links">
+        <span class="fitm"><a href="https://microsoftacademic.uservoice.com/knowledgebase/articles/838965-microsoft-academic-faq" target="_blank">Preview FAQ</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/?linkid=2028325" target="_blank">Contact Us</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy & Cookies</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkID=206977" target="_blank">Terms of use</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=506942" target="_blank">Trademarks</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="/Licenses" target="_blank">Specific Terms</a></span> <span class="dot">·</span>
+        <span>&copy; 2016 Microsoft</span>
+    </div>
+</div>
+                </div>
+                <div class="pure-u-1 pure-u-md-13-24 middle-column">
+                    <div class="column-header articles-header">
+    <h2 class="grey-title" data-bind="text: $root.newsPage.computedSectionName()"></h2>
+    <div class="content-toggle desktop-visible">
+        <select data-bind="value: $root.newsPage.activeNewsSection, event: { change: function(data, event) { $root.newsPage.toggleSection(data, event); $root.newsPage.logging.valueChange($root.newsPage.constants.logging.actionTypes.homepageFeedContentFilterChanged, $root.newsPage.activeNewsSection())} }">
+            <option value="0">All</option>
+            <option value="1">News</option>
+            <option value="2">Papers</option>
+        </select>
+    </div>
+</div>
+<div class="column-content news-content">
+    <!-- ko foreach: resultContainers.news.feedArray() -->
+    <!-- ko if: $data.type == $root.constants.entityTypesInt.conferenceInstance -->
+    <conferenceinstance-tile params="{ data: $data }"></conferenceinstance-tile>
+    <!-- /ko -->
+    <!-- ko if: $data.type == $root.constants.entityTypesInt.news -->
+    <news-tile params="{ data: $data }"></news-tile>
+    <!-- /ko -->
+    <!-- ko if: $data.type == $root.constants.entityTypesInt.paper -->
+    <paper-tile params="{ data: $data, displayMode: $root.constants.displayContext.homepage }"></paper-tile>
+    <!-- /ko -->
+    <!-- /ko -->
+    <div class="small-loader loading-more-news" data-bind="visible: newsPage.loadingNews">
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+    </div>
+    <div class="loading-more-news" data-bind="visible: newsPage.noMoreNews">
+        <p><i>You've reached the end of the feed...</i></p>
+    </div>
+</div>
+<script type="text/html" id="conferenceinstance-tile-template">
+    <div class="entity-news card">
+        
+        <div class="story-content">
+            <div class="story-title">
+                <h3><span data-bind="text: data.cin"></span> <!-- ko if: data.extended.d != null-->- <span data-bind="text: data.extended.d"></span><!-- /ko --></h3>
+            </div>
+            <div class="story-subtitle">
+                <p><!-- ko if: dates --><span class="semibold"><span class="icon-calendar"></span> <span data-bind="text: dates"></span></span><!-- /ko --><!-- ko if: data.cil --> - <span data-bind="text: data.cil"></span><!-- /ko --></p>
+            </div>
+            <div class="story-content">
+                <p><!-- ko if: data.content --><span data-bind="text: data.content"></span><!-- /ko --></p>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="news-tile-template">
+    <div class="entity-news card">
+        <!-- ko if: data.previewImage.url -->
+        <div class="story-image">
+            <img data-bind="attr: { src: data.previewImage.url }" onerror="this.parentNode.style.display='none'" />
+        </div>
+        <!-- /ko -->
+        <div>
+            <div class="story-title">
+                <h3><a target="_blank" data-bind="text: data.title, attr:{ href: data.url.u }, click: externalSite"></a></h3>
+            </div>
+            <div class="story-subtitle">
+                <!-- ko if: data.date --><i><span data-bind="text: data.date"></span></i><!-- /ko --><!-- ko if: data.publisher --> - <a class="inline-link" target="_blank" data-bind="text: data.publisher.lt, attr: { href: data.publisher.u }, click: externalSite"></a><!-- /ko -->
+            </div>
+            <div class="story-content">
+                <p><!-- ko if: data.summary --><span data-bind="text: data.summary"></span><!-- /ko --></p>
+            </div>
+        </div>
+        
+    </div>
+</script>
+<script type="text/html" id="paper-tile-template">
+    <article class="paper-tile2 card">
+        <nav class="tile-top-bar">
+            <div class="title-bar">
+                <h3>
+                    <a class="blue-title" data-bind="page-href: '/detail/' + data.id, html: data.extended.dn, attr: { title: data.extended.dn }"></a>
+                </h3>
+            </div>
+        </nav>
+        <!-- ko if: displayMode == $root.constants.displayContext.homepage -->
+        <div class="tile-body">
+            <aside class="paper-meta">
+                <input type="hidden" class="authorIds" data-bind="attr: { value: authorIds }" />
+                <!-- ko if: data.j != null || data.c != null -->
+                <!-- ko if: data.j != null -->
+                <!-- ko if: data.d --><i><span data-bind="text: data.d, attr:{title: data.d != null ? data.d :'' }"></span></i><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.j.jId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a>
+                <!-- /ko -->
+                <!-- ko if: data.c != null -->
+                <!-- ko if: data.d --><i><span data-bind="text: data.d, attr:{title: data.d != null ? data.d :'' }"></span></i><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.c.cId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a>
+                <!-- /ko -->
+                <!-- /ko -->
+                <!-- ko ifnot: data.j != null || data.c != null -->
+                <!-- ko if: data.d --><i><span data-bind="text: data.d, attr:{title: data.d != null ? data.d :'' }"></span></i><!-- /ko -->, <span class="paper-authors"><!-- ko foreach: firstFiveAuthors --><a class="button-link" data-bind="page-href: '/detail/' + $data.auId, click: $root.termClickHandler, html: $data.dAuN, attr:{title: $data.afId != null ? $data.dAfN :'' }"></a><!-- ko if: $data.afId != null --> <i>(<a class="button-link" data-bind="page-href: '/detail/' + $data.afId, text: $data.dAfN"></a>)</i><!-- /ko --><!-- ko if: ($index() !== $parent.firstFiveAuthors.length - 1) -->, <!-- /ko --><!-- /ko --><!-- ko if: data.aa.length > 5 -->, <a class="button-link" data-bind="page-href: '/detail/' + data.id">...</a><!-- /ko --></span>
+                <!-- /ko -->
+            </aside>
+            <!-- ko if: data.extended.d -->
+            <p data-bind="visible: data.extended.d">
+                <span data-bind="html: longAbstract"></span>
+            </p>
+            <!-- /ko -->
+            <!-- ko if: data.f -->
+            <p data-bind="style: { 'margin-top': data.extended.d ? '5px' : '' }">
+                <!-- ko if: data.f.length > 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f.slice(0,3) --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko --> <a data-bind="page-href: '/detail/' + data.id">...</a>
+
+                <!-- /ko -->
+                <!-- ko if: data.f.length <= 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko --> <a data-bind="page-href: '/detail/' + data.fId">...</a>
+                <!-- /ko -->
+            </p>
+            <!-- /ko -->
+        </div>
+        <div class="tile-footer">
+            <div class="actions">
+                <!-- ko if: topUrl -->
+                <p><a data-bind="attr: { href: topUrl, target: '_blank' }, click: externalSite"><!-- ko if: urlIcon == 'pdf' --><img src="/App/assets/icons/icon_PDF.png" /><!-- /ko --><!-- ko if: urlIcon == 'source' --><img src="/App/assets/icons/14x_source.png" /><!-- /ko --><span data-bind="text: urlLabel"></span></a></p>
+                <!-- /ko -->
+            </div>
+            <div class="cited-times">
+                <!-- ko if: data.cc -->
+                <p>Cited <span data-bind="text: data.cc"></span> times<!-- ko if: data.cc > 50 -->*<!-- /ko --></p>
+                <!-- /ko -->
+                <!-- ko ifnot: data.cc -->
+                <p>Not cited</p>
+                <!-- /ko -->
+            </div>        </div>
+        <!-- /ko -->
+        <!-- ko if: displayMode == $root.constants.displayContext.searchResults -->
+        <div class="tile-body">
+            <aside class="paper-meta">
+                <input type="hidden" class="authorIds" data-bind="attr: { value: authorIds }" />
+                <!-- ko if: data.j != null || data.c != null -->
+                <!-- ko if: data.j != null -->
+                <!-- ko if: data.y --><span data-bind="text: data.y, attr:{title: data.ogd != null ? data.ogd :'' }"></span><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.j.jId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a><!-- ko if: data.extended.v != null -->, volume <span data-bind="html: data.extended.v"></span><!-- /ko --><!-- ko if: data.extended.i != null -->, issue <span data-bind="html: data.extended.i"></span><!-- /ko --><!-- ko if: data.extended.fp != null -->, pp <span data-bind="html:data.extended.fp"></span><!-- /ko --><!-- ko if: data.extended.lp != null -->-<span data-bind="html: data.extended.lp"></span><!-- /ko -->
+                <!-- /ko -->
+                <!-- ko if: data.c != null -->
+                <!-- ko if: data.y --><span data-bind="text: data.y, attr:{title: data.ogd != null ? data.ogd :'' }"></span><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.c.cId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a>
+                <!-- /ko -->
+                <div class="paper-authors">
+                    <!-- ko foreach: firstFiveAuthors -->
+                    <a class="button-link" data-bind="page-href: '/detail/' + $data.auId, click: $root.termClickHandler, html: $data.dAuN, attr:{title: $data.afId != null ? $data.dAfN :'' }"></a><!-- ko if: $data.afId != null --> <i>(<a class="button-link" data-bind="page-href: '/detail/' + $data.afId, text: $data.dAfN"></a>)</i><!-- /ko --><!-- ko if: ($index() !== $parent.firstFiveAuthors.length - 1) -->, <!-- /ko --><!-- /ko --><!-- ko if: data.aa.length > 5 -->, <a data-bind="page-href: '/detail/' + data.id">...</a><!-- /ko -->
+                </div>
+                <!-- /ko -->
+                <!-- ko ifnot: data.j != null || data.c != null -->
+                <!-- ko if: data.y --><span data-bind="text: data.y, attr:{title: data.ogd != null ? data.ogd :'' }"></span><!-- /ko -->, <span class="paper-authors"><!-- ko foreach: firstFiveAuthors --><a class="button-link" data-bind="page-href: '/detail/' + $data.auId, click: $root.termClickHandler, html: $data.dAuN, attr:{title: $data.afId != null ? $data.dAfN :'' }"></a><!-- ko if: $data.afId != null --> <i>(<a class="button-link" data-bind="page-href: '/detail/' + $data.afId, text: $data.dAfN"></a>)</i><!-- /ko --><!-- ko if: ($index() !== $parent.firstFiveAuthors.length - 1) -->, <!-- /ko --><!-- /ko --><!-- ko if: data.aa.length > 5 -->, <a data-bind="page-href: '/detail/' + data.id">...</a><!-- /ko --></span>
+                <!-- /ko -->
+            </aside>
+            <!-- ko if: data.extended.d -->
+            <p data-bind="visible: data.extended.d">
+                <span data-bind="html: shortAbstract, visible: !abstractToggle()"></span>
+                <span data-bind="html: longAbstract, visible: abstractToggle()"></span>
+                <div data-bind="visible: showAbstractToggle">
+                    <div class="more-content-divider" data-bind="click: hideFullAbstract, visible: abstractToggle()">
+                        <span class="grey-line"></span>
+                        <span class="icon-chevron-circle-up"></span>
+                    </div>
+                    <div class="more-content-divider" data-bind="click: showFullAbstract, visible: !abstractToggle()">
+                        <span class="grey-line"></span>
+                        <span class="icon-chevron-circle-down"></span>
+                    </div>
+                </div>
+            </p>
+            <!-- /ko -->
+            <!-- ko if: data.f -->
+            <p>
+                <!-- ko if: data.f.length > 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f.slice(0,3) --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko --> <a data-bind="page-href: '/detail/' + data.id">...</a>
+
+                <!-- /ko -->
+                <!-- ko if: data.f.length <= 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                <!-- /ko -->
+            </p>
+            <!-- /ko -->
+        </div>
+        <div class="tile-footer">
+            <div class="actions">
+                <!-- ko if: topUrl -->
+                <p><a data-bind="attr: { href: topUrl, target: '_blank' }, click: externalSite"><!-- ko if: urlIcon == 'pdf' --><img src="/App/assets/icons/icon_PDF.png" /><!-- /ko --><!-- ko if: urlIcon == 'source' --><img src="/App/assets/icons/14x_source.png" /><!-- /ko --><span data-bind="text: urlLabel"></span></a></p>
+                <!-- /ko -->
+            </div>
+            <div class="cited-times">
+                <!-- ko if: data.cc -->
+                <p>Cited <span data-bind="text: data.cc"></span> times<!-- ko if: data.cc > 50 -->*<!-- /ko --></p>
+                <!-- /ko -->
+                <!-- ko ifnot: data.cc -->
+                <p>Not cited</p>
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+    </article>
+</script>
+
+
+                </div>
+                <div class="pure-u-1 pure-u-md-6-24 right-column">
+                    <div class="desktop-visible"><h2>&nbsp;</h2></div>
+                    <top-10-entities class="desktop-visible" params="{ topEntities: newsPage.topTenEntities,
+                           fos: resultContainers.news.selectedFieldOfStudy, 
+                           selectedEntity: resultContainers.news.selectedTopEntityType, 
+                           selectedTime: resultContainers.news.selectedTopEntityTime }"></top-10-entities>
+<script type="text/html" id="top10entities-template">
+    <div class="column-header top10-entities">
+        <div class="top10-head">
+            <h2 class="medium-heading">
+                <span class="grey-title entity-select-pre">Leaderboard Top 10</span>
+            </h2>
+        </div>
+    </div>
+    <div class="column-content top10-entities">
+        <div class="top10-content">
+            <div class="top10-toggles">
+                <select data-bind="value: $root.newsPage.selectedTopTenEntityType, event: { change: function(data, event) { $root.newsPage.triggerSelectedEntity(data, event); logging.valueChange(constants.logging.actionTypes.top10TypeChanged, $root.newsPage.selectedTopTenEntityType())} }">
+                    <option selected value="5">Affiliations</option>
+                    <option value="1">Authors</option>
+                    <option value="3">Conferences</option>
+                    <option value="2">Journals</option>
+                </select>
+                <select data-bind="value: $root.newsPage.selectedTopTenEntityTime, event: {change: function(data, event) { $root.newsPage.triggerSelectedTimeRange(data, event); logging.valueChange(constants.logging.actionTypes.top10TimeChanged, $root.newsPage.selectedTopTenEntityTime())}}">
+                    <option selected value="0">All time</option>
+                    <option value="26">Past 6 months</option>
+                    <option value="156">Past 3 years</option>
+                    <option value="260">Past 5 years</option>
+                </select>
+            </div>
+            <div class="top10list">
+                <!-- ko foreach: topTenEntities -->
+                <div class="top10-entity">
+                    <p class="rank"><span data-bind="text: ($index() + 1)"></span>)</p>
+                    <div class="content">
+                        <p><a class="semibold blue-title" data-bind="page-href: '/detail/' + $data.entity.id, text: $data.displayedTitle, click: $parent.logging.entityClick.bind($data, $parent.constants.logging.actionTypePrefixes.top10, $root.newsPage.selectedTopTenEntityType(), $data.entity.id, $data.displayedTitle, $index())"></a></p>
+                        <p><i data-bind="text: $data.displayedSubtitle"></i></p>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</script>
+
+<important-dates class="desktop-visible" params="{ importantDates: newsPage.importantDates,
+                           fos: resultContainers.news.selectedFieldOfStudy }"></important-dates>
+<script type="text/html" id="imp-dates-template">
+    <div class="column-header">
+        <h2 class="medium-heading grey-title">Important Dates</h2>
+    </div>
+    <div class="column-content">
+        <div class="imp-dates-content">
+            <!-- ko if: data().length == 0 -->
+            <span>No upcoming events.</span>
+            <!-- /ko -->
+            <!-- ko foreach: data -->
+            <div class="important-date">
+                <div class="conference-title">
+                    <a class="semibold blue-title" data-bind="page-href: '/detail/' + $data.entityDetailsLink.id, text: $data.entityDetailsLink.lt, click: $parent.logging.entityClick.bind($data, $parent.constants.logging.actionTypePrefixes.importantDates, $parent.constants.logging.entityTypes.conferenceInstance, $data.entityDetailsLink.id, $data.entityDetailsLink.lt, $index())"></a>
+                </div>
+                <div class="conference-meta">
+                    <a data-bind="attr:{ href: '/Calendar/Index?id=' + $data.entityDetailsLink.id + '&date=' + $data.originalDate }, click: $parent.logging.entityClick.bind($data, $parent.constants.logging.actionTypePrefixes.addToCalendar, $parent.constants.logging.entityTypes.conferenceInstance, $data.entityDetailsLink.id, $data.entityDetailsLink.lt, $index())"><img src="/App/assets/icons/icon_calendar.png" /> <span class="conference-meta-date" data-bind="text: $data.date + ':'"></span> <span data-bind="text:$data.description"></span></a>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<div class="side-footer">
+    <div class="footer-msr">
+        <a href="https://research.microsoft.com"><img src="/App/assets/mslogo.png" /></a>
+    </div>
+    <div class="footer-links">
+        <span class="fitm"><a href="https://microsoftacademic.uservoice.com/knowledgebase/articles/838965-microsoft-academic-faq" target="_blank">Preview FAQ</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/?linkid=2028325" target="_blank">Contact Us</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy & Cookies</a></span> <span class="dot">·</span> 
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkID=206977" target="_blank">Terms of use</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=506942" target="_blank">Trademarks</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="/Licenses" target="_blank">Specific Terms</a></span> <span class="dot">·</span>
+        <span >&copy; 2016 Microsoft</span>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="search-page" data-bind="page: { id: 'search', onMatch: afterSearchResultShown, afterShow: afterSearchResultShown, params: {'iq': '','q': '','from': 0,'sort': 0,'filters': ''} }">
+    <!-- ko ifnot: resultContainers.papers().length == 0 -->
+    <div class="result-stats">
+        <div class="pure-g container">
+            <!-- ko ifnot: resultContainers.states.emptyResults() -->
+            <div class="pure-u-1 pure-u-md-13-24 middle-column">
+                <span data-bind="text: searchPage.from"></span>-<span data-bind="text: searchPage.to"></span> of <span data-bind="text: searchPage.total"></span> results for <i><span data-bind="text: resultContainers.selectedResult()"></span></i> <!-- ko if: resultContainers.selectedFiltersArray().length > 0 -->+ <!-- ko foreach: resultContainers.selectedFiltersArray --><span data-bind="text: $data.displayName"></span><!-- ko if: ($index() !== $parent.length - 1) -->, <!-- /ko --> <!-- /ko --><!-- /ko -->(<span data-bind="text: numeral(resultContainers.searchTime()).format('0,0.0')"></span> seconds)
+            </div>
+            <div class="pure-u-1 pure-u-md-5-24 desktop-visible left-column">
+                Sort by: <select data-bind="options: searchPage.availableSortMethods, optionsText: 'sortMethod', optionsValue: 'sortValue', value: searchPage.selectedSortMethod, event: {change: searchPage.triggerSortMethod}"></select>
+            </div>
+            <div class="pure-u-1 pure-u-md-6-24 right-column">&nbsp;</div>
+            <!-- /ko -->
+        </div>
+    </div>
+    <!-- /ko -->
+    <div class="pure-g container search-results">
+        <!-- ko ifnot: resultContainers.papers().length == 0 -->
+        <section class="pure-u-1 pure-u-md-5-24 filter-column left-column" data-bind="visible: mobile.mobileFiltersShow">
+            <div class="filter-header">
+                <span class="filter-title">Filters</span>
+                <span class="icon-remove" data-bind="click: mobile.toggleMobileFilters"></span>
+            </div>
+            
+
+<div class="filter-content">
+    <!-- ko with: $root.resultContainers.filterGroups -->
+    <!-- ko foreach: $root.resultContainers.filterGroups -->
+    <div class="filter-group">
+        <!-- ko if: $data.filterType == 7-->
+        <h4>
+            <span>Date Range</span>
+        </h4>
+        <date-range-picker params="dates: $data.values, filters: $root.resultContainers.selectedFiltersArray"></date-range-picker>
+        <!-- /ko -->
+        <!-- ko if: $data.filterType != 7-->
+        <!-- ko if: $data.values -->
+        <h4>
+            <span data-bind="text: $data.type"></span>
+        </h4>
+        <ul data-bind="foreach: $data.values.slice(0,5), visible: !$data.expandedGroup()">
+            <li>
+                <label data-bind="click: $root.searchPage.toggleFilter">
+                    <input type="checkbox" data-bind="checked: isChecked" />
+                    <span class="ff"></span><span data-bind="text: $data.displayName"></span>
+                </label>
+            </li>
+        </ul>
+        <ul data-bind="foreach: $data.values, visible: $data.expandedGroup()">
+            <li>
+                <label data-bind="click: $root.searchPage.toggleFilter">
+                    <input type="checkbox" data-bind="checked: isChecked" />
+                    <span class="ff"></span><span data-bind="text: $data.displayName"></span>
+                </label>
+            </li>
+        </ul>
+        <!-- ko if: $data.values.length > 5-->
+        <span class="inline-link see-all" data-bind="click: $data.setExpanded, visible: !$data.expandedGroup()">See more</span>
+        <span class="inline-link see-all" data-bind="click: $data.setCompressed, visible: $data.expandedGroup()">See less</span>
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+</div>
+
+
+        </section>
+        <section class="pure-u-1 pure-u-md-13-24 content-column middle-column">
+            <div class="content-main">
+                <!-- ko foreach: $root.resultContainers.papers() -->
+                <paper-tile params="{ data: $data }"></paper-tile>
+                <!-- /ko -->
+                <results-pager params="value: 'searchControl'"></results-pager>
+                <script type="text/html" id="results-pager-template">
+    <div class="entityResultPager" data-bind="visible: !resultContainers.states.emptyResults() && resultContainers.totalResultsForQuery() > 8">
+        <ul class="pagination" data-bind="attr: { id: ctrlId }">
+            <li>
+                <a aria-label="First" data-bind="click: first, visible: hasPrevious">
+                    <span aria-hidden="true" class="icon-angle-double-left"></span>
+                </a>
+            </li>
+            <li>
+                <a aria-label="Previous" data-bind="click: previous, visible: hasPrevious">
+                    <span aria-hidden="true" class="icon-angle-left"></span>
+                </a>
+            </li>
+            <!-- ko foreach: pageNrs -->
+            <li data-bind="click: $parent.goToPage, html: $data"></li>
+            <!-- /ko -->
+            <li>
+                <a aria-label="Next" data-bind="click: next, visible: hasNext">
+                    <span aria-hidden="true" class="icon-angle-right"></span>
+                </a>
+            </li>
+            <li>
+                <a aria-label="Last" data-bind="click: last, visible: hasNext">
+                    <span aria-hidden="true" class="icon-angle-double-right"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</script>
+                <script type="text/html" id="paper-tile-template">
+    <article class="paper-tile2 card">
+        <nav class="tile-top-bar">
+            <div class="title-bar">
+                <h3>
+                    <a class="blue-title" data-bind="page-href: '/detail/' + data.id, html: data.extended.dn, attr: { title: data.extended.dn }"></a>
+                </h3>
+            </div>
+        </nav>
+        <!-- ko if: displayMode == $root.constants.displayContext.homepage -->
+        <div class="tile-body">
+            <aside class="paper-meta">
+                <input type="hidden" class="authorIds" data-bind="attr: { value: authorIds }" />
+                <!-- ko if: data.j != null || data.c != null -->
+                <!-- ko if: data.j != null -->
+                <!-- ko if: data.d --><i><span data-bind="text: data.d, attr:{title: data.d != null ? data.d :'' }"></span></i><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.j.jId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a>
+                <!-- /ko -->
+                <!-- ko if: data.c != null -->
+                <!-- ko if: data.d --><i><span data-bind="text: data.d, attr:{title: data.d != null ? data.d :'' }"></span></i><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.c.cId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a>
+                <!-- /ko -->
+                <!-- /ko -->
+                <!-- ko ifnot: data.j != null || data.c != null -->
+                <!-- ko if: data.d --><i><span data-bind="text: data.d, attr:{title: data.d != null ? data.d :'' }"></span></i><!-- /ko -->, <span class="paper-authors"><!-- ko foreach: firstFiveAuthors --><a class="button-link" data-bind="page-href: '/detail/' + $data.auId, click: $root.termClickHandler, html: $data.dAuN, attr:{title: $data.afId != null ? $data.dAfN :'' }"></a><!-- ko if: $data.afId != null --> <i>(<a class="button-link" data-bind="page-href: '/detail/' + $data.afId, text: $data.dAfN"></a>)</i><!-- /ko --><!-- ko if: ($index() !== $parent.firstFiveAuthors.length - 1) -->, <!-- /ko --><!-- /ko --><!-- ko if: data.aa.length > 5 -->, <a class="button-link" data-bind="page-href: '/detail/' + data.id">...</a><!-- /ko --></span>
+                <!-- /ko -->
+            </aside>
+            <!-- ko if: data.extended.d -->
+            <p data-bind="visible: data.extended.d">
+                <span data-bind="html: longAbstract"></span>
+            </p>
+            <!-- /ko -->
+            <!-- ko if: data.f -->
+            <p data-bind="style: { 'margin-top': data.extended.d ? '5px' : '' }">
+                <!-- ko if: data.f.length > 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f.slice(0,3) --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko --> <a data-bind="page-href: '/detail/' + data.id">...</a>
+
+                <!-- /ko -->
+                <!-- ko if: data.f.length <= 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko --> <a data-bind="page-href: '/detail/' + data.fId">...</a>
+                <!-- /ko -->
+            </p>
+            <!-- /ko -->
+        </div>
+        <div class="tile-footer">
+            <div class="actions">
+                <!-- ko if: topUrl -->
+                <p><a data-bind="attr: { href: topUrl, target: '_blank' }, click: externalSite"><!-- ko if: urlIcon == 'pdf' --><img src="/App/assets/icons/icon_PDF.png" /><!-- /ko --><!-- ko if: urlIcon == 'source' --><img src="/App/assets/icons/14x_source.png" /><!-- /ko --><span data-bind="text: urlLabel"></span></a></p>
+                <!-- /ko -->
+            </div>
+            <div class="cited-times">
+                <!-- ko if: data.cc -->
+                <p>Cited <span data-bind="text: data.cc"></span> times<!-- ko if: data.cc > 50 -->*<!-- /ko --></p>
+                <!-- /ko -->
+                <!-- ko ifnot: data.cc -->
+                <p>Not cited</p>
+                <!-- /ko -->
+            </div>        </div>
+        <!-- /ko -->
+        <!-- ko if: displayMode == $root.constants.displayContext.searchResults -->
+        <div class="tile-body">
+            <aside class="paper-meta">
+                <input type="hidden" class="authorIds" data-bind="attr: { value: authorIds }" />
+                <!-- ko if: data.j != null || data.c != null -->
+                <!-- ko if: data.j != null -->
+                <!-- ko if: data.y --><span data-bind="text: data.y, attr:{title: data.ogd != null ? data.ogd :'' }"></span><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.j.jId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a><!-- ko if: data.extended.v != null -->, volume <span data-bind="html: data.extended.v"></span><!-- /ko --><!-- ko if: data.extended.i != null -->, issue <span data-bind="html: data.extended.i"></span><!-- /ko --><!-- ko if: data.extended.fp != null -->, pp <span data-bind="html:data.extended.fp"></span><!-- /ko --><!-- ko if: data.extended.lp != null -->-<span data-bind="html: data.extended.lp"></span><!-- /ko -->
+                <!-- /ko -->
+                <!-- ko if: data.c != null -->
+                <!-- ko if: data.y --><span data-bind="text: data.y, attr:{title: data.ogd != null ? data.ogd :'' }"></span><!-- /ko -->, <a class="inline-link" data-bind="page-href: '/detail/' + data.c.cId, click: $root.termClickHandler, html: data.extended.vfn, attr: { title: data.extended.vfn }"></a>
+                <!-- /ko -->
+                <div class="paper-authors">
+                    <!-- ko foreach: firstFiveAuthors -->
+                    <a class="button-link" data-bind="page-href: '/detail/' + $data.auId, click: $root.termClickHandler, html: $data.dAuN, attr:{title: $data.afId != null ? $data.dAfN :'' }"></a><!-- ko if: $data.afId != null --> <i>(<a class="button-link" data-bind="page-href: '/detail/' + $data.afId, text: $data.dAfN"></a>)</i><!-- /ko --><!-- ko if: ($index() !== $parent.firstFiveAuthors.length - 1) -->, <!-- /ko --><!-- /ko --><!-- ko if: data.aa.length > 5 -->, <a data-bind="page-href: '/detail/' + data.id">...</a><!-- /ko -->
+                </div>
+                <!-- /ko -->
+                <!-- ko ifnot: data.j != null || data.c != null -->
+                <!-- ko if: data.y --><span data-bind="text: data.y, attr:{title: data.ogd != null ? data.ogd :'' }"></span><!-- /ko -->, <span class="paper-authors"><!-- ko foreach: firstFiveAuthors --><a class="button-link" data-bind="page-href: '/detail/' + $data.auId, click: $root.termClickHandler, html: $data.dAuN, attr:{title: $data.afId != null ? $data.dAfN :'' }"></a><!-- ko if: $data.afId != null --> <i>(<a class="button-link" data-bind="page-href: '/detail/' + $data.afId, text: $data.dAfN"></a>)</i><!-- /ko --><!-- ko if: ($index() !== $parent.firstFiveAuthors.length - 1) -->, <!-- /ko --><!-- /ko --><!-- ko if: data.aa.length > 5 -->, <a data-bind="page-href: '/detail/' + data.id">...</a><!-- /ko --></span>
+                <!-- /ko -->
+            </aside>
+            <!-- ko if: data.extended.d -->
+            <p data-bind="visible: data.extended.d">
+                <span data-bind="html: shortAbstract, visible: !abstractToggle()"></span>
+                <span data-bind="html: longAbstract, visible: abstractToggle()"></span>
+                <div data-bind="visible: showAbstractToggle">
+                    <div class="more-content-divider" data-bind="click: hideFullAbstract, visible: abstractToggle()">
+                        <span class="grey-line"></span>
+                        <span class="icon-chevron-circle-up"></span>
+                    </div>
+                    <div class="more-content-divider" data-bind="click: showFullAbstract, visible: !abstractToggle()">
+                        <span class="grey-line"></span>
+                        <span class="icon-chevron-circle-down"></span>
+                    </div>
+                </div>
+            </p>
+            <!-- /ko -->
+            <!-- ko if: data.f -->
+            <p>
+                <!-- ko if: data.f.length > 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f.slice(0,3) --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko --> <a data-bind="page-href: '/detail/' + data.id">...</a>
+
+                <!-- /ko -->
+                <!-- ko if: data.f.length <= 3 -->
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.f --><a data-bind="html: $data.fn, page-href: '/detail/' + $data.fId, click: $root.termClickHandler"></a><!-- ko if: ($index() !== $parent.data.f.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                <!-- /ko -->
+            </p>
+            <!-- /ko -->
+        </div>
+        <div class="tile-footer">
+            <div class="actions">
+                <!-- ko if: topUrl -->
+                <p><a data-bind="attr: { href: topUrl, target: '_blank' }, click: externalSite"><!-- ko if: urlIcon == 'pdf' --><img src="/App/assets/icons/icon_PDF.png" /><!-- /ko --><!-- ko if: urlIcon == 'source' --><img src="/App/assets/icons/14x_source.png" /><!-- /ko --><span data-bind="text: urlLabel"></span></a></p>
+                <!-- /ko -->
+            </div>
+            <div class="cited-times">
+                <!-- ko if: data.cc -->
+                <p>Cited <span data-bind="text: data.cc"></span> times<!-- ko if: data.cc > 50 -->*<!-- /ko --></p>
+                <!-- /ko -->
+                <!-- ko ifnot: data.cc -->
+                <p>Not cited</p>
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+    </article>
+</script>
+
+            </div>
+        </section>
+        <section class="pure-u-1 pure-u-md-6-24 sidebar-column right-column">
+            <!-- ko if: $root.resultContainers -->
+<!-- ko foreach: $root.resultContainers.entitiesInQuery -->
+<!-- ko if: entityType == $root.constants.entityTypesInt.author -->
+<author-entity-tile params="{ data: $data }"></author-entity-tile>
+<!-- /ko -->
+<!-- ko if: entityType == $root.constants.entityTypesInt.affiliation -->
+<aff-entity-tile params="{ data: $data }"></aff-entity-tile>
+<!-- /ko -->
+<!-- ko if: entityType == $root.constants.entityTypesInt.fieldOfStudy -->
+<fos-entity-tile params="{ data: $data }"></fos-entity-tile>
+<!-- /ko -->
+<!-- ko if: entityType == $root.constants.entityTypesInt.journal -->
+<journal-entity-tile params="{ data: $data }"></journal-entity-tile>
+<!-- /ko -->
+<!-- ko if: entityType == $root.constants.entityTypesInt.conferenceSeries -->
+<confseries-entity-tile params="{ data: $data }"></confseries-entity-tile>
+<!-- /ko -->
+<!-- ko if: entityType == $root.constants.entityTypesInt.conferenceInstance -->
+<confinstance-entity-tile params="{ data: $data }"></confinstance-entity-tile>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<script type="text/html" id="author-tile-template">
+    <div class="entity-tile card" data-bind="event: { mouseenter: paperDimmer.dimPapers, mouseleave: paperDimmer.undimPapers }">
+        <div class="header">
+            <!-- ko if: data.image -->
+            <img data-bind="attr: { src: data.image, alt: data.entityTitle }" onerror="this.style.display='none'" />
+            <!-- /ko -->
+            <!-- ko if: data.entityTitle -->
+            <h3>
+                <a class="blue-title" data-bind="page-href: '/detail/' + data.entity.id, text: data.entityTitle, attr: { title: data.entityTitle }, click: eg.entityTileTitleClicked"></a>
+                <!-- ko if: data.lastKnownAffiliation -->
+                <p>
+                    <i><a class="subtitle" data-bind="text: data.lastKnownAffiliation.lt, page-href: '/detail/' + data.lastKnownAffiliation.id, click: logging.relatedEntityClick.bind(data, constants.logging.entityTypes.affiliation, data.lastKnownAffiliation.id, data.lastKnownAffiliation.lt, -1)"></a></i>
+                </p>
+                <!-- /ko -->
+            </h3>
+            <!-- /ko -->
+        </div>
+        <div class="entity-body">
+            
+            <!-- ko if: data.description -->
+            <!-- ko if: data.description.length > 420 -->
+            <p><span class="semibold"></span><span data-bind="text: data.description.slice(0,420)"></span>...</p>
+            <!-- /ko -->
+            <!-- ko if: data.description.length <= 420 -->
+            <p><span class="semibold"></span><span data-bind="text: data.description"></span></p>
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko if: data.websites && data.websites.length > 0 -->
+            <ul data-bind="foreach: data.websites">
+                <li><a target="_blank" data-bind="text: lt, attr: { href: u }, click: $parent.eg.externalLinkClicked.bind($data, $parent)"></a></li>
+            </ul>
+            <!-- /ko -->
+            <!-- ko ifnot: data.description -->
+            <!-- ko if: data.fieldsOfStudy -->
+            <p>
+                <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.fieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.fieldsOfStudy.length - 1) --><strong>,</strong> <!-- /ko --><!-- /ko -->
+            </p>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="aff-tile-template">
+    <div class="entity-tile card">
+        <div class="header">
+            <!-- ko if: data.image -->
+            <img data-bind="attr: { src: data.image, alt: data.entityTitle }" onerror="this.style.display='none'" />
+            <!-- /ko -->
+            <h3>
+                <a class="blue-title" data-bind="page-href: '/detail/' + data.entity.id, text: data.entityTitle, attr: { title: data.entityTitle }, click: eg.entityTileTitleClicked"></a>
+            </h3>
+        </div>
+        <div class="entity-body">
+            <!-- ko if: data.description -->
+            <p>
+                <span data-bind="text: data.description"></span>
+            </p>
+            <!-- /ko -->
+            <div class="entity-urls">
+                <!-- ko if: data.websites -->
+                <ul data-bind="foreach: data.websites">
+                    <li><a data-bind="attr: { href: $data.u }, text: $data.lt, click: $parent.eg.externalLinkClicked.bind($data, $parent)"></a></li>
+                </ul>
+                <!-- /ko -->
+            </div>
+
+            <!-- ko if: data.topFieldsOfStudy -->
+            <inline-entity-list params="{ title: 'Fields of Study', show: 10, data: data.topFieldsOfStudy, parentEntity: { id: data.entity.id, title: data.entityTitle, type: data.entityType }, listType: $root.constants.entityTypesInt.fieldOfStudy, type: $root.constants.logging.entityTypes.fieldOfStudy }"></inline-entity-list>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="fos-tile-template">
+    <div class="entity-tile card">
+        <div class="header">
+            <!-- ko if: data.image -->
+            <img data-bind="attr: { src: data.image, alt: data.entityTitle }" onerror="this.style.display='none'" />
+            <!-- /ko -->
+            <h3>
+                <a class="blue-title" data-bind="page-href: '/detail/' + data.entity.id, text: data.entityTitle, attr: { title: data.entityTitle }, click: eg.entityTileTitleClicked"></a>
+            </h3>
+        </div>
+        <div class="entity-body">
+            <!-- ko if: data.description -->
+            <p>
+                <span data-bind="text: data.description"></span>
+            </p>
+            <!-- /ko -->
+            <div class="entity-urls">
+                <!-- ko if: data.websites -->
+                <ul data-bind="foreach: data.websites">
+                    <li><a data-bind="attr: { href: $data.u }, text: $data.lt, click: $parent.eg.externalLinkClicked.bind($data, $parent)"></a></li>
+                </ul>
+                <!-- /ko -->
+            </div>
+            <!-- ko if: data.parentFieldsOfStudy -->
+            <inline-entity-list params="{ title: 'Subdiscipline of', show: 10, data: data.parentFieldsOfStudy, parentEntity: { id: data.entity.id, title: data.entityTitle, type: data.entityType }, listType: $root.constants.entityTypesInt.fieldOfStudy, type: $root.constants.logging.entityTypes.fieldOfStudy}"></inline-entity-list>
+            <!-- /ko -->
+            <!-- ko if: data.childFieldsOfStudy -->
+            <inline-entity-list params="{ title: 'Subfields', show: 10, data: data.childFieldsOfStudy, parentEntity: { id: data.entity.id, title: data.entityTitle, type: data.entityType }, listType: $root.constants.entityTypesInt.fieldOfStudy, type: $root.constants.logging.entityTypes.fieldOfStudy}"></inline-entity-list>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="journal-tile-template">
+    <div class="entity-tile card">
+        <div class="header">
+            <!-- ko if: data.image -->
+            <img data-bind="attr: { src: data.image, alt: data.entityTitle }" onerror="this.style.display='none'" />
+            <!-- /ko -->
+            <h3>
+                <a class="blue-title" data-bind="page-href: '/detail/' + data.entity.id, text: data.entityTitle, attr: { title: data.entityTitle }, click: eg.entityTileTitleClicked"></a>
+            </h3>
+        </div>
+        <div class="entity-body">
+            <!-- ko if: data.description -->
+            <p>
+                <span data-bind="text: data.description"></span>
+            </p>
+            <!-- /ko -->
+            <div class="entity-urls">
+                <!-- ko if: data.websites -->
+                <ul data-bind="foreach: data.websites">
+                    <li><a data-bind="attr: { href: $data.u }, text: $data.lt, click: $parent.eg.externalLinkClicked.bind($data, $parent)"></a></li>
+                </ul>
+                <!-- /ko -->
+            </div>
+            <!-- ko if: data.topFieldsOfStudy -->
+            <inline-entity-list params="{ title: 'Fields of Study', show: 10, data: data.topFieldsOfStudy, parentEntity: { id: data.entity.id, title: data.entityTitle, type: data.entityType }, listType: $root.constants.entityTypesInt.fieldOfStudy}, type: $root.constants.logging.entityTypes.fieldOfStudy"></inline-entity-list>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="confseries-tile-template">
+    <div class="entity-tile card">
+        <div class="header">
+            <!-- ko if: data.image -->
+            <img data-bind="attr: { src: data.image, alt: data.entityTitle }" onerror="this.style.display='none'" />
+            <!-- /ko -->
+            <h3>
+                <a class="blue-title" data-bind="page-href: '/detail/' + data.entity.id, text: data.entityTitle, attr: { title: data.entityTitle }, click: eg.entityTileTitleClicked"></a>
+            </h3>
+        </div>
+        <div class="sub-header">
+            <!-- ko if: data.description -->
+            <i><span class="subtitle" data-bind="text: data.description"></span></i>
+            <!-- /ko -->
+        </div>
+        <div class="entity-body">
+            
+            
+            <!-- ko if: data.fieldsOfStudy -->
+            <inline-entity-list params="{ title: 'Fields of Study', show: 10, data: data.fieldsOfStudy, parentEntity: { id: data.entity.id, title: data.entityTitle, type: data.entityType }, listType: $root.constants.entityTypesInt.fieldOfStudy, type: $root.constants.logging.entityTypes.fieldOfStudy }"></inline-entity-list>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="confinstance-tile-template">
+    <div class="entity-tile card">
+        <div class="header">
+            <h3>
+                <a class="blue-title" data-bind="page-href: '/detail/' + data.entity.id, text: data.entityTitle, attr: { title: data.entityTitle }, click: eg.entityTileTitleClicked"></a>
+            </h3>
+        </div>
+        <div class="sub-header">
+            <!-- ko if: data.location -->
+            <i class="icon-calendar"></i> <a data-bind="attr:{ href: '/Calendar/Index?id=' + data.entity.id + '&date=' + moment(data.startDate).format('YYYY-MM-DD') }, click: eg.relatedEntityClicked"> <span data-bind="text: moment(data.startDate).format('MMM DD')"></span> - <span data-bind="text: moment(data.endDate).format('MMM DD')"></span> - <span data-bind="text: data.location"></span></a>
+            <!-- /ko-->
+        </div>
+        <div class="entity-body">
+            <!-- ko if: data.description -->
+            <p style="margin-bottom: 10px;"><span data-bind="text: data.description"></span></p>
+            <!-- /ko -->
+            <!-- ko if: data.websites -->
+            <p>
+                <ul>
+                    <!-- ko foreach: data.websites -->
+                    <li><a target="_blank" data-bind="text: lt, attr: { href: u }, click: $parent.eg.externalLinkClicked.bind($data, $parent)"></a></li>
+                    <!-- /ko -->
+                </ul>
+            </p>
+            <!-- /ko -->
+            <!-- ko if: data.fieldsOfStudy -->
+            <inline-entity-list params="{ title: 'Fields of Study', show: 10, data: data.fieldsOfStudy, parentEntity: { id: data.entity.id, entityTitle: data.entityTitle }, listType: $root.constants.entityTypesInt.fieldOfStudy}, type: $root.constants.logging.entityTypes.fieldOfStudy"></inline-entity-list>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="entity-tile-template">
+    <div class="entity-detail card">
+        <div class="entity-type">
+            <p data-bind="text: $root.constants.entityTypeNames[data.entityType]"></p>
+        </div>
+        <div class="column-content">
+            <div class="entity-section">
+                <!-- ko if: data.image -->
+                <img style="max-width: 200px; max-height: 200px" data-bind="attr: { src: data.image }" />
+                <!-- /ko -->
+                <h3>
+                    <a class="button-link" data-bind="page-href: '/detail/' + data.entity.id, text: data.entityTitle, attr: { title: data.entityTitle }, click: entityTileTitleClicked"></a>
+                </h3>
+                <div class="sub-header">
+                    <!-- ko if: data.lastKnownAffiliation -->
+                    <i><span class="subtitle" data-bind="text: data.lastKnownAffiliation.lt, page-href: '/detail/' + data.lastKnownAffiliation.id"></span></i>
+                    <!-- /ko -->
+                </div>
+                <!-- ko if: data.description -->
+                <p><span data-bind="text: data.description"></span></p>
+                <!-- /ko -->
+                <!-- ko if: data.websites && data.websites.length > 0 -->
+                <p>
+                    <span class="attr-name">Websites:</span><ul>
+                        <!-- ko foreach: data.websites -->
+                        <li><a target="_blank" data-bind="text: lt, attr: { href: u }"></a></li>
+                        <!-- /ko -->
+                    </ul>
+                </p>
+                <!-- /ko -->
+
+                
+
+                <!-- ko if: data.fieldsOfStudy -->
+                <p>
+                    <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.fieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id"></a><!-- ko if: ($index() !== $parent.data.fieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</script>
+
+        </section>
+        <!-- /ko -->
+    </div>
+</div>
+
+<script id="searchTemplate" type="text/html">
+    <li class="search-result-item">
+        <div class="result-content">
+            <input type="hidden" class="sq" value="#=suggestedQuery#" />
+            <input type="hidden" class="iq" value="#=internalQuery#" />
+            <span class="name">#=augmentedQuery#</span>
+        </div>
+    </li>
+</script>
+<div class="pure-u-1 mobile-serp mobile-menu mobile-visible">
+    <div class="mobile-header">
+    <span class="icon-bars" data-bind="click: $root.mobile.toggleMenu"></span>
+    <a href='/'>
+        <img src='/App/assets/ma_logo_209.png' alt="Microsoft Academic" />
+    </a>
+</div>
+<div class="serp-sort">
+    <p>Sort by: <select data-bind="options: searchPage.availableSortMethods, optionsText: 'sortMethod', optionsValue: 'sortValue', value: searchPage.selectedSortMethod, event: {change: searchPage.triggerSortMethod}"></select></p>
+</div>
+<div class="filter-content">
+    <!-- ko with: $root.resultContainers.filterGroups -->
+    <!-- ko foreach: $root.resultContainers.filterGroups -->
+    <div class="filter-group">
+        <!-- ko if: $data.filterType == 7-->
+        <h4>
+            <span>Date Range</span>
+        </h4>
+        <date-range-picker params="dates: $data.values, filters: $root.resultContainers.selectedFiltersArray"></date-range-picker>
+        <!-- /ko -->
+        <!-- ko if: $data.filterType != 7-->
+        <!-- ko if: $data.values -->
+        <h4>
+            <span data-bind="text: $data.type"></span>
+        </h4>
+        <ul data-bind="foreach: $data.values.slice(0,5), visible: !$data.expandedGroup()">
+            <li>
+                <label data-bind="click: $root.searchPage.toggleFilter">
+                    <input type="checkbox" data-bind="checked: isChecked" />
+                    <span class="ff"></span><span data-bind="text: $data.displayName"></span>
+                </label>
+            </li>
+        </ul>
+        <ul data-bind="foreach: $data.values, visible: $data.expandedGroup()">
+            <li>
+                <label data-bind="click: $root.searchPage.toggleFilter">
+                    <input type="checkbox" data-bind="checked: isChecked" />
+                    <span class="ff"></span><span data-bind="text: $data.displayName"></span>
+                </label>
+            </li>
+        </ul>
+        <!-- ko if: $data.values.length > 5-->
+        <span class="inline-link see-all" data-bind="click: $data.setExpanded, visible: !$data.expandedGroup()">See more</span>
+        <span class="inline-link see-all" data-bind="click: $data.setCompressed, visible: $data.expandedGroup()">See less</span>
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+</div>
+<div class="spacer"></div>
+<div class="mobile-footer">
+    <div class="footer-msr">
+        <a href="https://research.microsoft.com"><img src="/App/assets/mslogo.png" /></a>
+    </div>
+    <div class="footer-links">
+        <span class="fitm"><a href="https://microsoftacademic.uservoice.com/knowledgebase/articles/838965-microsoft-academic-faq" target="_blank">Preview FAQ</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/?linkid=2028325" target="_blank">Contact Us</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy & Cookies</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkID=206977" target="_blank">Terms of use</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=506942" target="_blank">Trademarks</a></span> <span class="dot">·</span>
+        <span class="fitm"><a href="/Licenses" target="_blank">Specific Terms</a></span> <span class="dot">·</span>
+        <span>&copy; 2016 Microsoft</span>
+    </div>
+</div>
+
+</div>
+<div class="pure-g" data-bind="visible: resultContainers.states.emptyResults()">
+    <div class="pure-u-1 results-loading" data-bind="visible: !resultContainers.states.firstVisit()">
+        <h3>No results found for <span style="font-style: italic" data-bind="text: resultContainers.selectedResult()"></span>...</h3>
+    </div>
+</div>
+
+
+<article style="display: none" class="author-page" data-bind="page: {id: 'detail', params: { id: '' } }">
+    <div class="id-wrapper" data-bind="page: { id: '?', beforeShow: detailPage.beforeDetailPageShown}">
+        <div class="pure-g container entity-detail" data-bind="with: detailPage.entityDetail">
+            <!-- ko if: entityType == $root.constants.entityTypesInt.paper -->
+            <paper-detail-entity class="full-page-entity" params="{ entity: $data }"></paper-detail-entity>
+            <!-- /ko -->
+            <script type="text/html" id="paper-detail-template">
+    <div class="pure-u-1 entity-header">
+        <h1 data-bind="text: data.entityTitle"></h1>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-left">
+        <div class="entity-type">
+            <p>Publication</p>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko if: data.date -->
+                <div>
+                    <span class="semibold">Published: </span> <p><span data-bind="text: moment(data.date).format('MMM Do YYYY')"></span></p>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.entity.j -->
+                <div>
+                    <span class="semibold">Journal:</span>
+                    <p>
+                        <a data-bind="text: data.entity.extended.vfn, page-href: '/detail/' + data.entity.j.jId, click: logging.relatedEntityClick.bind(data, constants.logging.entityTypes.journal, data.entity.j.jId, data.entity.extended.vfn, -1)"></a>
+                    </p>
+                    <p>
+                        <!-- ko if: data.entity.extended.v -->Volume: <span data-bind="text: data.entity.extended.v"></span><!-- /ko -->
+                        <!-- ko if: data.entity.extended.i -->Issue: <span data-bind="text: data.entity.extended.i"></span><!-- /ko -->
+                        <!-- ko if: data.entity.extended.fp -->pp <span data-bind="text: data.entity.extended.fp"></span> - <!-- /ko --><!-- ko if: data.entity.extended.lp --><span data-bind="text: data.entity.extended.lp"></span><!-- /ko -->
+                    </p>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.entity.c -->
+                <div>
+                    <span class="semibold">Conference:</span>
+                    <p>
+                        <a data-bind="text: data.entity.extended.vfn, page-href: '/detail/' + data.entity.c.cId, click: logging.relatedEntityClick.bind(data, constants.logging.entityTypes.conference, data.entity.c.cId, data.entity.extended.vfn, -1)"></a>
+                    </p>
+                    <p>
+                        <!-- ko if: data.entity.extended.v -->Volume: <span data-bind="text: data.entity.extended.v"></span><!-- /ko -->
+                        <!-- ko if: data.entity.extended.i -->Issue: <span data-bind="text: data.entity.extended.i"></span><!-- /ko -->
+                        <!-- ko if: data.entity.extended.fp -->pp <span data-bind="text: data.entity.extended.fp"></span> - <!-- /ko --><!-- ko if: data.entity.extended.lp --><span data-bind="text: data.entity.extended.lp"></span><!-- /ko -->
+                    </p>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.authors -->
+                <div>
+                    <span class="semibold">Authors:</span>
+                    <!-- ko foreach: data.authors -->
+                    <p>
+                        <a data-bind="page-href: '/detail/' + id, text: lt, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.author, id, lt, $index())"></a><br />
+                        <!-- ko if: $data.lt2 --><i><a data-bind="page-href: '/detail/' + id2, text: lt2, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.affiliation, id2, lt2, $index())"></a></i><!-- /ko -->
+                    </p>
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.fieldsOfStudy -->
+                <p>
+                    <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.fieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.fieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-13-24 entity-center">
+        <!-- ko if: data.abstract -->
+        <div class="column-header">
+            <h2 class="grey-title">Abstract</h2>
+        </div>
+        <div class="card column-content entity-section">
+            <p data-bind="text: data.abstract"></p>
+        </div>
+        <br />
+        <!-- /ko -->
+        <!-- ko if: data.references -->
+        <div class="column-header">
+            <h2 class="grey-title">Linked References</h2>
+            <!-- ko with: data.references.m -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all references (' + $data.lt + ')', attr: { title: 'Search for ' + $data.q + '...'}"></a>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.references.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+        <!-- ko if: data.citations && data.refences -->
+        <hr />
+        <!-- /ko -->
+        <!-- ko if: data.citations -->
+        <div class="column-header">
+            <h2 class="grey-title">Top Citations</h2>
+            <!-- ko with: data.citations.m -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, null),
+               text: 'See all linked citations (' + $data.lt + ')', attr: { title: 'Search for ' + $data.q + '...'}"></a>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.citations.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+    </div>
+    <div class="pure-u-1 pure-u-md-6-24 entity-right">
+        <div class="column-header">
+            <h2 class="grey-title">Sources</h2>
+        </div>
+        <div class="column-content">
+            <!-- ko ifnot: data.sources -->
+            <p><i>Sorry, we couldn't find any source URLs for this paper.</i></p>
+            <!-- /ko -->
+            <!-- ko if: data.sources -->
+            <ul class="sources-list" data-bind="foreach: data.sources">
+                <li>
+                    <img data-bind="attr: { src: '/App/assets/icons/48x_' + urlIcon + '.png' }"></img> <a data-bind="attr: { href: u, title: u }, click: $parent.logging.externalLinkClick.bind(domain, u)" target="_blank"><span data-bind="text: domain"></span></a>
+                </li>
+            </ul>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+            <!-- ko if: entityType == $root.constants.entityTypesInt.author -->
+            <author-detail-entity class="full-page-entity" params="{ entity: $data }"></author-detail-entity>
+            <!-- /ko -->
+            <script type="text/html" id="author-detail-template">
+    <div class="pure-u-1 entity-header">
+        <h1 data-bind="text: data.entityTitle"></h1>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-left">
+        <div class="entity-type">
+            <p>Author</p>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko if: data.image -->
+                <div class="entity-image-container">
+                    <img data-bind="attr: { src: data.image }" onerror="this.parentNode.style.display='none'" />
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.lastKnownAffiliation -->
+                <p>
+                    <i><a data-bind="text: data.lastKnownAffiliation.lt, page-href: '/detail/' + data.lastKnownAffiliation.id, click: logging.relatedEntityClick.bind(data, constants.logging.entityTypes.affiliation, data.lastKnownAffiliation.id, data.lastKnownAffiliation.lt, -1)"></a></i>
+                </p>
+                <!-- /ko -->
+                
+                <!-- ko if: data.description -->
+                <long-description params="{ show: 400, content: data.description, header: 'Description' }"></long-description>
+                <!-- /ko -->
+                <!-- ko if: data.websites && data.websites.length > 0 -->
+                <p>
+                    <span class="semibold">Websites: </span><ul>
+                        <!-- ko foreach: data.websites -->
+                        <li><a target="_blank" data-bind="text: lt, attr: { href: u }, click: $parent.logging.externalLinkClick.bind($data, $data.lt, $data.u, $index())"></a></li>
+                        <!-- /ko -->
+                    </ul>
+                </p>
+                <!-- /ko -->
+                <!-- ko if: data.fieldsOfStudy -->
+                <p>
+                    <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.fieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.fieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+                <!-- ko if: data.affiliations -->
+                <p>
+                    <span class="semibold">Co-author Affiliations: </span> <!-- ko foreach: data.affiliations --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.affiliation, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.affiliations.length - 1) --><span class="semibold">,</span> <!-- /ko --> <!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="pure-u-1 pure-u-md-14-24 entity-center">
+        <!-- ko if: data.publications -->
+        <div class="column-header">
+            <h2 class="grey-title">Top Publications</h2>
+            <!-- ko with: data.publications.m -->
+            <!-- ko if: lt > 5 -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all papers (' + $data.lt + ')', attr: { title: 'Search for ' + $data.q + '...'}"></a>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.publications.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+        <!-- ko if: data.citations -->
+        <hr />
+        <div class="column-header">
+            <h2 class="grey-title">Top Citations</h2>
+            <!-- ko with: data.citations.m -->
+            <!-- ko if: lt > 5 -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, null),
+               text: 'See all linked citations (' + $data.lt + ')', attr: { title: 'Search for ' + $data.q + '...'}"></a>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.citations.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+            
+        </div>
+        <!-- /ko -->
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-right">
+        <!-- ko if: data.journals -->
+        <div class="column-header">
+            <h2 class="grey-title">Journals</h2>
+        </div>
+        <entity-list params="{ items: data.journals, more: true, show: 5, type: $root.constants.logging.entityTypes.journal  }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.conferences -->
+        <div class="column-header">
+            <h2 class="grey-title">Conferences</h2>
+        </div>
+        <entity-list params="{ items: data.conferences, more: true, show: 5, type: $root.constants.logging.entityTypes.conferenceSeries  }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.coauthors -->
+        <div class="column-header">
+            <h2 class="grey-title">Co-authors</h2>
+        </div>
+        <entity-list params="{ items: data.coauthors, more: true, show: 5, type: $root.constants.logging.entityTypes.author  }"></entity-list>
+        <!-- /ko -->
+    </div>
+</script>
+
+            <!-- ko if: entityType == $root.constants.entityTypesInt.journal -->
+            <journal-detail-entity class="full-page-entity" params="{ entity: $data }"></journal-detail-entity>
+            <!-- /ko -->
+            <script type="text/html" id="journal-detail-template">
+    <div class="pure-u-1 entity-header">
+        <h1 data-bind="text: data.entityTitle"></h1>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-left">
+        <div class="entity-type">
+            <p>Journal</p>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko if: data.image -->
+                <div class="entity-image-container">
+                    <img data-bind="attr: { src: data.image }" onerror="this.parentNode.style.display='none'" />
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.description -->
+                <long-description params="{ show: 400, content: data.description, header: 'Description' }"></long-description>
+                <!-- /ko -->
+                <!-- ko if: data.websites -->
+                <p>
+                    <span class="semibold">Websites: </span><ul>
+                        <!-- ko foreach: data.websites -->
+                        <li><a target="_blank" data-bind="text: lt, attr: { href: u }, click: $parent.logging.externalLinkClick.bind($data, $data.lt, $data.u, $index())"></a></li>
+                        <!-- /ko -->
+                    </ul>
+                </p>
+                <!-- /ko -->
+                <!-- ko if: data.topFieldsOfStudy -->
+                <p>
+                    <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.topFieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.topFieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-14-24 entity-center">
+        <div class="column-header">
+            <h2 class="grey-title">Recent Publications</h2>
+            <!-- ko with: data.recentPublications.m -->
+            <!-- ko if: lt -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all papers (' + $data.lt + ')', attr: { title: lt }"></a>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko if: data.recentPublications -->
+            <!-- ko foreach: data.recentPublications.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+
+            
+            <!-- /ko -->
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-right">
+        <!-- ko if: data.topAuthors -->
+        <div class="column-header">
+            <h2 class="grey-title">Authors</h2>
+        </div>
+        <entity-list params="{ items: data.topAuthors, more: true, show: 5, type: $root.constants.logging.entityTypes.author  }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.topAffiliations -->
+        <div class="column-header">
+            <h2 class="grey-title">Affiliations</h2>
+        </div>
+        <entity-list params="{ items: data.topAffiliations, more: true, show: 5, type: $root.constants.logging.entityTypes.affiliation  }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.relatedJournals -->
+        <div class="column-header">
+            <h2 class="grey-title">Related Journals</h2>
+        </div>
+        <entity-list params="{ items: data.relatedJournals, more: true, show: 5, type: $root.constants.logging.entityTypes.journal  }"></entity-list>
+        <!-- /ko -->
+    </div>
+</script>
+
+            <!-- ko if: entityType == $root.constants.entityTypesInt.conferenceSeries -->
+            <conference-series-detail-entity class="full-page-entity" params="{ entity: $data }"></conference-series-detail-entity>
+            <!-- /ko -->
+            <script type="text/html" id="conference-series-detail-template">
+    <div class="pure-u-1 entity-header">
+        <h1 data-bind="text: data.entityTitle"></h1>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-left">
+        <div class="entity-type">
+            <p>Conference</p>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko if: data.image -->
+                <div class="entity-image-container">
+                    <img data-bind="attr: { src: data.image }" onerror="this.parentNode.style.display='none'" />
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.fieldsOfStudy -->
+                <p>
+                    <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.fieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.fieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-14-24 entity-center">
+        <!-- ko if: data.topPublications -->
+        <div class="column-header">
+            <h2 class="grey-title">Top Publications</h2>
+            <!-- ko with: data.topPublications.m -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all papers (' + $data.lt + ')', attr: { title: 'Search for ' + $data.q + '...'}"></a>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.topPublications.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+
+            
+        </div>
+        <!-- /ko -->
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-right">
+        <div class="column-header">
+            <h2 class="grey-title"> </h2>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko with: data.mostRecentConferenceInstance -->
+                <h4><a data-bind="text: entityTitle, page-href: '/detail/' + entityDetails.id"></a></h4>
+                <p>
+                    <i class="icon-calendar"></i> <span data-bind="text: moment(startDate).format('MMM DD')"></span> - <span data-bind="text: moment(endDate).format('MMM DD')"></span> - <span data-bind="text: location"></span>
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- ko if: data.pastConferenceInstances -->
+        <div class="column-header">
+            <h2 class="grey-title">Past Conferences</h2>
+        </div>
+        <entity-list params="{ items: data.pastConferenceInstances, more: true, show: 5, type: $root.constants.logging.entityTypes.conferenceInstance  }"></entity-list>
+        <!-- /ko -->
+    </div>
+</script>
+
+            <!-- ko if: entityType == $root.constants.entityTypesInt.conferenceInstance -->
+            <conference-instance-detail-entity class="full-page-entity" params="{ entity: $data }"></conference-instance-detail-entity>
+            <!-- /ko -->
+            <script type="text/html" id="conference-instance-detail-template">
+    <div class="pure-u-1 entity-header">
+        <h1 data-bind="text: data.entityTitle"></h1>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-left">
+        <div class="entity-type">
+            <p>Conference Event</p>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko if: data.image -->
+                <div class="entity-image-container">
+                    <img data-bind="attr: { src: data.image }" />
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.location -->
+                <i><span class="location" data-bind="text: data.location "></span></i>
+                <!-- /ko -->
+                <!-- ko if: data.description -->
+                <long-description params="{ show: 400, content: data.description, header: 'Description' }"></long-description>
+                <!-- /ko -->
+                <!-- ko if: data.websites -->
+                <p>
+                    <span class="semibold">Websites: </span><ul>
+                        <!-- ko foreach: data.websites -->
+                        <li><a target="_blank" data-bind="text: lt, attr: { href: u }, click: $parent.logging.externalLinkClick.bind($data, $data.lt, $data.u, $index())"></a></li>
+                        <!-- /ko -->
+                    </ul>
+                </p>
+                <!-- /ko -->
+                <!-- ko if: data.fieldsOfStudy -->
+                <p>
+                    <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.fieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.fieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-13-24 entity-center">
+        <!-- ko if: data.recentPublications -->
+        <div class="column-header">
+            <h2 class="grey-title">Recent Publications</h2>
+            <!-- ko with: data.recentPublications.m -->
+            <!-- ko if: $data.lt > 0 -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all papers (' + $data.lt + ')', attr: { title: 'Search for ' + $data.q + '...'}"></a>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.recentPublications.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+    </div>
+    <div class="pure-u-1 pure-u-md-6-24 entity-right">
+        <div class="column-content">
+            <div class="column-header">
+                <h2 class="grey-title">Important Dates</h2>
+            </div>
+            <div class="column-content">
+                <div class="imp-dates-content card">
+                    <!-- ko if: data.importantDates.length == 0 -->
+                    <span>No upcoming events.</span>
+                    <!-- /ko -->
+                    <!-- ko foreach: data.importantDates.dates -->
+                    <div class="important-date">
+                        <span class="semibold" data-bind="text: $data.description"></span>
+                        <div class="conference-meta">
+                            <a data-bind="attr:{ href: '/Calendar/Index?id=' + $data.entityDetailsLink.id + '&date=' + $data.originalDate }">
+                                <!-- ko if: $data.endDate -->
+                                <span class="icon-calendar"></span> <span data-bind="text: moment($data.originalDate).format('MMMM Do') + '-' + moment($data.endDate).format('Do, YYYY')"></span>
+                                <!-- /ko -->
+                                <!-- ko ifnot: $data.endDate-->
+                                <span class="icon-calendar"></span> <span data-bind="text: moment($data.originalDate).format('MMMM Do, YYYY')"></span>
+                                <!-- /ko -->
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+
+        </div>
+        <!-- ko if: data.otherInstances -->
+        <div class="column-header">
+            <h2 class="grey-title">Other Instances</h2>
+        </div>
+        <entity-list params="{ items: data.otherInstances, more: true, show: 5, type: $root.constants.logging.entityTypes.conferenceInstance  }"></entity-list>
+        <!-- /ko -->
+    </div>
+</script>
+
+            <!-- ko if: entityType == $root.constants.entityTypesInt.affiliation -->
+            <affiliation-detail-entity class="full-page-entity" params="{ entity: $data }"></affiliation-detail-entity>
+            <!-- /ko -->
+            <script type="text/html" id="affiliation-detail-template">
+    <div class="pure-u-1 entity-header">
+        <h1 data-bind="text: data.entityTitle"></h1>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-left">
+        <div class="entity-type">
+            <p>Affiliation</p>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko if: data.image -->
+                <div class="entity-image-container">
+                    <img data-bind="attr: { src: data.image }" onerror="this.parentNode.style.display='none'" />
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.description -->
+                <long-description params="{ show: 400, content: data.description, header: 'Description' }"></long-description>
+                <!-- /ko -->
+                <!-- ko if: data.websites -->
+                <p>
+                    <span class="semibold">Websites: </span><ul>
+                        <!-- ko foreach: data.websites -->
+                        <li><a target="_blank" data-bind="text: lt, attr: { href: u }, click: $parent.logging.externalLinkClick.bind($data, $data.lt, $data.u, $index())"></a></li>
+                        <!-- /ko -->
+                    </ul>
+                </p>
+                <!-- /ko -->
+                <!-- ko if: data.topFieldsOfStudy -->
+                <p>
+                    <span class="semibold">Fields of Study: </span> <!-- ko foreach: data.topFieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index()) "></a><!-- ko if: ($index() !== $parent.data.topFieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-14-24 entity-center">
+        <!-- ko if: data.recentPublications -->
+        <div class="column-header">
+            <h2 class="grey-title">Recent Publications</h2>
+            <!-- ko with: data.recentPublications.m -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all papers (' + $data.lt + ')', attr: { title: 'Search for ' + $data.q + '...'}"></a>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.recentPublications.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-right">
+        <!-- ko if: data.topAuthors -->
+        <div class="column-header">
+            <h2 class="grey-title">Authors</h2>
+        </div>
+        <entity-list params="{ items: data.topAuthors, more: true, show: 5, type: $root.constants.logging.entityTypes.author }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.topConferences -->
+        <div class="column-header">
+            <h2 class="grey-title">Conferences</h2>
+        </div>
+        <entity-list params="{ items: data.topConferences, more: true, show: 5, type: $root.constants.logging.entityTypes.conferenceSeries }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.topJournals -->
+        <div class="column-header">
+            <h2 class="grey-title">Journals</h2>
+        </div>
+        <entity-list params="{ items: data.topJournals, more: true, show: 5, type: $root.constants.logging.entityTypes.journal }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.relatedAffiliations -->
+        <div class="column-header">
+            <h2 class="grey-title">Related Affiliations</h2>
+        </div>
+        <entity-list params="{ items: data.relatedAffiliations, more: true, show: 5, type: $root.constants.logging.entityTypes.affiliation }"></entity-list>
+        <!-- /ko -->
+    </div>
+</script>
+
+            <!-- ko if: entityType == $root.constants.entityTypesInt.fieldOfStudy -->
+            <fos-detail-entity class="full-page-entity" params="{ entity: $data }"></fos-detail-entity>
+            <!-- /ko -->
+            <script type="text/html" id="fos-detail-template">
+    <div class="pure-u-1 entity-header">
+        <h1 data-bind="text: data.entityTitle"></h1>
+    </div>
+    <div class="pure-u-1 pure-u-md-5-24 entity-left">
+        <div class="entity-type">
+            <p>Field of Study</p>
+        </div>
+        <div class="column-content">
+            <div class="card entity-section">
+                <!-- ko if: data.image -->
+                <div class="entity-image-container">
+                    <img data-bind="attr: { src: data.image }" onerror="this.parentNode.style.display='none'" />
+                </div>
+                <!-- /ko -->
+                <!-- ko if: data.description -->
+                <long-description params="{ show: 400, content: data.description, header: 'Description' }"></long-description>
+                <!-- /ko -->
+                <!-- ko if: data.websites -->
+                <p>
+                    <span class="semibold">Websites: </span><ul>
+                        <!-- ko foreach: data.websites -->
+                        <li><a target="_blank" data-bind="text: lt, attr: { href: u }, click: $parent.logging.externalLinkClick.bind($data, $data.lt, $data.u, $index())"></a></li>
+                        <!-- /ko -->
+                    </ul>
+                </p>
+                <!-- /ko -->
+                <!-- ko if: data.childFieldsOfStudy -->
+                <p>
+                    <span class="semibold">Subfields: </span> <!-- ko foreach: data.childFieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.childFieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+                <!-- ko if: data.parentFieldsOfStudy -->
+                <p>
+                    <span class="semibold">Subdiscipline of: </span> <!-- ko foreach: data.parentFieldsOfStudy --><a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.constants.logging.entityTypes.fieldOfStudy, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.parentFieldsOfStudy.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko -->
+                </p>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-13-24 entity-center">
+        <!-- ko if: data.topPublications -->
+        <div class="column-header">
+            <h2 class="grey-title">Top Publications</h2>
+            <!-- ko with: data.topPublications.m -->
+            <!-- ko if: lt -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all top papers (' + $data.lt + ')', attr: { title: lt }"></a>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.topPublications.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+        <!-- ko if: data.recentPublications -->
+        <hr />
+        <div class="column-header">
+            <h2 class="grey-title">Recent Publications</h2>
+            <!-- ko with: data.recentPublications.m -->
+            <!-- ko if: lt -->
+            <div class="see-all">
+                <a data-bind="page-href: $root.helpers.buildUrl($data.iq, $data.q, 0, $data.sm),
+               text: 'See all recent papers (' + $data.lt + ')', attr: { title: lt }"></a>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <div class="column-content">
+            <!-- ko foreach: data.recentPublications.e -->
+            <paper-tile params="{ data: $data }"></paper-tile>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+    </div>
+    <div class="pure-u-1 pure-u-md-6-24 entity-right">
+        <!-- ko if: data.topAuthors -->
+        <div class="column-header">
+            <h2 class="grey-title">Authors</h2>
+        </div>
+        <entity-list params="{ items: data.topAuthors, more: true, show: 5, type: $root.constants.logging.entityTypes.author  }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.topAffiliations -->
+        <div class="column-header">
+            <h2 class="grey-title">Affiliations</h2>
+        </div>
+        <entity-list params="{ items: data.topAffiliations, more: true, show: 5, type: $root.constants.logging.entityTypes.affiliation  }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.topJournals -->
+        <div class="column-header">
+            <h2 class="grey-title">Journals</h2>
+        </div>
+        <entity-list params="{ items: data.topJournals, more: true, show: 5, type: $root.constants.logging.entityTypes.journal  }"></entity-list>
+        <!-- /ko -->
+        <!-- ko if: data.topConferences -->
+        <div class="column-header">
+            <h2 class="grey-title">Conferences</h2>
+        </div>
+        <entity-list params="{ items: data.topConferences, more: true, show: 5, type: $root.constants.logging.entityTypes.conferenceSeries  }"></entity-list>
+        <!-- /ko -->
+    </div>
+</script>
+
+        </div>
+    </div>
+</article>
+
+<script type="text/html" id="top-list-template">
+    <div class="column-content top-list">
+        <div class="card">
+            <div class="top-list-inner">
+                <!-- ko foreach: items -->
+                <div class="top-list-entity">
+                    <div class="rank"><p data-bind="text: ($index() + 1)"></p></div>
+                    <div class="content">
+                        <p><span class="semibold"><a data-bind="page-href: '/detail/' + $data.id, text: $data.name"></a></span></p>
+                        <!-- ko if: $data.afN --><p class="sub-header" data-bind="text: $data.affiliation"></p><!-- /ko -->
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="entity-list-template">
+    <div class="column-content top-list">
+        <div class="top-list-inner">
+            <div data-bind="visible: !expandedGroup()">
+                <!-- ko foreach: shortArray -->
+                <div class="top-list-entity">
+                    <div class="content">
+                        <p><a data-bind="page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.type, $data.id, $data.lt, $index()) "><span data-bind="text: $data.title"></span></a></p>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <div data-bind="visible: expandedGroup">
+                <!-- ko foreach: longArray -->
+                <div class="top-list-entity">
+                    <div class="content">
+                        <p><a data-bind="page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.type, $data.id, $data.lt, $index()) "><span data-bind="text: $data.title"></span></a></p>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <!-- ko if: longArray().length > show -->
+            <div class="see-more " data-bind="visible: more">
+                <span class="inline-link" data-bind="click: setExpanded, text: expandedGroup() ? 'See less' : 'See more'"></span>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="inline-entity-list-template">
+    <p>
+        <span class="semibold"><span data-bind="text: title"></span>: </span>
+        <!-- ko foreach: data -->
+        <a data-bind="text: $data.lt, page-href: '/detail/' + $data.id, click: $parent.logging.relatedEntityClick.bind($data, $parent.type, $data.id, $data.lt, $index())"></a><!-- ko if: ($index() !== $parent.data.length - 1) --><span class="semibold">,</span> <!-- /ko --><!-- /ko --><!-- ko if: entityCount > show -->, <a data-bind="page-href: '/detail/' + parentEntity.id">...</a><!-- /ko -->
+    </p>
+</script>
+
+<script type="text/html" id="date-range-picker-template">
+    <div class="date-range-picker">
+            <select class="from" data-bind="options: dates,
+                optionsText: 'displayName',
+                value: selectedFromYear,
+                event: {change: setFromDate}" />
+            <span class="selector-separator">to</span>
+            <select class="to" data-bind="options: dates,
+                optionsText: 'displayName',
+                value: selectedToYear,
+                event: {change: setToDate}" />
+    </div>
+</script>
+<script type="text/html" id="long-description-template">
+    <p>
+        <span class="semibold" data-bind="text: header"></span>: 
+        <span style="word-wrap: break-word;" data-bind="text: shortDesc, visible: !expandedText()"></span>
+        <span style="word-wrap: break-word;" data-bind="text: longDesc, visible: expandedText"></span>
+        <div style="text-align: right" data-bind="visible: more"><p><span class="inline-link" data-bind="click: setExpanded, text: expandedText() ? 'See less' : 'See more'"></span></p></div>
+    </p>
+</script>
+
+
+
+
+
+<div class="pure-g loading-overlay" data-bind="visible: ldr">
+    <div class="pure-u-1 results-loading">
+        <div class="loader">
+            <span class="loader--ball loader--ball__first"></span>
+            <span class="loader--ball"></span>
+            <span class="loader--ball"></span>
+            <span class="loader--ball"></span>
+        </div>
+    </div>
+</div>
+<div class="pure-g overlay" data-bind="visible: resultContainers.states.dimOut"></div>
+
+
+
+    </div>
+    <footer class="pure-g page-footer desktop-visible">
+        <div class="pure-u-1 container">
+            <div class="footer-links">
+                <span class="fitm"><a href="https://microsoftacademic.uservoice.com/knowledgebase/articles/838965-microsoft-academic-faq" target="_blank">Preview FAQ</a></span>
+                <span class="fitm"><a href="http://go.microsoft.com/?linkid=2028325" target="_blank">Contact Us</a></span>
+                <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy and Cookies</a></span>
+                <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkID=206977" target="_blank">Terms of Use</a></span>
+                <span class="fitm"><a href="http://go.microsoft.com/fwlink/?LinkId=506942" target="_blank">Trademarks</a></span>
+                <span class="fitm"><a href="/Licenses" target="_blank">Specific Terms</a></span>
+                <span class="fitm"><a href="https://microsoftacademic.uservoice.com/knowledgebase/articles/838965-microsoft-academic-faq#citations" target="_blank">* Estimated count</a></span>
+            </div>
+            <span class="footer-msr">
+                <span style="margin-left: 30px;">&copy; 2016 Microsoft</span>
+                <a href="https://research.microsoft.com"><img src="/App/assets/mslogo.png" /></a>
+            </span>
+        </div>
+    </footer>
+    <div style="display: none" data-bind="visible: true">
+            <div class="feedback-button">
+                <a href="https://microsoftacademic.uservoice.com/forums/344310-questions-suggestions" target="_blank">Feedback</a>
+            </div>
+    </div>
+        <script src="/App/js/build/libs.min.js"></script>
+        <script src="/App/js/build/public.min.js"></script>
+    
+</body>
+</html>
