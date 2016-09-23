@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="keywords" content="">
+    <meta http-equiv="description" content="">
+    <title>Web Login Service</title>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/assets/favicon.ico">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/assets/shib2.css">
+    <script type="text/javascript" src="/assets/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/mobile.js"></script>
+  </head>
+  <body class="page contentpage ">
+    <p class="accessible">[ <a href="#content">skip to content</a> ]</p>
+    <input type="checkbox" id="uni-phone-menu-jump-toggle" />
+    <div id="page-container">
+      <header id="uni-header">
+        <hgroup id="uni-logo">
+          <h1><a href="http://www.odu.edu/">Old Dominion University</a></h1>
+          <h2>Idea Fusion</h2>
+        </hgroup>
+        <nav id="uni-find" title="Find People, Dates, and Information">
+          <ul>
+            <li><a href="http://www.odu.edu/a-to-z">A to Z</a></li>
+            <li><a href="http://www.odu.edu/directory">Directories</a></li>
+            <li><a href="http://www.odu.edu/library">Libraries</a></li>
+            <li><a href="http://www.odu.edu/calendar">Calendars</a></li>
+          </ul>
+          <form action="https://www.odu.edu/search" method="get" id="uni-search">
+            <label for="uni-search-bar" class="accessible">Search ODU</label>
+            <input id="uni-search-bar" type="text" size="15" maxlength="35" name="q" value="Search ODU" onfocus="if(value=='Search ODU'){ value='';}" onblur="if(value==''){value='Search ODU';}">
+            <button type="submit">Search</button>
+          </form>
+        </nav>
+        <nav id="uni-nav" title="University Navigation"> 
+          <ul> 
+            <li><a href="http://www.odu.edu/about">About ODU</a> </li> 
+            <li><a href="http://www.odu.edu/academics">Academics</a></li> 
+            <li><a href="http://www.odu.edu/life">University Life</a></li> 
+            <li><a href="http://www.odu.edu/admission">Admission &amp; Aid</a></li> 
+            <li><a href="http://www.odu.edu/research">Research &amp; Impact</a></li> 
+            <li><a href="http://www.odusports.com/">Athletics</a></li> 
+          </ul>
+          <label for="uni-phone-menu-jump-toggle" id="uni-phone-menu-jump">Find, Search, and Navigate</label>
+          <a id="uni-phone-menu-jump-anchor" href="#uni-phone-menu">Find, Search, and Navigate</a>
+        </nav>
+      </header>
+      <section class="theme-1 second">
+        <header>
+          <h1>Monarch-Key Web Login</h1>
+        </header>
+        <div id="content">
+          <div class="container-16 clearfix">
+            <div class="grid-10 page-content col-border">
+              <div class="loginContent">
+                <section class="serviceProvider">
+                  <div class="serviceLogo">
+                                                          </div>
+                </section>
+                <div class="loginBox">
+                  <form action="/idp/profile/SAML2/Redirect/SSO;jsessionid=2FB921D59C89ECD1EBCECD32C9F6C482?execution=e1s1" method="post">
+                                        <p class="form-element-wrapper">
+                      <label for="username">MIDAS ID:</label>
+                      <input class="form-element form-field" id="username" name="j_username" type="text"
+                        value="">
+                    </p>
+
+                    <p class="form-element-wrapper">
+                      <label for="password">Password:</label>
+                      <input class="form-element form-field" id="password" name="j_password" type="password" value="">
+                    </p>
+                    <!--
+                    <p class="form-element-wrapper">
+                      <input type="checkbox" name="donotcache" value="1"> Don't Remember Login                    </p>
+                    -->
+                                        <!--
+                    <p class="form-element-wrapper">
+                      <input id="_shib_idp_revokeConsent" type="checkbox" name="_shib_idp_revokeConsent" value="true">
+                      Clear prior granting of permission for release of your information to this service.                    </p>
+                    -->
+                                          <p class="form-element-wrapper">
+                        <button class="form-element form-button button" type="submit" name="_eventId_proceed"
+                            onClick="this.childNodes[0].nodeValue='Login'"
+                            >Login</button>
+                      </p>
+                      <div id="midaslinks">
+                        <p>
+                        <a href="https://midas.odu.edu/ActivateAccount">Create an Account</a>
+                        <a href="https://midas.odu.edu/ForgottenPassword">Forgot Password?</a>
+                        </p>
+                      </div>
+                    
+                                      </form>
+                  <div class="loginErrorMessage">
+                    
+                  </div>
+                </div> <!-- end loginBox -->
+                <div class="serviceInformation">
+                  
+                                      <p>
+                      Login to <strong>myODU</strong>
+                    </p>
+                                                        <p><em>myODU is your personalized web portal for Old Dominion University, with direct links to academic services, customizable bookmarks, and reminders about important tasks.</em></p>
+                                  
+                </div>
+              </div> <!-- end loginContent -->
+            </div>
+            <div class="grid-6 menu-1">
+              <section class="layout-2">
+                <header class="overlay"><h1>Integrated Services</h1></header>
+                <ul>
+                  <li><a href="https://www.blackboard.odu.edu/webapps/bb-auth-provider-shibboleth-bb_bb60/execute/shibbolethLogin?returnUrl=https%3A%2F%2Fwww.blackboard.odu.edu%2Fwebapps%2Fportal%2Fexecute%2Ftabs%2FtabAction%3Ftab_tab_group_id%3D_1_1&authProviderId=_102_1">Blackboard</a></li>
+                  <li><a href="https://shibboleth-odu-csm.symplicity.com/sso/">CareerLink - Student</a></li>
+                  <li><a href="http://clt.odu.edu/login/?url=%2F">Center for Learning and Teaching</a></li>
+                  <li><a href="http://dl.odu.edu/video/vs-launch-pages">Distance Learning - Class Access and Archives</a></li>
+                  <li><a href="https://mail.google.com/a/odu.edu">Google Mail</a></li>
+                  <li><a href="https://sso.odu.edu/ssomanager/c/SSB">LeoOnline</a></li>
+                  <li><a href="https://my.odu.edu/">myODU Portal</a></li>
+                  <li><a href="http://jobs.odu.edu/hr">PAPERS</a></li>
+                  <li><a href="https://pbsvid.itc.virginia.edu/">Virtual Library of Virginia - Public Broadcasting System Videos</a></li>
+                </ul>
+              </section>
+              <section class="layout-2">
+                <header class="overlay"><h1>Support</h1></header>
+                <p>Need Help? Please specify the service you are having problems with, and that you are trying to authenticate to Monarch-Key Web Login.</p>
+                <footer>
+                  <p><a href="http://odu.edu/ts/helpdesk">ITS Help Desk</a></p>
+                </footer>
+              </section>
+              <div class="logoFooter">
+              </div>
+            </div> <!-- end grid-6 -->
+          </div> <!-- end grid-16 -->
+        </div> <!-- end content -->
+      </section>
+      <footer id="uni-footer">
+        <div class="container-16">
+          <address class="grid-4">
+            <span id="uni-footer-name">Old Dominion University</span>
+            <br />5115 Hampton Boulevard
+            <br />Norfolk, VA 23529
+            <br />Phone: (757) 683-3000
+          </address>
+          <nav id="uni-quicklinks" class="grid-4">
+            <h1>Quick Links</h1>
+            <ul>
+              <li><a href="http://www.odu.edu/admission">Apply Now</a></li>
+              <li><a href="http://www.odu.edu/about/support-odu">Support ODU</a></li>
+              <li><a href="http://www.odu.edu/about/visitors">Visitor's Guide</a></li>
+            </ul>
+            <ul>
+              <li><a href="http://www.odu.edu/employment">Employment</a></li>
+              <li><a href="http://www.odu.edu/media">Media Kit</a></li>
+              <li><a href="http://www.odu.edu/life/health-safety/alerts">Campus Alerts</a></li>
+            </ul>
+          </nav>
+          <div id="uni-connect" class="grid-4">
+            <p><a href="//www.odu.edu/link/c/connect">Connect with Old Dominion University</a></p>
+          </div>
+          <div id="uni-copyright" class="grid-3 prefix-1">
+            <p>Copyright &copy; 2016</p>
+            <p>Old Dominion University</p>
+            <p>Updated: 6/06/2016</p>
+            <p>
+              <a href="http://www.odu.edu/about/contact">Contact Us</a> &bull; <a href="http://www.odu.edu/privacy">Privacy</a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div> <!-- end page-container -->
+    <div id="uni-phone-menu">
+      <nav id="uni-phone-nav" title="University Navigation"> 
+        <ul> 
+          <li><a href="http://www.odu.edu/about">About ODU</a></li> 
+          <li><a href="http://www.odu.edu/academics">Academics</a></li> 
+          <li><a href="http://www.odu.edu/life">University Life</a></li> 
+          <li><a href="http://www.odu.edu/admission">Admission &amp; Aid</a></li> 
+          <li><a href="http://www.odu.edu/research">Research &amp; Impact</a></li> 
+          <li><a href="http://www.odusports.com/">Athletics</a></li> 
+        </ul> 
+      </nav>        
+      <nav id="uni-phone-find" title="Find People, Dates, and Information">
+        <ul>
+          <li><a href="http://www.odu.edu/a-to-z">A to Z</a></li>
+          <li><a href="http://www.odu.edu/directory">Directories</a></li>
+          <li><a href="http://www.odu.edu/library">Libraries</a></li>
+          <li><a href="http://www.odu.edu/calendar">Calendars</a></li>
+        </ul>
+        <form action="https://www.odu.edu/search" method="get" id="uni-phone-search" class="clearfix">
+          <label for="uni-phone-search-bar" class="accessible">Search ODU</label>
+          <input id="uni-phone-search-bar" type="text" size="15" maxlength="35" name="q" value="Search ODU" onfocus="if(value=='Search ODU'){ value='';}" onblur="if(value==''){value='Search ODU';}">
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </body>
+</html>

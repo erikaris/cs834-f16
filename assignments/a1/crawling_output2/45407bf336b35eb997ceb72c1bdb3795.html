@@ -1,0 +1,135 @@
+<html>
+<head>
+	<TITLE>Department of Computer Science</TITLE>
+	<META http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link href="/alumni/css/jquery.Jcrop.css" rel="stylesheet" type="text/css">
+	<link href="/alumni/css/new_style.css" rel="stylesheet" type="text/css">
+	<link href="/alumni/css/main-alumni.css" rel="stylesheet" type="text/css">
+</head>
+<body>	
+	<script language="javascript" src="/alumni/js/jquery.min.js"></script>
+	<script language="javascript" src="/alumni/js/jquery.Jcrop.min.js"></script>
+	<script language="javascript" src="/alumni/js/jquery.color.js"></script>
+	<script language="javascript" src="/alumni/js/jquery.form.js"></script>
+	
+	<div id="wrap">
+			<DIV id="header">
+		        <DIV id="odu" class="container_h1">
+		                <DIV id="odu-logo" class="grid_h1">
+		                        <A href="http://www.odu.edu">
+		                        <IMG style="height:27px;width:235px;" src="http://cs.odu.edu/files/gfx-logo-odu-crown.gif" alt="Old Dominion University">
+		                        </A>
+		                </DIV> 
+		                <DIV id="search" class="grid_h2">
+		                        <FORM action="http://www.odu.edu/oduhome/search/" method="GET">
+		                                <A class="header" href="http://www.odu.edu/oduhome/azindex.shtml">A to Z Index</A>&nbsp;&nbsp;
+		                                <SPAN style="color:#FFFFFF">|</SPAN>&nbsp;&nbsp;
+		                                <A class="header" href="http://www.odu.edu/oduhome/directories.shtml">Directories</A>&nbsp;
+		                                <INPUT style="font:11px normal Arial,Helvetica;" type="text" size=15 maxlength=35 name="q" value="Search ODU" onfocus="if(value=='Search ODU'){value='';}" onblur="if (value==''){value='Search ODU';}">
+		                                <INPUT type="hidden" name="col" value="www">
+		                                <INPUT style="vertical-align:middle;" type="image" src="http://cs.odu.edu/files/gfx-btn-go-dblue.gif" alt="GO">
+		                        </FORM>
+		                </DIV> 
+		        </DIV> 
+		        <DIV id="col" class="container_h2">
+		                <A href="http://sci.odu.edu">
+		                        <IMG src="http://cs.odu.edu/files/hmenu_college_of_sciences-new.png" alt="College of Sciences">
+		                </A>
+		        </DIV> 
+		        <DIV id="cs" class="container_h3">
+		                <DIV id="cs-logo" class="grid_h3">
+		                        <A href="http://www.cs.odu.edu">
+		                                <IMG src="/alumni/images/header.png" alt="Computer Science" height="41" width="763"> 
+		                        </A>
+		                </DIV> 
+		        </DIV> 
+		</DIV> 
+		
+		<div id="bodycontainer">
+			<div id="content">
+				<div id="pagecontent">
+					<div id="cs-alumni-main-content">
+					<div id="cs-alumni-main-panel">
+						<a href="/alumni">CS Current Student and Alumni</a>
+						<div id="cs-alumni-status-panel">
+							<p>
+															<a href="/alumni/password_request/new" >Request Access to your profile</a> | 
+								<a href="/alumni/session/new" >Login</a>
+														</p>
+						</div>
+					</div>
+						<br/>
+						<form id="cs-alumni-search" action="/alumni" method="POST">
+							<input name="search" id='cs-alumni-search-field' type="text">
+							</input>
+							<button id='cs-alumni-search-button'>Search</button>
+						</form>
+					
+						<br/>
+						<div id='alumni-real-data'>
+							<a class='year-select' href="/alumni/user/2000/year">[2000]</a>
+	<a class='year-select' href="/alumni/user/2001/year">[2001]</a>
+	<a class='year-select' href="/alumni/user/2002/year">[2002]</a>
+	<a class='year-select' href="/alumni/user/2003/year">[2003]</a>
+	<a class='year-select' href="/alumni/user/2004/year">[2004]</a>
+	<a class='year-select' href="/alumni/user/2005/year">[2005]</a>
+	<a class='year-select' href="/alumni/user/2006/year">[2006]</a>
+	<a class='year-select' href="/alumni/user/2007/year">[2007]</a>
+	<a class='year-select' href="/alumni/user/2008/year">[2008]</a>
+	<a class='year-select' href="/alumni/user/2009/year">[2009]</a>
+	<a class='year-select' href="/alumni/user/2010/year">[2010]</a>
+	<a class='year-select' href="/alumni/user/2011/year">[2011]</a>
+	<a class='year-select' href="/alumni/user/2013/year">[2013]</a>
+<a class='year-select' href="/alumni/user/0/year">[Current Enrolled]</a>
+
+<div id="real-data">
+</div>
+
+
+<script language='javascript'>
+	$(function(){
+		$('.year-select').click(function(event){
+			event.preventDefault();
+			
+			$.post($(this).attr('href'), function(data){
+				$('#real-data').html(data);
+			});
+			
+			$('.year-select').each(function(key, value){
+				$(this).css('font-size', '11px');
+				$(this).css('color', '#002B5F');
+			});
+			
+			$(this).css('font-size', '15px');
+			$(this).css('color', '#7A1F03');
+		});
+		$('.year-select:last').click();
+	});
+</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<DIV id="footer">
+		    Maintained by: <A class="footer" href="mailto:webmaster@cs.odu.edu">CS Webmaster</A> | &copy; 2011 <A class="footer" href="http://www.odu.edu">Old Dominion University</A>, Norfolk, VA 23529 | 
+		    <A class="footer" href="http://www.odu.edu/oduhome/policies.shtml">Policies</A><BR>
+		    Phone: 757.683.6001 | Engineering &amp; Computational Sciences Bldg, 4700 Elkhorn Ave, Suite 3300, Norfolk, VA 23529-0162<BR>
+		</DIV> <!-- footer -->
+	</div>
+
+<script lanaguage='javascript'>
+	$(function(){
+		$('#cs-alumni-search-button').click(function(event){
+			event.preventDefault();
+			var url = '/alumni/user/' + $('#cs-alumni-search-field').val() + '/search';
+			$.post(url, function(data) {
+				$('#alumni-real-data').html(data);
+			});
+		});
+	});
+</script>
+
+</body>
+</html>
