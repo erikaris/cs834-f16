@@ -24,6 +24,19 @@ The~R Foundation.
 \newblock \url{https://www.r-project.org/}, 2016.
 \newblock [Online; accessed 12-October-2016].
 
+\bibitem{Croft:2009:SEI:1516224}
+Bruce Croft, Donald Metzler, and Trevor Strohman.
+\newblock {\em Search Engines: Information Retrieval in Practice}.
+\newblock Addison-Wesley Publishing Company, USA, 1st edition, 2009.
+
+\bibitem{nls}
+Lionel Hertzog.
+\newblock {First steps with Non-Linear Regression in R}.
+\newblock
+  \url{https://www.r-bloggers.com/first-steps-with-non-linear-regression-in-r/},
+  2016.
+\newblock [Online; accessed 12-October-2016].
+
 \bibitem{nltk-porter}
 NLTK Project.
 \newblock {nltk.stem package}.

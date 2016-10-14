@@ -206,7 +206,7 @@ print('number of html files that are processed {}'.format(len(html_files)))
 
 \end{lstlisting}
 
-Table \ref{tab:highest-words} and \ref{tab:bigrams} show the top 20 words and top 20 bigrams with the highest ranks. The complete tables for the words and bigrams ranks are uploaded on github (`rank\_freq\_rev1.csv' and `rank\_freq\_bigram\_rev1.csv'). \linebreak
+Table \ref{tab:highest-words} and \ref{tab:bigrams} show the top 20 words and top 20 bigrams with the highest ranks, respectively. The complete tables for the words and bigrams ranks are uploaded on github (`rank\_freq\_rev1.csv' and `rank\_freq\_bigram\_rev1.csv'). \linebreak
 
 \begin{table}[H]
 \centering
@@ -278,7 +278,7 @@ We just finished doing the first part of our task, which are creating tokens and
 \item The combination of log-log rank-frequency plot for words and bigrams. 
 \end{enumerate}
 
-Figures \ref{fig:4_1_rank_freq_plot}, \ref{fig:4_1_rank_freq_bigram_plot} show the log-log rank-frequency plot for the words, bigrams, and the combination of words and bigrams, respectively. Instead of frequency, I use probability for the y-axis. 
+Figures \ref{fig:4_1_rank_freq_plot}, \ref{fig:4_1_rank_freq_bigram_plot}, and \ref{fig:4_1_log_log_plot_combination} show the log-log rank-frequency plot for the words, bigrams, and the combination of words and bigrams, respectively. Instead of frequency, I use probability for the y-axis. 
 
 \begin{figure}[H]
 	\fbox{\includegraphics[scale=0.7]{4_1_rank_freq_plot}}
@@ -294,6 +294,13 @@ Figures \ref{fig:4_1_rank_freq_plot}, \ref{fig:4_1_rank_freq_bigram_plot} show t
 	\label{fig:4_1_rank_freq_bigram_plot}
 \end{figure}
 
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.7]{4_1_log_log_plot_combination}}
+	\centering
+	\caption{Log-log rank-frequency for bigrams and words in Wikipedia Collection (Wiki small)}
+	\label{fig:4_1_log_log_plot_combination}
+\end{figure}
+
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
 \section*{Question 4.2}
@@ -302,7 +309,7 @@ Plot vocabulary growth for the Wikipedia collection and estimate the parameters 
 \end{spverbatim}
 
 \subsection*{Answer:}
-The idea to solve this problem is simply calculated the number of words in every document and store it as `corpus'. Beside that, we also calculate the number of unique words in every document and store it as `vocabulary'. 
+The idea to solve this problem is simply calculated the number of words in every document and store it as `corpus' (words in collection). At the same time, we also calculate the number of unique words in every document and store it as `vocabulary'. 
 Then, we can create the plot of vocabulary growth using R. Figure \ref{fig:4_2_ascending} show the plot for vocabulary growth for the Wikipedia collection. 
 
 \begin{figure}[H]
@@ -337,7 +344,6 @@ for root, dirs, files in os.walk(os.path.abspath('./articles')):
             filepath = os.path.join(root, file)
             html_files.append(filepath)
 
-bigrams = []
 corpus = []
 voc_corpus = []
 # process each html file
@@ -353,7 +359,7 @@ for idx, file in enumerate(html_files):
     # get all words from text by splitting by whitespace
     tokens = []
     for word in text.split():
-        if word.isalpha():
+        if word.isalnum():
             tokens.append(word)
 
     # corpus is cummulative of tokens
@@ -378,6 +384,7 @@ with open(out_file, "wb") as f:
 print('\n\n Processing reverse list...')
 html_files.reverse()
 
+
 corpus = []
 voc_corpus = []
 # process each html file
@@ -393,7 +400,7 @@ for idx, file in enumerate(html_files):
     # get all words from text by splitting by whitespace
     tokens = []
     for word in text.split():
-        if word.isalpha():
+        if word.isalnum():
             tokens.append(word)
 
     # corpus is cummulative of tokens
@@ -415,17 +422,20 @@ with open(out_file, "wb") as f:
 
 \end{lstlisting}
 
-Estimation of the parameters for Heap's law are done using non-linear least square (nls), which is provided in R. Table \ref{tab:heap-par} show the parameter of Heap's law both for ascending and descending order. 
+The relationship between the size of corpus and the size of vocabulary was empirically defined by Heap \cite{Croft:2009:SEI:1516224} to be: \[ v = kn^\beta \].
+Estimation of the parameters for Heap's law are done using non-linear least square (nls) \cite{nls}, which is available in R. Table \ref{tab:heap-par} show the parameter of Heap's law both for ascending and descending order. 
+From figure \ref{fig:4_2_ascending} and \ref{fig:4_2_reverse} we can see that both plots look the same. There is a sligt difference in the parameter values between documents the reversed-order documents and the non-reversed-order documents. But, this difference is not really significant. Therefore, we can conclude that the order in which the documents are processed does not really make any difference towards the vocabulary growth. 
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
 \multicolumn{1}{|c|}{\textbf{No}} & \multicolumn{1}{c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Values}} \\ \hline
-1 & k ascending & 8.8941676 \\ \hline
-2 & b ascending & 0.6527393 \\ \hline
-3 & k descending & 7.2333319 \\ \hline
-4 & b descending & 0.6663944 \\ \hline
+1 & k ascending & 8.223226 \\ \hline
+2 & b ascending & 0.659675 \\ \hline
+3 & k descending & 6.813402 \\ \hline
+4 & b descending & 0.672038 \\ \hline
+5 & number of documents & 6043 \\ \hline
 \end{tabular}
 \caption{Heap parameter for Wikipedia Collection}
 \label{tab:heap-par}
@@ -437,7 +447,7 @@ The R code for creating the plot and calculating the parameter value can be seen
 
 require(ggplot2)
 
-mydata <- read.csv("/media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a2/code_report/4_2-voc_corpus.csv", head=TRUE, sep = ',')
+mydata <- read.csv("4_2-voc_corpus_rev1.csv", head=TRUE, sep = ',')
 x <- mydata$corpus_size
 y <- mydata$vocabulary_size
 
@@ -447,12 +457,16 @@ summary(fit)
 #get some estimation of goodness of fit
 cor(y, predict(fit))
 
-ggplot(data=mydata, aes(x=corpus_size, y=vocabulary_size))  + geom_line(aes(group = 1), color="#000099") + geom_line(data=mydata, aes(x=corpus_size, y=predict(fit)), color="#CC0000") + labs(title='Vocabulary Growth',x = 'Corpus Size', y = 'Vocabulary Size') + scale_colour_manual(name='', values=c('Important line'='grey', 'Point values'='red'), guide='legend')
+ggplot(data=mydata, aes(x=corpus_size, y=vocabulary_size))  + geom_line(aes(group = 1, color="Actual")) + geom_line(data=mydata, aes(x=corpus_size, y=predict(fit), color="Heaps")) + labs(title='Vocabulary Growth for Wikipedia documents',x = 'Words in Collection', y = 'Words in Vocabulary') + scale_colour_manual(name='', values=c('Actual'='#000099', 'Heaps'='#CC0000'), guide='legend')
+
+
 
 #=======================================================================
 # the reverse order
 
-mydata <- read.csv("/media/erikaris/DATA/ODU/Semester 3/intro_to_info_retrieval/assignments/a2/code_report/4_2-voc_corpus_reverse.csv", head=TRUE, sep = ',')
+require(ggplot2)
+
+mydata <- read.csv("4_2-voc_corpus_reverse_rev1.csv", head=TRUE, sep = ',')
 x <- mydata$corpus_size
 y <- mydata$vocabulary_size
 
@@ -462,7 +476,8 @@ summary(fit)
 #get some estimation of goodness of fit
 cor(y, predict(fit))
 
-ggplot(data=mydata, aes(x=corpus_size, y=vocabulary_size))  + geom_line(aes(group = 1), color="#000099") + geom_line(data=mydata, aes(x=corpus_size, y=predict(fit)), color="#CC0000") + labs(title='Vocabulary Growth',x = 'Corpus Size', y = 'Vocabulary Size') + scale_colour_manual(name='', values=c('Important line'='grey', 'Point values'='red'), guide='legend')
+ggplot(data=mydata, aes(x=corpus_size, y=vocabulary_size))  + geom_line(aes(group = 1, color="Actual")) + geom_line(data=mydata, aes(x=corpus_size, y=predict(fit), color="Heaps")) + labs(title='Vocabulary Growth for Wikipedia documents (reversed order)',x = 'Corpus Size', y = 'Vocabulary Size') + scale_colour_manual(name='', values=c('Actual'='#000099', 'Heaps'='#CC0000'), guide='legend')
+
 
 \end{lstlisting}
 
