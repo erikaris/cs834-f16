@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{html2text}
+Alireza Savand.
+\newblock {html2text 2016.9.19}.
+\newblock \url{https://pypi.python.org/pypi/html2text}, 2016.
+\newblock [Online; accessed 11-October-2016].
+
+\bibitem{bs4}
+Leonard Richardson.
+\newblock {Beautiful Soup}.
+\newblock \url{https://www.crummy.com/software/BeautifulSoup/}, 2016.
+\newblock [Online; accessed 20-September-2016].
+
+\bibitem{nltk}
+NLTK Project.
+\newblock {NLTK 3.0 documentation}.
+\newblock \url{http://www.nltk.org/}, 2016.
+\newblock [Online; accessed 11-October-2016].
+
+\bibitem{r-project}
+The~R Foundation.
+\newblock {The R Project for Statistical Computing}.
+\newblock \url{https://www.r-project.org/}, 2016.
+\newblock [Online; accessed 12-October-2016].
+
+\bibitem{rosetta}
+RosettaCode.org.
+\newblock {Inverted index}.
+\newblock \url{https://www.rosettacode.org/wiki/Inverted_index#Python}, 2016.
+\newblock [Online; accessed 12-October-2016].
+
+\end{thebibliography}
