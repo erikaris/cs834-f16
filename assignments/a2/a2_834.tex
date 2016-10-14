@@ -93,7 +93,7 @@ For this question, I use the `Wiki small' test collections which can be download
 \begin{enumerate}
 \item Traverse the directory containing the test collections and list all the HTML files in that directory. 
 \item Get the text content from each HTML files using a python library `html2text' \cite{html2text}. I think using this library is simpler than using `Beautiful Soup' \cite{bs4}. It also gives us a cleaner `html-stripped' result. 
-\item Tokenize the text using function \texttt{`text.split()'} and  \texttt{`word.isalpha()'}. Each token is equal to one word. 
+\item Tokenize the text using function \texttt{`text.split()'} and  \texttt{`word.isalnum()'}. Each token is equal to one word. 
 \item Create the bigrams using function \texttt{nltk.bigrams()} provided by python library `nltk' \cite{nltk}.
 \item For both tokens and bigrams, do:
 	\begin{enumerate}
@@ -301,7 +301,43 @@ Figures \ref{fig:4_1_rank_freq_plot}, \ref{fig:4_1_rank_freq_bigram_plot}, and \
 	\label{fig:4_1_log_log_plot_combination}
 \end{figure}
 
+The R code for creating the plot can be seen in listing: 
+\begin{lstlisting}[language=R, caption={Code for plotting vocabulary growth and calculating the Heap's parameter}, label={lst:heap-par}]
+
+require(ggplot2)
+
+mydata <- read.csv("/home/erikaris/PycharmProjects/IR-A2/rank_freq.csv", head=TRUE, sep = ',')
+ggplot(data=mydata, aes(x=rank, y=prob)) + geom_point() + scale_x_log10() + scale_y_log10()
+
+
+#=======================================================================
+# 
+require(ggplot2)
+
+mydata <- read.csv("/home/erikaris/PycharmProjects/IR-A2/rank_freq_bigram.csv", head=TRUE, sep = ',')
+ggplot(data=mydata, aes(x=rank, y=prob)) + geom_point() + scale_x_log10() + scale_y_log10()
+#ggplot(data=mydata, aes(x=rank, y=prob)) + geom_point() + scale_x_log10() + scale_y_log10()
+
+
+
+
+#=======================================================================
+# combination
+
+require(ggplot2)
+
+mydata1 <- read.csv("rank_freq_rev1.csv", head=TRUE, sep = ',')
+mydata2 <- read.csv("rank_freq_bigram_rev1.csv", head=TRUE, sep = ',')
+
+ggplot(data=mydata1, aes(x=rank, y=prob)) + geom_line(data=mydata1, aes(x=rank, y=prob, color="Words")) + geom_line(data=mydata2, aes(x=rank, y=prob, color="Bigram")) + scale_colour_manual(name='', values=c('Words'='#000099', 'Bigram'='#CC0000'), guide='legend') + scale_x_log10() + scale_y_log10() + labs(title='Log-log plot for rank and frequency of words and bigram',x = 'Words in Collection', y = 'Words in Vocabulary')
+
+
+\end{lstlisting}
+
+From the plots we can see that the best value for c is 0.1.
+
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+
 
 \section*{Question 4.2}
 \begin{spverbatim}

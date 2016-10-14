@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.14)  13 OCT 2016 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.14)  13 OCT 2016 23:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -612,7 +612,11 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen123
-) (./a2_834.aux)
+) (./a2_834.aux
+
+LaTeX Warning: Label `lst:heap-par' multiply defined.
+
+)
 \openout1 = `a2_834.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -630,8 +634,7 @@ LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
 \c@lstlisting=\count114
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen124
@@ -763,25 +766,6 @@ Package pdftex.def Info: 4_1_log_log_plot_combination.jpeg used on input line 2
 98.
 (pdftex.def)             Requested size: 400.49352pt x 280.34546pt.
  [5 <./4_1_rank_freq_plot.jpeg> <./4_1_rank_freq_bigram_plot.jpeg>]
-Overfull \hbox (35.44237pt too wide) in paragraph at lines 309--309
-[]\T1/cmtt/m/n/10.95 Plot[] vocabulary[] growth[] for[] the[] Wikipedia[] colle
-ction[] and[] estimate[] the[] parameters[] for[] Heaps'[]
- []
-
-<4_2_ascending.jpeg, id=175, 572.1375pt x 400.49625pt>
-File: 4_2_ascending.jpeg Graphic file (type jpg)
-
-<use 4_2_ascending.jpeg>
-Package pdftex.def Info: 4_2_ascending.jpeg used on input line 316.
-(pdftex.def)             Requested size: 400.49352pt x 280.34546pt.
- [6 <./4_1_log_log_plot_combination.jpeg>]
-<4_2_reverse.jpeg, id=185, 572.1375pt x 400.49625pt>
-File: 4_2_reverse.jpeg Graphic file (type jpg)
- <use 4_2_reverse.jpeg>
-Package pdftex.def Info: 4_2_reverse.jpeg used on input line 324.
-(pdftex.def)             Requested size: 400.49352pt x 280.34546pt.
-
-[7 <./4_2_ascending.jpeg>] [8 <./4_2_reverse.jpeg>] [9]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -790,74 +774,97 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2015/06/04 1.6 listings language file
-) [10]
-Overfull \hbox (35.44237pt too wide) in paragraph at lines 489--489
+) [6 <./4_1_log_log_plot_combination.jpeg>]
+Overfull \hbox (35.44237pt too wide) in paragraph at lines 345--345
+[]\T1/cmtt/m/n/10.95 Plot[] vocabulary[] growth[] for[] the[] Wikipedia[] colle
+ction[] and[] estimate[] the[] parameters[] for[] Heaps'[]
+ []
+
+<4_2_ascending.jpeg, id=204, 572.1375pt x 400.49625pt>
+File: 4_2_ascending.jpeg Graphic file (type jpg)
+
+<use 4_2_ascending.jpeg>
+Package pdftex.def Info: 4_2_ascending.jpeg used on input line 352.
+(pdftex.def)             Requested size: 400.49352pt x 280.34546pt.
+ <4_2_reverse.jpeg, id=206, 572.1375pt x 400.49625pt>
+File: 4_2_reverse.jpeg Graphic file (type jpg)
+
+<use 4_2_reverse.jpeg>
+Package pdftex.def Info: 4_2_reverse.jpeg used on input line 360.
+(pdftex.def)             Requested size: 400.49352pt x 280.34546pt.
+ [7 <./4_2_ascending.jpeg>] [8 <./4_2_reverse.jpeg>]
+[9] [10]
+Overfull \hbox (35.44237pt too wide) in paragraph at lines 525--525
 []\T1/cmtt/m/n/10.95 Process[] five[] Wikipedia[] documents[] using[] the[] Por
 ter[] stemmer[] and[] the[] Krovetz[] stemmer.[] Compare[]
  []
 
 
-Overfull \hbox (7.15051pt too wide) in paragraph at lines 489--489
+Overfull \hbox (7.15051pt too wide) in paragraph at lines 525--525
 \T1/cmtt/m/n/10.95 the[] number[] of[] stems[] produced[] and[] find[] 10[] exa
 mples[] of[] differences[] in[] the[] stemming[] that[]
  []
 
-<4_6_stemming_comparison.jpg, id=333, 1341.01pt x 717.68124pt>
+<4_6_stemming_comparison.jpg, id=358, 1341.01pt x 717.68124pt>
 File: 4_6_stemming_comparison.jpg Graphic file (type jpg)
 
 <use 4_6_stemming_comparison.jpg>
-Package pdftex.def Info: 4_6_stemming_comparison.jpg used on input line 506.
+Package pdftex.def Info: 4_6_stemming_comparison.jpg used on input line 542.
 (pdftex.def)             Requested size: 496.16594pt x 265.5379pt.
 
-Overfull \hbox (29.1549pt too wide) in paragraph at lines 506--508
+Overfull \hbox (29.1549pt too wide) in paragraph at lines 542--544
  [][] 
  []
 
 [11] [12 <./4_6_stemming_comparison.jpg>] [13]
-Overfull \hbox (1.49214pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.49214pt too wide) in paragraph at lines 675--675
 []\T1/cmtt/m/n/10.95 Find[] the[] 10[] Wikipedia[] documents[] with[] the[] mos
 t[] inlinks.[] Show[] the[] collection[] of[] anchor[]
  []
 
 
-Overfull \hbox (53.29039pt too wide) in paragraph at lines 654--668
+Overfull \hbox (53.29039pt too wide) in paragraph at lines 690--704
  [][] 
  []
 
 [14] [15] [16]
-Overfull \hbox (18.46725pt too wide) in paragraph at lines 797--797
+Overfull \hbox (18.46725pt too wide) in paragraph at lines 833--833
 []\T1/cmtt/m/n/10.95 Write[] a[] program[] that[] can[] build[] a[] simple[] in
 verted[] index[] of[] a[] set[] of[] text[] documents.[] Each[]
  []
 
-<5_8_terminal_input.jpg, id=573, 734.745pt x 439.6425pt>
+<5_8_terminal_input.jpg, id=601, 734.745pt x 439.6425pt>
 File: 5_8_terminal_input.jpg Graphic file (type jpg)
 
 <use 5_8_terminal_input.jpg>
-Package pdftex.def Info: 5_8_terminal_input.jpg used on input line 810.
+Package pdftex.def Info: 5_8_terminal_input.jpg used on input line 846.
 (pdftex.def)             Requested size: 440.85039pt x 263.78752pt.
  [17] [18 <./5_8_terminal_input.jpg>]
-Overfull \hbox (54.13312pt too wide) in paragraph at lines 869--870
+Overfull \hbox (54.13312pt too wide) in paragraph at lines 905--906
 []\T1/cmr/m/n/10.95 Table []7[] shows 20 first rows of the in-verted in-dex cre
 -ated from Wikipedia doc-u-ment `Hama_Photo_a182.html'
  []
 
 [19] (./a2_834.bbl [20])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 907.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 943.
  [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 907.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 943.
  (./a2_834.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 907.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 907.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 943.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 943.
 Package rerunfilecheck Info: File `a2_834.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 907.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 943.
  ) 
 Here is how much of TeX's memory you used:
- 10601 strings out of 493029
- 149882 string characters out of 6136234
- 465399 words of memory out of 5000000
- 13476 multiletter control sequences out of 15000+600000
+ 10632 strings out of 493029
+ 150297 string characters out of 6136234
+ 467516 words of memory out of 5000000
+ 13479 multiletter control sequences out of 15000+600000
  15232 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,16n,42p,536b,2518s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -873,10 +880,10 @@ sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 fti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on a2_834.pdf (22 pages, 1111650 bytes).
+Output written on a2_834.pdf (22 pages, 1115823 bytes).
 PDF statistics:
- 834 PDF objects out of 1000 (max. 8388607)
- 781 compressed objects within 8 object streams
- 531 named destinations out of 1000 (max. 500000)
+ 869 PDF objects out of 1000 (max. 8388607)
+ 815 compressed objects within 9 object streams
+ 559 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
