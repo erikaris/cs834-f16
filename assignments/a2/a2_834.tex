@@ -586,23 +586,31 @@ Find the 10 Wikipedia documents with the most inlinks. Show the collection of an
 \end{spverbatim}
 
 \subsection*{Answer}
-Table \ref{tab:inlinks} shows 10 Wikipedia documents with the most inlinks. 
+Here is the algorithm to find the document with the most inlinks:
+\begin{enumerate}
+\item Use Beautiful Soup \cite{bs4} to extract all links from the Wikipedia documents.
+\item Store the links in a key-value format, where key = document and value = link. 
+\item Group and count the links by the destination (the one that is written in `href'). This will be the number of inlinks for each destination. 
+\item Sort the data by the number of inlinks in a descending order.  
+\end{enumerate}
+
+Table \ref{tab:inlinks} shows 10 Wikipedia documents with the most inlinks and their anchor text. 
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
-\multicolumn{1}{|c|}{\textbf{No}} & \multicolumn{1}{c|}{\textbf{Link}} & \multicolumn{1}{c|}{\textbf{Freq}} & \multicolumn{1}{c|}{\textbf{Anchor Text}} \\ \hline
-1 & Brazil.html & 28 & Brazil, Brazilian \\ \hline
-2 & Victoria\_of\_the\_United\_Kingdom\_5e8e.html & 11 & \begin{tabular}[c]{@{}l@{}}Queen Victoria, Queen, Victoria of the \\ United Kingdom, Victoria\end{tabular} \\ \hline
-3 & Manga.html & 10 & manga, Manga \\ \hline
-4 & Magazine.html & 7 & magazine, magazines, Magazine \\ \hline
-5 & Tuscany.html & 7 & Tuscany \\ \hline
-6 & Tottenham\_Hotspur\_F.C.\_6bd2.html & 6 & Tottenham Hotspur, Tottenham \\ \hline
-7 & August\_26.html & 5 & August 26, 08-26 \\ \hline
-8 & NFATC4\_4a66.html & 4 & C4 \\ \hline
-9 & Robert\_Holdstock\_9c9e.html & 4 & Robert Holdstock \\ \hline
-10 & Isthmian\_League\_1d48.html & 4 & Isthmian League \\ \hline
+\multicolumn{1}{|c|}{\textbf{No}} & \multicolumn{1}{c|}{\textbf{Link}} & \multicolumn{1}{c|}{\textbf{Inlinks}} & \multicolumn{1}{c|}{\textbf{Anchor Text}} \\ \hline
+1 & Brazil.html & 83 & Brazil, BRA, Brazilian \\ \hline
+2 & August\_26.html & 25 & 08-26, 26, August 26, 26 August \\ \hline
+3 & Manga.html & 14 & manga, Manga \\ \hline
+4 & Magazine.html & 13 & magazine, magazines, Magazine \\ \hline
+5 & Mollusca.html & 12 & Mollusca \\ \hline
+6 & Victoria\_of\_the\_United\_Kingdom\_5e8e.html & 8 & \begin{tabular}[c]{@{}l@{}}Queen Victoria, Queen,\\ Victoria of the United Kingdom, Victoria\end{tabular} \\ \hline
+7 & Screenwriter.html & 7 & Writer(s), screenwriter, Screenwriter \\ \hline
+8 & Kidney.html & 6 & kidneys, Renal, kidney \\ \hline
+9 & Tottenham\_Hotspur\_F.C.\_6bd2.html & 5 & Tottenham Hotspur, Tottenham \\ \hline
+10 & Tuscany.html & 4 & Tuscany \\ \hline
 \end{tabular}
 \caption{Wikipedia documents with the most inlinks}
 \label{tab:inlinks}
@@ -665,7 +673,7 @@ for idx, file in enumerate(html_files):
         # - file != link
         # - all_links do not contain link
         # - link is file --> ignore http
-        if file != link and link not in all_links and os.path.isfile(link):
+        if file != link and link not in all_links[file] and os.path.isfile(link):
             all_links[file].append(link)
             all_anchor_text[file].append(text)
 
