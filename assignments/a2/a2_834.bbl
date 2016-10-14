@@ -24,6 +24,19 @@ The~R Foundation.
 \newblock \url{https://www.r-project.org/}, 2016.
 \newblock [Online; accessed 12-October-2016].
 
+\bibitem{nltk-porter}
+NLTK Project.
+\newblock {nltk.stem package}.
+\newblock \url{http://www.nltk.org/api/nltk.stem.html#module-nltk.stem.porter},
+  2016.
+\newblock [Online; accessed 11-October-2016].
+
+\bibitem{krovetz-python}
+Ruey-Cheng Chen.
+\newblock {KrovetzStemmer 0.4}.
+\newblock \url{https://pypi.python.org/pypi/KrovetzStemmer/0.4}, 2016.
+\newblock [Online; accessed 12-October-2016].
+
 \bibitem{rosetta}
 RosettaCode.org.
 \newblock {Inverted index}.

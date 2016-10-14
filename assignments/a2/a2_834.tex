@@ -13,7 +13,7 @@
 \usepackage{caption}
 \usepackage{spverbatim}
 \usepackage[table,xcdraw]{xcolor}
-
+\usepackage{multirow}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -474,16 +474,47 @@ Process five Wikipedia documents using the Porter stemmer and the Krovetz stemme
 \end{spverbatim}
 
 \subsection*{Answer}
+Stemming using Porter stemmer is quite easy to do since this stemmer is provided by nltk \cite{nltk-porter}. Fortunately, there is also a python library for stemming with Krovetz algorithm \cite{krovetz-python}. So, our task now is to create a script that utilizes these 2 libraries. The logic is simple: get the text content of the documents and use Porter and Krovetz for stemming. 
 
-I choose randomly 5 documents from the Wikipedia collections. These 5 documents are:
+To do the stemming, I randomly choose 5 documents from the Wikipedia collections. These 5 documents are:
 \begin{enumerate}
-\item `./articles/a/b/c/ABC\_Wasp\_3b25.html'
-\item `./articles/a/b/c/ABC\_In\_Concert\_6d5f.html'
-\item `./articles/a/b/d/Abdus\_Salam\_(disambiguation)\_0602.html'
-\item `./articles/a/b/d/Abd-Allah\_ibn\_Amr\_f58f.html'
-\item `./articles//a/b/d/Abdul\_Haq\_Vidyarthi\_582b.html'
+\item ABC\_Wasp\_3b25.html
+\item ABC\_In\_Concert\_6d5f.html
+\item Abdus\_Salam\_(disambiguation)\_0602.html
+\item Abd-Allah\_ibn\_Amr\_f58f.html
+\item Abdul\_Haq\_Vidyarthi\_582b.html
 \end{enumerate}
-Table \ref{tab:porter-krovetz} show 10 differences in the stemming between Porter and Krovetz that could have impact on ranking. 
+
+Figure \ref{fig:4_6_stemming_comparison} shows the comparison of stemming result between Porter and Krovetz. I circle some of the words that I consider will affect the ranking. The complete stemming result for all 5 documents is uploaded on github under a file named `4\_6-result\_rev3.txt'. 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.37]{4_6_stemming_comparison}}
+	\centering
+	\caption{Stemming comparison (Porter vs Krovetz)}
+	\label{fig:4_6_stemming_comparison}
+\end{figure}
+
+Table \ref{tab:porter-krovetz} show 10 differences in the stemming between Porter and Krovetz that could have impact on ranking. From this table we can see that Porter arbitraly dissect the words. For example, Porter stem the word `united' into `unit', which have different meaning. Moreover, when this word is combined with the word next to it, they form different term. The term `united states' is clearly different with `unit state'. Therefore, we can see that it will definetely impact the ranking. 
+The comparison of the number of stems produces by both Porter and Krovetz can be seen on table \ref{tab:stem}. From table \ref{tab:stem} we can see that Krovetz produced more stems compare to that of Porter. This is because Porter is more naive in `stemming' the word. So, there could be two words that are grouped together into the same stem while, in fact, they do not belong in the same stem. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\rowcolor[HTML]{ECF4FF} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{ECF4FF}} & \multicolumn{1}{c|}{\cellcolor[HTML]{ECF4FF}} & \multicolumn{2}{c|}{\cellcolor[HTML]{ECF4FF}\textbf{number of stems}} \\ \cline{3-4} 
+\rowcolor[HTML]{ECF4FF} 
+\multicolumn{1}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{ECF4FF}\textbf{No}}} & \multicolumn{1}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{ECF4FF}\textbf{document}}} & Porter & Krovetz \\ \hline
+1 & ABC\_Wasp\_3b25.html & 146 & 148 \\ \hline
+2 & ABC\_In\_Concert\_6d5f.html & 138 & 142 \\ \hline
+3 & Abdus\_Salam\_(disambiguation)\_0602.html & 91 & 93 \\ \hline
+4 & Abd-Allah\_ibn\_Amr\_f58f.html & 471 & 480 \\ \hline
+5 & Abdul\_Haq\_Vidyarthi\_582b.html & 165 & 170 \\ \hline
+\multicolumn{2}{|c|}{\textbf{Total}} & \textbf{1011} & \textbf{1033} \\ \hline
+\end{tabular}
+\caption{The number of stems produced by Porter and Krovetz}
+\label{tab:stem}
+\end{table}
 
 \begin{table}[H]
 \centering
@@ -494,7 +525,7 @@ Table \ref{tab:porter-krovetz} show 10 differences in the stemming between Porte
 1 & united states & unit state & united states \\ \hline
 2 & available & avail & available \\ \hline
 3 & engine & engin & engine \\ \hline
-4 & general & gener & general \\ \hline
+4 & component & compon & component \\ \hline
 5 & airspeed & airspe & airspeed \\ \hline
 6 & movie & movi & movie \\ \hline
 7 & tradition & tradit & tradit \\ \hline
@@ -568,6 +599,12 @@ for file in results:
     txt_results.append(u'Original text \t= {}\n'.format(results[file]['original']))
     txt_results.append(u'Porter result \t= {}\n'.format(results[file]['porter']))
     txt_results.append(u'Krovetz result \t= {}\n'.format(results[file]['krovetz']))
+
+    num_stems_porter = len(set(results[file]['porter'].split()))
+    txt_results.append(u'Number of stems produced by Porter \t= {}\n'.format(num_stems_porter))
+
+    num_stems_krovetz = len(set(results[file]['krovetz'].split()))
+    txt_results.append(u'Number of stems produced by Krovetz \t= {}\n'.format(num_stems_krovetz))
     txt_results.append(u'\n')
 
     print(u'\n'.join(txt_results))
@@ -576,6 +613,7 @@ for file in results:
     f = io.open('4_6-result.txt', "w", encoding="utf-8")
     for txt_result in txt_results:
         f.write(txt_result + '\n')
+
 \end{lstlisting}
 
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
