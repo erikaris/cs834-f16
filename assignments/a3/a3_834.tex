@@ -371,9 +371,90 @@ Spelling corrector based on the noisy channel model works using this approach \c
 \item Our task is to compute the conditional probability and take a word \( w_i \) that has the maximum value for \( P\left(x|w_{i}\right).P\left(w_i\right) \).
 \end{enumerate}
 
-It looks complicated. But, fortunately, Peter Norvig \cite{norvig} has provided a nice python code for spelling corrector, which is worked based on the noisy channel model. For this assignment, I modified Norvig's code as can be seen in listing \ref{lst:xxx}.
+It looks complicated. But, fortunately, Peter Norvig \cite{norvig} has provided a nice python code for spelling corrector, which is worked based on the noisy channel model. To compute the probability, Norvig uses word frequencies taken from a predefined dataset `big.txt'. For this assignment, I modified Norvig's code as can be seen in listing \ref{lst:spelling}.
 
-Figure \ref{fig:xxx} shows the example of spelling correction using the words taken from the textbook \cite{Croft:2009:SEI:1516224}. 
+\begin{lstlisting}[language=python, caption={Spelling corrector}, label={lst:spelling}]
+
+#!/usr/bin/python
+
+import re
+from collections import Counter
+
+import sys
+
+
+class Spell:
+    def __init__(self, train_file):
+        self.document = open(train_file).read()
+        self.to_words()
+        self.count_words()
+
+    def to_words(self):
+        self.words = re.findall(r'\w+', self.document.lower())
+
+    def count_words(self):
+        self.word_count = Counter(self.words)
+
+    def probability(self, word):
+        "Probability of `word`."
+        word = word.lower()
+        N = sum(self.word_count.values())
+        return self.word_count[word] / N
+
+    def edits1(self, word):
+        "All edits that are one edit away from `word`."
+        word = word.lower()
+        letters = 'abcdefghijklmnopqrstuvwxyz'
+        splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]
+        deletes = [L + R[1:] for L, R in splits if R]
+        transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R) > 1]
+        replaces = [L + c + R[1:] for L, R in splits if R for c in letters]
+        inserts = [L + c + R for L, R in splits for c in letters]
+        return set(deletes + transposes + replaces + inserts)
+
+    def edits2(self, word):
+        "All edits that are two edits away from `word`."
+        word = word.lower()
+        return (e2 for e1 in self.edits1(word) for e2 in self.edits1(e1))
+
+    def known(self, words):
+        "The subset of `words` that appear in the dictionary of WORDS."
+        return set(w for w in words if w in self.word_count)
+
+    def candidates(self, word):
+        "Generate possible spelling corrections for word."
+        word = word.lower()
+        return (self.known([word]) or self.known(self.edits1(word)) or self.known(self.edits2(word)) or [word])
+
+    def correction(self, word):
+        "Most probable spelling correction for word."
+        word = word.lower()
+        candidates = self.candidates(word)
+        return max(candidates, key=self.probability)
+
+
+if __name__ == '__main__':
+    spell = Spell('big.txt')
+
+    if len(sys.argv) != 2:
+        print('python spell.py <word>')
+        exit()
+
+    word = sys.argv[1]
+    spelled_word = spell.correction(word)
+
+    print('{} --> {}'.format(word, spelled_word))
+
+\end{lstlisting}
+
+Figure \ref{fig:spelling_corrector} shows the example of spelling correction using some words taken from the textbook \cite{Croft:2009:SEI:1516224} and some words taken from Norvig's website \cite{norvig}. 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.55]{spelling_corrector}}
+	\centering
+	\caption{Spelling corrector using noisy channel model with edit distance of 1 and 2}
+	\label{fig:spelling_corrector}
+\end{figure}
 
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
