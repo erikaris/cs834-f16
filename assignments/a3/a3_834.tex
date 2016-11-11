@@ -450,7 +450,7 @@ if __name__ == '__main__':
 Figure \ref{fig:spelling_corrector} shows the example of spelling correction using some words taken from the textbook \cite{Croft:2009:SEI:1516224} and some words taken from Norvig's website \cite{norvig}. 
 
 \begin{figure}[H]
-	\fbox{\includegraphics[scale=0.55]{spelling_corrector}}
+	\fbox{\includegraphics[scale=0.56]{spelling_corrector}}
 	\centering
 	\caption{Spelling corrector using noisy channel model with edit distance of 1 and 2}
 	\label{fig:spelling_corrector}
@@ -466,55 +466,169 @@ Describe the snippet generation algorithm in Galago. Would this algorithm work w
 \subsection*{Answer}
 For this question, I downloaded the source code for Galago version 3.10 \cite{galago_3.10} from \url{https://sourceforge.net/p/lemur/galago/ci/release-3.10/tree/}. It is a part of The Lemur Project \cite{lemur}. The code for the snippet generator can be found in a file named \textit{`SnippetGenerator.java'} under the directory `galago-3.10/core/src/main/java/org/lemurproject/galago/core/index/corpus'. This is how the code works:
 \begin{enumerate}
-\item Given `documentText' and a set of `queryTerms', tokenize the `documentText' into terms and its position. Listing \ref{lst:galago-token} shows the code for this step. 
-\item Stem each term using a defined stemmer. By default, Galago uses Krovetz stemmer. 
-\item Iterate each stemmed term in documentText and find matches with each term in queryTerm. 
-\item For each matched term, make snippet region containing match term (original term) and maximum 5 terms before and 4 terms after original term in document. So, the snippet region will contain maximum 10 terms including the matched term. 
-\item Check the snippet regions and resolve if there are overlapped regions. 
-\item Remove snippet regions that overflow the maxSize. In the code, the maxSize is set to 40. 
-\item Combine all snippet regions in each document into a single snippet splitted by `…' (three dots). Make the matched terms displayed in a bold format.
+\item Given `documentText' and a set of `queryTerms', tokenize the `documentText' into terms and its position. Listing \ref{lst:step1} shows the code for this step. 
 
-\end{enumerate}
+\begin{lstlisting}[language=Java, caption={}, label={lst:step1}]
 
-\begin{lstlisting}[language=Java, caption={Tokenizing in Galago's snippet generator}, label={lst:galago-token}]
-public String getSnippet(String documentText, Set<String> queryTerms) throws IOException {
+ public String getSnippet(String documentText, Set<String> queryTerms) throws IOException {
     ArrayList<IntSpan> positions = new ArrayList<IntSpan>();
     Document document = parseAsDocument(documentText, positions);
     return generateSnippet(document, positions, queryTerms);
   }
+
 \end{lstlisting}
 
-Figure \ref{fig: xxx} shows the example of running the Galago's snippet generator on one of documents in the small Wikipedia collections `xxx.html'. 
+\item Stem each term using a defined stemmer. By default, Galago uses Krovetz stemmer. 
+
+\begin{lstlisting}[language=Java, caption={}, label={lst:step2}]
+
+  private Document parseAsDocument(String text, ArrayList<IntSpan> positions) throws IOException {
+     Document document = new Document();
+     document.text = text;
+ 
+     // Tokenize the document
+     TagTokenizer tokenizer = new TagTokenizer();
+     tokenizer.process(document);
+ 
+     if (positions != null) {
+       positions.addAll(tokenizer.getTokenPositions());
+     }
+     if (stemming) {
+       document = stemmer.stem(document);
+     }
+ 
+     return document;
+   }
+
+\end{lstlisting}
+
+\item Iterate each stemmed term in documentText and find matches with each term in queryTerm. 
+\item For each matched term, make snippet region containing match term (original term) and maximum 5 terms before and 4 terms after original term in document. So, the snippet region will contain maximum 10 terms including the matched term. 
+
+\begin{lstlisting}[language=Java, caption={}, label={lst:step3}]
+
+ Private ArrayList<SnippetRegion> findMatches(final Document document, final Set<String> queryTerms) {
+     // Make a snippet region object for each term occurrence in the document,
+     // while also counting matches
+     ArrayList<SnippetRegion> regions = new ArrayList<SnippetRegion>();
+ 
+     for (int i = 0; i < document.terms.size(); i++) {
+       String term = document.terms.get(i);
+       if (queryTerms.contains(term)) {
+         regions.add(new SnippetRegion(term, i, width, document.terms.size()));
+       }
+     }
+     return regions;
+   }
+
+\end{lstlisting}
+
+\item Check the snippet regions and resolve if there are overlapped regions.
+\item Remove snippet regions that overflow the maxSize. In the code, the maxSize is set to 40. 
+
+\begin{lstlisting}[language=Java, caption={}, label={lst:step4}]
+
+  public ArrayList<SnippetRegion> combineRegions(final ArrayList<SnippetRegion> regions) {
+     ArrayList<SnippetRegion> finalRegions = new ArrayList<SnippetRegion>();
+     SnippetRegion last = null;
+     int snippetSize = 0;
+     int maxSize = 40;
+ 
+     for (SnippetRegion current : regions) {
+       if (last == null) {
+         last = current;
+       } else if (last.overlap(current)) {
+         SnippetRegion bigger = last.merge(current);
+ 
+         if (bigger.size() + snippetSize > maxSize) {
+           finalRegions.add(last);
+           last = null;
+         } else {
+           last = bigger;
+         }
+       } else if (last.size() + snippetSize > maxSize) {
+         break;
+       } else {
+         finalRegions.add(last);
+         snippetSize += last.size();
+         last = current;
+       }
+     }
+ 
+     if (last != null && snippetSize + last.size() < maxSize) {
+       finalRegions.add(last);
+     }
+ 
+     return finalRegions;
+   }
+
+\end{lstlisting}
+
+\item Combine all snippet regions in each document into a single snippet splitted by `…' (three dots). Make the matched terms displayed in a bold format.
+
+\begin{lstlisting}[language=Java, caption={}, label={lst:step5}]
+ public String buildHtmlString(Snippet best, Document document, ArrayList<IntSpan> positions) {
+    StringBuilder builder = new StringBuilder();
+
+    for (SnippetRegion region : best.regions) {
+      if (region.start != 0) {
+        builder.append("...");
+      }
+      int startChar = positions.get(region.start).start;
+      int endChar = positions.get(region.end - 1).end;
+      int start = 0;
+
+      // section string
+      String section = document.text.substring(startChar, endChar);
+
+      for (Match m : region.matches) {
+        int startMatchChar = positions.get(m.start).start - startChar;
+        int endMatchChar = positions.get(m.end - 1).end - startChar;
+
+        String intermediate = stripTags(section.substring(start, startMatchChar));
+        builder.append(intermediate);
+        builder.append("<strong>");
+        builder.append(stripTags(section.substring(startMatchChar, endMatchChar)));
+        builder.append("</strong>");
+        start = endMatchChar;
+      }
+
+      if (start >= 0) {
+        builder.append(stripTags(section.substring(start)));
+      }
+
+      // terminate matches once we reached a max length.
+      int maxSnippetSize = 500;
+      if (builder.length() > maxSnippetSize) {
+        break;
+      }
+    }
+
+    if (best.regions.size() > 1 && best.regions.get(best.regions.size() - 1).end != document.terms.
+            size()) {
+      builder.append("...");
+    }
+    return builder.toString();
+  }
+  
+\end{lstlisting}
+
+\end{enumerate}
+
+Figure \ref{fig:computer_science} shows the example of snippets generated for the query terms `computer science'. 
 
 \begin{figure}[H]
-	\fbox{\includegraphics[scale=0.7]{4_graph_activate}}
+	\fbox{\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{computer_science}}
 	\centering
-	\caption{xxx}
-	\label{fig:xxx}
+	\caption{Snippet generated by Galago for query terms `computer science'}
+	\label{fig:computer_science}
 \end{figure}
 
-I also run the snippet generator on a document that has small content. For this assignment, I modified the document `xxy.html' so that it only contains 2 sentences. Figure \ref{fig:xxy} shows the output of Galago's snippet generator for a document with small content. 
+Based on my analysis, I think Galago's snippet algorithm will not work well for pages with little text content. It is because the algorithm works by matching the query terms with the page content. If there is only little content on the page, then the probability to generate a good snippet will also decrease. 
+One thing that we can use to improve the algorithm is to adopt the algorithm explained by Turpin \cite{Turpin:2007:FGR:1277741.1277766}. Turpin's algorithm does not only depends on the `matched terms'. It also uses the combination of several weights to improve the rank of the sentences such as the longest contiguous run of query terms and the position of the sentences. Figure \ref{fig:sentence_rank} illustrates the algorithm used by Turpin \cite{Turpin:2007:FGR:1277741.1277766} to generate snippets. 
 
 \begin{figure}[H]
-	\fbox{\includegraphics[scale=0.7]{4_graph_activate}}
-	\centering
-	\caption{xxy}
-	\label{fig:xxy}
-\end{figure}
-
-From figure \ref{fig:xxy}, I conclude that ... for document with little content, the algorithm .... I also find out that the algorithm does not handle the phrase well. For example, if I type a query `United States', it will return a snippet as can be seen in figure \ref{fig:xxz}. The algorithm split the phrase and find the best match based on term-by-term, not based on the complete phrase (two terms at a time). 
-
-\begin{figure}[H]
-	\fbox{\includegraphics[scale=0.7]{4_graph_activate}}
-	\centering
-	\caption{xxz}
-	\label{fig:xxz}
-\end{figure}
-
-One thing that we can use to improve the algorithm is to adopt the algorithm explained by Turpin \cite{Turpin:2007:FGR:1277741.1277766}. In his algorithm, Turpin \cite{Turpin:2007:FGR:1277741.1277766} takes `the longest contiguous run of query terms' as a variable to rank the sentences. Using this approach, I think we can avoid getting the snippet contains separated query terms. Figure \ref{fig:sentence_rank}
-
-\begin{figure}[H]
-	\fbox{\includegraphics[scale=0.7]{sentence_rank}}
+	\fbox{\includegraphics[scale=0.4]{sentence_rank}}
 	\centering
 	\caption{Turpin's algorithm for ranking the sentences. Adapted from \cite{Turpin:2007:FGR:1277741.1277766}}
 	\label{fig:sentence_rank}

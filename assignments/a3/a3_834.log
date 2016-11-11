@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.14)  10 NOV 2016 21:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.14)  10 NOV 2016 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -777,9 +777,9 @@ File: spelling_corrector.jpg Graphic file (type jpg)
 
 <use spelling_corrector.jpg>
 Package pdftex.def Info: spelling_corrector.jpg used on input line 453.
-(pdftex.def)             Requested size: 511.21146pt x 131.39127pt.
+(pdftex.def)             Requested size: 520.50107pt x 133.77887pt.
 
-Overfull \hbox (44.20042pt too wide) in paragraph at lines 453--455
+Overfull \hbox (53.49004pt too wide) in paragraph at lines 453--455
  [][] 
  []
 
@@ -801,73 +801,58 @@ Overfull \hbox (8.48347pt too wide) in paragraph at lines 467--468
 ver-sion 3.10 [[]] from []$\T1/cmtt/m/n/10.95 https : / / sourceforge .
  []
 
-[8 <./spelling_corrector.jpg>]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
+) [8 <./spelling_corrector.jpg>] [9] [10]
+<computer_science.png, id=480, 1371.1225pt x 740.7675pt>
+File: computer_science.png Graphic file (type png)
 
-LaTeX Warning: Reference `fig: xxx' on page 9 undefined on input line 487.
+<use computer_science.png>
+Package pdftex.def Info: computer_science.png used on input line 621.
+(pdftex.def)             Requested size: 473.81187pt x 255.98328pt.
 
-File: 4_graph_activate.png Graphic file (type png)
-<use 4_graph_activate.png>
-Package pdftex.def Info: 4_graph_activate.png used on input line 490.
-(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
-File: 4_graph_activate.png Graphic file (type png)
- <use 4_graph_activate.png>
-Package pdftex.def Info: 4_graph_activate.png used on input line 499.
-(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
- [9]
-File: 4_graph_activate.png Graphic file (type png)
-
-<use 4_graph_activate.png>
-Package pdftex.def Info: 4_graph_activate.png used on input line 508.
-(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
- [10]
-<sentence_rank.jpg, id=393, 778.91pt x 602.25pt>
-File: sentence_rank.jpg Graphic file (type jpg)
- <use sentence_rank.jpg>
-Package pdftex.def Info: sentence_rank.jpg used on input line 517.
-(pdftex.def)             Requested size: 545.23329pt x 421.57211pt.
-
-Overfull \hbox (78.22226pt too wide) in paragraph at lines 517--519
+Overfull \hbox (6.80084pt too wide) in paragraph at lines 621--623
  [][] 
  []
 
-[11]
-Overfull \hbox (18.46725pt too wide) in paragraph at lines 528--528
+[11 <./computer_science.png>] <sentence_rank.jpg, id=510, 778.91pt x 602.25pt>
+File: sentence_rank.jpg Graphic file (type jpg)
+
+<use sentence_rank.jpg>
+Package pdftex.def Info: sentence_rank.jpg used on input line 631.
+(pdftex.def)             Requested size: 311.55849pt x 240.89572pt.
+
+Overfull \hbox (18.46725pt too wide) in paragraph at lines 642--642
 []\T1/cmtt/m/n/10.95 MLN1:[] using[] the[] small[] wikipedia[] example,[] choos
 e[] 10[] words[] and[] create[] stem[] classes[] as[] per[]
  []
 
 
-Overfull \hbox (41.10074pt too wide) in paragraph at lines 539--539
+Overfull \hbox (41.10074pt too wide) in paragraph at lines 653--653
 []\T1/cmtt/m/n/10.95 MLN2:[] using[] the[] small[] wikipedia[] example,[] choos
 e[] 10[] words[] and[] compute[] MIM,[] EMIM,[] chi[] square,[]
  []
 
-[12 <./sentence_rank.jpg>] (./a3_834.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 549.
+(./a3_834.bbl [12 <./sentence_rank.jpg>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 663.
  [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 663.
  (./a3_834.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 549.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 663.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 663.
 Package rerunfilecheck Info: File `a3_834.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 549.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 663.
  ) 
 Here is how much of TeX's memory you used:
- 9820 strings out of 493029
- 140641 string characters out of 6136234
- 468799 words of memory out of 5000000
- 12921 multiletter control sequences out of 15000+600000
+ 9987 strings out of 493029
+ 143054 string characters out of 6136234
+ 471939 words of memory out of 5000000
+ 12975 multiletter control sequences out of 15000+600000
  15232 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,42p,669b,2006s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -885,10 +870,10 @@ super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb><
 ts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on a3_834.pdf (14 pages, 516278 bytes).
+Output written on a3_834.pdf (14 pages, 654316 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
- 317 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 680 PDF objects out of 1000 (max. 8388607)
+ 635 compressed objects within 7 object streams
+ 429 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
