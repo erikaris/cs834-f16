@@ -1,0 +1,468 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{listings}
+\usepackage[pdftex]{graphicx} 
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage{alltt}
+\usepackage{color}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{spverbatim}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\addtolength{\textwidth}{4cm}
+\addtolength{\hoffset}{-2cm}
+\addtolength{\textheight}{4cm}
+\addtolength{\voffset}{-2cm}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\lstset{
+	basicstyle=\footnotesize,
+	breaklines=true,
+}
+
+\title{Bibliography management: BibTeX}
+\author{Share\LaTeX}
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+
+\Huge{Assignment 3}
+
+\Large{CS834-F16:  Introduction to Information Retrieval}
+
+\Large{Fall 2016}
+
+
+\Large{Erika Siregar}
+
+\vfill
+
+% Bottom of the page
+\Large{CS Department - Old Dominion University  \\ \today}
+
+
+\end{center}
+
+\end{titlepage}
+
+
+\section*{Question 6.1}
+\begin{spverbatim}
+Using the Wikipedia collection provided at the book website, create a sample of stem clusters by the following process:
+1. Index the collection without stemming.
+2. Identify the first 1,000 words (in alphabetical order) in the index.
+3. Create stem classes by stemming these 1,000 words and recording which words become the same stem.
+4. Compute association measures (Dice’s coefficient) between all pairs of stems in each stem class. Compute co-occurrence at the document level.
+5. Create stem clusters by thresholding the association measure. All terms that are still connected to each other form the clusters.
+
+Compare the stem clusters to the stem classes in terms of size and the quality (in your opinion) of the groupings.
+\end{spverbatim}
+
+\subsection*{Answer}
+For indexing the collection, I modified the code that I used in assignment 2, sort the index alphabetically, and take the first 1000 words. The code for this is written in the file `1\_2\_index.py'. For creating the stem classes, I use Krovetz Stemmer because it produces a better stemming results than Porter Stemmer. Listing \ref{lst:krovetz} shows the code to create the stem classes that utilize python library for Krovetz Stemmer \cite{krovetz-python}.
+
+\begin{lstlisting}[language=python, caption={Creating Stem Classes with Krovetz Stemmer}, label={lst:krovetz}]
+#!/usr/bin/python
+import json
+from krovetzstemmer import Stemmer as KrovetzStemmer
+import unicodecsv as csv
+from prettyprint import prettyprint
+
+
+# Instantiate krovetz stemmer
+krovetz = KrovetzStemmer()
+
+
+# Read result of 1_index
+with open('1_2_index.txt', 'rb') as f:
+    str_word_files_index = f.read()
+    word_files_index =  json.loads(str_word_files_index)
+
+    stem_word_index = {}
+    for word, files in word_files_index.items():
+        # Stem word using krovetz
+        stemmed_word = krovetz.stem(word)
+
+        # Group by stemmed word
+        stem_word_index.setdefault(stemmed_word, [])
+        stem_word_index[stemmed_word].append(word)
+
+
+    filename = '3_stemmed_words.csv'
+    with open(filename, 'wb') as f:
+        print('Writing to file {}'.format(filename))
+
+        writer = csv.writer(f)
+        for stemmed_word, words in stem_word_index.items():
+            writer.writerow((stemmed_word, ', '.join(words)))
+
+        print('Done!')
+
+\end{lstlisting}
+
+Table \ref{tab:stem-class} shows the snippet of the stem classes created. The complete list of the stem classes is available in `3\_stemmed\_words.csv' which is uploaded on github. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{stem class}} & \multicolumn{1}{c|}{\textbf{terms}}      \\ \hline
+academician                          & academicians, academician                \\ \hline
+adamant                              & adamantly, adamant                       \\ \hline
+abundance                            & abundance                                \\ \hline
+account                              & account, accounted, accounts, accounting \\ \hline
+abdelkader                           & abdelkader                               \\ \hline
+achter                               & achter                                   \\ \hline
+abednego                             & abednego                                 \\ \hline
+abortion                             & abortion, abortions                      \\ \hline
+aboot                                & aboot                                    \\ \hline
+abrahamsson                          & abrahamsson                              \\ \hline
+abdeali                              & abdeali                                  \\ \hline
+abandon                              & abandonment, abandon, abandoning         \\ \hline
+\end{tabular}
+\caption{A snippet of the stem classes}
+\label{tab:stem-class}
+\end{table}
+ 
+Next step is to create the stem clusters using Dice's Coefficient \cite{dice} as the term association measure. Dice's Coefficient works based on this formula: \[ 2.\frac{n_{ab}}{n_{a} + n_{b}} \]      
+Using this formula, compute the Dice's Coefficient for each pair of terms in every stem classes. With a threshold = 0.01, create a graph in which every pair of terms that has Dice's Coefficient greater than 0.01 will be connected with an edge. Figure \ref{fig:4_graph_activate} shows the graph for the stem class `activate' that can be grouped into two clusters: `\textit{activate, activating, activator}' and `\textit{activates, activation}'. The graph for other stem classes are available on github in a folder named \textit{`graph'}. From this graph, we only need to extract the connected components to form the clusters. \newline
+Listing \ref{lst:cluster} shows the code used to compute the Dice's Coefficient, create the graphs, and extract the connected components of the graphs. 
+
+\begin{lstlisting}[language=python, caption={Creating Cluster using Dice's Coefficient}, label={lst:cluster}]
+
+#!/usr/bin/python
+import json
+import nltk as nltk
+from tabulate import tabulate
+import unicodecsv as csv
+from prettyprint import prettyprint
+import networkx as nx
+import matplotlib.pyplot as plt
+
+dice_coef_threshold = 0.01
+stem_clusters = []
+
+# Read result of 1_2_index.txt
+with open('1_2_index.txt', 'rb') as f1:
+    word_files_index = json.loads(f1.read())
+
+    # Read result of 3_stemmed_words.csv
+    with open('3_stemmed_words.csv', 'rb') as f3:
+        for stemmed_word, words in csv.reader(f3):
+            words = words.split(', ')
+
+            # create bigrams from words
+            bigrams = list(nltk.bigrams(words))
+            for word_a, word_b in bigrams:
+                # Lookup filename in word_files_index
+                files_a = word_files_index[word_a]
+                files_b = word_files_index[word_b]
+                files_a_sliced_b = list(set(files_b) & set(files_a))
+
+                dice_coef = float(2 * len(files_a_sliced_b)) / (len(files_a) + len(files_b))
+
+                if(dice_coef > dice_coef_threshold):
+                    stem_clusters.append((stemmed_word, word_a, word_b, dice_coef))
+
+
+stem_clusters = sorted(stem_clusters, key=lambda x: x[3], reverse=True)
+# print tabulate(stem_clusters, headers=['stemmed_word', 'word_a', 'word_b', 'dice_coef'])
+
+filename = '4_dice_coeficient.csv'
+with open(filename, 'wb') as f:
+    print('Writing to file {}'.format(filename))
+
+    writer = csv.writer(f)
+    for stemmed_word, word_a, word_b, dice_coef in stem_clusters:
+        writer.writerow((stemmed_word, word_a, word_b, dice_coef))
+
+
+# Create graph
+stemmed_word_data = {}
+for stemmed_word, word_a, word_b, dice_coef in stem_clusters:
+    stemmed_word_data.setdefault(stemmed_word, [])
+    stemmed_word_data[stemmed_word].append((word_a, word_b, dice_coef))
+
+stemmed_word_clusters = {}
+for stemmed_word, data in stemmed_word_data.items():
+    G=nx.MultiGraph()
+
+    labels = {}
+    for word_a, word_b, dice_coef in data:
+        G.add_edge(word_a, word_b, weight=dice_coef, label=dice_coef)
+        labels[(word_a, word_b)] = dice_coef
+
+    # export connected components into list
+    stemmed_word_clusters[stemmed_word] = list(nx.connected_components(G))
+
+    nx.draw(G, with_labels=True)
+    nx.draw_networkx_edge_labels(G, pos=nx.spring_layout(G), edge_labels=labels)
+
+    filename = '4_graph_{}.png'.format(stemmed_word)
+    print('Saving graph {}'.format(filename))
+    plt.savefig(filename, format='PNG')
+    plt.clf()
+
+print('Draw graphics done!')
+
+print('Print stem clusters...')
+
+for stemmed_word, connected_nodes in stemmed_word_clusters.items():
+    for connected_node in connected_nodes:
+        print(u'{}\t: {}'.format(stemmed_word, ', '.join(connected_node)))
+
+print('Print stem clusters done')
+
+
+\end{lstlisting}
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.7]{4_graph_activate}}
+	\centering
+	\caption{Graph of the connected component for the stem class `activate'}
+	\label{fig:4_graph_activate}
+\end{figure}
+
+Table \ref{tab:dice} shows the Dice's Coefficient for some pair of terms in the Wikipedia collection. The complete list of the term pairs with their Dice's Coefficient value is available on Github in a file named `4\_dice\_coeficient.csv'. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+No & \multicolumn{1}{c|}{\textbf{Class}} & \multicolumn{1}{c|}{\textbf{Term 1}} & \multicolumn{1}{c|}{\textbf{Term 2}} & \multicolumn{1}{c|}{\textbf{Dice's Coefficient}} \\ \hline
+1  & abomination                         & abominationes                        & abomination                          & 0.6666666667                                     \\ \hline
+2  & abut                                & abuts                                & abutting                             & 0.6666666667                                     \\ \hline
+3  & abjad                               & abjads                               & abjad                                & 0.6666666667                                     \\ \hline
+4  & academician                         & academicians                         & academician                          & 0.5714285714                                     \\ \hline
+5  & aberration                          & aberrations                          & aberration                           & 0.5                                              \\ \hline
+6  & adapter                             & adapters                             & adapter                              & 0.5                                              \\ \hline
+7  & actor                               & actors                               & actor                                & 0.4984025559                                     \\ \hline
+8  & abridge                             & abridged                             & abridges                             & 0.4                                              \\ \hline
+9  & absolve                             & absolve                              & absolved                             & 0.4                                              \\ \hline
+10 & acoustic                            & acoustically                         & acoustical                           & 0.4                                              \\ \hline
+\end{tabular}
+\caption{Dice's Coefficient for some pair of terms in small Wikipedia collection}
+\label{tab:dice}
+\end{table}
+
+Listing \ref{lst:cluster} shows the clusters resulted for the small Wikipedia Collection. 
+
+\begin{lstlisting}[caption={Cluster for the small wikipedia collection}, label={lst:cluster}]
+accessible	: accessible, accessibility	
+activate	: activator, activate, activating
+activate	: activation, activates
+accelerator	: accelerators, accelerator
+abridge	: abridges, abridged
+accurate	: accurate, accurately
+address	: addressing, addresses, addressed, address
+abomination	: abomination, abominationes
+accept	: accepting, accepted, accept
+abbreviation	: abbreviation, abbreviations
+acclaim	: acclaim, acclaimed
+adaptation	: adaptations, adaptation
+abrogate	: abrogation, abrogated
+accrete	: accreting, accrete, accreted
+acid	: acidic, acids, acid
+accommodate	: accommodate, accommodated
+absolute	: absoluter, absolute
+acceleration	: acceleration, accelerations
+additional	: additional, additionally
+acknowledge	: acknowledges, acknowledged
+addition	: addition, additions
+accent	: accent, accented
+actor	: actors, actor
+access	: access, accessed, accessing, accessor
+acyltransferase	: acyltransferase, acyltransferases
+add	: adding, add, added, adds
+activist	: activist, activists
+adapt	: adaption, adapt
+adapt	: adaptive, adapted
+acre	: acres, acre
+achieve	: achieves, achieve
+achieve	: achieving, achieved
+abstraction	: abstraction, abstractions
+accompany	: accompany, accompanying
+activity	: activities, activity
+accidental	: accidentally, accidental
+aberration	: aberrations, aberration
+acronym	: acronym, acronyms
+academy	: academy, academies
+acquire	: acquire, acquiring
+academician	: academician, academicians
+abut	: abutting, abuts
+abuse	: abused, abuse
+accompaniment	: accompaniment, accompaniments
+actress	: actresses, actress
+accuse	: accusing, accuses
+acute	: acute, acutely
+accumulate	: accumulate, accumulated
+abugida	: abugidas, abugida
+abduct	: abducted, abductors
+achievement	: achievements, achievement
+accredit	: accrediting, accredited, accreditation
+accusation	: accusation, accusations
+account	: accounting, accounted, accounts
+accident	: accident, accidents
+actual	: actual, actualized
+adapter	: adapter, adapters
+accomplishment	: accomplishment, accomplishments
+absolve	: absolved, absolve
+abjad	: abjads, abjad
+academic	: academic, academically
+abrupt	: abrupt, abruptly
+abolition	: abolitionism, abolition
+act	: acted, act
+action	: action, actions
+acoustic	: acoustical, acoustic, acoustically
+abbey	: abbeys, abbey
+acquisition	: acquisitions, acquisition
+abbot	: abbots, abbot
+
+\end{lstlisting}
+
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+
+\section*{Question 6.2}
+\begin{spverbatim}
+Create a simple spelling corrector based on the noisy channel model. Use a single-word language model, and an error model where all errors with the same edit distance have the same probability. Only consider edit distances of 1 or 2. Implement your own edit distance calculator (example code can easily be found on the Web).
+\end{spverbatim}
+
+\subsection*{Answer:}
+Spelling corrector based on the noisy channel model works using this approach \cite{spelling}:
+\begin{enumerate}
+\item Let's say \textit{x} is a mispelled word and \( w = w_{1}, w_{2}, w_{3}, ..., w_{n} \) is an array of possible corrected words. 
+\item Our task is to compute the conditional probability and take a word \( w_i \) that has the maximum value for \( P\left(x|w_{i}\right).P\left(w_i\right) \).
+\end{enumerate}
+
+It looks complicated. But, fortunately, Peter Norvig \cite{norvig} has provided a nice python code for spelling corrector, which is worked based on the noisy channel model. For this assignment, I modified Norvig's code as can be seen in listing \ref{lst:xxx}.
+
+Figure \ref{fig:xxx} shows the example of spelling correction using the words taken from the textbook \cite{Croft:2009:SEI:1516224}. 
+
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+
+\section*{Question 6.5}
+\begin{spverbatim}
+Describe the snippet generation algorithm in Galago. Would this algorithm work well for pages with little text content? Describe in detail how you would modify the algorithm to improve it.
+\end{spverbatim}
+
+\subsection*{Answer}
+For this question, I downloaded the source code for Galago version 3.10 \cite{galago_3.10} from \url{https://sourceforge.net/p/lemur/galago/ci/release-3.10/tree/}. It is a part of The Lemur Project \cite{lemur}. The code for the snippet generator can be found in a file named \textit{`SnippetGenerator.java'} under the directory `galago-3.10/core/src/main/java/org/lemurproject/galago/core/index/corpus'. This is how the code works:
+\begin{enumerate}
+\item Given `documentText' and a set of `queryTerms', tokenize the `documentText' into terms and its position. Listing \ref{lst:galago-token} shows the code for this step. 
+\item Stem each term using a defined stemmer. By default, Galago uses Krovetz stemmer. 
+\item Iterate each stemmed term in documentText and find matches with each term in queryTerm. 
+\item For each matched term, make snippet region containing match term (original term) and maximum 5 terms before and 4 terms after original term in document. So, the snippet region will contain maximum 10 terms including the matched term. 
+\item Check the snippet regions and resolve if there are overlapped regions. 
+\item Remove snippet regions that overflow the maxSize. In the code, the maxSize is set to 40. 
+\item Combine all snippet regions in each document into a single snippet splitted by `…' (three dots). Make the matched terms displayed in a bold format.
+
+\end{enumerate}
+
+\begin{lstlisting}[language=Java, caption={Tokenizing in Galago's snippet generator}, label={lst:galago-token}]
+public String getSnippet(String documentText, Set<String> queryTerms) throws IOException {
+    ArrayList<IntSpan> positions = new ArrayList<IntSpan>();
+    Document document = parseAsDocument(documentText, positions);
+    return generateSnippet(document, positions, queryTerms);
+  }
+\end{lstlisting}
+
+Figure \ref{fig: xxx} shows the example of running the Galago's snippet generator on one of documents in the small Wikipedia collections `xxx.html'. 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.7]{4_graph_activate}}
+	\centering
+	\caption{xxx}
+	\label{fig:xxx}
+\end{figure}
+
+I also run the snippet generator on a document that has small content. For this assignment, I modified the document `xxy.html' so that it only contains 2 sentences. Figure \ref{fig:xxy} shows the output of Galago's snippet generator for a document with small content. 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.7]{4_graph_activate}}
+	\centering
+	\caption{xxy}
+	\label{fig:xxy}
+\end{figure}
+
+From figure \ref{fig:xxy}, I conclude that ... for document with little content, the algorithm .... I also find out that the algorithm does not handle the phrase well. For example, if I type a query `United States', it will return a snippet as can be seen in figure \ref{fig:xxz}. The algorithm split the phrase and find the best match based on term-by-term, not based on the complete phrase (two terms at a time). 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.7]{4_graph_activate}}
+	\centering
+	\caption{xxz}
+	\label{fig:xxz}
+\end{figure}
+
+One thing that we can use to improve the algorithm is to adopt the algorithm explained by Turpin \cite{Turpin:2007:FGR:1277741.1277766}. In his algorithm, Turpin \cite{Turpin:2007:FGR:1277741.1277766} takes `the longest contiguous run of query terms' as a variable to rank the sentences. Using this approach, I think we can avoid getting the snippet contains separated query terms. Figure \ref{fig:sentence_rank}
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.7]{sentence_rank}}
+	\centering
+	\caption{Turpin's algorithm for ranking the sentences. Adapted from \cite{Turpin:2007:FGR:1277741.1277766}}
+	\label{fig:sentence_rank}
+\end{figure}
+
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+
+\section*{Question MLN1}
+\begin{spverbatim}
+MLN1: using the small wikipedia example, choose 10 words and create stem classes as per the algorithm on pp. 191-192.
+\end{spverbatim}
+
+\subsection*{Answer}
+D
+    
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+
+
+\section*{Question MLN2}
+\begin{spverbatim}
+MLN2: using the small wikipedia example, choose 10 words and compute MIM, EMIM, chi square, dice association measures for full document & 5 word windows (cf. pp. 203-205)
+\end{spverbatim}
+
+\subsection*{Answer}
+e
+
+\medskip
+
+\bibliographystyle{unsrt}%Used BibTeX style is unsrt
+\bibliography{biblio}
+
+\end{document}

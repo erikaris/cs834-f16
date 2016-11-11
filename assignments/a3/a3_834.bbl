@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+
+\bibitem{krovetz-python}
+Ruey-Cheng Chen.
+\newblock {KrovetzStemmer 0.4}.
+\newblock \url{https://pypi.python.org/pypi/KrovetzStemmer/0.4}, 2016.
+\newblock [Online; accessed 12-October-2016].
+
+\bibitem{dice}
+Wikipedia.
+\newblock {Algorithm Implementation/Strings/Dice's coefficient}.
+\newblock
+  \url{https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient/},
+  2016.
+\newblock [Online; accessed 8-November-2016].
+
+\bibitem{spelling}
+Dan Jurafsky.
+\newblock {Spelling Correction and the Noisy Channel }.
+\newblock \url{https://web.stanford.edu/class/cs124/lec/spelling.pdf}, 2012.
+\newblock [Online; accessed 8-November-2016].
+
+\bibitem{norvig}
+Peter Norvig.
+\newblock {How to Write a Spelling Corrector }.
+\newblock \url{http://norvig.com/spell-correct.html}, 2016.
+\newblock [Online; accessed 9-November-2016].
+
+\bibitem{Croft:2009:SEI:1516224}
+Bruce Croft, Donald Metzler, and Trevor Strohman.
+\newblock {\em Search Engines: Information Retrieval in Practice}.
+\newblock Addison-Wesley Publishing Company, USA, 1st edition, 2009.
+
+\bibitem{galago_3.10}
+The~Lemur Project.
+\newblock {The Lemur Project - Galago 3.10 }.
+\newblock \url{https://sourceforge.net/p/lemur/galago/ci/release-3.10/tree/},
+  2016.
+\newblock [Online; accessed 5-November-2016].
+
+\bibitem{lemur}
+The~Lemur Project.
+\newblock {The Lemur Project }.
+\newblock \url{http://www.lemurproject.org/}, 2016.
+\newblock [Online; accessed 5-November-2016].
+
+\bibitem{Turpin:2007:FGR:1277741.1277766}
+Andrew Turpin, Yohannes Tsegay, David Hawking, and Hugh~E. Williams.
+\newblock Fast generation of result snippets in web search.
+\newblock In {\em Proceedings of the 30th Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, SIGIR '07,
+  pages 127--134, New York, NY, USA, 2007. ACM.
+
+\end{thebibliography}
