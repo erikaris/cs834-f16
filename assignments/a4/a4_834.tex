@@ -449,7 +449,7 @@ interpolated recall-precision graph.
 \subsection*{Answer:}
 For this assignment, I randomly choose query no. 6 and no. 12 and calculate the recall and precision values based on the top 10 rank positions. The code to do this can be seen on listing \ref{lst:84}. To generate the recall-precision graph, I use python library \textit{matplotlib} \cite{matplotlib} based on example from \cite{matplotlib-example}. 
 \newline
-Figure \ref{fig:84_uninterpolated} and figure \ref{fig:84_interpolated} show the uninterpolated and interpolated recall-precision graphs for query no. 6 and 12. The table of interpolated precision values can be seen in figure 
+Figure \ref{fig:84_uninterpolated} and figure \ref{fig:84_interpolated} show the uninterpolated and interpolated recall-precision graphs for query no. 6 and 12, while figure \ref{fig:84_avg-interpolated} shows the average interpolated recall-precision graph for those 2 queries. The table of interpolated precision values can be seen in figure \ref{fig:8_4_interpolated_table}
 
 \begin{figure}[H]
 	\fbox{\includegraphics[scale=0.6]{uninterpolated}}
@@ -466,10 +466,17 @@ Figure \ref{fig:84_uninterpolated} and figure \ref{fig:84_interpolated} show the
 \end{figure}
 
 \begin{figure}[H]
-	\fbox{\includegraphics[scale=0.4]{84_query6_12_table}}
+	\fbox{\includegraphics[scale=0.5]{8_4_interpolated_table}}
 	\centering
-	\caption{Table of interpolate for query no. 6 and 12}
-	\label{fig:84_query6_12_table}
+	\caption{Interpolated precision values for query 6 and 12}
+	\label{fig:8_4_interpolated_table}
+\end{figure}
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.7]{84_avg-interpolated}}
+	\centering
+	\caption{The average interpolated recall-precision graph for query no. 6 and 12}
+	\label{fig:84_avg-interpolated}
 \end{figure}
 
 
@@ -596,6 +603,10 @@ at 5 and 10, and precision at 10 for the entire CACM query set
 \end{spverbatim}
 
 \subsection*{Answer}
+The formulas to calculate the metrics required in this question are similar to the formulas that have been used in the previous questions. NDCG is calculated using the following formula:
+\begin{align}
+NDCG_{p}=\frac{DCG_{p}}{IDCG_{p}}
+\end{align}
 The code to solve this problem can be found on listing \ref{lst:85}. Figure \ref{fig:85_metrics} shows the value of mean average precision (MAP), average NDCG at 5 and 10, and precision at 10 for the entire CACM query set. The recall-precision graph is shown in figure \ref{fig:85_recall-precision}.
 
 \begin{figure}[H]

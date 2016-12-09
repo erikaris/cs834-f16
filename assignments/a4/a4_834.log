@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  8 DEC 2016 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  8 DEC 2016 23:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -796,61 +796,69 @@ Overfull \hbox (41.10074pt too wide) in paragraph at lines 447--447
 [] at[] standard[] recall[] levels,[] and[] the[] average[] 
  []
 
-<uninterpolated.png, id=362, 578.16pt x 433.62pt>
+<uninterpolated.png, id=364, 578.16pt x 433.62pt>
 File: uninterpolated.png Graphic file (type png)
  <use uninterpolated.png>
 Package pdftex.def Info: uninterpolated.png used on input line 455.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
-[8] <interpolated.png, id=387, 578.16pt x 433.62pt>
+[8] <interpolated.png, id=391, 578.16pt x 433.62pt>
 File: interpolated.png Graphic file (type png)
  <use interpolated.png>
 Package pdftex.def Info: interpolated.png used on input line 462.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
-<84_query6_12_table.jpg, id=388, 1474.50874pt x 274.02374pt>
-File: 84_query6_12_table.jpg Graphic file (type jpg)
+<8_4_interpolated_table.jpg, id=392, 984.67876pt x 520.94624pt>
+File: 8_4_interpolated_table.jpg Graphic file (type jpg)
 
-<use 84_query6_12_table.jpg>
-Package pdftex.def Info: 84_query6_12_table.jpg used on input line 469.
-(pdftex.def)             Requested size: 589.79306pt x 109.60754pt.
+<use 8_4_interpolated_table.jpg>
+Package pdftex.def Info: 8_4_interpolated_table.jpg used on input line 469.
+(pdftex.def)             Requested size: 492.33817pt x 260.47249pt.
 
-Overfull \hbox (122.78203pt too wide) in paragraph at lines 469--471
+Overfull \hbox (25.32713pt too wide) in paragraph at lines 469--471
  [][] 
  []
 
-[9 <./uninterpolated.png> <./interpolated.png>] [10 <./84_query6_12_table.jpg>]
-[11] <85_metrics.jpg, id=504, 600.2425pt x 694.595pt>
-File: 85_metrics.jpg Graphic file (type jpg)
- <use 85_metrics.jpg>
-Package pdftex.def Info: 85_metrics.jpg used on input line 602.
-(pdftex.def)             Requested size: 360.14827pt x 416.76022pt.
+[9 <./uninterpolated.png> <./interpolated.png>]
+<84_avg-interpolated.png, id=399, 578.16pt x 433.62pt>
+File: 84_avg-interpolated.png Graphic file (type png)
 
-[12] <85_recall-precision.png, id=526, 578.16pt x 433.62pt>
+<use 84_avg-interpolated.png>
+Package pdftex.def Info: 84_avg-interpolated.png used on input line 476.
+(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
+ [10 <./8_4_interpolated_table.jpg> <./84_avg-interpolated.png>] [11] [12] <85_
+metrics.jpg, id=525, 600.2425pt x 694.595pt>
+File: 85_metrics.jpg Graphic file (type jpg)
+
+<use 85_metrics.jpg>
+Package pdftex.def Info: 85_metrics.jpg used on input line 613.
+(pdftex.def)             Requested size: 360.14827pt x 416.76022pt.
+ [13]
+<85_recall-precision.png, id=536, 578.16pt x 433.62pt>
 File: 85_recall-precision.png Graphic file (type png)
 
 <use 85_recall-precision.png>
-Package pdftex.def Info: 85_recall-precision.png used on input line 609.
+Package pdftex.def Info: 85_recall-precision.png used on input line 620.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
- [13 <./85_metrics.jpg>] [14 <./85_recall-precision.png>] [15] <87_output.jpg, 
-id=623, 533.995pt x 602.25pt>
+ [14 <./85_metrics.jpg>] [15 <./85_recall-precision.png>] [16] <87_output.jpg, 
+id=633, 533.995pt x 602.25pt>
 File: 87_output.jpg Graphic file (type jpg)
  <use 87_output.jpg>
-Package pdftex.def Info: 87_output.jpg used on input line 734.
+Package pdftex.def Info: 87_output.jpg used on input line 745.
 (pdftex.def)             Requested size: 320.39948pt x 361.35278pt.
 
-[16] [17 <./87_output.jpg>] [18]
-<89_output.jpg, id=732, 843.15pt x 251.94125pt>
+[17] [18 <./87_output.jpg>] [19]
+<89_output.jpg, id=742, 843.15pt x 251.94125pt>
 File: 89_output.jpg Graphic file (type jpg)
  <use 89_output.jpg>
-Package pdftex.def Info: 89_output.jpg used on input line 846.
+Package pdftex.def Info: 89_output.jpg used on input line 857.
 (pdftex.def)             Requested size: 505.8939pt x 151.16591pt.
 
-Overfull \hbox (38.88287pt too wide) in paragraph at lines 846--848
+Overfull \hbox (38.88287pt too wide) in paragraph at lines 857--859
  [][] 
  []
 
-[19 <./89_output.jpg>] [20] (./a4_834.bbl
+[20 <./89_output.jpg>] [21] (./a4_834.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 22--29
 []\T1/cmr/m/n/10.95 Stackoverflow.  How to draw a precision-recall curve with i
 n-ter-po-la-
@@ -869,21 +877,21 @@ terpolation-[]in-[]python$[]\T1/cmr/m/n/10.95 , 2016.  [On-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 923.
- [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 923.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 934.
+ [22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 934.
  (./a4_834.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 923.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 923.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 934.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 934.
 Package rerunfilecheck Info: File `a4_834.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 923.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 934.
  ) 
 Here is how much of TeX's memory you used:
- 10650 strings out of 493029
- 150863 string characters out of 6136233
- 430690 words of memory out of 5000000
- 13360 multiletter control sequences out of 15000+600000
+ 10659 strings out of 493029
+ 151082 string characters out of 6136233
+ 430799 words of memory out of 5000000
+ 13365 multiletter control sequences out of 15000+600000
  16358 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,42p,551b,2024s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -903,10 +911,10 @@ xmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2488
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/tex
 mf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on a4_834.pdf (22 pages, 949366 bytes).
+Output written on a4_834.pdf (23 pages, 1049970 bytes).
 PDF statistics:
- 1023 PDF objects out of 1200 (max. 8388607)
- 959 compressed objects within 10 object streams
- 685 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1033 PDF objects out of 1200 (max. 8388607)
+ 966 compressed objects within 10 object streams
+ 688 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
