@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{Croft:2009:SEI:1516224}
+Bruce Croft, Donald Metzler, and Trevor Strohman.
+\newblock {\em Search Engines: Information Retrieval in Practice}.
+\newblock Addison-Wesley Publishing Company, USA, 1st edition, 2009.
+
+\bibitem{networkx-hits-pagerank}
+NetworkX Developers.
+\newblock {Networkx - Link Analysis}.
+\newblock
+  \url{https://networkx.github.io/documentation/networkx-1.9/reference/algorithms.link_analysis.html},
+  2016.
+\newblock [Online; accessed 14-December-2016].
+
+\end{thebibliography}
