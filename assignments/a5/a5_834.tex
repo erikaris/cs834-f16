@@ -281,7 +281,7 @@ Find a community-based question answering site on the Web and ask two questions,
 \end{spverbatim}
 
 \subsection*{Answer:}
-For this assignment, I asked 2 questions on 2 different comunity-based question answering site. For the low-quality question, I asked about \textbf{\textit{`What is the purpose of our life?'}} \footnote{https://answers.yahoo.com/question/index?qid=20161216122515AAPvTIw&page=4} on Yahoo Answers \url{https://answers.yahoo.com/} as can be seen on figure \ref{fig:10_5_q}. For the high-quality question, I asked the question \textbf{\textit{`BUILD-MAX-HEAP running time for array sorted in decreasing order'}} on Stackoverflow \footnote{http://stackoverflow.com/questions/39691923/build-max-heap-running-time-for-array-sorted-in-decreasing-order} as can be seen on figure \ref{fig:10_5_a1}.
+For this assignment, I asked 2 questions on 2 different comunity-based question answering site. For the low-quality question, I asked about \textbf{\textit{`What is the purpose of our life?'}}\footnote{https://answers.yahoo.com/question/index?qid=20161216122515AAPvTIw\&page=4} on Yahoo Answers \url{https://answers.yahoo.com/} as can be seen on figure \ref{fig:10_5_q}. For the high-quality question, I asked the question \textbf{\textit{`BUILD-MAX-HEAP running time for array sorted in decreasing order'}} on Stackoverflow \footnote{http://stackoverflow.com/questions/39691923/build-max-heap-running-time-for-array-sorted-in-decreasing-order} as can be seen on figure \ref{fig:10_5_a1}.
 
 \begin{figure}[H]
 	\fbox{\includegraphics[scale=0.5]{10_5_q}}
@@ -399,13 +399,46 @@ Figure \ref{fig:10_6_google_alerts_result} and \ref{fig:10_6_twilert_output} sho
 
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
-\section*{Question 8.7}
+\section*{Question 7.5}
 \begin{spverbatim}
-question 4
+Implement a BM25 module for Galago. Show that it works and document it.
 \end{spverbatim}
 
 \subsection*{Answer}
-answer 4
+Information about how to impelemnt BM25 on Galago can be found on Lemur Project website \cite{galago-operators}. First, we have to make the json query file. The format for the json query is available on \cite{galago-operators} and it looks like the example on listing \ref{lst:query-bm25}.
+
+\begin{lstlisting}[caption={json query format for BM25}, label={lst:query-bm25}]
+	"queries" : [
+	{
+	"number" : "bm25-combine",
+	"text" : "#combine(#bm25(international) #bm25(organized) #bm25(crime))",
+	}
+\end{lstlisting}
+
+For this assignment, the json query that I use can be found on listing \ref{lst:query-bm25-me}.
+\begin{lstlisting}[caption={json query format for BM25}, label={lst:query-bm25-me}]
+	{
+	"query": [
+	{
+	"text": "#combine(#bm25(what) #bm25(articles) #bm25(exist) #bm25(which) #bm25(deal) #bm25(with) #bm25(tss) #bm25(time) #bm25(sharing) #bm25(system) #bm25(an) #bm25(operating) #bm25(system) #bm25(for) #bm25(ibm) #bm25(computers))", 
+	"number": "1"
+	}
+	]
+	}
+\end{lstlisting}
+
+
+To execute this query, use the command \textbf{`./galago batch-search --index="[path to the index files]" --requested=10 [path to the json query]'}. Output of this execution is shown on figure \ref{fig:7_5_galago_bm25_output}.
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{7_5_galago_bm25_output}}
+	\centering
+	\caption{Output of BM25 implementation using Galago}
+	\label{fig:7_5_galago_bm25_output}
+\end{figure}
+
+
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
 \section*{Question 8.8}
 \begin{spverbatim}

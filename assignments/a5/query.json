@@ -1,0 +1,8 @@
+{
+    "query": [
+        {
+            "text": "#combine(#bm25(what) #bm25(articles) #bm25(exist) #bm25(which) #bm25(deal) #bm25(with) #bm25(tss) #bm25(time) #bm25(sharing) #bm25(system) #bm25(an) #bm25(operating) #bm25(system) #bm25(for) #bm25(ibm) #bm25(computers))", 
+            "number": "1"
+        }
+    ]
+}
