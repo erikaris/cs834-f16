@@ -291,7 +291,7 @@ For this assignment, I asked 2 questions on 2 different comunity-based question 
 \end{figure}
 
 \begin{figure}[H]
-	\fbox{\includegraphics[scale=0.6]{10_5_hi_quality}}
+	\fbox{\includegraphics[scale=0.5]{10_5_hi_quality}}
 	\centering
 	\caption{High Quality Question I asked on Stackoverflow}
 	\label{fig:10_5_hi_quality}
@@ -318,19 +318,98 @@ Accordingly, despite the low number of answers, I got high-quality answers for t
 
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
-\section*{Question 8.5}
+\section*{Question 10.6}
 \begin{spverbatim}
-question 3
+Find two examples of document filtering systems on the Web. How do they build a profile for your information need? Is the system static or adaptive?
 \end{spverbatim}
 
 \subsection*{Answer}
-answer 3
+I found 2 examples of document filtering systems on the Web, which are:
+\begin{enumerate}
+	\item Google Alerts (\url{https://www.google.com/alerts}). This is a content change detection and notification service, offered by the search engine company Google. 
+	\item Twilert (\url{https://www.twilert.com/}). This is a tool to get realtime alerts anytime a certain keyword you are interested in are mentioned on Twitter. 
+\end{enumerate}
+
+Both Google Alerts and Twilert use the same method to build the profile: using input from the user. Figure \ref{fig:10_6_google_alerts} and \ref{fig:10_6_twilert_input} shows the creation of profile on Google Alerts and Twilert, respectively. \newline
+To build a profile on Google Alerts, a user needs to input several information:
+\begin{enumerate}
+	\item The keyword that the user is interested in. This keyword will be the profile's name. 
+	\item Sources: news, blogs, videos, etc
+	\item Language: English, Arabic, etc
+	\item Region: select a country's name
+	\item How many: best results, all results. 
+	\item Deliver to: user's email address. 
+\end{enumerate}
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.6]{10_6_google_alerts}}
+	\centering
+	\caption{Creating a profile on Google Alerts}
+	\label{fig:10_6_google_alerts}
+\end{figure}
+
+Similarly, to build a profile on Twilert, user also needs to input several information such as the keyword, the location of the tweets, and the type of the tweets (positive, negative, or question). 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.6]{10_6_twilert_input}}
+	\centering
+	\caption{Creating a profile on Twilert}
+	\label{fig:10_6_twilert_input}
+\end{figure}
+
+The key to determine if a filtering system is static or adaptive is to check whether the profile is updateable or not. Based on this definition, I can conlude that both Google Alerts and Twilert are using adaptive filtering system since they provide a menu to update/edit profile. Figure \ref{fig:10_6_google_alert_edit} and \ref{fig:10_6_twilert_input_edit} illustrate the profile update for Google Alerts and Twilert, respectively. In this case, I make the keyword more specific by changing `aleppo' to `aleppo evacuation'. For Twilert, I also specify the tweet location to `Syria' (figure \ref{fig:10_6_twilert_area2}).
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{10_6_google_alert_edit}}
+	\centering
+	\caption{Update a profile on Google Alerts}
+	\label{fig:10_6_google_alert_edit}
+\end{figure}
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{10_6_twilert_input_edit}}
+	\centering
+	\caption{Update a profile on Twilert}
+	\label{fig:10_6_twilert_input_edit}
+\end{figure}
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{10_6_twilert_area2}}
+	\centering
+	\caption{Update a profile on Twilert - update the area}
+	\label{fig:10_6_twilert_area2}
+\end{figure}
+
+Figure \ref{fig:10_6_google_alerts_result} and \ref{fig:10_6_twilert_output} show the filtering result from Google Alerts and Twilert, respectively. 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{10_6_google_alerts_result}}
+	\centering
+	\caption{Filter result by Google Alert}
+	\label{fig:10_6_google_alerts_result}
+\end{figure}
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{10_6_twilert_output}}
+	\centering
+	\caption{Filter result by Twilert}
+	\label{fig:10_6_twilert_output}
+\end{figure}
+
 
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
 \section*{Question 8.7}
 \begin{spverbatim}
 question 4
+\end{spverbatim}
+
+\subsection*{Answer}
+answer 4
+
+\section*{Question 8.8}
+\begin{spverbatim}
+	question 4
 \end{spverbatim}
 
 \subsection*{Answer}

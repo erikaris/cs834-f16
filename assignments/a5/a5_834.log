@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  17 DEC 2016 07:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  17 DEC 2016 08:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,7 +828,7 @@ File: 10_5_hi_quality.jpg Graphic file (type jpg)
 
 <use 10_5_hi_quality.jpg>
 Package pdftex.def Info: 10_5_hi_quality.jpg used on input line 294.
-(pdftex.def)             Requested size: 456.50902pt x 198.74402pt.
+(pdftex.def)             Requested size: 380.42032pt x 165.61833pt.
  [5 <./10_5_q.jpg>]
 <10_5_a1.jpg, id=214, 574.145pt x 676.5275pt>
 File: 10_5_a1.jpg Graphic file (type jpg)
@@ -842,28 +842,84 @@ File: 10_5_high_quality_answer.jpg Graphic file (type jpg)
 <use 10_5_high_quality_answer.jpg>
 Package pdftex.def Info: 10_5_high_quality_answer.jpg used on input line 312.
 (pdftex.def)             Requested size: 402.90836pt x 560.69908pt.
- [7 <./10_5_a1.jpg>] [8 <./10_5_high_quality_answer.jpg>] (./a5_834.bbl
+ [7 <./10_5_a1.jpg>]
+Overfull \hbox (18.46725pt too wide) in paragraph at lines 324--324
+[]\T1/cmtt/m/n/10.95 Find[] two[] examples[] of[] document[] filtering[] system
+s[] on[] the[] Web.[] How[] do[] they[] build[] a[] profile[]
+ []
+
+[8 <./10_5_high_quality_answer.jpg>]
+<10_6_google_alerts.jpg, id=235, 683.55376pt x 466.74374pt>
+File: 10_6_google_alerts.jpg Graphic file (type jpg)
+
+<use 10_6_google_alerts.jpg>
+Package pdftex.def Info: 10_6_google_alerts.jpg used on input line 345.
+(pdftex.def)             Requested size: 410.13542pt x 280.0484pt.
+ [9 <./10_6_google_alerts.jpg>]
+<10_6_twilert_input.jpg, id=253, 658.46pt x 606.265pt>
+File: 10_6_twilert_input.jpg Graphic file (type jpg)
+
+<use 10_6_twilert_input.jpg>
+Package pdftex.def Info: 10_6_twilert_input.jpg used on input line 354.
+(pdftex.def)             Requested size: 395.07906pt x 363.76181pt.
+
+<10_6_google_alert_edit.jpg, id=257, 682.55pt x 407.5225pt>
+File: 10_6_google_alert_edit.jpg Graphic file (type jpg)
+
+<use 10_6_google_alert_edit.jpg>
+Package pdftex.def Info: 10_6_google_alert_edit.jpg used on input line 363.
+(pdftex.def)             Requested size: 341.27417pt x 203.76074pt.
+ [10 <./10_6_twilert_input.jpg>]
+<10_6_twilert_input_edit.jpg, id=265, 692.5875pt x 659.46375pt>
+File: 10_6_twilert_input_edit.jpg Graphic file (type jpg)
+
+<use 10_6_twilert_input_edit.jpg>
+Package pdftex.def Info: 10_6_twilert_input_edit.jpg used on input line 370.
+(pdftex.def)             Requested size: 346.2929pt x 329.73106pt.
+
+<10_6_twilert_area2.jpg, id=266, 683.55376pt x 643.40375pt>
+File: 10_6_twilert_area2.jpg Graphic file (type jpg)
+
+<use 10_6_twilert_area2.jpg>
+Package pdftex.def Info: 10_6_twilert_area2.jpg used on input line 377.
+(pdftex.def)             Requested size: 341.77605pt x 321.70108pt.
+ [11 <./10_6_google_alert_edit.jpg> <./10_6_twilert_input_edit.jpg>]
+<10_6_google_alerts_result.jpg, id=273, 631.35875pt x 587.19376pt>
+File: 10_6_google_alerts_result.jpg Graphic file (type jpg)
+
+<use 10_6_google_alerts_result.jpg>
+Package pdftex.def Info: 10_6_google_alerts_result.jpg used on input line 386.
+(pdftex.def)             Requested size: 315.6786pt x 293.59616pt.
+ [12 <./10_6_twilert_area2.jpg>]
+<10_6_twilert_output.jpg, id=281, 876.27374pt x 707.64375pt>
+File: 10_6_twilert_output.jpg Graphic file (type jpg)
+
+<use 10_6_twilert_output.jpg>
+Package pdftex.def Info: 10_6_twilert_output.jpg used on input line 393.
+(pdftex.def)             Requested size: 438.13579pt x 353.82101pt.
+ [13 <./10_6_google_alerts_result.jpg>]
+(./a5_834.bbl [14 <./10_6_twilert_output.jpg>]
 Underfull \hbox (badness 4266) in paragraph at lines 9--15
 []\T1/cmr/m/n/10.95 NetworkX De-vel-op-ers.  Net-workx - Link Anal-y-sis.  []$\
 T1/cmtt/m/n/10.95 https : / / networkx . github . io /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 344.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
  (./a5_834.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 344.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 344.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
 Package rerunfilecheck Info: File `a5_834.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 344.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
  ) 
 Here is how much of TeX's memory you used:
- 9991 strings out of 493029
- 141803 string characters out of 6136233
- 419809 words of memory out of 5000000
- 13218 multiletter control sequences out of 15000+600000
+ 10056 strings out of 493029
+ 143207 string characters out of 6136233
+ 420265 words of memory out of 5000000
+ 13253 multiletter control sequences out of 15000+600000
  17823 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,42p,1008b,2024s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -878,10 +934,10 @@ hare/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 frm2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on a5_834.pdf (10 pages, 714921 bytes).
+Output written on a5_834.pdf (16 pages, 1067321 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 169 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
+ 192 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
