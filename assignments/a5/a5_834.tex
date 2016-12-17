@@ -440,13 +440,49 @@ To execute this query, use the command \textbf{`./galago batch-search --index="[
 
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 
-\section*{Question 8.8}
+\section*{Question 7.8}
 \begin{spverbatim}
-	question 4
+Using the Galago implementation of query likelihood, study the impact of short queries and long queries on effectiveness. Do the parameter settings make a difference?
 \end{spverbatim}
 
 \subsection*{Answer}
-answer 4
+According to \cite{language-model}, the formula for query likelihood is what can be seen on figure \ref*{fig:7_8_likelihood_formula}.
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{7_8_likelihood_formula}}
+	\centering
+	\caption{Query Likelihood Formula}
+	\label{fig:7_8_likelihood_formula}
+\end{figure}
+
+This formula has 2 drawbacks:
+\begin{enumerate}
+	\item Results in zero if a term is missing in document (figure \ref{fig:7_8_zero_problem})
+	\item Document may be relevant to query but the query term is absent from document
+\end{enumerate}
+
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.5]{7_8_zero_problem}}
+	\centering
+	\caption{Problem with missing document. Figure is taken from \cite{language-model}}
+	\label{fig:7_8_zero_problem}
+\end{figure}
+
+To overcome these issues, smoothing is needed. By default, Galago uses DirichletScorer for smoothing \cite{galago-default-smoothing}. Figure \ref{fig:7_8_dirichlet} shows the snippet for DirichletScorer code that can be found in file `DirichletScoringIterator.java' line 56 in Galago Project. 
+
+\begin{figure}[H]
+	\fbox{\includegraphics[scale=0.6]{7_8_dirichlet}}
+	\centering
+	\caption{Snippet for Dirichlet code in Galago Project}
+	\label{fig:7_8_dirichlet}
+\end{figure}
+
+Using short query could impact the effectiveness since short query might contains noises (things that are not really relevant) in the result set. On the other hand, using a very long query could lower the likelihood value, especiallly if the long query contain a lower proportion of keywords. For example, the query `search engines' may produce a better result with a web search engine than the query `“what are typical implementation techniques and data structures used in search engines'. Therefore, the best thing to do is to use an average-length query since it has enough keywords to produce a good result, but contain less noise compare to the short query. \newline
+Parameter setting (query, query format, input file format, output file format, etc) will have insignificant effect on the query effectiveness. It normally will not affect the top-ranked pages of the search engine result. 
+
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+
 
 \medskip
 

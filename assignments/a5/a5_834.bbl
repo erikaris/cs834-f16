@@ -19,4 +19,20 @@ David Fisher.
 \newblock \url{https://sourceforge.net/p/lemur/wiki/Galago%20Operators/}, 2016.
 \newblock [Online; accessed 16-December-2016].
 
+\bibitem{language-model}
+Nazli Goharian.
+\newblock {Language Model}.
+\newblock
+  \url{http://people.cs.georgetown.edu/~nazli/classes/ir-Slides/LanguageModel-13.pdf},
+  2016.
+\newblock [Online; accessed 16-December-2016].
+
+\bibitem{galago-default-smoothing}
+Galago Project.
+\newblock {The Lemur Project / Discussion / Galago:About retrieval models}.
+\newblock
+  \url{https://sourceforge.net/p/lemur/discussion/galago/thread/10ff53c2/},
+  2016.
+\newblock [Online; accessed 16-December-2016].
+
 \end{thebibliography}
